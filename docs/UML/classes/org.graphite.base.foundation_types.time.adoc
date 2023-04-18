@@ -1,9 +1,9 @@
-=== Iso8601_time Class
+=== Time Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Iso8601_time*
+2+^h|*Time*
 
 h|*Description*
 2+a|Represents an ISO 8601 time, including partial and extended forms. Value may be:
@@ -17,7 +17,7 @@ See `_valid_iso8601_time()_` for validity.
 NOTE: A small deviation to the ISO 8601:2004 standard in this class is that the time `24:00:00` is not allowed, for consistency with `Iso8601_date_time`.
 
 h|*Inherit*
-2+|`<<_iso8601_type_class,Iso8601_type>>`
+2+|`<<_temporal_class,Temporal>>`
 
 h|*Functions*
 ^h|*Signature*
@@ -42,7 +42,7 @@ __Pre__: `not second_unknown`
 a|Extract the fractional seconds part of the time (i.e. following to any decimal sign) as a Real, or return 0.0 if not present.
 
 h|*1..1*
-|*timezone* (): `<<_iso8601_timezone_class,Iso8601_timezone>>`
+|*timezone* (): `<<_timezone_class,Timezone>>`
 a|Timezone; may be Void.
 
 h|*1..1*
@@ -77,20 +77,20 @@ a|Return string value in extended format.
 
 h|*1..1*
 |*add* __alias__ "+" ( +
-a_diff: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_time_class,Iso8601_time>>`
+a_diff: `<<_duration_class,Duration>>[1]` +
+): `<<_time_class,Time>>`
 a|Arithmetic addition of a duration to a time.
 
 h|*1..1*
 |*subtract* __alias__ "-" ( +
-a_diff: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_time_class,Iso8601_time>>`
+a_diff: `<<_duration_class,Duration>>[1]` +
+): `<<_time_class,Time>>`
 a|Arithmetic subtraction of a duration from a time.
 
 h|*1..1*
 |*diff* __alias__ "-" ( +
-a_time: `<<_iso8601_time_class,Iso8601_time>>[1]` +
-): `<<_iso8601_duration_class,Iso8601_duration>>`
+a_time: `<<_time_class,Time>>[1]` +
+): `<<_duration_class,Duration>>`
 a|Difference of two times.
 
 h|*Invariants*

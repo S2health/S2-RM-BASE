@@ -52,13 +52,16 @@
             "keywords": "openehr, resources"
         },
         {
-            "id": "iso_18308_conformance_statement",
-            "title": "ISO 18308 Conformance Statement",
-            "title_short": "ISO 18308 Conformance",
-            "description": "ISO 18308 Conformance Statement",
-            "summary": "Document describing conformance of openEHR architecture to ISO TS 18308, \"Requirements for EHR Architectures\".",
-            "link": "/releases/1.0.2/requirements/iso18308_conformance.pdf",
-            "copyright_year": "2003",
+            "id": "change_control",
+            "title": "Change Control Model",
+            "title_short": "Change Control",
+            "description": "Model of change and versioning",
+            "summary": "The Change Control Model describes the semantics of versioning for systems of record, supporting distributed versioning and merging.",
+            "micro_summary": "Authoring resources and translations",
+            "classes": [
+                "VERSIONED_OBJECT, VERSION, CONTRIBUTION"
+            ],
+            "copyright_year": "2023",
             "spec_status": "STABLE",
             "keywords": "EHR, conformance"
         }

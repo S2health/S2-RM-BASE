@@ -47,7 +47,7 @@ a|Universal quantifier applied to container, taking one agent argument `_test_` 
 h|*0..1*
 |*matching* ( +
 test: `Operation[1]` +
-): `<<_list_class,List>><T>`
+): `List<T>`
 a|Return a List all items matching the predicate function `_test_` which has signature `(v:T): Boolean`. If no matches, an empty List is returned.
 
 h|*0..1*

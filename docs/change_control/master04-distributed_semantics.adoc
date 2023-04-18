@@ -1,0 +1,93 @@
+= Semantics in Distributed Systems
+
+== Copying
+
+=== The Copy Operation
+
+In openEHR, the smallest unit of copying of content between systems that satisfies traceability requirements is the `ORIGINAL_VERSION`. In order to copy a `OBSERVATION` or even an `COMPOSITION` somewhere else and retain versioning capability, its enclosing `ORIGINAL_VERSION` object must be sent. When the type of content is a `COMPOSITION` for example, an `ORIGINAL_VERSION<COMPOSITION>` object is sent. At the receiving system various steps will occur depending on whether:
+
+* any items for the EHR in question have ever been copied before;
+* a copied EHR exists in the destination system for the subject of care, but no copies of the particular item in question have even been made (e.g. it is the first time Family History has been copied);
+* an EHR exists, and previous copies have been made for the item in question;
+* there is a duplicate EHR for the subject of care (i.e. created by new data entry rather than by automatic copying).
+
+In the first situation, there is not even an EHR (i.e. repository of Versioned objects for the patient in question) in the target system. A new one has to be created. As mentioned in the {openehr_rm_ehr}#_ehr_creation_semantics[EHR IM specification], the newly created EHR should re-use the EHR identifier from the source system. This establishes the new EHR as an intentional clone of the source EHR (or more correctly, part of the family of EHRs making up the virtual EHR for that patient).
+
+If it is the first time any version of the item logically identified by its `ORIGINAL_VERSION._uid.object_id()_` (i.e. the `_uid_` of its original `VERSIONED_OBJECT`, common to all Versions in the same container) was received from the originating system, a new `VERSIONED_OBJECT<T>` (e.g. `VERSIONED_OBJECT<COMPOSITION>`) is created, with its uid set to the same value as the received `VERSION._uid.object_id()_`. This establishes the newly created `VERSIONED_OBJECT` as being a logical clone of the one from which the received `ORIGINAL_VERSION` was copied. If some version of the item had already been received, this step will have already occurred, and the requisite `VERSIONED_OBJECT` would already exist.
+
+An `IMPORTED_VERSION` instance is then created, its item set to the received `ORIGINAL_VERSION`, and it is committed in the normal way (i.e. as part of a Contribution). The `IMPORTED_VERSION` commit_audit and contribution attributes record the local act of committal. In this operation, the `ORIGINAL_VERSION` instance is never modified - it remains a faithful copy of its original, no matter how many systems it may be copied through.
+
+=== Subsequent Local Modifications
+
+In most cases, the received information will remain as is for the duration. However, in some cases, users at the receiver system might want to make modifications as well. This is likely to happen in the case of information items representing things like medication lists and allergies. When new versions are added locally to a copied object, the local system id is recorded in the `_uid.creating_system_id()_` attribute, while branching numbering is used in the `_uid.version_tree_id()_`.
+
+These copying scenarios are illustrated in the figure below. On the left hand-side of the figure, a version container (i.e. an instance of `VERSIONED_OBJECT`) with `_uid_` = `"1"` is shown; the first Version has `_uid.creating_system_id_` = `"sysA"`; `_uid.version_tree_id_` = `"1"`. Further local trunk and branch versions are also shown.
+
+[.text-center]
+.Distributed versioning
+image::{diagrams_uri}/distributed_versioning.png[id=distributed_versioning, align="center", width=70%]
+
+When the first `ORIGINAL_VERSION` is copied (copy #1) to system B, it is committed as an `IMPORTED_VERSION` to a `VERSIONED_OBJECT` which is a clone of the original. Subsequent copies (copy #2 and copy #3) can be made of later versions from system A to system B, with the effect that the version tree can be recreated inside system B (if required; there is of course no obligation to do anything with the received information). Users in system B an also make modifications to the received Version copies; these modifications are shown in grey, as branched versions with `_uid.creating_system_id_` = `"sysB"`. Independently, users in system B will of course be creating other content locally, e.g. as shown on the right-hand side, where a Versioned object with `_uid_`= `"2"` has been created. Two places are indicated on the diagram where identification clashes could have occurred, but are prevented due to the use of the 3-part unique Version identifier scheme.
+
+Two rules are required to make this system work, as follows:
+
+* branch versions from the original systems that are copied to another system cannot be copied without their corresponding preceding versions on the same branch (if any) and trunk versions also being copied;
+* no system should create a new Versioned object (with a new uid) without first determining that it does not already have one with the same uid. This should happen automatically if GUIDs are being used (and the generating software is reliable); checks may have to be made if ISO Oids are being used.
+
+An important consequence of the way `IMPORTED_VERSION` is modelled is that in the Version containers resulting from copy operations, the commit times always reflect the local (more recent) act of committal, not the original committal of the information to the container where it was created. This ensures that a query for the state of a Version container at earlier commit times correctly returns what information existed at that time in that container, rather than giving the illusion that recently copied Versions were there earlier than the time of local committal (as would occur if the original commit time of the `ORIGINAL_VERSION` object was used for comparison purposes in such queries). Accordingly, such a query over an entire EHR or other versioned information repository always returns the state of the repository available to users at that time, regardless of how many later merges or copies were carried out. This is a key requirement for supporting medico-legal and historical investigations of stored information.
+
+== Version Merging
+
+One of the most common operations in distributed versioned environments, particularly in healthcare, is that content created in one system is imported into another system, modified in the receiving system and subsequently sent back to the first system. This information pathway corresponds to scenarios such as the patient being referred from primary care into a hospital, and later being discharged into primary (or other care).
+
+The usual need when the first system receives changes made to the data by the second system is to merge them back into the trunk of the version tree. Logically a 'merge' is the operation of using two versions of the same content to create a third version. How the source versions are used will vary based on the semantics of the information; it could be that the either is simply taken in its totality and the other discarded, or some mixture might be created of the two in a process of editing by the user. In many cases in health, such as where the content is a medication or problem list, the user in the original system will review the received content and create a new trunk version locally using that content, since it will be deemed to be the most accurate available in the clinical computing environment. This scenario is illustrated below.
+
+[.text-center]
+.Version merging
+image::{diagrams_uri}/version_merging.png[id=version_merging, align="center", width=60%]
+
+In this figure, versions 1 and 2 of the content (e.g. a medication list) from Versioned object with `_uid_`= `1` are copied from system A (e.g. a GP) to system B (e.g. a hospital). In system B, changes are made to version 2, creating a branch (as an instance of `IMPORTED_VERSION<T>`) as required by the rules described above. These changes (modified medication list) are then imported back into system A. The system A user performs a merge operation to create a new trunk version 3, using the `sysB::2.1.2` and `sysA::2` content as input, in which he may do any of the following:
+
+* use the `sysB::2.1.2` (most recent) content unchanged;
+* retain the `sysA::2` content as being more correct, despite the more recent information in the `sysB::2.1.2` version (which might be clinically incorrect, or out of date, despite being entered more recently);
+* reconcile the information from the two versions in a synthesised form that now best represents the known reality for the patient.
+
+In all cases, the result is that system A now has an up-to-date medication list for the patient, as judged by the merging clinician. The new Version is an instance of `ORIGINAL_VERSION<T>`, and the `_other_input_version_uids_` attribute is updated to include the `OBJECT_VERSION_ID` representing `sysB::2.1.2`. This should be done even if its content was not used in the merge, since it indicates which source versions were considered in the merge operation. It does not need to include `sysA::2`, since this is already known in the `_preceding_version_uid_`.
+
+If in system A a modification had been done to the `sysA::2` version, creating `sysA::3`, in parallel with the system B changes, then a conflict situation is likely when the merge attempt is made. This may need to be resolved by a human user, for whom an automated merge attempt could be presented on the screen as a starting point, much as current source code control tools do today.
+
+== Disjoint Merging
+
+An unintended but not uncommon situation is when distinct Version containers are created for the same real-world entity. For example, separate EHRs can be created for the one patient, due to patient identification errors or other procedural or administrative problems. Each record is likely to contain some logically duplicated basic information, as well as information unique to that record, e.g. contributed by different hospital departments. Within the one EHR, unintentionally distinct Version containers might be created for the same logical item, such as the patient's problem list. These erroneous situations are eventually detected, and need to be rectified. Logically what is required is to merge the two records (each potentially consisting of numerous Version containers) into one, as shown below.
+
+[.text-center]
+.Disjoint merging
+image::{diagrams_uri}/disjoint_merging.png[id=disjoint_merging, align="center", width=80%]
+
+The merge procedure is as follows:
+
+* decide which record is to remain active (for merging purposes, this will be the 'target', the other the 'source');
+* for all Version containers in the source record...
+** if there is a logical equivalent in the target record (for EHRs, there will typically only be equivalents for persistent and possibly administrative Compositions), perform a disjoint merge in the target Version container by:
+*** creating a new trunk version in the target Version container;
+** if there is no logical equivalent, do the following:
+*** create a new target Version container;
+*** create its first trunk Version;
+** in both cases, continue as follows:
+*** set the `_data_` in the new trunk Version to be a copy of the data from the most recent trunk Version from the source container;
+*** set `_other_input_version_uids_` to include the uid of the source Version being merged (this uid will contain the uid of the Version container being logically deleted);
+*** for any branches on the most recent trunk Version in the source container, create corresponding branches on the newly created trunk Version in the target, include the corresponding content and set the `_other_input_version_uids_` in the target in the same way as above;
+*** add a new trunk Version to the source container, with the `_data_` set to Void, and `_lifecycle_state_` set to deleted.
+
+As for copying and merging, an important consequence of this procedure is that the resulting record (i.e. the target of the merge procedure) continues to correctly represent previous states of the repository, regardless of how many recent merges have occurred.
+
+== Moving Version Containers
+
+It will not be uncommon that whole `VERSIONED_OBJECTS` need to be moved to another system, e.g. due to a move of a complete patient record (due to the patient moving), or re-organisation of EHR data centres. The semantics of a move are different from those of copying: with a move, there is no longer a source instance after the operation; the destination instance becomes the primary instance.
+
+When the move is effected, the identifier of the system in which the `VERSIONED_OBJECT` now exists will usually be different from what it was before. As a consequence, subsequent versions of the content created in a moved version container will now have the `_uid.creating_system_id_` set to the id of the new system. This creates another variation on the version lineage, one in which the `_uid.creating_system_id_` value can change in the trunk line, as shown in below.
+
+[.text-center]
+.Moving a version container
+image::{diagrams_uri}/moving_version_container.png[id=moving_version_container, align="center", width=50%]
+

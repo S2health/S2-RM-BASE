@@ -14,11 +14,11 @@ image::{openehr_logo}["openEHR logo",align="center"]
 = {spec_title}
 
 include::{ref_dir}/docs/boilerplate/full_front_block.adoc[]
-include::{ref_dir}/docs/references/reference_definitions.adoc[]
 
 //
 // ============================================= Asciidoc BODY ===============================================
 //
+include::{ref_dir}/docs/references/reference_definitions.adoc[]
 
 include::master00-amendment_record.adoc[leveloffset=+1]
 
@@ -28,19 +28,28 @@ include::master00-amendment_record.adoc[leveloffset=+1]
 
 == Acknowledgements
 
+=== Editor
+
+* Graphite Informatics group.
+
 === Contributors
 
-This specification has benefited from formal and informal input from the openEHR and wider health informatics community.
+This specification benefited from input from the wider health informatics community. The openEHR Foundation would like to recognise the following people for their contributions.
+
+* xxx
+
+=== Support
+
+The work reported in this paper has been funded in part by the following organisations:
+
+* xxx
 
 === Trademarks
 
-* 'openEHR' is a registered trademark of the openEHR Foundation
+* 'openEHR' is a trademark of the openEHR Foundation
+* 'Java' is a registered trademark of Oracle Corporation
+* 'Microsoft' and '.Net' are trademarks of the Microsoft Corporation
 
-
-//
-// --------------------------------------------- TOC -----------------------------------------------
-//
-//toc::[left]
 
 //
 // --------------------------------------------- CHAPTERS -----------------------------------------------
@@ -48,24 +57,19 @@ This specification has benefited from formal and informal input from the openEHR
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.graphite.base.foundation_types.
+:pkg: org.graphite.base.change_control.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-overview.adoc[leveloffset=+1]
-include::master03-primitive_types.adoc[leveloffset=+1]
-include::master04-structure_types.adoc[leveloffset=+1]
-include::master05-interval.adoc[leveloffset=+1]
-include::master06-time_types.adoc[leveloffset=+1]
-include::master07-terminology.adoc[leveloffset=+1]
-include::master08-functional.adoc[leveloffset=+1]
-include::master09-type_cross_ref.adoc[leveloffset=+1]
+include::master03-change_control_package.adoc[leveloffset=+1]
+include::master04-distributed_semantics.adoc[leveloffset=+1]
 
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------
 //
 :sectnums!:
-//== References
-//
-//bibliography::[]
+== References
+
+bibliography::[]

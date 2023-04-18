@@ -1,9 +1,9 @@
-=== Iso8601_duration Class
+=== Duration Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Iso8601_duration*
+2+^h|*Duration*
 
 h|*Description*
 2+a|Represents an ISO 8601 duration, which may have multiple parts from years down to seconds. The `_value_` attribute is a String in the format:
@@ -13,7 +13,7 @@ h|*Description*
 NOTE: two deviations from ISO 8601 are supported, the first, to allow a negative sign, and the second allowing the 'W' designator to be mixed with other designators.
 
 h|*Inherit*
-2+|`<<_iso8601_type_class,Iso8601_type>>`
+2+|`<<_temporal_class,Temporal>>`
 
 h|*Functions*
 ^h|*Signature*
@@ -75,30 +75,30 @@ a|Return the duration string value.
 
 h|*1..1*
 |*add* __alias__ "+" ( +
-a_val: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_duration_class,Iso8601_duration>>`
+a_val: `<<_duration_class,Duration>>[1]` +
+): `<<_duration_class,Duration>>`
 a|Arithmetic addition of a duration to a duration, via conversion to seconds, using `Time_definitions._Average_days_in_year_` and `Time_definitions._Average_days_in_month_`
 
 h|*1..1*
 |*subtract* __alias__ "-" ( +
-a_val: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_duration_class,Iso8601_duration>>`
+a_val: `<<_duration_class,Duration>>[1]` +
+): `<<_duration_class,Duration>>`
 a|Arithmetic subtraction of a duration from a duration, via conversion to seconds, using `Time_definitions._Average_days_in_year_` and `Time_definitions._Average_days_in_month_`
 
 h|*1..1*
 |*multiply* __alias__ "&#42;" ( +
 a_val: `<<_real_class,Real>>[1]` +
-): `<<_iso8601_duration_class,Iso8601_duration>>`
+): `<<_duration_class,Duration>>`
 a|Arithmetic multiplication a duration by a number.
 
 h|*1..1*
 |*divide* __alias__ "/" ( +
 a_val: `<<_real_class,Real>>[1]` +
-): `<<_iso8601_duration_class,Iso8601_duration>>`
+): `<<_duration_class,Duration>>`
 a|Arithmetic division of a duration by a number.
 
 h|*1..1*
-|*negative* __alias__ "-" (): `<<_iso8601_duration_class,Iso8601_duration>>`
+|*negative* __alias__ "-" (): `<<_duration_class,Duration>>`
 a|Generate negative of current duration value.
 
 h|*Invariants*

@@ -1,9 +1,9 @@
-=== Iso8601_date Class
+=== Date Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Iso8601_date*
+2+^h|*Date*
 
 h|*Description*
 2+a|Represents an ISO 8601 date, including partial and extended forms. Value may be:
@@ -15,7 +15,7 @@ h|*Description*
 See `Time_definitions._valid_iso8601_date()_` for validity.
 
 h|*Inherit*
-2+|`<<_iso8601_type_class,Iso8601_type>>`
+2+|`<<_temporal_class,Temporal>>`
 
 h|*Functions*
 ^h|*Signature*
@@ -38,7 +38,7 @@ __Pre__: `not day_unknown`
 a|Extract the day part of the date as an Integer, or return 0 if not present.
 
 h|*1..1*
-|*timezone* (): `<<_iso8601_timezone_class,Iso8601_timezone>>`
+|*timezone* (): `<<_timezone_class,Timezone>>`
 a|Timezone; may be Void.
 
 h|*1..1*
@@ -65,26 +65,26 @@ a|Return string value in extended format.
 
 h|*1..1*
 |*add* __alias__ "+" ( +
-a_diff: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_date_class,Iso8601_date>>`
+a_diff: `<<_duration_class,Duration>>[1]` +
+): `<<_date_class,Date>>`
 a|Arithmetic addition of a duration to a date.
 
 h|*1..1*
 |*subtract* __alias__ "-" ( +
-a_diff: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_date_class,Iso8601_date>>`
+a_diff: `<<_duration_class,Duration>>[1]` +
+): `<<_date_class,Date>>`
 a|Arithmetic subtraction of a duration from a date.
 
 h|*1..1*
 |*diff* __alias__ "-" ( +
-a_date: `<<_iso8601_date_class,Iso8601_date>>[1]` +
-): `<<_iso8601_duration_class,Iso8601_duration>>`
+a_date: `<<_date_class,Date>>[1]` +
+): `<<_duration_class,Duration>>`
 a|Difference of two dates.
 
 h|*1..1*
 |*add_nominal* __alias__ "++" ( +
-a_diff: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_date_class,Iso8601_date>>`
+a_diff: `<<_duration_class,Duration>>[1]` +
+): `<<_date_class,Date>>`
 a|Addition of nominal duration represented by `_a_diff_`. For example, a duration of `'P1Y'` means advance to the same date next year, with the exception of the date 29 February in a leap year, to which the addition of a nominal year will result in 28 February of the following year. Similarly, `'P1M'` is understood here as a nominal month, the addition of which will result in one of:
 
 * the same day in the following month, if it exists, or;
@@ -93,8 +93,8 @@ a|Addition of nominal duration represented by `_a_diff_`. For example, a duratio
 
 h|*1..1*
 |*subtract_nominal* __alias__ "--" ( +
-a_diff: `<<_iso8601_duration_class,Iso8601_duration>>[1]` +
-): `<<_iso8601_date_class,Iso8601_date>>`
+a_diff: `<<_duration_class,Duration>>[1]` +
+): `<<_date_class,Date>>`
 a|Subtraction of nominal duration represented by `_a_diff_`. See `_add_nominal_()` for semantics.
 
 h|*Invariants*

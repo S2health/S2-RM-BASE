@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.16">
 <meta name="description" content="openEHR Foundation Types specification">
 <meta name="keywords" content="openehr, identifiers, types">
 <title>Foundation Types</title>
@@ -110,12 +110,11 @@
 <ul class="sectlevel3">
 <li><a href="#_time_definitions_class">6.5.1. Time_Definitions Class</a></li>
 <li><a href="#_temporal_class">6.5.2. Temporal Class</a></li>
-<li><a href="#_iso8601_type_class">6.5.3. Iso8601_type Class</a></li>
-<li><a href="#_iso8601_date_class">6.5.4. Iso8601_date Class</a></li>
-<li><a href="#_iso8601_time_class">6.5.5. Iso8601_time Class</a></li>
-<li><a href="#_iso8601_date_time_class">6.5.6. Iso8601_date_time Class</a></li>
-<li><a href="#_iso8601_duration_class">6.5.7. Iso8601_duration Class</a></li>
-<li><a href="#_iso8601_timezone_class">6.5.8. Iso8601_timezone Class</a></li>
+<li><a href="#_date_class">6.5.3. Date Class</a></li>
+<li><a href="#_time_class">6.5.4. Time Class</a></li>
+<li><a href="#_date_time_class">6.5.5. Date_time Class</a></li>
+<li><a href="#_duration_class">6.5.6. Duration Class</a></li>
+<li><a href="#_timezone_class">6.5.7. Timezone Class</a></li>
 </ul>
 </li>
 </ul>
@@ -157,7 +156,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/images/openEHR_logo_RGB.svg" alt="openEHR logo">
+<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-graphite.svg" alt="openEHR logo">
 </div>
 </div>
 </div>
@@ -172,7 +171,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="https://www.openehr.org/programs/specification" target="_blank" rel="noopener">openEHR Specification Program</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="https://www.openehr.org/programs/specification" target="_blank" rel="noopener">Graphite Platform Publishing</a></th>
 </tr>
 </thead>
 <tbody>
@@ -189,11 +188,6 @@
 </tr>
 </tbody>
 </table>
-<div class="imageblock text-center">
-<div class="content">
-<object type="image/svg+xml" data="openehr_block_diagram.svg" width="60%"><span class="alt">openEHR components</span></object>
-</div>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -201,12 +195,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2017 - 2022 The openEHR Foundation</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2017 - 2023 Graphite Platform Publishing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="https://www.openehr.org" target="_blank" rel="noopener">The openEHR Foundation</a> is an independent, non-profit foundation, facilitating the sharing of health records by consumers and clinicians via open specifications, clinical models and open platform implementations.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="https://www.openehr.org" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -1906,7 +1900,7 @@ test: <code>Operation[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>matching</strong> (<br>
 test: <code>Operation[1]</code><br>
-): <code><a href="#_list_class">List</a>&lt;T&gt;</code></p></td>
+): <code>List&lt;T&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Return a List all items matching the predicate function <code><em>test</em></code> which has signature <code>(v:T): Boolean</code>. If no matches, an empty List is returned.</p>
 </div></div></td>
@@ -3102,38 +3096,12 @@ allowing the <code>W</code> designator in the same expression as other designato
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract ancestor of time-related classes.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_class">Ordered</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_iso8601_type_class"><a class="anchor" href="#_iso8601_type_class"></a>6.5.3. Iso8601_type Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Iso8601_type (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Abstract ancestor type of ISO 8601 types, defining interface for 'extended' and 'partial' concepts from ISO 8601.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_temporal_class">Temporal</a></code>, <code><a href="#_time_definitions_class">Time_Definitions</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_class">Ordered</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3172,7 +3140,7 @@ allowing the <code>W</code> designator in the same expression as other designato
 </table>
 </div>
 <div class="sect3">
-<h4 id="_iso8601_date_class"><a class="anchor" href="#_iso8601_date_class"></a>6.5.4. Iso8601_date Class</h4>
+<h4 id="_date_class"><a class="anchor" href="#_date_class"></a>6.5.3. Date Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3182,7 +3150,7 @@ allowing the <code>W</code> designator in the same expression as other designato
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Iso8601_date</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Date</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3208,7 +3176,7 @@ allowing the <code>W</code> designator in the same expression as other designato
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_iso8601_type_class">Iso8601_type</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_temporal_class">Temporal</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -3242,7 +3210,7 @@ allowing the <code>W</code> designator in the same expression as other designato
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timezone</strong> (): <code><a href="#_iso8601_timezone_class">Iso8601_timezone</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timezone</strong> (): <code><a href="#_timezone_class">Timezone</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Timezone; may be Void.</p>
 </div></div></td>
@@ -3287,8 +3255,8 @@ allowing the <code>W</code> designator in the same expression as other designato
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_class">Iso8601_date</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_class">Date</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic addition of a duration to a date.</p>
 </div></div></td>
@@ -3296,8 +3264,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_class">Iso8601_date</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_class">Date</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic subtraction of a duration from a date.</p>
 </div></div></td>
@@ -3305,8 +3273,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>diff</strong> <em>alias</em> "-" (<br>
-a_date: <code><a href="#_iso8601_date_class">Iso8601_date</a>[1]</code><br>
-): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+a_date: <code><a href="#_date_class">Date</a>[1]</code><br>
+): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Difference of two dates.</p>
 </div></div></td>
@@ -3314,8 +3282,8 @@ a_date: <code><a href="#_iso8601_date_class">Iso8601_date</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add_nominal</strong> <em>alias</em> "++" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_class">Iso8601_date</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_class">Date</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Addition of nominal duration represented by <code><em>a_diff</em></code>. For example, a duration of <code>'P1Y'</code> means advance to the same date next year, with the exception of the date 29 February in a leap year, to which the addition of a nominal year will result in 28 February of the following year. Similarly, <code>'P1M'</code> is understood here as a nominal month, the addition of which will result in one of:</p>
 </div>
@@ -3336,8 +3304,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract_nominal</strong> <em>alias</em> "--" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_class">Iso8601_date</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_class">Date</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Subtraction of nominal duration represented by <code><em>a_diff</em></code>. See <code><em>add_nominal</em>()</code> for semantics.</p>
 </div></div></td>
@@ -3370,7 +3338,7 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_iso8601_time_class"><a class="anchor" href="#_iso8601_time_class"></a>6.5.5. Iso8601_time Class</h4>
+<h4 id="_time_class"><a class="anchor" href="#_time_class"></a>6.5.4. Time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3380,7 +3348,7 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Iso8601_time</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Time</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3418,7 +3386,7 @@ A small deviation to the ISO 8601:2004 standard in this class is that the time <
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_iso8601_type_class">Iso8601_type</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_temporal_class">Temporal</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -3457,7 +3425,7 @@ A small deviation to the ISO 8601:2004 standard in this class is that the time <
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timezone</strong> (): <code><a href="#_iso8601_timezone_class">Iso8601_timezone</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timezone</strong> (): <code><a href="#_timezone_class">Timezone</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Timezone; may be Void.</p>
 </div></div></td>
@@ -3516,8 +3484,8 @@ A small deviation to the ISO 8601:2004 standard in this class is that the time <
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_time_class">Iso8601_time</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_time_class">Time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic addition of a duration to a time.</p>
 </div></div></td>
@@ -3525,8 +3493,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_time_class">Iso8601_time</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_time_class">Time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic subtraction of a duration from a time.</p>
 </div></div></td>
@@ -3534,8 +3502,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>diff</strong> <em>alias</em> "-" (<br>
-a_time: <code><a href="#_iso8601_time_class">Iso8601_time</a>[1]</code><br>
-): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+a_time: <code><a href="#_time_class">Time</a>[1]</code><br>
+): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Difference of two times.</p>
 </div></div></td>
@@ -3574,7 +3542,7 @@ a_time: <code><a href="#_iso8601_time_class">Iso8601_time</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_iso8601_date_time_class"><a class="anchor" href="#_iso8601_date_time_class"></a>6.5.6. Iso8601_date_time Class</h4>
+<h4 id="_date_time_class"><a class="anchor" href="#_date_time_class"></a>6.5.5. Date_time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3584,7 +3552,7 @@ a_time: <code><a href="#_iso8601_time_class">Iso8601_time</a>[1]</code><br>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Iso8601_date_time</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Date_time</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3623,7 +3591,7 @@ a_time: <code><a href="#_iso8601_time_class">Iso8601_time</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_iso8601_type_class">Iso8601_type</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_temporal_class">Temporal</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -3691,7 +3659,7 @@ a_time: <code><a href="#_iso8601_time_class">Iso8601_time</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timezone</strong> (): <code><a href="#_iso8601_timezone_class">Iso8601_timezone</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timezone</strong> (): <code><a href="#_timezone_class">Timezone</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Timezone; may be Void.</p>
 </div></div></td>
@@ -3764,8 +3732,8 @@ a_time: <code><a href="#_iso8601_time_class">Iso8601_time</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_time_class">Iso8601_date_time</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_time_class">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic addition of a duration to a date/time.</p>
 </div></div></td>
@@ -3773,8 +3741,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_time_class">Iso8601_date_time</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_time_class">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic subtraction of a duration from a date/time.</p>
 </div></div></td>
@@ -3782,8 +3750,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>diff</strong> <em>alias</em> "-" (<br>
-a_date_time: <code><a href="#_iso8601_date_time_class">Iso8601_date_time</a>[1]</code><br>
-): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+a_date_time: <code><a href="#_date_time_class">Date_time</a>[1]</code><br>
+): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Difference of two date/times.</p>
 </div></div></td>
@@ -3791,8 +3759,8 @@ a_date_time: <code><a href="#_iso8601_date_time_class">Iso8601_date_time</a>[1]<
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add_nominal</strong> <em>alias</em> "++" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_class">Iso8601_date</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_class">Date</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Addition of nominal duration represented by <code><em>a_diff</em></code>. See <code>Iso8601_date.<em>add_nominal</em>()</code> for semantics.</p>
 </div></div></td>
@@ -3800,8 +3768,8 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract_nominal</strong> <em>alias</em> "--" (<br>
-a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_date_class">Iso8601_date</a></code></p></td>
+a_diff: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_date_class">Date</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Subtraction of nominal duration represented by <code><em>a_diff</em></code>. See <code><em>add_nominal</em>()</code> for semantics.</p>
 </div></div></td>
@@ -3882,7 +3850,7 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_iso8601_duration_class"><a class="anchor" href="#_iso8601_duration_class"></a>6.5.7. Iso8601_duration Class</h4>
+<h4 id="_duration_class"><a class="anchor" href="#_duration_class"></a>6.5.6. Duration Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3892,7 +3860,7 @@ a_diff: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Iso8601_duration</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Duration</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3921,7 +3889,7 @@ two deviations from ISO 8601 are supported, the first, to allow a negative sign,
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_iso8601_type_class">Iso8601_type</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_temporal_class">Temporal</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -4024,8 +3992,8 @@ two deviations from ISO 8601 are supported, the first, to allow a negative sign,
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-a_val: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+a_val: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic addition of a duration to a duration, via conversion to seconds, using <code>Time_definitions.<em>Average_days_in_year</em></code> and <code>Time_definitions.<em>Average_days_in_month</em></code></p>
 </div></div></td>
@@ -4033,8 +4001,8 @@ a_val: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><b
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-a_val: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><br>
-): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+a_val: <code><a href="#_duration_class">Duration</a>[1]</code><br>
+): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic subtraction of a duration from a duration, via conversion to seconds, using <code>Time_definitions.<em>Average_days_in_year</em></code> and <code>Time_definitions.<em>Average_days_in_month</em></code></p>
 </div></div></td>
@@ -4043,7 +4011,7 @@ a_val: <code><a href="#_iso8601_duration_class">Iso8601_duration</a>[1]</code><b
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
 a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
-): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic multiplication a duration by a number.</p>
 </div></div></td>
@@ -4052,14 +4020,14 @@ a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>divide</strong> <em>alias</em> "/" (<br>
 a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
-): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic division of a duration by a number.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>negative</strong> <em>alias</em> "-" (): <code><a href="#_iso8601_duration_class">Iso8601_duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>negative</strong> <em>alias</em> "-" (): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Generate negative of current duration value.</p>
 </div></div></td>
@@ -4116,7 +4084,7 @@ a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_iso8601_timezone_class"><a class="anchor" href="#_iso8601_timezone_class"></a>6.5.8. Iso8601_timezone Class</h4>
+<h4 id="_timezone_class"><a class="anchor" href="#_timezone_class"></a>6.5.7. Timezone Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4126,7 +4094,7 @@ a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Iso8601_timezone</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Timezone</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4159,7 +4127,7 @@ a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_iso8601_type_class">Iso8601_type</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_temporal_class">Temporal</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -4784,7 +4752,7 @@ a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-29 11:13:18 UTC
+Last updated 2023-04-18 15:36:02 -0600
 </div>
 </div>
 </body>

@@ -1,0 +1,5 @@
+:spec_title: Change Control Model
+:copyright_year: 2023
+:spec_status: STABLE
+:keywords: EHR, conformance
+:description: Model of change and versioning

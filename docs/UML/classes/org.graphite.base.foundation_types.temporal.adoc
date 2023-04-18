@@ -1,15 +1,15 @@
-=== Iso8601_type Class
+=== Temporal Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*__Iso8601_type (abstract)__*
+2+^h|*__Temporal (abstract)__*
 
 h|*Description*
 2+a|Abstract ancestor type of ISO 8601 types, defining interface for 'extended' and 'partial' concepts from ISO 8601.
 
 h|*Inherit*
-2+|`<<_temporal_class,Temporal>>`, `<<_time_definitions_class,Time_Definitions>>`
+2+|`<<_ordered_class,Ordered>>`
 
 h|*Attributes*
 ^h|*Signature*
