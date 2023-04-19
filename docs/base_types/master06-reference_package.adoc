@@ -88,13 +88,13 @@ The `_reason_` attribute is used to indicate why the attestation occurred, and i
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}partyproxy.adoc[]
+include::{uml_export_dir}/classes/{pkg}party_proxy.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}partyself.adoc[]
+include::{uml_export_dir}/classes/{pkg}party_self.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}partyidentified.adoc[]
+include::{uml_export_dir}/classes/{pkg}party_identified.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}partyrelated.adoc[]
+include::{uml_export_dir}/classes/{pkg}party_related.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}participation.adoc[]
 

@@ -1,9 +1,9 @@
-=== PartyIdentified Class
+=== Party_identified Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*PartyIdentified*
+2+^h|*Party_identified*
 
 h|*Description*
 2+a|Proxy data for an identified party other than the subject of the record, minimally consisting of human-readable identifier(s), such as name, formal (and possibly computable) identifiers such as NHS number, and an optional link to external data. There must be at least one of name, identifier or external_ref present.
@@ -13,7 +13,7 @@ Used to describe parties where only identifiers may be known, and there is no en
 Should not be used to include patient identifying information.
 
 h|*Inherit*
-2+|`<<_partyproxy_class,PartyProxy>>`
+2+|`<<_party_proxy_class,Party_proxy>>`
 
 h|*Attributes*
 ^h|*Signature*

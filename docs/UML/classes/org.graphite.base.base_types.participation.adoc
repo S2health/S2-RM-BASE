@@ -23,7 +23,7 @@ h|*0..1*
 a|Role of participant within the organisation, e.g. cardiologist, senior nurse.
 
 h|*1..1*
-|*performer*: `<<_partyproxy_class,PartyProxy>>`
+|*performer*: `<<_party_proxy_class,Party_proxy>>`
 a|The id and possibly demographic system link of the party participating in the activity.
 
 h|*0..1*
