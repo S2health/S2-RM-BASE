@@ -1,4 +1,4 @@
-:spec_title: Change Control Model
+:spec_title: Graphite Change Control Model
 :copyright_year: 2023
 :spec_status: STABLE
 :keywords: EHR, conformance
