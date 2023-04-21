@@ -24,7 +24,7 @@ h|*0..1*
 a|Optional human-readable name (in String form).
 
 h|*0..1*
-|*identifiers*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dvidentifier_class[DvIdentifier^]>`
+|*identifiers*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_identifier_class[Dv_identifier^]>`
 a|One or more formal identifiers (possibly computable).
 
 TODO: fix type

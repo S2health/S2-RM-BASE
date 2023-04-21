@@ -37,7 +37,7 @@ It is assumed in the openEHR specifications that Unicode is supported by the typ
 
 include::{uml_export_dir}/classes/{pkg}boolean.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}ordered.adoc[]
+include::{uml_export_dir}/classes/{pkg}comparable.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}character.adoc[]
 
@@ -49,7 +49,7 @@ include::{uml_export_dir}/classes/{pkg}uri.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}numeric.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}ordered_numeric.adoc[]
+include::{uml_export_dir}/classes/{pkg}comparable_numeric.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}integer.adoc[]
 

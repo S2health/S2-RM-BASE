@@ -9,7 +9,7 @@ h|*Description*
 2+a|Abstract ancestor type of ISO 8601 types, defining interface for 'extended' and 'partial' concepts from ISO 8601.
 
 h|*Inherit*
-2+|`<<_ordered_class,Ordered>>`
+2+|`<<_comparable_class,Comparable>>`
 
 h|*Attributes*
 ^h|*Signature*

@@ -9,7 +9,7 @@ h|*Description*
 2+a|Type representing minimal interface of built-in String type, as used to represent textual data in any natural or formal language.
 
 h|*Inherit*
-2+|`<<_ordered_class,Ordered>>`
+2+|`<<_comparable_class,Comparable>>`
 
 h|*Functions*
 ^h|*Signature*

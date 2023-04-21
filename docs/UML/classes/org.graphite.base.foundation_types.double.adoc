@@ -9,7 +9,7 @@ h|*Description*
 2+a|Type used to represent double-precision decimal numbers. Corresponds to a double-precision floating point value in most languages.
 
 h|*Inherit*
-2+|`<<_ordered_numeric_class,Ordered_Numeric>>`
+2+|`<<_comparable_numeric_class,Comparable_Numeric>>`
 
 h|*Functions*
 ^h|*Signature*

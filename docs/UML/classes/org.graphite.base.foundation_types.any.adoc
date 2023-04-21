@@ -47,7 +47,7 @@ a|Type name of an object as a string. May include generic parameters, as in `"In
 
 h|*1..1*
 |*not_equal* __alias__ "!=", "≠" ( +
-other: `<<_ordered_class,Ordered>>[1]` +
+other: `<<_comparable_class,Comparable>>[1]` +
 ): `<<_boolean_class,Boolean>>`
 a|True if current object not equal to `_other_`. Returns not `_equal_()`.
 |===

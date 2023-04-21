@@ -1,12 +1,12 @@
-=== ComparisonOperator Enumeration
+=== Comparison_operator Enumeration
 
 [cols="^1,3,5"]
 |===
 h|*Enumeration*
-2+^h|*ComparisonOperator*
+2+^h|*Comparison_operator*
 
 h|*Description*
-2+a|
+2+a|TODO: should be covered by Range
 
 h|*Attributes*
 ^h|*Signature*

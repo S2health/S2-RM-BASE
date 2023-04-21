@@ -45,7 +45,7 @@ Original content of this Version.
 
 h|*1..1 +
 (abstract)*
-|*lifecycle_state* (): `link:/releases/GCM/{gcm_release}/data_types.html#_dvcodedtext_class[DvCodedText^]`
+|*lifecycle_state* (): `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^]`
 a|Lifecycle state of this version; coded by openEHR vocabulary `version lifecycle state`.
 
 h|*1..1*

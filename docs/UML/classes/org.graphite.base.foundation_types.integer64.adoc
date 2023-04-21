@@ -9,7 +9,7 @@ h|*Description*
 2+a|Type representing minimal interface of built-in Integer64 type.
 
 h|*Inherit*
-2+|`<<_ordered_numeric_class,Ordered_Numeric>>`
+2+|`<<_comparable_numeric_class,Comparable_Numeric>>`
 
 h|*Functions*
 ^h|*Signature*

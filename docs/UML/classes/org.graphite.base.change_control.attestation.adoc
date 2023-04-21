@@ -20,7 +20,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*attested_view*: `link:/releases/GCM/{gcm_release}/data_types.html#_dvmultimedia_class[DvMultimedia^]`
+|*attested_view*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_multimedia_class[Dv_multimedia^]`
 a|Optional visual representation of content attested e.g. screen image.
 
 TODO: fix data type.
@@ -30,7 +30,7 @@ h|*0..1*
 a|Proof of attestation.
 
 h|*0..1*
-|*items*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_ehr_uri_class[DV_EHR_URI^]>`
+|*items*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_ehr_uri_class[Dv_ehr_uri^]>`
 a|Items attested, expressed as fully qualified runtime paths to the items in question. Although not recommended, these may include fine-grained items which have been attested in some other system. Otherwise it is assumed to be for the entire VERSION with which it is associated.
 
 TODO: fix type

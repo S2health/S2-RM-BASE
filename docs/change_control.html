@@ -966,7 +966,7 @@ a_contribution: <code><a href="/releases/BASE/latest/base_types.html#_object_ref
 a_new_version_uid: <code><a href="/releases/BASE/latest/base_types.html#_object_version_id_class" target="_blank" rel="noopener">OBJECT_VERSION_ID</a>[1]</code>,<br>
 a_preceding_version_id: <code><a href="/releases/BASE/latest/base_types.html#_object_version_id_class" target="_blank" rel="noopener">OBJECT_VERSION_ID</a>[1]</code>,<br>
 an_audit: <code><a href="#_auditdetails_class">AuditDetails</a>[1]</code>,<br>
-a_lifecycle_state: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvcodedtext_class" target="_blank" rel="noopener">DvCodedText</a>[1]</code>,<br>
+a_lifecycle_state: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class" target="_blank" rel="noopener">Dv_coded_text</a>[1]</code>,<br>
 a_data: <code>T[1]</code>,<br>
 signing_key: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
 ): <code>void</code><br>
@@ -983,7 +983,7 @@ a_contribution: <code><a href="/releases/BASE/latest/base_types.html#_object_ref
 a_new_version_uid: <code><a href="/releases/BASE/latest/base_types.html#_object_version_id_class" target="_blank" rel="noopener">OBJECT_VERSION_ID</a>[1]</code>,<br>
 a_preceding_version_id: <code><a href="/releases/BASE/latest/base_types.html#_object_version_id_class" target="_blank" rel="noopener">OBJECT_VERSION_ID</a>[1]</code>,<br>
 an_audit: <code><a href="#_auditdetails_class">AuditDetails</a>[1]</code>,<br>
-a_lifecycle_state: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvcodedtext_class" target="_blank" rel="noopener">DvCodedText</a>[1]</code>,<br>
+a_lifecycle_state: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class" target="_blank" rel="noopener">Dv_coded_text</a>[1]</code>,<br>
 a_data: <code>T[1]</code>,<br>
 an_other_input_uids: <code>List&lt;<a href="/releases/BASE/latest/base_types.html#_object_version_id_class" target="_blank" rel="noopener">OBJECT_VERSION_ID</a>&gt;[1]</code>,<br>
 signing_key: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
@@ -1130,7 +1130,7 @@ Original content of this Version.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>lifecycle_state</strong> (): <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvcodedtext_class" target="_blank" rel="noopener">DvCodedText</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>lifecycle_state</strong> (): <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class" target="_blank" rel="noopener">Dv_coded_text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Lifecycle state of this version; coded by openEHR vocabulary <code>version lifecycle state</code>.</p>
 </div></div></td>
@@ -1522,7 +1522,7 @@ signature.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>attested_view</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvmultimedia_class" target="_blank" rel="noopener">DvMultimedia</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>attested_view</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_multimedia_class" target="_blank" rel="noopener">Dv_multimedia</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional visual representation of content attested e.g. screen image.</p>
 </div>
@@ -1539,7 +1539,7 @@ signature.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_types.html#_dv_ehr_uri_class" target="_blank" rel="noopener">DV_EHR_URI</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_types.html#_dv_ehr_uri_class" target="_blank" rel="noopener">Dv_ehr_uri</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Items attested, expressed as fully qualified runtime paths to the items in question. Although not recommended, these may include fine-grained items which have been attested in some other system. Otherwise it is assumed to be for the entire VERSION with which it is associated.</p>
 </div>
