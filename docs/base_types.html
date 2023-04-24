@@ -114,33 +114,71 @@
 <li><a href="#_syntaxes">5.5. Syntaxes</a></li>
 </ul>
 </li>
-<li><a href="#_reference_package">6. Reference Package</a>
+<li><a href="#_archetyped_package">6. Archetyped Package</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_5">6.1. Overview</a></li>
-<li><a href="#_design_principles">6.2. Design Principles</a>
+<li><a href="#_overview_5">6.1. Overview</a>
 <ul class="sectlevel3">
-<li><a href="#_referring_to_demographic_entities">6.2.1. Referring to Demographic Entities</a>
+<li><a href="#_the_pathable_class">6.1.1. The PATHABLE Class</a></li>
+<li><a href="#_the_locatable_class">6.1.2. The LOCATABLE Class</a>
 <ul class="sectlevel4">
-<li><a href="#_party_self_and_referring_to_the_patient_from_the_ehr">6.2.1.1. PARTY_SELF and Referring to the Patient from the EHR</a></li>
+<li><a href="#_unique_node_identification">6.1.2.1. Unique Node Identification</a></li>
 </ul>
 </li>
-<li><a href="#_participation">6.2.2. Participation</a></li>
-<li><a href="#_audit_information">6.2.3. Audit Information</a>
+<li><a href="#_feeder_system_audit">6.1.3. Feeder System Audit</a>
 <ul class="sectlevel4">
-<li><a href="#_audit_details">6.2.3.1. Audit Details</a></li>
-<li><a href="#_revision_history">6.2.3.2. Revision History</a></li>
+<li><a href="#_requirements_2">6.1.3.1. Requirements</a></li>
+<li><a href="#_design_principles">6.1.3.2. Design Principles</a></li>
+<li><a href="#_meta_data">6.1.3.3. Meta-data</a></li>
+<li><a href="#_traceability">6.1.3.4. Traceability</a></li>
+<li><a href="#_version_detection">6.1.3.5. Version Detection</a></li>
+<li><a href="#_duplicate_detection">6.1.3.6. Duplicate Detection</a></li>
+<li><a href="#_differentially_coded_data">6.1.3.7. Differentially Coded Data</a></li>
+<li><a href="#_using_feeder_audit_in_converted_data">6.1.3.8. Using Feeder Audit in Converted Data</a></li>
+<li><a href="#_structural_correspondence">6.1.3.9. Structural Correspondence</a></li>
+<li><a href="#_original_content">6.1.3.10. Original Content</a></li>
 </ul>
 </li>
-<li><a href="#_attestation">6.2.4. Attestation</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_2">6.3. Class Descriptions</a>
+<li><a href="#_class_definitions_3">6.2. Class Definitions</a>
 <ul class="sectlevel3">
-<li><a href="#_party_proxy_class">6.3.1. Party_proxy Class</a></li>
-<li><a href="#_party_self_class">6.3.2. Party_self Class</a></li>
-<li><a href="#_party_identified_class">6.3.3. Party_identified Class</a></li>
-<li><a href="#_party_related_class">6.3.4. Party_related Class</a></li>
-<li><a href="#_participation_class">6.3.5. Participation Class</a></li>
+<li><a href="#_pathable_class">6.2.1. Pathable Class</a></li>
+<li><a href="#_locatable_class">6.2.2. Locatable Class</a></li>
+<li><a href="#_archetyped_class">6.2.3. Archetyped Class</a></li>
+<li><a href="#_link_class">6.2.4. Link Class</a></li>
+<li><a href="#_feeder_audit_class">6.2.5. Feeder_audit Class</a></li>
+<li><a href="#_feeder_audit_details_class">6.2.6. Feeder_audit_details Class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_reference_package">7. Reference Package</a>
+<ul class="sectlevel2">
+<li><a href="#_overview_6">7.1. Overview</a></li>
+<li><a href="#_design_principles_2">7.2. Design Principles</a>
+<ul class="sectlevel3">
+<li><a href="#_referring_to_demographic_entities">7.2.1. Referring to Demographic Entities</a>
+<ul class="sectlevel4">
+<li><a href="#_party_self_and_referring_to_the_patient_from_the_ehr">7.2.1.1. PARTY_SELF and Referring to the Patient from the EHR</a></li>
+</ul>
+</li>
+<li><a href="#_participation">7.2.2. Participation</a></li>
+<li><a href="#_audit_information">7.2.3. Audit Information</a>
+<ul class="sectlevel4">
+<li><a href="#_audit_details">7.2.3.1. Audit Details</a></li>
+<li><a href="#_revision_history">7.2.3.2. Revision History</a></li>
+</ul>
+</li>
+<li><a href="#_attestation">7.2.4. Attestation</a></li>
+</ul>
+</li>
+<li><a href="#_class_descriptions_2">7.3. Class Descriptions</a>
+<ul class="sectlevel3">
+<li><a href="#_party_proxy_class">7.3.1. Party_proxy Class</a></li>
+<li><a href="#_party_self_class">7.3.2. Party_self Class</a></li>
+<li><a href="#_party_identified_class">7.3.3. Party_identified Class</a></li>
+<li><a href="#_party_related_class">7.3.4. Party_related Class</a></li>
+<li><a href="#_participation_class">7.3.5. Participation Class</a></li>
 </ul>
 </li>
 </ul>
@@ -170,7 +208,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="https://www.openehr.org/programs/specification" target="_blank" rel="noopener">Graphite Platform Publishing</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platform Community</a></th>
 </tr>
 </thead>
 <tbody>
@@ -199,7 +237,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="https://www.openehr.org" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -207,8 +245,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.openehr.org/components/BASE/open_issues" target="_blank" rel="noopener">Problem Reports</a><br>
- Web: <a href="https://specifications.openehr.org" target="_blank" rel="noopener">specifications.openEHR.org</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.graphitehealth.io/components/BASE/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
+ Web: <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">specifications.GraphiteHealth.io</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -388,10 +426,10 @@ corrected definition of <code>UID_BASED_ID.<em>has_extension()</em></code> to 'T
 <p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications" target="_blank" rel="noopener">technical mailing list</a>.</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.openehr.org/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://specifications.graphitehealth.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.openehr.org/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.graphitehealth.io/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2161,10 +2199,751 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_reference_package"><a class="anchor" href="#_reference_package"></a>6. Reference Package</h2>
+<h2 id="_archetyped_package"><a class="anchor" href="#_archetyped_package"></a>6. Archetyped Package</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_overview_5"><a class="anchor" href="#_overview_5"></a>6.1. Overview</h3>
+<div class="paragraph">
+<p>The <code>archetyped</code> package defines the core types <code>PATHABLE</code>, <code>LOCATABLE</code>, <code>ARCHETYPED</code>, and <code>LINK</code>. It is illustrated in <a href="#archetyped_package">Figure 5</a>.</p>
+</div>
+<div id="archetyped_package" class="imageblock text-center text-center">
+<div class="content">
+<img src="UML/diagrams/BASE-base_types.archetyped.svg" alt="BASE base types.archetyped">
+</div>
+<div class="title">Figure 5. common.archetyped Package</div>
+</div>
+<div class="sect3">
+<h4 id="_the_pathable_class"><a class="anchor" href="#_the_pathable_class"></a>6.1.1. The PATHABLE Class</h4>
+<div class="paragraph">
+<p>The <code>PATHABLE</code> class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of <code>LOCATABLE</code>. The defining characteristics of <code>PATHABLE</code> objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The <code><em>parent</em></code> feature is defined as abstract in the model, and may be implemented in any way convenient.</p>
+</div>
+<div class="paragraph">
+<p>A number of functions provide the path functionality, of which <code><em>item_at_path()</em></code> and <code><em>items_at_path()</em></code> are the key functions. The former returns an item corresponding to a unique path, i.e. a path that resolves against the data structure to a single node. The latter returns a list of items corresponding to a non-unique path. These functions can be used safely using the following pattern, but can also be used without checking the validity of paths, if this is known a priori in the code anyway.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">path_exists</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">))</span> <span class="tok-p">{</span>
+    <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">path_unique</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">))</span> <span class="tok-p">{</span>
+        <span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-n">item_at_path</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">);</span>
+		<span class="tok-c1">// process one item</span>
+	<span class="tok-p">}</span>
+    <span class="tok-k">else</span> <span class="tok-p">{</span>
+        <span class="tok-n">list_of_x</span> <span class="tok-o">=</span> <span class="tok-n">items_at_path</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">);</span>
+        <span class="tok-c1">//iterate the list</span>
+    <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_locatable_class"><a class="anchor" href="#_the_locatable_class"></a>6.1.2. The LOCATABLE Class</h4>
+<div class="paragraph">
+<p>Most classes in the openEHR reference model inherit from the <code>LOCATABLE</code> class, which defines the idea of 'locatability in an archetyped structure'. <code>LOCATABLE</code> defines a runtime name and an <code><em>archetype_node_id</em></code>. The <code><em>archetype_node_id</em></code> is the standardised semantic code for a node and comes from the corresponding node in the archetype used to create the data. The only exception is at archetype root points in data, where <code><em>archetype_node_id</em></code> carries the archetype identifier in string form rather than an interior node id from an archetype. <code>LOCATABLE</code> also provides the attribute <code><em>archetype_details</em></code>, which is non-Void for archetype root points in data, and carries meta-data relevant to root points. The <code><em>name</em></code> attribute carries a name created at runtime. The 'meaning' of any node is derived formally from the archetype by obtaining the text value for the <code><em>archetype_node_id</em></code> code from the archetype <code>ontology</code> section, in the language required.</p>
+</div>
+<div class="paragraph">
+<p>The <code><em>name</em></code> and <code><em>archetype_node_id</em></code> valuesin a <code>LOCATABLE</code> instance are often the same semantically, but may differ. For example, in "problem/SOAP" Sections (i.e. headings), the name of a section at the problem level might be "diabetes", but its meaning might be "problem". The default value for <code><em>name</em></code> should be assumed to be the text value in the local language for the <code><em>archetype_node_id</em></code> code on the node in question, unless explicitly set otherwise.</p>
+</div>
+<div class="sect4">
+<h5 id="_unique_node_identification"><a class="anchor" href="#_unique_node_identification"></a>6.1.2.1. Unique Node Identification</h5>
+<div class="paragraph">
+<p><code>LOCATABLE</code> descendants may have a <code><em>uid</em></code>, containing a GUID. In the current openEHR architecture, GUIDs are not needed to identify data nodes, since paths are used to reference all nodes inside top-level structures (i.e. <code>COMPOSITIONs</code> etc). Accordingly all references between parts of an EHR are represented in terms of <code>LOCATABLE_REFs</code> or <code>DV_EHR_URIs</code> (the former is a reference to an <code>OBJECT_VERSION_ID</code> with a path appended; the latter is the stringified URI form). This would allow for example, one Entry to reference the serum sodium value in another Entry in version 2 of a Versioned Composition for a laboratory test on 12/Apr/2004. The <code><em>uid</em></code> attribute will usually be empty in most EHR data in most openEHR EHR systems.</p>
+</div>
+<div class="paragraph">
+<p>The exception is the top-level types such as <code>COMPOSITION</code>, <code>EHR_STATUS</code>, <code>PARTY</code> etc for which it is recommended to set the <code><em>uid</em></code> value to a copy of the <code><em>uid.object_id()</em></code> value of the owning <code>VERSION</code> object (usually an <code>ORIGINAL_VERSION</code>), i.e. the leading Uid, which is normally a Guid. This enables easy identification of standalone top-level objects in a serialised form. For example, if the <code>ORIGINAL_VERSION.uid</code> is <code>87284370-2D4B-4e3d-A3F3-F303D2F4F34B::uk.nhs.ehr1::2</code>, the Guid <code>87284370-2D4B-4e3d-A3F3-F303D2F4F34B</code> would be copied to the contained <code>COMPOSITION.uid</code> field.</p>
+</div>
+<div class="paragraph">
+<p>Another use for <code>LOCATABLE.<em>uid</em></code> is in EHR Extracts, which contain serialised expressions of EHR content. In an Extract, <code><em>uid</em></code> could be set on some or all nodes to a value generated by concatenating the <code><em>uid</em></code> value of the enclosing Version object (i.e. <code>VERSION.<em>uid</em></code>) and the unique runtime path to the particular node. This may be useful to the receiver system for the purpose of referencing particular data nodes when communicating to the sender, or another system. This use of <code><em>uid</em></code> is not however mandatory, since for each node in an Extract item, the <code><em>uid</em></code> value can be generated at any time (including at the receiver system).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+some classes in the openEHR architecture that do not inherit from <code>LOCATABLE</code> but require a UID, such as <code>VERSIONED_OBJECT</code>, <code>VERSION</code> etc, explicitly define their own <code><em>uid</em></code> attributes.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_feeder_system_audit"><a class="anchor" href="#_feeder_system_audit"></a>6.1.3. Feeder System Audit</h4>
+<div class="paragraph">
+<p>The data in any part of the EHR may be obtained from a feeder system, i.e. a source system which does not obey the versioning, auditing and content semantics of openEHR (data in the EHR which have been sourced from another openEHR system are dealt with in the Common IM, Change control section). The <code>FEEDER_AUDIT</code> class defines the semantics of an audit trail which is constructed to describe the origin of data that have been transformed into openEHR form and committed to the system. There are a number of aspects to the problem of transforming data for committal into an openEHR system, dealt with in the following subsections.</p>
+</div>
+<div class="sect4">
+<h5 id="_requirements_2"><a class="anchor" href="#_requirements_2"></a>6.1.3.1. Requirements</h5>
+<div class="paragraph">
+<p>The model of Feeder audit is designed to satisfy the following requirements with respect to EHR content sourced from non-openEHR systems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>record medico-legal audit information from the originating system (e.g. pathology lab system) similar to that captured in the <code>AUDIT_DETAILS</code> class in the <code>change_control</code> package;</p>
+</li>
+<li>
+<p>record information identifying the immediate system from which the content was obtained (might not be the originating system);</p>
+</li>
+<li>
+<p>record sufficient information to distinguish incoming items from each other, and to enable the detection of duplicates and new versions of the same item;</p>
+</li>
+<li>
+<p>allow the inclusion of the source content either as a link or inline.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_design_principles"><a class="anchor" href="#_design_principles"></a>6.1.3.2. Design Principles</h5>
+<div class="paragraph">
+<p>The design of the Feeder audit part of the reference model is based on a generalised model of data communication in which various elements are identified, as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>the originating system</em>: the computer system where the information item was initially created, e.g. the system at a pathology laboratory or a reporting system for a number of laboratories;</p>
+</li>
+<li>
+<p><em>intermediate systems</em>: any system which moves information from the originating system to an openEHR system;</p>
+</li>
+<li>
+<p><em>the feeder system</em>: the intermediate system from which the information item was directly obtained by the openEHR system; this might be the originating system, or it may be a distinct intermediate system;</p>
+</li>
+<li>
+<p><em>the committing openEHR system</em>: the openEHR system where the information item is transformed into openEHR form and committed as a Composition;</p>
+</li>
+<li>
+<p><em>openEHR converter</em>: a component whose job it is to convert non-openEHR information into a form compliant with the openEHR reference model and chosen archetypes;</p>
+</li>
+<li>
+<p><em>original content store</em>: some EHR systems may have an associated persistent repository of content as received from external systems, e.g. a message or document database.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#feeder_chain">Figure 6</a> illustrates these elements, shown as a "feeder chain", along with typical meta-data available in messages from each system. In general, not much can be assumed about systems in the feeder chain. The originating system may or may not correspond to the place of the clinical activity - it is not uncommon for a pathology company to have a centralised report issuing location while having numerous physical laboratories. There is often limited consistency in the way identifiers are assigned, timestamps are created, and information is structured and coded. In general, information from a feeder system is in response to a request, often a pathology order, although the request/response pattern probably cannot be assumed in all cases.</p>
+</div>
+<div id="feeder_chain" class="imageblock text-center text-center">
+<div class="content">
+<img src="base_types/diagrams/feeder_chain.png" alt="feeder chain" width="80%">
+</div>
+<div class="title">Figure 6. Abstract Model of Feeder Chain</div>
+</div>
+<div class="paragraph">
+<p>The idea underlying the openEHR Feeder audit model is that there are two groups of meta-data which should be recorded about an imported information item. The first is medico-legal meta-data about its creation: the system of origin, who created it and when it was created. The second is identifying meta-data for the item from the originating and feeder system, and potentially other intermediate systems in the feeder chain, where necessary to support duplicate detection, version detection and so on.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_meta_data"><a class="anchor" href="#_meta_data"></a>6.1.3.3. Meta-data</h5>
+<div class="paragraph">
+<p>The potentially available medico-legal meta-data about the received item is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>identifier of the originating system (where the item was originally committed);</p>
+</li>
+<li>
+<p>identifier of the information item in the originating system;</p>
+</li>
+<li>
+<p>agent who committed the item;</p>
+</li>
+<li>
+<p>timestamp of committal or creation of the item;</p>
+</li>
+<li>
+<p>type of change, e.g. initial creation, correction (including deletion of a subpart), logical deletion (e.g. due to cancellation of order);</p>
+</li>
+<li>
+<p>status of information, e.g. interim, final;</p>
+</li>
+<li>
+<p>version id, where versioning is supported.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above information is equivalent to the audit trail and versioning data captured when information created in an openEHR system is committed in a Composition version.</p>
+</div>
+<div class="paragraph">
+<p>Various kinds of identifying information may be required including the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>subject identifier (often more than one, e.g. national patient id, GP&#8217;s local patient id, lab&#8217;s local patient id) are usually recorded and may be required for traceability purposes;</p>
+</li>
+<li>
+<p>subject identifier(s) may identify someone other than the subject of the record as being the subject of the incoming item;</p>
+</li>
+<li>
+<p>location of the feeder system;</p>
+</li>
+<li>
+<p>identifier of the feeder system (which may be one of many at the feeder system location);</p>
+</li>
+<li>
+<p>identifer the feeder system uses for the item in question (often known as an "accession id");</p>
+</li>
+<li>
+<p>identifier of request or order to which the information is a response (sometimes known as a "placer&#8217;s request id");</p>
+</li>
+<li>
+<p>identifier of the information item used by the originating system (sometimes known as a "filler&#8217;s request id");</p>
+</li>
+<li>
+<p>timestamp(s) assigned by feeder system to the item.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Some or all of this information will usually be sufficient to perform a number of tasks as follows.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_traceability"><a class="anchor" href="#_traceability"></a>6.1.3.4. Traceability</h5>
+<div class="paragraph">
+<p>The first task is to support medico-legal investigation into the path of the information item through the health computing infrastructure. This requires the availability of sufficient identifier information that the origin of the information item can be traced. Subject identifiers where available should be used to ensure that the received data go into the correct EHR, by ensuring that the relevant lookups in client directories or other lookup mechanisms can be effected. Again, in rare cases, the subject of the incoming data item may not necessarily be the subject of the EHR - a test result may be made from a relative or other associate which will be stored in the patient&#8217;s EHR.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_version_detection"><a class="anchor" href="#_version_detection"></a>6.1.3.5. Version Detection</h5>
+<div class="paragraph">
+<p>The second is to detect new versions of an item (e.g. interim and final versions of a microbiology test result). This can usually be achieved by using various identifiers as well as the originating system version id and/or content status (interim, final etc). A new openEHR Composition version should always be created for each received version, even where the content does not change at all (e.g. a microbiology test where the result is "no growth" in both interim and final results).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_duplicate_detection"><a class="anchor" href="#_duplicate_detection"></a>6.1.3.6. Duplicate Detection</h5>
+<div class="paragraph">
+<p>Another task is to disambiguate duplicates (often caused by failure of a network connection during sending) coming from the feeder system. In some cases however duplicates are erroneously given new ids by the feeder system, giving the receiver the impression of a new information. In such cases, a further item of meta-data may be required:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>hash or content signature generated (most likely by the converter) from the received information.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_differentially_coded_data"><a class="anchor" href="#_differentially_coded_data"></a>6.1.3.7. Differentially Coded Data</h5>
+<div class="paragraph">
+<p>A further problem is that the originating system may send new versions of an item which are not complete in and of themselves, i.e. which only include new or changed elements with respect to a previous send of the same item. An example is a system which sends a correction to an HL7v2 blood test message, where the correction includes just the "serum sodium" data item. In this case, special processing will be required in the openEHR converter component, in order to regenerate a full data item from difference data when it is received. Such processing may also have to take account of deleted items.</p>
+</div>
+<div class="paragraph">
+<p>In summary, the Feeder audit class design tries to accommodate the recording of as much of the above meta-data as is relevant in any particular case. It is up to the design of openEHR conversion front-end components as well as proper analysis of the situation to determine which identifiers are germane to the needs of traceability. In general, any meta-data of medico-legal significance should be captured where it is available.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_feeder_audit_in_converted_data"><a class="anchor" href="#_using_feeder_audit_in_converted_data"></a>6.1.3.8. Using Feeder Audit in Converted Data</h5>
+<div class="paragraph">
+<p>Although the design of the openEHR converter is outside the scope of the current document, it is worth considering a common design approach, and where the <code>FEEDER_AUDIT</code> class fits in. An effective way of converting non-openEHR data such as HL7v2 messages, relational data etc, is in two steps. The first is to perform a 'syntactic' conversion to Compositions containing instances of the <code>GENERIC_ENTRY</code> class (described in the Integration IM), using 'legacy archetypes'. The resulting database will contain versioned Compositions containing <code>GENERIC_ENTRY</code> instances; logically this database does not contain EHRs but simply external data converted to openEHR computational form. The relevant <code>FEEDER_AUDIT</code> instances should be attached to the Compositions containing the corresponding <code>GENERIC_ENTRY</code> instances. The second step is to perform a 'semantic' conversion to subtypes of ENTRY, i.e. <code>OBSERVATION</code>, <code>EVALUATION</code>, <code>INSTRUCTION</code> and <code>ACTION</code>, according to standardised clinical archetypes. There are various possibilities for what to do with the Feeder audit. The minimum Feeder audit required on the final instance contains the originating system audit information, but none of the information to do with feeder or intermediate systems. This will satisfy medico-legal needs. Alternatively, a complete copy could be made, even though the feeder-related meta-data is probably only of use in the conversion environment. What the Feeder audit looks like in the EHR proper may depend on local legislation, norms or other factors. Alternative conversion approaches are also possible, in which no intermediate form of data exists.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_structural_correspondence"><a class="anchor" href="#_structural_correspondence"></a>6.1.3.9. Structural Correspondence</h5>
+<div class="paragraph">
+<p>There is no guarantee that the granularity of information recorded in the feeder system obeys the rules of Entries, Compositions, etc. As a consquence, feeder information might correspond to any level of information defined in the openEHR models. In order to be able to record feeder audit information correctly, the model has to be able to associate an audit trail with any granularity of object. For this reason, feeder audit information is attached to the <code>LOCATABLE</code> class via the feeder_audit attribute, even though it is preferable by design to have it attached to the equivalent of Compositions or at least the equivalent of archetype entities (i.e. Compositions, Section trees and Entries). Its usual usage is to attach it to the outermost object to which it applies. In other words, in most cases, during a legacy data conversion process, the entirety of a Composition needs only one <code>FEEDER_AUDIT</code> to document its origins. In exceptional cases, where feeder data comes in in near real time, e.g. from an ICU database, separate <code>FEEDER_AUDIT</code> objects may need to be generated for parts of a Composition; each commit in this situation will create a stack of versions of one Composition, with a growing number of <code>FEEDER_AUDIT</code> objects attached to internal data nodes, each documenting the last import of data.</p>
+</div>
+<div class="paragraph">
+<p>The Feeder audit information is included as part of the data of the Composition, rather than part of the audit trail of version committal, because it remains relevant throughout the versioning of a logical Composition, i.e. when a new version is created, the feeder information is retained as part of the current version to be seen and possibly modified, just as for the rest of its content. If the main part of the content is modified so drastically as to make the feeder audit irrelevant, it too can be removed. A second consequence of feeder and legacy systems is that structural data items may need to be synthesised in order to create valid structures, even though the source system does not have them. For example, a system may have the equivalent data of Clusters and Elements (see <a href="https://specifications.openehr.org/releases/RM/latest/data_structures.html" target="_blank" rel="noopener">openEHR Data Structures IM</a> or <a href="https://www.iso.org/standard/40784.html" target="_blank" rel="noopener">ISO 13606</a>), but no Entries, Sections or other higher-level data items; these have to be synthesised during conversion. To indicate synthesis of a data node, a <code>FEEDER_AUDIT</code> instance is attached to the <code>LOCATABLE</code> in question, and its <code><em>change_type</em></code> set to "synthesised".</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_original_content"><a class="anchor" href="#_original_content"></a>6.1.3.10. Original Content</h5>
+<div class="paragraph">
+<p>The features of the model described so far allow accurate referencing of content as it is known in source systems and intermediate feeder systems. A further feature of the <code>FEEDER_AUDIT</code> class, the <code><em>original_content</em></code> attribute allows the original content item itself to be either included inline or pointed to. If a link is used, the usual situation is that the content is in a store associated with the receiving system, such as a message or document database. The content could also be included inline. Since the <code><em>original_content</em></code> link is on a <code>FEEDER_AUDIT</code> object, more than one can be used within the same generated Composition if required. It may be deemed preferable to attach only a single link at the top node, i.e. the Composition node, since this establishes basic equivalent between the whole Composition and the whole document or message.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_class_definitions_3"><a class="anchor" href="#_class_definitions_3"></a>6.2. Class Definitions</h3>
+<div class="sect3">
+<h4 id="_pathable_class"><a class="anchor" href="#_pathable_class"></a>6.2.1. Pathable Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Pathable (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>The <code>PATHABLE</code> class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of <code>LOCATABLE</code>. The defining characteristics of <code>PATHABLE</code> objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The parent feature is defined as abstract in the model, and may be implemented in any way convenient.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/foundation_types.html#_any_class" target="_blank" rel="noopener">Any</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>parent</strong> (): <code><a href="#_pathable_class">Pathable</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Parent of this node in a compositional hierarchy.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>item_at_path</strong> (<br>
+a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_any_class" target="_blank" rel="noopener">Any</a></code><br>
+<br>
+<em>Pre</em>: <code>path_unique (a_path)</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The item at a path (relative to this item); only valid for unique paths, i.e. paths that resolve to a single item.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items_at_path</strong> (<br>
+a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
+): <code>List&lt;<a href="/releases/BASE/latest/foundation_types.html#_any_class" target="_blank" rel="noopener">Any</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>List of items corresponding to a non-unique path.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>path_exists</strong> (<br>
+a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
+<br>
+<em>Pre</em>: <code>not a_path.is_empty</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if the path exists in the data with respect to the current item.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>path_unique</strong> (<br>
+a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
+<br>
+<em>Pre</em>: <code>path_exists (a_path)</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if the path corresponds to a single item in the data.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>path_of_item</strong> (<br>
+a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The path to an item relative to the root of this archetyped structure.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_locatable_class"><a class="anchor" href="#_locatable_class"></a>6.2.2. Locatable Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Locatable (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the <code>LOCATABLE</code> class, which defines the idea of  locatability in an archetyped structure. <code>LOCATABLE</code> defines a runtime name and an <code><em>archetype_node_id</em></code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_pathable_class">Pathable</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class" target="_blank" rel="noopener">Dv_coded_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>archetype_node_id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Design-time archetype identifier of this node taken from its generating archetype; used to build archetype paths. Always in the form of an at-code, e.g. <code>at0005</code>. This value enables a 'standardised' name for this node to be generated, by referring to the generating archetype local terminology.</p>
+</div>
+<div class="paragraph">
+<p>At an archetype root point, the value of this attribute is always the stringified form of the <code><em>archetype_id</em></code> found in the <code><em>archetype_details</em></code> object.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong>: <code><a href="#_object_id_class">OBJECT_ID</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional globally unique object identifier for root points of archetyped structures.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>links</strong>: <code>List&lt;<a href="#_link_class">Link</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Links to other archetyped structures (data whose root object inherits from <code>ARCHETYPED</code>, such as <code>ENTRY</code>, <code>SECTION</code> and so on). Links may be to structures in other compositions.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>archetype_details</strong>: <code><a href="#_archetyped_class">Archetyped</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Details of archetyping used on this node.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>feeder_audit</strong>: <code><a href="#_feeder_audit_class">Feeder_audit</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional field to carry code from bound terminology, e.g. LOINC or other.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong> (): <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Clinical concept of the archetype as a whole (= derived from the archetype_node_id' of the root node)</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_archetype_root</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if this node is the root of an archetyped structure.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Links_valid</em>: <code>links /= Void implies not links.is_empty</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Archetyped_valid</em>: <code>is_archetype_root xor archetype_details = Void</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Archetype_node_id_valid</em>: <code>not archetype_node_id.is_empty</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_archetyped_class"><a class="anchor" href="#_archetyped_class"></a>6.2.3. Archetyped Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Archetyped</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Archetypes act as the configuration basis for the particular structures of instances defined by the reference model. To enable archetypes to be used to create valid data, key classes in the reference model act as  root  points for archetyping; accordingly, these classes have the <code><em>archetype_details</em></code> attribute set.</p>
+</div>
+<div class="paragraph">
+<p>An instance of the class <code>ARCHETYPED</code> contains the relevant archetype identification information, allowing generating archetypes to be matched up with data instances.</p>
+</div>
+<div class="paragraph">
+<p>TODO: use ARCHETYPE_HRID</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>archetype_id</strong>: <code><a href="#_archetype_id_class">ARCHETYPE_ID</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Globally unique archetype identifier.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>template_id</strong>: <code><a href="#_archetype_id_class">ARCHETYPE_ID</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Globally unique template identifier, if a template was active at this point in the structure. Normally, a template would only be used at the top of a top-level structure, but the possibility exists for templates at lower levels.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>rm_version</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Version of the openEHR reference model used to create this object. Expressed in terms of the release version string, e.g.  1.0 ,  1.2.4 .</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Rm_version_valid</em>: <code>not rm_version.is_empty</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_link_class"><a class="anchor" href="#_link_class"></a>6.2.4. Link Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Link</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>The <code>LINK</code> type defines a logical relationship between two items, such as two <code>ENTRYs</code> or an <code>ENTRY</code> and a <code>COMPOSITION</code>. Links can be used across compositions, and across EHRs. Links can potentially be used between interior (i.e. non archetype root) nodes, although this probably should be prevented in archetypes. Multiple <code>LINKs</code> can be attached to the root object of any archetyped structure to give the effect of a 1&#8594;N link.</p>
+</div>
+<div class="paragraph">
+<p>1:1 and 1:N relationships between archetyped content elements (e.g. <code>ENTRYs</code>) can be expressed by using one, or more than one, respectively, <code>LINKs</code>. Chains of links can be used to see  problem threads  or other logical groupings of items.</p>
+</div>
+<div class="paragraph">
+<p>Links should be between archetyped structures only, i.e. between objects representing complete domain concepts because relationships between sub-elements of whole concepts are not necessarily meaningful, and may be downright confusing. Sensible links only exist between whole <code>ENTRYs</code>, <code>SECTIONs</code>, <code>COMPOSITIONs</code> and so on.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information. Values for meaning include those described in Annex C, ENV 13606 pt 2 under the categories of  generic ,  documenting and reporting ,  organisational ,  clinical ,  circumstancial , and  view management .</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The type attribute is used to indicate a clinical or domain-level meaning for the kind of link, for example  problem  or  issue . If type values are designed appropriately, they can be used by the requestor of EHR extracts to categorise links which must be followed and which can be broken when the extract is created.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>target</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_ehr_uri_class" target="_blank" rel="noopener">Dv_ehr_uri</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The logical  to  object in the link relation, as per the linguistic sense of the meaning attribute.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_feeder_audit_class"><a class="anchor" href="#_feeder_audit_class"></a>6.2.5. Feeder_audit Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Feeder_audit</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>The <code>FEEDER_AUDIT</code> class defines the semantics of an audit trail which is constructed to describe the origin of data that have been transformed into openEHR form and committed to the system.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>originating_system_item_ids</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_types.html#_dv_identifier_class" target="_blank" rel="noopener">Dv_identifier</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identifiers used for the item in the originating system, e.g. filler and placer ids.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>feeder_system_item_ids</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_types.html#_dv_identifier_class" target="_blank" rel="noopener">Dv_identifier</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identifiers used for the item in the feeder system, where the feeder system is distinct from the originating system.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>original_content</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_encapsulated_class" target="_blank" rel="noopener">Dv_encapsulated</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional inline inclusion of or reference to original content corresponding to the openEHR content at this node. Typically a URI reference to a document or message in a persistent store associated with the EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>originating_system_audit</strong>: <code><a href="#_feeder_audit_details_class">Feeder_audit_details</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Any audit information for the information item from the originating system.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>feeder_system_audit</strong>: <code><a href="#_feeder_audit_details_class">Feeder_audit_details</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Any audit information for the information item from the feeder system, if different from the originating system.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>original_code</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Original code for this data item, often pre-coordinated.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_feeder_audit_details_class"><a class="anchor" href="#_feeder_audit_details_class"></a>6.2.6. Feeder_audit_details Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Feeder_audit_details</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Audit details for any system in a feeder system chain. Audit details here means the general notion of who/where/when the information item to which the audit is attached was created. None of the attributes is defined as mandatory, however, in different scenarios, various combinations of attributes will usually be mandatory. This can be controlled by specifying feeder audit details in legacy archetypes.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>system_id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identifier of the system which handled the information item. This is the IT system owned by the organisation legally responsible for handling the data, and at which the data were previously created or passed by an earlier system.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>location</strong>: <code><a href="#_party_identified_class">Party_identified</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the <code>PARTY_IDENTIFIED</code> object.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subject</strong>: <code><a href="#_party_proxy_class">Party_proxy</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identifiers for subject of the received information item.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>provider</strong>: <code><a href="#_party_identified_class">Party_identified</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional provider(s) who created, committed, forwarded or otherwise handled the item.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Time of handling the item. For an originating system, this will be time of creation, for an intermediate feeder system, this will be a time of accession or other time of handling, where available.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>version_id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Any identifier used in the system such as  "interim" ,  "final" , or numeric versions if available.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_details</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional attribute to carry any custom meta-data. May be archetyped.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>System_id_valid</em>: <code>not system_id.is_empty</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference_package"><a class="anchor" href="#_reference_package"></a>7. Reference Package</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview_6"><a class="anchor" href="#_overview_6"></a>7.1. Overview</h3>
 <div class="paragraph">
 <p>The classes presented in this section are abstractions of concepts which are generic patterns in the domain of health (and most likely other domains), such as 'participation' and 'attestation'. The generic cluster is shown below.</p>
 </div>
@@ -2172,13 +2951,13 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <div class="content">
 <img src="UML/diagrams/BASE-base_types.reference.svg" alt="BASE base types.reference">
 </div>
-<div class="title">Figure 5. common.generic Package</div>
+<div class="title">Figure 7. common.generic Package</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_design_principles"><a class="anchor" href="#_design_principles"></a>6.2. Design Principles</h3>
+<h3 id="_design_principles_2"><a class="anchor" href="#_design_principles_2"></a>7.2. Design Principles</h3>
 <div class="sect3">
-<h4 id="_referring_to_demographic_entities"><a class="anchor" href="#_referring_to_demographic_entities"></a>6.2.1. Referring to Demographic Entities</h4>
+<h4 id="_referring_to_demographic_entities"><a class="anchor" href="#_referring_to_demographic_entities"></a>7.2.1. Referring to Demographic Entities</h4>
 <div class="paragraph">
 <p>There are two ways to refer to a demographic identity in the openEHR EHR: using <code>PARTY_REF</code> directly, which records an identifier of the party in some external system, and using <code>PARTY_PROXY</code>, consisting of a small amount of descriptive data, depending on the subtype, and an optional <code>PARTY_REF</code>. The semantics of <code>PARTY_REF</code> are described in the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html">Base Types <code>identification</code> package</a>, while the semantics of <code>PARTY_PROXY</code> and use of <code>PARTY_REF</code> in such entities are described below. The approach taken in openEHR for representing demographic and user entities in the EHR data isbased on the following assumptions:</p>
 </div>
@@ -2205,7 +2984,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <p>The <code>PARTY_RELATED</code> type is used whenever the relationship of the party to the record subject is required. Relationships are coded and include familial ones ('mother', 'uncle', etc) as well as relationships like 'donor', 'travelling companion' and so on.</p>
 </div>
 <div class="sect4">
-<h5 id="_party_self_and_referring_to_the_patient_from_the_ehr"><a class="anchor" href="#_party_self_and_referring_to_the_patient_from_the_ehr"></a>6.2.1.1. PARTY_SELF and Referring to the Patient from the EHR</h5>
+<h5 id="_party_self_and_referring_to_the_patient_from_the_ehr"><a class="anchor" href="#_party_self_and_referring_to_the_patient_from_the_ehr"></a>7.2.1.1. PARTY_SELF and Referring to the Patient from the EHR</h5>
 <div class="paragraph">
 <p>There are three schemes which are likely to be used for referring to patient (i.e. the record subject) demographic or patient master index (PMI) data from within the EHR, each likely to be valid in different circumstances. Each uses a <code>PARTY_SELF</code> object but with varying usage of the external_ref attribute, and are as follows.</p>
 </div>
@@ -2228,15 +3007,15 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_participation"><a class="anchor" href="#_participation"></a>6.2.2. Participation</h4>
+<h4 id="_participation"><a class="anchor" href="#_participation"></a>7.2.2. Participation</h4>
 <div class="paragraph">
 <p>The Participation abstraction models the interaction of some Party in an activity. In the openEHR reference models, participations are actually modelled in two ways. In situations where the kinds of participation are known and constant, they are modelled as a named attribute in the relevant reference model. For example, the <code><em>committer</em>: PARTY_PROXY</code> attribute in <code>AUDIT_DETAILS</code> models a participation in which the function is "committal". Where the kind of participation is not known at design time, a descendant of the generic <code>PARTICIPATION</code> class is used.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_audit_information"><a class="anchor" href="#_audit_information"></a>6.2.3. Audit Information</h4>
+<h4 id="_audit_information"><a class="anchor" href="#_audit_information"></a>7.2.3. Audit Information</h4>
 <div class="sect4">
-<h5 id="_audit_details"><a class="anchor" href="#_audit_details"></a>6.2.3.1. Audit Details</h5>
+<h5 id="_audit_details"><a class="anchor" href="#_audit_details"></a>7.2.3.1. Audit Details</h5>
 <div class="paragraph">
 <p>Three classes are provided to represent audit information. The first, <code>AUDIT_DETAILS</code> expresses the details that would be captured about a user when committing some information to a repository of some kind, which may be version controlled. It records the <code>system_id_</code>, <code><em>committer</em></code>, <code><em>time_committed</em></code>, <code><em>change_type</em></code> and an optoinal <code><em>description</em></code>.</p>
 </div>
@@ -2248,14 +3027,14 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_revision_history"><a class="anchor" href="#_revision_history"></a>6.2.3.2. Revision History</h5>
+<h5 id="_revision_history"><a class="anchor" href="#_revision_history"></a>7.2.3.2. Revision History</h5>
 <div class="paragraph">
 <p>The classes <code>REVISION_HISTORY</code> and <code>REVISION_HISTORY_ITEM</code> express the notion of a revision history, which consists of audit items, each associated with a revision number. An instance of the <code>REVISION_HISTORY_ITEM</code> class is designed to express the information that corresponds to an item in a revision history, i.e. a list of all audits relating to some information item. The version_id is included to indicate which revision each audit corresponds to. These classes provide an interoperable definition of revision history for the <code>VERSIONED_OBJECT</code> and <code>AUTHORED_RESOURCE</code> classes.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_attestation"><a class="anchor" href="#_attestation"></a>6.2.4. Attestation</h4>
+<h4 id="_attestation"><a class="anchor" href="#_attestation"></a>7.2.4. Attestation</h4>
 <div class="paragraph">
 <p>Attestation is another concept which occurs commonly in health information. An attestation is an explicit signing by one healthcare agent of particular content for various particular purposes, including:</p>
 </div>
@@ -2304,7 +3083,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <div class="content">
 <img src="base_types/diagrams/attestation_signature_generation.png" alt="attestation signature generation" width="80%">
 </div>
-<div class="title">Figure 6. Attestation signature generation (using openPGP)</div>
+<div class="title">Figure 8. Attestation signature generation (using openPGP)</div>
 </div>
 <div class="paragraph">
 <p>In this process, the attestation object is serialised into a canonical text form, and then hashed to create a digest. A digital signature is created from the hash, using the user&#8217;s private key. The result is then radix-64 encoded to create an ASCII string so as to remove or reduce potential problems with subsequent communication. The openPGP standard ensures that the transformations and algorithms used to create the signature are indicated within it (i.e. the signature is self-describing).</p>
@@ -2324,9 +3103,9 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>6.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>7.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_party_proxy_class"><a class="anchor" href="#_party_proxy_class"></a>6.3.1. Party_proxy Class</h4>
+<h4 id="_party_proxy_class"><a class="anchor" href="#_party_proxy_class"></a>7.3.1. Party_proxy Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2360,7 +3139,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_party_self_class"><a class="anchor" href="#_party_self_class"></a>6.3.2. Party_self Class</h4>
+<h4 id="_party_self_class"><a class="anchor" href="#_party_self_class"></a>7.3.2. Party_self Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2386,7 +3165,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_party_identified_class"><a class="anchor" href="#_party_identified_class"></a>6.3.3. Party_identified Class</h4>
+<h4 id="_party_identified_class"><a class="anchor" href="#_party_identified_class"></a>7.3.3. Party_identified Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2458,7 +3237,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_party_related_class"><a class="anchor" href="#_party_related_class"></a>6.3.4. Party_related Class</h4>
+<h4 id="_party_related_class"><a class="anchor" href="#_party_related_class"></a>7.3.4. Party_related Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2502,7 +3281,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_participation_class"><a class="anchor" href="#_participation_class"></a>6.3.5. Participation Class</h4>
+<h4 id="_participation_class"><a class="anchor" href="#_participation_class"></a>7.3.5. Participation Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2585,7 +3364,7 @@ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participati
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-18 15:36:43 -0600
+Last updated 2023-04-24 08:10:36 -0600
 </div>
 </div>
 </body>
