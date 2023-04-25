@@ -4,7 +4,7 @@
 include::{ref_dir}/docs/boilerplate/basic_style_settings.adoc[]
 
 :keywords: base models
-:description: openEHR Base Models Component
+:description: Graphite Base Models Component
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
@@ -14,10 +14,10 @@ include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
 image::{openehr_logo}["openEHR logo",align="center"]
 
-image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
+//image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
 
 :numbered!:
-= Base Models (BASE) Component - {base_release}
+= Base Model
 
 // Use the following version for 'latest'
 ifeval::["{base_release}" == "latest"]
@@ -39,20 +39,17 @@ endif::[]
 |===
 |Specification |Description
 
-|link:/releases/BASE/{base_release}/architecture_overview.html[openEHR Architecture Overview]
-|"Read me first" document for the overall architecture. Provides a summary of the reference, archetype and service models, and describes global semantics.
+|link:foundation_types.html[Foundation Types]
+|Specification of assumed, primitive and other foundation types required by  other specifications.
 
-|link:/releases/BASE/{base_release}/foundation_types.html[Foundation Types]
-|Specification of assumed, primitive and other foundation types required by all other openEHR specifications.
+|link:base_types.html[Base Types]
+|Specification of basic health informatics types used in other specifications.
 
-|link:/releases/BASE/{base_release}/base_types.html[Base Types]
-|Specification of basic openEHR and health informatics types used in other openEHR specifications.
+|link:change_control.html[Change Control]
+|Specification of vresioning for the EHR.
 
-|link:/releases/BASE/{base_release}/resource.html[Resource]
+|link:resource.html[Resource]
 |The Resource specification defines a formal model of authoring and IP meta-data, language translation and annotations that can be used by classes defining any concrete type of authored resource, such as a document, archetype or template.
-
-|link:/releases/1.0.2/requirements/iso18308_conformance.pdf[ISO 18308 Conformance Statement]
-|Document describing conformance of openEHR architecture to ISO TS 18308, "Requirements for EHR Architectures".
 
 |===
 
@@ -62,7 +59,7 @@ endif::[]
 |===
 |Resource |Description
 
-|link:/releases/BASE/{base_release}/UML/openEHR_UML-Base.mdzip[source files / XMI]
+|link:/UML/openEHR_UML-Base.mdzip[source files / XMI]
 |UML file for openEHR Base classes, as MagicDraw 19. Contains UML 2.5 standard XMI file.
 
 |===
