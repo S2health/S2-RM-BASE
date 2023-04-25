@@ -19,6 +19,8 @@ h|*1..1*
 |*terminology_id*: `<<_string_class,String>>`
 a|The archetype environment namespace identifier used to identify a terminology. Typically a value like `"snomed_ct"` that is mapped elsewhere to the full URI identifying the terminology.
 
+TODO: should these be URIs? Possibly rename to 'system'.
+
 h|*0..1*
 |*terminology_version*: `<<_string_class,String>>`
 a|Optional string value representing terminology version, typically a date or dotted numeric.

@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*name*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^]`
+|*name*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.
 
 h|*1..1*
@@ -44,12 +44,14 @@ a|Audit trail from non-openEHR system of original commit of information forming 
 h|*0..1*
 |*key*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Optional field to carry code from bound terminology, e.g. LOINC or other.
+
+TODO: for GCM, default to Graphite LOINC extension
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*concept* (): `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`
+|*concept* (): `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Clinical concept of the archetype as a whole (= derived from the archetype_node_id' of the root node)
 
 h|*1..1*

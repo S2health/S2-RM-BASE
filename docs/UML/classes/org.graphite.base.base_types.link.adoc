@@ -18,7 +18,9 @@ h|*Attributes*
 
 h|*1..1*
 |*meaning*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`
-a|Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information. Values for meaning include those described in Annex C, ENV 13606 pt 2 under the categories of  generic ,  documenting and reporting ,  organisational ,  clinical ,  circumstancial , and  view management .
+a|Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information.
+
+TODO: check use of DV_xxx types here.
 
 h|*1..1*
 |*type*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`

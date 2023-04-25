@@ -2581,7 +2581,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class" target="_blank" rel="noopener">Dv_coded_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.</p>
 </div></div></td>
@@ -2629,6 +2629,9 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional field to carry code from bound terminology, e.g. LOINC or other.</p>
+</div>
+<div class="paragraph">
+<p>TODO: for GCM, default to Graphite LOINC extension</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2638,7 +2641,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong> (): <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Clinical concept of the archetype as a whole (= derived from the archetype_node_id' of the root node)</p>
 </div></div></td>
@@ -2765,7 +2768,10 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information. Values for meaning include those described in Annex C, ENV 13606 pt 2 under the categories of  generic ,  documenting and reporting ,  organisational ,  clinical ,  circumstancial , and  view management .</p>
+<p>Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information.</p>
+</div>
+<div class="paragraph">
+<p>TODO: check use of DV_xxx types here.</p>
 </div></div></td>
 </tr>
 <tr>
