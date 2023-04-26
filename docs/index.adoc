@@ -39,17 +39,17 @@ endif::[]
 |===
 |Specification |Description
 
-|link:foundation_types.html[Foundation Types]
+|link:foundation_types.html[Foundation Types^]
 |Specification of assumed, primitive and other foundation types required by  other specifications.
 
-|link:base_types.html[Base Types]
+|link:base_types.html[Base Types^]
 |Specification of basic health informatics types used in other specifications.
 
-|link:change_control.html[Change Control]
-|Specification of vresioning for the EHR.
+|link:change_control.html[Change Control^]
+|Specification of versioning for the EHR.
 
 |link:resource.html[Resource]
-|The Resource specification defines a formal model of authoring and IP meta-data, language translation and annotations that can be used by classes defining any concrete type of authored resource, such as a document, archetype or template.
+|A formal model of authoring and IP meta-data, language translation and annotations that can be used by classes defining any concrete type of authored resource, such as a document, archetype or template.
 
 |===
 
@@ -59,12 +59,12 @@ endif::[]
 |===
 |Resource |Description
 
-|link:/UML/openEHR_UML-Base.mdzip[source files / XMI]
+|link:/UML/openEHR_UML-Base.mdzip[source files / XMI^]
 |UML file for openEHR Base classes, as MagicDraw 19. Contains UML 2.5 standard XMI file.
 
 |===
 
 
-== Class Index
+//== Class Index
 
-include::UML/class_index.adoc[leveloffset=+1]
+//include::UML/class_index.adoc[leveloffset=+1]
