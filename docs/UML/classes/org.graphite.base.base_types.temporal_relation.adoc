@@ -1,0 +1,26 @@
+=== Temporal_relation Enumeration
+
+[cols="^1,3,5"]
+|===
+h|*Enumeration*
+2+^h|*Temporal_relation*
+
+h|*Description*
+2+a|Enumeration of temporal relations.
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|
+|after
+a|Time is after the reference event.
+
+h|
+|before
+a|Time is before the reference event.
+
+h|
+|with
+a|Time is with / during the reference event.
+|===

@@ -2,10 +2,10 @@
 
 == Overview
 
-The classes presented in this section are abstractions of concepts which are generic patterns in the domain of health (and most likely other domains), such as 'participation' and 'attestation'. The generic cluster is shown below.
+The classes presented in this section are abstractions of concepts which are generic patterns in the domain of health (and most likely other domains), such as 'participation' and 'attestation'. The reference package is shown below.
 
 [.text-center]
-.common.generic Package
+.base_types.reference Package
 image::{uml_diagrams_uri}/BASE-base_types.reference.svg[id=reference_package, align="center"]
 
 == Design Principles

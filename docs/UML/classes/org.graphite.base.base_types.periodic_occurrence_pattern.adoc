@@ -1,0 +1,25 @@
+=== Periodic_occurrence_pattern Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Periodic_occurrence_pattern*
+
+h|*Description*
+2+a|TODO: possible conflict with Date_time_specifier.
+
+h|*Inherit*
+2+|`<<_occurrence_pattern_class,Occurrence_pattern>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*period*: `link:/releases/BASE/{base_release}/foundation_types.html#_duration_class[Duration^]`
+a|
+
+h|*1..1*
+|*event_count*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
+a|
+|===

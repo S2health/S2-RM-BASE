@@ -61,6 +61,7 @@ include::master04-builtins_package.adoc[leveloffset=+1]
 include::master05-identification_package.adoc[leveloffset=+1]
 include::master06-archetyped_package.adoc[leveloffset=+1]
 include::master07-reference_package.adoc[leveloffset=+1]
+include::master08-timing_package.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

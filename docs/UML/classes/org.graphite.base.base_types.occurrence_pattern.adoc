@@ -1,0 +1,29 @@
+=== Occurrence_pattern Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Occurrence_pattern*
+
+h|*Description*
+2+a|Pattern-based description of events in the past or future.
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*bounding_period*: `link:/releases/BASE/{base_release}/foundation_types.html#_interval_class[Interval^]<link:/releases/BASE/{base_release}/foundation_types.html#_date_class[Date^]>`
+a|Period bounding history of events.
+
+h|*0..1*
+|*total_count*: `Integer`
+a|
+
+h|*0..1*
+|*times*: `List<<<_date_time_specifier_class,Date_time_specifier>>>`
+a|Times at which event took place or should take place.
+
+h|*Invariants*
+2+a|__Total_count_validity__: `total_count >=0`
+|===
