@@ -1,15 +1,15 @@
-=== Periodic_occurrence_pattern Class
+=== Period_specifier Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Periodic_occurrence_pattern*
+2+^h|*Period_specifier*
 
 h|*Description*
 2+a|TODO: possible conflict with Date_time_specifier.
 
 h|*Inherit*
-2+|`<<_occurrence_pattern_class,Occurrence_pattern>>`
+2+|`<<_time_specifier_class,Time_specifier>>`
 
 h|*Attributes*
 ^h|*Signature*
@@ -17,9 +17,5 @@ h|*Attributes*
 
 h|*1..1*
 |*period*: `link:/releases/BASE/{base_release}/foundation_types.html#_duration_class[Duration^]`
-a|
-
-h|*1..1*
-|*event_count*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
 a|
 |===

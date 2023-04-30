@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Timing*
 
 h|*Description*
-2+a|Representation of timing of events, either in the past or future. Two modes are supported: a history of occurrences, and a pattern of occurrences.
+2+a|Representation of timing of events, either in the past or future. Two modes are supported: a history of occurrences, and a pattern of occurrences. Both may be used in the same instance.
 
 h|*Attributes*
 ^h|*Signature*

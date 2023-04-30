@@ -16,11 +16,7 @@ h|*1..1*
 |*date*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_class[Date^]`
 a|Date of the occurrence.
 
-h|*0..1*
-|*duration*: `link:/releases/BASE/{base_release}/foundation_types.html#_duration_class[Duration^]`
-a|Optional duration. Void value indicates either an instantaneous event, or that the event duration is unknown or not important.
-
 h|*1..1*
-|*time_of_day*: `<<_time_specifier_class,Time_specifier>>`
+|*time_of_day*: `<<_hour_specifier_class,Hour_specifier>>`
 a|Time of day of the occurrence.
 |===

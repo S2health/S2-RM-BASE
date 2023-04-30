@@ -2,7 +2,7 @@
 
 == Overview
 
-The `timing` package contains classes that provide a structured model of representation of timing of events in the past or future, in two forms: as a list of occurrences, or a pattern. The latter supports common ways of stating times such as used in medication prescription. The timing package is shown below.
+The `timing` package contains classes that provide a structured model of representation of timing of events in the past or future, in two forms: as a list of occurrences, and as a pattern. The latter supports common ways of stating times such as used in medication prescription. The timing package is shown below.
 
 [.text-center]
 .base_types.timing Package
@@ -10,20 +10,28 @@ image::{uml_diagrams_uri}/BASE-base_types.timing.svg[id=timing_package, align="c
 
 == Requirements
 
-One of the difficulties with time is expressing future times, since potential occurrences, durations, repetitions cannot be expressed in the same way as actual time. Complicating the problem is the fact that humans tend to use very customary (i.e. calendar-anchored) ways of specifying time, such as "every second Tuesday", or "the first Sunday of the month". In clinical medicine, future time is most commonly used to express when medications or other therapies are intended to take place. They are often anchored to the calendar, and can easily include repetitions.
+The Timing model responds to the need for expressing the time(s) at which some event did occur in the past or should occur in the future. The past case is used for reporting occurrences of illness, pain or any other health-related matter, including mental health events. The future case is typically used to indicate when to perform some healthcare-related activity, such as medication administration or exercise.
 
-As with other time types, there are both simple and complex cases to consider. One of the most common examples of time in the future is the timing for drug administrations, e.g. "once every four hours". This could be represented as a simple periodic specification, consisting of a start point in time, a period, and a number of repetitions. The specification for taking blood sugar levels during a glucose test could be represented as a simple aperiodic series, e.g. ".5hr, 1hr, 2hr". However, even common specifications for prescriptions e.g. "three times a day for seven days" start to become quite
-complex, for example, because "three times a day" might not mean literally 8 hours apart.
+In both cases there are two common ways to represent timing:
 
-Some of the factors to consider in timing specifications are:
+* *history*: a list of time-points, possibly with associated durations;
+* *pattern*: in the form of a rule or simple algorithm that can be interpreted by humans to express the intended specific real-world times.
 
-* period of repetition
-* duration of activity being specified
-* possible alignment to the calendar, e.g. "every 5th of the month"
-* possible alignment to real world events e.g. "after meals"
-* fuzziness
+The latter may have a bounding time interval defined for it such as 'from tomorrow until end of the month' or 'until next week'.
 
-Because time is inherently "messy" (months do not all have the same number of days, leap years change the number of days in some years etc.), and because the relationship we have with time can also be arbitrary (e.g. anchored to mealtimes etc), specifying linguistically obvious specifications formally is quite challenging.
+Typical pattern examples include:
+
+* twice a day for the last week;
+* three times a day with meals for the next 7 days;
+* once every four hours.
+
+Some of the elements that need to be represented in timing specifications are:
+
+* period of repetition;
+* duration of activity being specified;
+* possible alignment to the calendar, e.g. "every 5th of the month";
+* possible alignment to real world events e.g. "after meals";
+* variable precision.
 
 == Semantics
 
@@ -37,11 +45,13 @@ include::{uml_export_dir}/classes/{pkg}occurrence.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}occurrence_pattern.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}periodic_occurrence_pattern.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}date_time_specifier.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}time_specifier.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}period_specifier.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}day_specifier.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}hour_specifier.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}clock_time.adoc[]
 

@@ -200,12 +200,13 @@
 <li><a href="#_timing_class">8.4.1. Timing Class</a></li>
 <li><a href="#_occurrence_class">8.4.2. Occurrence Class</a></li>
 <li><a href="#_occurrence_pattern_class">8.4.3. Occurrence_pattern Class</a></li>
-<li><a href="#_periodic_occurrence_pattern_class">8.4.4. Periodic_occurrence_pattern Class</a></li>
-<li><a href="#_date_time_specifier_class">8.4.5. Date_time_specifier Class</a></li>
-<li><a href="#_time_specifier_class">8.4.6. Time_specifier Class</a></li>
-<li><a href="#_clock_time_class">8.4.7. Clock_time Class</a></li>
-<li><a href="#_customary_time_class">8.4.8. Customary_time Class</a></li>
-<li><a href="#_temporal_relation_enumeration">8.4.9. Temporal_relation Enumeration</a></li>
+<li><a href="#_time_specifier_class">8.4.4. Time_specifier Class</a></li>
+<li><a href="#_period_specifier_class">8.4.5. Period_specifier Class</a></li>
+<li><a href="#_day_specifier_class">8.4.6. Day_specifier Class</a></li>
+<li><a href="#_hour_specifier_class">8.4.7. Hour_specifier Class</a></li>
+<li><a href="#_clock_time_class">8.4.8. Clock_time Class</a></li>
+<li><a href="#_customary_time_class">8.4.9. Customary_time Class</a></li>
+<li><a href="#_temporal_relation_enumeration">8.4.10. Temporal_relation Enumeration</a></li>
 </ul>
 </li>
 </ul>
@@ -2435,6 +2436,13 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong>: <code><a href="#_uuid_class">UUID</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional globally unique object identifier for root points of archetyped structures.</p>
+</div></div></td>
+</tr>
+<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2449,13 +2457,6 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </div>
 <div class="paragraph">
 <p>At an archetype root point, the value of this attribute is always the stringified form of the <code><em>archetype_id</em></code> found in the <code><em>archetype_details</em></code> object.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong>: <code><a href="#_object_id_class">Object_id</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional globally unique object identifier for root points of archetyped structures.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2481,7 +2482,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>code</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional field to carry code from bound terminology, e.g. LOINC or other.</p>
 </div>
@@ -2621,7 +2622,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information.</p>
 </div>
@@ -2820,7 +2821,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <div class="sect3">
 <h4 id="_referring_to_demographic_entities"><a class="anchor" href="#_referring_to_demographic_entities"></a>7.2.1. Referring to Demographic Entities</h4>
 <div class="paragraph">
-<p>There are two ways to refer to a demographic identity in the openEHR EHR: using <code>PARTY_REF</code> directly, which records an identifier of the party in some external system, and using <code>PARTY_PROXY</code>, consisting of a small amount of descriptive data, depending on the subtype, and an optional <code>PARTY_REF</code>. The semantics of <code>PARTY_REF</code> are described in the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html">Base Types <code>identification</code> package</a>, while the semantics of <code>PARTY_PROXY</code> and use of <code>PARTY_REF</code> in such entities are described below. The approach taken in openEHR for representing demographic and user entities in the EHR data isbased on the following assumptions:</p>
+<p>There are two ways to refer to a demographic identity in the openEHR EHR: using <code>OBJECT_REF</code> directly, which records an identifier of the party in some external system, and using <code>PARTY_PROXY</code>, consisting of a small amount of descriptive data, depending on the subtype, and an optional <code>PARTY_REF</code>. The semantics of <code>PARTY_REF</code> are described in the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html">Base Types <code>identification</code> package</a>, while the semantics of <code>PARTY_PROXY</code> and use of <code>OBJECT_REF</code> in such entities are described below. The approach taken in openEHR for representing demographic and user entities in the EHR data isbased on the following assumptions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2870,7 +2871,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <div class="sect3">
 <h4 id="_participation"><a class="anchor" href="#_participation"></a>7.2.2. Participation</h4>
 <div class="paragraph">
-<p>The Participation abstraction models the interaction of some Party in an activity. In the openEHR reference models, participations are actually modelled in two ways. In situations where the kinds of participation are known and constant, they are modelled as a named attribute in the relevant reference model. For example, the <code><em>committer</em>: PARTY_PROXY</code> attribute in <code>AUDIT_DETAILS</code> models a participation in which the function is "committal". Where the kind of participation is not known at design time, a descendant of the generic <code>PARTICIPATION</code> class is used.</p>
+<p>The Participation abstraction models the interaction of some Party in an activity. In the openEHR reference models, participations are modelled in two ways. In situations where the kinds of participation are known and constant, they are modelled as a named attribute in the relevant reference model. For example, the <code><em>committer</em>: PARTY_PROXY</code> attribute in <code>AUDIT_DETAILS</code> models a participation in which the function is "committal". Where the kind of participation is not known at design time, a descendant of the generic <code>PARTICIPATION</code> class is used.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2878,7 +2879,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <div class="sect4">
 <h5 id="_audit_details"><a class="anchor" href="#_audit_details"></a>7.2.3.1. Audit Details</h5>
 <div class="paragraph">
-<p>Three classes are provided to represent audit information. The first, <code>AUDIT_DETAILS</code> expresses the details that would be captured about a user when committing some information to a repository of some kind, which may be version controlled. It records the <code>system_id_</code>, <code><em>committer</em></code>, <code><em>time_committed</em></code>, <code><em>change_type</em></code> and an optoinal <code><em>description</em></code>.</p>
+<p>Three classes are provided to represent audit information. The first, <code>AUDIT_DETAILS</code> expresses the details that would be captured about a user when committing some information to a repository of some kind, which may be version controlled. It records the <code>system_id_</code>, <code><em>committer</em></code>, <code><em>time_committed</em></code>, <code><em>change_type</em></code> and an optional <code><em>description</em></code>.</p>
 </div>
 <div class="paragraph">
 <p>The <code><em>system_id</em></code> attribute is used to record the identifier of the logical EHR repository to which the data containing the audit are committed. What constitutes a 'system' in this context is described in more detail in the <a href="https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html#_the_ehr_system">Architecture Overview</a>.</p>
@@ -2913,7 +2914,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </ul>
 </div>
 <div class="paragraph">
-<p>Here it is modelled as a subtype of <code>AUDIT_DETAILS</code>, meaning that it is logically a kind of audit, with additional information pertinant to the act of signing. The contents of an <code>ATTESTATION</code> are as follows:</p>
+<p>Here it is modelled as a subtype of <code>AUDIT_DETAILS</code>, meaning that it is logically a kind of audit, with additional information pertinent to the act of signing. The contents of an <code>ATTESTATION</code> are as follows:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2982,6 +2983,18 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Abstract concept of a proxy description of a party, including an optional link to data for this party in a demographic or other identity management system. Sub- typed into <code>PARTY_IDENTIFIED</code> and <code>PARTY_SELF</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>external_ref</strong>: <code><a href="#_object_ref_class">Object_ref</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional reference to external representation of Party, for example in a MAster Patient Index.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3216,7 +3229,7 @@ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participati
 <div class="sect2">
 <h3 id="_overview_7"><a class="anchor" href="#_overview_7"></a>8.1. Overview</h3>
 <div class="paragraph">
-<p>The <code>timing</code> package contains classes that provide a structured model of representation of timing of events in the past or future, in two forms: as a list of occurrences, or a pattern. The latter supports common ways of stating times such as used in medication prescription. The timing package is shown below.</p>
+<p>The <code>timing</code> package contains classes that provide a structured model of representation of timing of events in the past or future, in two forms: as a list of occurrences, and as a pattern. The latter supports common ways of stating times such as used in medication prescription. The timing package is shown below.</p>
 </div>
 <div id="timing_package" class="imageblock text-center text-center">
 <div class="content">
@@ -3228,36 +3241,61 @@ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participati
 <div class="sect2">
 <h3 id="_requirements_3"><a class="anchor" href="#_requirements_3"></a>8.2. Requirements</h3>
 <div class="paragraph">
-<p>One of the difficulties with time is expressing future times, since potential occurrences, durations, repetitions cannot be expressed in the same way as actual time. Complicating the problem is the fact that humans tend to use very customary (i.e. calendar-anchored) ways of specifying time, such as "every second Tuesday", or "the first Sunday of the month". In clinical medicine, future time is most commonly used to express when medications or other therapies are intended to take place. They are often anchored to the calendar, and can easily include repetitions.</p>
+<p>The Timing model responds to the need for expressing the time(s) at which some event did occur in the past or should occur in the future. The past case is used for reporting occurrences of illness, pain or any other health-related matter, including mental health events. The future case is typically used to indicate when to perform some healthcare-related activity, such as medication administration or exercise.</p>
 </div>
 <div class="paragraph">
-<p>As with other time types, there are both simple and complex cases to consider. One of the most common examples of time in the future is the timing for drug administrations, e.g. "once every four hours". This could be represented as a simple periodic specification, consisting of a start point in time, a period, and a number of repetitions. The specification for taking blood sugar levels during a glucose test could be represented as a simple aperiodic series, e.g. ".5hr, 1hr, 2hr". However, even common specifications for prescriptions e.g. "three times a day for seven days" start to become quite
-complex, for example, because "three times a day" might not mean literally 8 hours apart.</p>
-</div>
-<div class="paragraph">
-<p>Some of the factors to consider in timing specifications are:</p>
+<p>In both cases there are two common ways to represent timing:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>period of repetition</p>
+<p><strong>history</strong>: a list of time-points, possibly with associated durations;</p>
 </li>
 <li>
-<p>duration of activity being specified</p>
-</li>
-<li>
-<p>possible alignment to the calendar, e.g. "every 5th of the month"</p>
-</li>
-<li>
-<p>possible alignment to real world events e.g. "after meals"</p>
-</li>
-<li>
-<p>fuzziness</p>
+<p><strong>pattern</strong>: in the form of a rule or simple algorithm that can be interpreted by humans to express the intended specific real-world times.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Because time is inherently "messy" (months do not all have the same number of days, leap years change the number of days in some years etc.), and because the relationship we have with time can also be arbitrary (e.g. anchored to mealtimes etc), specifying linguistically obvious specifications formally is quite challenging.</p>
+<p>The latter may have a bounding time interval defined for it such as 'from tomorrow until end of the month' or 'until next week'.</p>
+</div>
+<div class="paragraph">
+<p>Typical pattern examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>twice a day for the last week;</p>
+</li>
+<li>
+<p>three times a day with meals for the next 7 days;</p>
+</li>
+<li>
+<p>once every four hours.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Some of the elements that need to be represented in timing specifications are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>period of repetition;</p>
+</li>
+<li>
+<p>duration of activity being specified;</p>
+</li>
+<li>
+<p>possible alignment to the calendar, e.g. "every 5th of the month";</p>
+</li>
+<li>
+<p>possible alignment to real world events e.g. "after meals";</p>
+</li>
+<li>
+<p>variable precision.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -3284,7 +3322,7 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Representation of timing of events, either in the past or future. Two modes are supported: a history of occurrences, and a pattern of occurrences.</p>
+<p>Representation of timing of events, either in the past or future. Two modes are supported: a history of occurrences, and a pattern of occurrences. Both may be used in the same instance.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3341,15 +3379,8 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>duration</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional duration. Void value indicates either an instantaneous event, or that the event duration is unknown or not important.</p>
-</div></div></td>
-</tr>
-<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_of_day</strong>: <code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_of_day</strong>: <code><a href="#_hour_specifier_class">Hour_specifier</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Time of day of the occurrence.</p>
 </div></div></td>
@@ -3395,7 +3426,7 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>times</strong>: <code>List&lt;<a href="#_date_time_specifier_class">Date_time_specifier</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>times</strong>: <code>List&lt;<a href="#_time_specifier_class">Time_specifier</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Times at which event took place or should take place.</p>
 </div></div></td>
@@ -3410,87 +3441,7 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </table>
 </div>
 <div class="sect3">
-<h4 id="_periodic_occurrence_pattern_class"><a class="anchor" href="#_periodic_occurrence_pattern_class"></a>8.4.4. Periodic_occurrence_pattern Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Periodic_occurrence_pattern</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>TODO: possible conflict with Date_time_specifier.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_occurrence_pattern_class">Occurrence_pattern</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>event_count</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_date_time_specifier_class"><a class="anchor" href="#_date_time_specifier_class"></a>8.4.5. Date_time_specifier Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Date_time_specifier</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Specification of date and time in customary terms.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_of_day</strong>: <code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>customary_day</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly' and so on.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_time_specifier_class"><a class="anchor" href="#_time_specifier_class"></a>8.4.6. Time_specifier Class</h4>
+<h4 id="_time_specifier_class"><a class="anchor" href="#_time_specifier_class"></a>8.4.4. Time_specifier Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3505,14 +3456,135 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Specification of date and time in customary terms.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>event_count</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_period_specifier_class"><a class="anchor" href="#_period_specifier_class"></a>8.4.5. Period_specifier Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Period_specifier</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>TODO: possible conflict with Date_time_specifier.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_day_specifier_class"><a class="anchor" href="#_day_specifier_class"></a>8.4.6. Day_specifier Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Day_specifier</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly' and so on.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_of_day</strong>: <code><a href="#_hour_specifier_class">Hour_specifier</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_hour_specifier_class"><a class="anchor" href="#_hour_specifier_class"></a>8.4.7. Hour_specifier Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Hour_specifier (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Abstract specification of a point in time during the day.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>duration</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional duration. Void value indicates either an instantaneous event, or that the event duration is unknown or not important.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_clock_time_class"><a class="anchor" href="#_clock_time_class"></a>8.4.7. Clock_time Class</h4>
+<h4 id="_clock_time_class"><a class="anchor" href="#_clock_time_class"></a>8.4.8. Clock_time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3532,7 +3604,7 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_hour_specifier_class">Hour_specifier</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3548,7 +3620,7 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </table>
 </div>
 <div class="sect3">
-<h4 id="_customary_time_class"><a class="anchor" href="#_customary_time_class"></a>8.4.8. Customary_time Class</h4>
+<h4 id="_customary_time_class"><a class="anchor" href="#_customary_time_class"></a>8.4.9. Customary_time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3568,7 +3640,7 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_hour_specifier_class">Hour_specifier</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3577,8 +3649,10 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reference_event</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reference event during day to which event being specified is linked, e.g. 'waking', 'going to bed', 'meal', 'breakfast', etc.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
@@ -3594,7 +3668,7 @@ complex, for example, because "three times a day" might not mean literally 8 hou
 </table>
 </div>
 <div class="sect3">
-<h4 id="_temporal_relation_enumeration"><a class="anchor" href="#_temporal_relation_enumeration"></a>8.4.9. Temporal_relation Enumeration</h4>
+<h4 id="_temporal_relation_enumeration"><a class="anchor" href="#_temporal_relation_enumeration"></a>8.4.10. Temporal_relation Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">

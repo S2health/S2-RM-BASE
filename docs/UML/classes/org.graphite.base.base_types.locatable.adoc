@@ -15,6 +15,10 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
+h|*0..1*
+|*uid*: `<<_uuid_class,UUID>>`
+a|Optional globally unique object identifier for root points of archetyped structures.
+
 h|*1..1*
 |*name*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.
@@ -24,10 +28,6 @@ h|*1..1*
 a|Design-time archetype identifier of this node taken from its generating archetype; used to build archetype paths. Always in the form of an at-code, e.g. `at0005`. This value enables a 'standardised' name for this node to be generated, by referring to the generating archetype local terminology.
 
 At an archetype root point, the value of this attribute is always the stringified form of the `_archetype_id_` found in the `_archetype_details_` object.
-
-h|*0..1*
-|*uid*: `<<_object_id_class,Object_id>>`
-a|Optional globally unique object identifier for root points of archetyped structures.
 
 h|*0..1*
 |*links*: `List<<<_link_class,Link>>>`
@@ -42,7 +42,7 @@ h|*0..1*
 a|Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node.
 
 h|*0..1*
-|*key*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+|*code*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Optional field to carry code from bound terminology, e.g. LOINC or other.
 
 TODO: for GCM, default to Graphite LOINC extension

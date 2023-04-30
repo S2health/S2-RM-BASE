@@ -17,7 +17,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*meaning*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`
+|*meaning*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information.
 
 TODO: check use of DV_xxx types here.

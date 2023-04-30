@@ -9,7 +9,7 @@ h|*Description*
 2+a|Time in day expressed as a standard clock time.
 
 h|*Inherit*
-2+|`<<_time_specifier_class,Time_specifier>>`
+2+|`<<_hour_specifier_class,Hour_specifier>>`
 
 h|*Attributes*
 ^h|*Signature*

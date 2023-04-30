@@ -21,7 +21,7 @@ h|*0..1*
 a|
 
 h|*0..1*
-|*times*: `List<<<_date_time_specifier_class,Date_time_specifier>>>`
+|*times*: `List<<<_time_specifier_class,Time_specifier>>>`
 a|Times at which event took place or should take place.
 
 h|*Invariants*
