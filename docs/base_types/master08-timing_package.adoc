@@ -2,7 +2,7 @@
 
 == Overview
 
-The timing package contains classes that provide a structured model of representation of timing of events in the past or future, in two forms: as a list of occurrences, or a pattern. The latter supports common ways of stating times such as used in medication prescription. The timing package is shown below.
+The `timing` package contains classes that provide a structured model of representation of timing of events in the past or future, in two forms: as a list of occurrences, or a pattern. The latter supports common ways of stating times such as used in medication prescription. The timing package is shown below.
 
 [.text-center]
 .base_types.timing Package

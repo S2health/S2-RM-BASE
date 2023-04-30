@@ -26,7 +26,7 @@ a|Design-time archetype identifier of this node taken from its generating archet
 At an archetype root point, the value of this attribute is always the stringified form of the `_archetype_id_` found in the `_archetype_details_` object.
 
 h|*0..1*
-|*uid*: `<<_object_id_class,OBJECT_ID>>`
+|*uid*: `<<_object_id_class,Object_id>>`
 a|Optional globally unique object identifier for root points of archetyped structures.
 
 h|*0..1*

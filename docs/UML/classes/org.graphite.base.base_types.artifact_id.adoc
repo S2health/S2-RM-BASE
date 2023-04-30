@@ -1,12 +1,12 @@
-=== ARTEFACT_ID Class
+=== Artifact_id Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*__ARTEFACT_ID (abstract)__*
+2+^h|*__Artifact_id (abstract)__*
 
 h|*Description*
-2+a|
+2+a|Identifier type for source knowledge artefacts.
 
 h|*Attributes*
 ^h|*Signature*

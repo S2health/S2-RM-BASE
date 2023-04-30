@@ -17,11 +17,11 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*archetype_id*: `<<_archetype_id_class,ARCHETYPE_ID>>`
+|*archetype_id*: `<<_archetype_id_class,Archetype_id>>`
 a|Globally unique archetype identifier.
 
 h|*0..1*
-|*template_id*: `<<_archetype_id_class,ARCHETYPE_ID>>`
+|*template_id*: `<<_archetype_id_class,Archetype_id>>`
 a|Globally unique template identifier, if a template was active at this point in the structure. Normally, a template would only be used at the top of a top-level structure, but the possibility exists for templates at lower levels.
 
 h|*1..1*

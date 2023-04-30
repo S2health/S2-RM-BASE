@@ -1,9 +1,9 @@
-=== VERSION_TREE_ID Class
+=== Version_tree_id Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*VERSION_TREE_ID*
+2+^h|*Version_tree_id*
 
 h|*Description*
 2+a|Version tree identifier for one version. Lexical form:

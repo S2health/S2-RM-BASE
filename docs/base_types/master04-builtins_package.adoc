@@ -2,7 +2,7 @@
 
 == Overview
 
-The `BASE.base_types.builtins` package includes interface classes that provide common utility functions. It is shown below.
+The `base_types.builtins` package includes interface classes that provide common utility functions. It is shown below.
 
 [.text-center]
 .base.base_types.builtins Package

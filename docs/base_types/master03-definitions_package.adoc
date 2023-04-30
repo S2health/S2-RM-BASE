@@ -2,7 +2,7 @@
 
 == Overview
 
-The `base_types.definitions` package shown below defines symbolic definitions used by the openEHR models.
+The `base_types.definitions` package shown below defines symbolic definitions used by the {product_name} models.
 
 [.text-center]
 .base.base_types.definitions package

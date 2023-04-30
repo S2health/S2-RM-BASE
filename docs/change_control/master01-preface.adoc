@@ -2,16 +2,9 @@
 
 == Purpose
 
-This document describes the architecture of the openEHR Common Reference Model, which contains patterns used by other openEHR reference models.
+This document describes the architecture of the {product_name} Change Control Model, which contains patterns used by other specifications.
 
-The intended audience includes:
-
-* Standards bodies producing health informatics standards;
-* Academic groups using openEHR;
-* The open source healthcare community;
-* Solution vendors;
-* Medical informaticians and clinicians interested in health information.
-* Health data managers.
+The intended audience includes implementers and health IT standards experts.
 
 == Related Documents
 
@@ -22,11 +15,15 @@ Prerequisite documents for reading this document include:
 Related documents include:
 
 * The {openehr_rm_support}[openEHR Support Information Model^];
-* The {openehr_rm_data_types}[openEHR Data Types Information Model^].
+* The {graphite_base_base_types}[{product_name} BAse Types^].
+
+== History
+
+This specification was derived from the Change Control section of the {openehr_rm_common}_change_control_package[openEHR RM Common IM specification^].
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {openehr_rm_latest_common}[{openehr_rm_latest_common}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {graphite_base_latest_change_control}[{graphite_base_latest_change_control}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -34,13 +31,8 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {openehr_rm_forum}[openEHR RM specifications forum^].
+Feedback may be provided on the {graphite_specifications_forum}[{product_name} specifications forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 
 To see changes made due to previously reported issues, see the {component_history}[{component} component Change Request tracker^].
-
-== Conformance
-
-Conformance of a data or software artifact to an openEHR specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.
-
