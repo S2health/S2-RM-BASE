@@ -106,7 +106,7 @@ Examples of archetype identifiers include:
 * `openEHR-EHR-SECTION.physical_examination.v2`
 * `openEHR-EHR-SECTION.physical_examination-prenatal.v1`
 * `Hl7-RIM-Act.progress_note.v1`
-* `openEHR-EHR-OBSERVATION.progress_note-naturopathy.v2`
+* `openEHR-EHR-Observation.progress_note-naturopathy.v2`
 
 The grammar of archetype identifiers is given below in <<Syntaxes>>.
 

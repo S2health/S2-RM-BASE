@@ -351,7 +351,7 @@
 <div class="sect3">
 <h4 id="_typing"><a class="anchor" href="#_typing"></a>2.1.1. Typing</h4>
 <div class="paragraph">
-<p>The classes <code>VERSIONED_OBJECT&lt;T&gt;</code>, <code>VERSION&lt;T&gt;</code>, <code>ORIGINAL_VERSION&lt;T&gt;</code> and <code>IMPORTED_VERSION&lt;T&gt;</code> are generic classes, with the generic parameter type T being the type of the data. This ensures that all versions in a given <code>VERSIONED_OBJECT</code> are of the same type, such as <code>COMPOSITION</code>, <code>FOLDER</code>, or <code>PARTY</code> and that the version container itself is properly typed.</p>
+<p>The classes <code>VERSIONED_OBJECT&lt;T&gt;</code>, <code>VERSION&lt;T&gt;</code>, <code>ORIGINAL_VERSION&lt;T&gt;</code> and <code>IMPORTED_VERSION&lt;T&gt;</code> are generic classes, with the generic parameter type T being the type of the data. This ensures that all versions in a given <code>VERSIONED_OBJECT</code> are of the same type, such as <code>Composition</code>, <code>FOLDER</code>, or <code>PARTY</code> and that the version container itself is properly typed.</p>
 </div>
 </div>
 <div class="sect3">
@@ -543,7 +543,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Normally, Attestations refer to the entire version to which they are attached. However, it is possible for an <code>ATTESTATION</code> instance to refer to some finer-grained item within the data of the version, such as a single <code>ENTRY</code> within a <code>COMPOSITION</code>.</p>
+<p>Normally, Attestations refer to the entire version to which they are attached. However, it is possible for an <code>ATTESTATION</code> instance to refer to some finer-grained item within the data of the version, such as a single <code>Entry</code> within a <code>Composition</code>.</p>
 </div>
 <div class="paragraph">
 <p>When subsequent Versions are added, the existing Attestations can not be assumed to be valid for the new Version, since the nature of an attestation is that it records the witnessing of exactly the content displayed at the time of witnessing.</p>
@@ -1370,7 +1370,7 @@ signature.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>versions</strong>: <code>List&lt;<a href="/releases/BASE/latest/base_types.html#_object_ref_class" target="_blank" rel="noopener">Object_ref</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Set of references to Versions causing changes to this EHR. Each contribution contains a list of versions, which may include paths pointing to any number of versionable items, i.e. items of types such as <code>COMPOSITION</code> and <code>FOLDER</code>.</p>
+<p>Set of references to Versions causing changes to this EHR. Each contribution contains a list of versions, which may include paths pointing to any number of versionable items, i.e. items of types such as <code>Composition</code> and <code>FOLDER</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1548,7 +1548,7 @@ signature.</p>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Reason_valid</em>: <code>(reason.generating_type.is_equal (“DV_CODED_TEXT”) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code))</code></p>
+<p><em>Reason_valid</em>: <code>(reason.generating_type.is_equal (“Dv_coded_text”) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code))</code></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1565,7 +1565,7 @@ signature.</p>
 <div class="sect3">
 <h4 id="_the_copy_operation"><a class="anchor" href="#_the_copy_operation"></a>4.1.1. The Copy Operation</h4>
 <div class="paragraph">
-<p>In openEHR, the smallest unit of copying of content between systems that satisfies traceability requirements is the <code>ORIGINAL_VERSION</code>. In order to copy a <code>OBSERVATION</code> or even an <code>COMPOSITION</code> somewhere else and retain versioning capability, its enclosing <code>ORIGINAL_VERSION</code> object must be sent. When the type of content is a <code>COMPOSITION</code> for example, an <code>ORIGINAL_VERSION&lt;COMPOSITION&gt;</code> object is sent. At the receiving system various steps will occur depending on whether:</p>
+<p>In openEHR, the smallest unit of copying of content between systems that satisfies traceability requirements is the <code>ORIGINAL_VERSION</code>. In order to copy a <code>Observation</code> or even an <code>Composition</code> somewhere else and retain versioning capability, its enclosing <code>ORIGINAL_VERSION</code> object must be sent. When the type of content is a <code>Composition</code> for example, an <code>ORIGINAL_VERSION&lt;Composition&gt;</code> object is sent. At the receiving system various steps will occur depending on whether:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1587,7 +1587,7 @@ signature.</p>
 <p>In the first situation, there is not even an EHR (i.e. repository of Versioned objects for the patient in question) in the target system. A new one has to be created. As mentioned in the <a href="https://specifications.openehr.org/releases/RM/latest/ehr.html#_ehr_creation_semantics">EHR IM specification</a>, the newly created EHR should re-use the EHR identifier from the source system. This establishes the new EHR as an intentional clone of the source EHR (or more correctly, part of the family of EHRs making up the virtual EHR for that patient).</p>
 </div>
 <div class="paragraph">
-<p>If it is the first time any version of the item logically identified by its <code>ORIGINAL_VERSION.<em>uid.object_id()</em></code> (i.e. the <code><em>uid</em></code> of its original <code>VERSIONED_OBJECT</code>, common to all Versions in the same container) was received from the originating system, a new <code>VERSIONED_OBJECT&lt;T&gt;</code> (e.g. <code>VERSIONED_OBJECT&lt;COMPOSITION&gt;</code>) is created, with its uid set to the same value as the received <code>VERSION.<em>uid.object_id()</em></code>. This establishes the newly created <code>VERSIONED_OBJECT</code> as being a logical clone of the one from which the received <code>ORIGINAL_VERSION</code> was copied. If some version of the item had already been received, this step will have already occurred, and the requisite <code>VERSIONED_OBJECT</code> would already exist.</p>
+<p>If it is the first time any version of the item logically identified by its <code>ORIGINAL_VERSION.<em>uid.object_id()</em></code> (i.e. the <code><em>uid</em></code> of its original <code>VERSIONED_OBJECT</code>, common to all Versions in the same container) was received from the originating system, a new <code>VERSIONED_OBJECT&lt;T&gt;</code> (e.g. <code>VERSIONED_OBJECT&lt;Composition&gt;</code>) is created, with its uid set to the same value as the received <code>VERSION.<em>uid.object_id()</em></code>. This establishes the newly created <code>VERSIONED_OBJECT</code> as being a logical clone of the one from which the received <code>ORIGINAL_VERSION</code> was copied. If some version of the item had already been received, this step will have already occurred, and the requisite <code>VERSIONED_OBJECT</code> would already exist.</p>
 </div>
 <div class="paragraph">
 <p>An <code>IMPORTED_VERSION</code> instance is then created, its item set to the received <code>ORIGINAL_VERSION</code>, and it is committed in the normal way (i.e. as part of a Contribution). The <code>IMPORTED_VERSION</code> commit_audit and contribution attributes record the local act of committal. In this operation, the <code>ORIGINAL_VERSION</code> instance is never modified - it remains a faithful copy of its original, no matter how many systems it may be copied through.</p>

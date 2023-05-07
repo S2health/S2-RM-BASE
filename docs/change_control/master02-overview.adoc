@@ -18,7 +18,7 @@ image::{diagrams_uri}/version_control_structures.png[id=version_control_structur
 
 === Typing
 
-The classes `VERSIONED_OBJECT<T>`, `VERSION<T>`, `ORIGINAL_VERSION<T>` and `IMPORTED_VERSION<T>` are generic classes, with the generic parameter type T being the type of the data. This ensures that all versions in a given `VERSIONED_OBJECT` are of the same type, such as `COMPOSITION`, `FOLDER`, or `PARTY` and that the version container itself is properly typed.
+The classes `VERSIONED_OBJECT<T>`, `VERSION<T>`, `ORIGINAL_VERSION<T>` and `IMPORTED_VERSION<T>` are generic classes, with the generic parameter type T being the type of the data. This ensures that all versions in a given `VERSIONED_OBJECT` are of the same type, such as `Composition`, `FOLDER`, or `PARTY` and that the version container itself is properly typed.
 
 === Versioned Objects
 
@@ -118,7 +118,7 @@ Attestations may be used in different ways as follows.
 * Marking content for review and signing: data entered and committed by a data-entry person e.g. a secretary, transcriptionist or student need to be reviewed and signed by a senior clinician. Similarly to the above case, this will cause `ORIGINAL_VERSION._commit_audit_` to be of type `ATTESTATION`, but in this case, the Attestation will have its `_is_pending_` flag set True to indicate that attestation is required.
 * Post-committal signing: data committed with an Attestation in the is_pending state is reviewed and signed at a later point in tme by an appropriate member of staff. This action will cause an `ATTESTATION` to be added to the `ORIGINAL_VERSION._attestations_` list.
 
-Normally, Attestations refer to the entire version to which they are attached. However, it is possible for an `ATTESTATION` instance to refer to some finer-grained item within the data of the version, such as a single `ENTRY` within a `COMPOSITION`.
+Normally, Attestations refer to the entire version to which they are attached. However, it is possible for an `ATTESTATION` instance to refer to some finer-grained item within the data of the version, such as a single `Entry` within a `Composition`.
 
 When subsequent Versions are added, the existing Attestations can not be assumed to be valid for the new Version, since the nature of an attestation is that it records the witnessing of exactly the content displayed at the time of witnessing.
 

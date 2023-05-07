@@ -31,7 +31,7 @@ At an archetype root point, the value of this attribute is always the stringifie
 
 h|*0..1*
 |*links*: `List<<<_link_class,Link>>>`
-a|Links to other archetyped structures (data whose root object inherits from `ARCHETYPED`, such as `ENTRY`, `SECTION` and so on). Links may be to structures in other compositions.
+a|Links to other archetyped structures (data whose root object inherits from `ARCHETYPED`, such as `Entry`, `SECTION` and so on). Links may be to structures in other compositions.
 
 h|*0..1*
 |*archetype_details*: `<<_archetyped_class,Archetyped>>`
