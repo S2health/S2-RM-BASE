@@ -2,3 +2,4 @@
 
 This repository contains the document and model sources (Asciidoctor and MagicDraw) for the Graphite Platform BASE specifications.
 
+https://congenial-adventure-wl936kl.pages.github.io/[Specifications^].
