@@ -262,4 +262,4 @@ Only the `identifier` field is mandatory to allow for use cases in which the oth
 
 === Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}Rwe_id_ref.adoc[leveloffset=+1]
+include::{uml_export_dir}/classes/{pkg}rwe_id_ref.adoc[leveloffset=+1]
