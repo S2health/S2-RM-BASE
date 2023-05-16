@@ -115,17 +115,17 @@ The second modification is to require branching version identifiers to be used w
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}versionedobject.adoc[]
+include::{uml_export_dir}/classes/{pkg}versioned_object.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}version.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}originalversion.adoc[]
+include::{uml_export_dir}/classes/{pkg}original_version.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}importedversion.adoc[]
+include::{uml_export_dir}/classes/{pkg}imported_version.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}contribution.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}auditdetails.adoc[]
+include::{uml_export_dir}/classes/{pkg}audit_details.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}attestation.adoc[]
 

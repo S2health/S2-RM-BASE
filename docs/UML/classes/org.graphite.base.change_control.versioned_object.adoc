@@ -1,9 +1,9 @@
-=== VersionedObject Class
+=== Versioned_object Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*VersionedObject<T>*
+2+^h|*Versioned_object<T>*
 
 h|*Description*
 2+a|Version control abstraction, defining semantics for versioning one complex object.
@@ -13,7 +13,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*uid*: `link:/releases/BASE/{base_release}/base_types.html#_uuid_class[UUID^]`
+|*uid*: `link:/releases/BASE/{base_release}/base_types.html#_uuid_class[Uuid^]`
 a|Unique identifier of this version container in the form of a UID with no extension. This id will be the same in all instances of the same container in a distributed environment, meaning that it can be understood as the uid of the  virtual version tree.
 
 h|*1..1*
@@ -98,7 +98,7 @@ h|*1..1*
 a_contribution: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^][1]`, +
 a_new_version_uid: `link:/releases/BASE/{base_release}/base_types.html#_object_version_id_class[Object_version_id^][1]`, +
 a_preceding_version_id: `link:/releases/BASE/{base_release}/base_types.html#_object_version_id_class[Object_version_id^][1]`, +
-an_audit: `<<_auditdetails_class,AuditDetails>>[1]`, +
+an_audit: `<<_audit_details_class,Audit_details>>[1]`, +
 a_lifecycle_state: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^][1]`, +
 a_data: `T[1]`, +
 signing_key: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^][1]` +
@@ -112,7 +112,7 @@ h|*1..1*
 a_contribution: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^][1]`, +
 a_new_version_uid: `link:/releases/BASE/{base_release}/base_types.html#_object_version_id_class[Object_version_id^][1]`, +
 a_preceding_version_id: `link:/releases/BASE/{base_release}/base_types.html#_object_version_id_class[Object_version_id^][1]`, +
-an_audit: `<<_auditdetails_class,AuditDetails>>[1]`, +
+an_audit: `<<_audit_details_class,Audit_details>>[1]`, +
 a_lifecycle_state: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^][1]`, +
 a_data: `T[1]`, +
 an_other_input_uids: `List<link:/releases/BASE/{base_release}/base_types.html#_object_version_id_class[Object_version_id^]>[1]`, +
@@ -125,8 +125,8 @@ a|Add a new original merged version. This commit function adds a parameter conta
 h|*1..1*
 |*commit_imported_version* ( +
 a_contribution: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^][1]`, +
-an_audit: `<<_auditdetails_class,AuditDetails>>[1]`, +
-a_version: `<<_originalversion_class,OriginalVersion>>[1]` +
+an_audit: `<<_audit_details_class,Audit_details>>[1]`, +
+a_version: `<<_original_version_class,Original_version>>[1]` +
 ): `void`
 a|Add a new imported version. Details of version id etc come from the `ORIGINAL_VERSION` being committed.
 

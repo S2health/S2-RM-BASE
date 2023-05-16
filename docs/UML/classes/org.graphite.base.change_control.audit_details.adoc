@@ -1,9 +1,9 @@
-=== AuditDetails Class
+=== Audit_details Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*AuditDetails*
+2+^h|*Audit_details*
 
 h|*Description*
 2+a|The set of attributes required to document the committal of an information item to a repository.

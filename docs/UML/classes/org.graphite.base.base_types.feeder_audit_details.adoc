@@ -18,7 +18,7 @@ a|Identifier of the system which handled the information item. This is the IT sy
 
 h|*0..1*
 |*location*: `<<_party_identified_class,Party_identified>>`
-a|Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the `Party_identified` object.
+a|Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the `PARTY_IDENTIFIED` object.
 
 h|*0..1*
 |*subject*: `<<_party_proxy_class,Party_proxy>>`

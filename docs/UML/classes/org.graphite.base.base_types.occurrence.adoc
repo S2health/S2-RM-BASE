@@ -16,7 +16,7 @@ h|*1..1*
 |*date*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_class[Date^]`
 a|Date of the occurrence.
 
-h|*1..1*
-|*time_of_day*: `<<_hour_specifier_class,Hour_specifier>>`
+h|*0..1*
+|*time_of_day*: `List<<<_hour_specifier_class,Hour_specifier>>>`
 a|Time of day of the occurrence.
 |===

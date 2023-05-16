@@ -3,7 +3,7 @@
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*__Object_id (abstract)__*
+2+^h|*Object_id*
 
 h|*Description*
 2+a|Ancestor class of identifiers of informational objects.
@@ -22,7 +22,7 @@ h|*Functions*
 ^h|*Meaning*
 
 h|*1..1*
-|*object_id* (): `<<_uuid_class,UUID>>`
+|*object_id* (): `<<_uuid_class,Uuid>>`
 a|Unique identifier for logical object of which this identifier identifies one version; normally the `_object_id_` will be the unique identifier of the version container containing the version referred to by this `OBJECT_VERSION_ID` instance.
 
 h|*Invariants*

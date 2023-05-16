@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Period_specifier*
 
 h|*Description*
-2+a|TODO: possible conflict with Date_time_specifier.
+2+a|Time specified as a period, meaning 'every <period>'.
 
 h|*Inherit*
 2+|`<<_time_specifier_class,Time_specifier>>`

@@ -1,9 +1,9 @@
-=== BASIC_DEFINITIONS Class
+=== Basic_definitions Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*BASIC_DEFINITIONS*
+2+^h|*Basic_definitions*
 
 h|*Description*
 2+a|Defines globally used constant values.

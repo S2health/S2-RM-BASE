@@ -1,15 +1,15 @@
-=== OPENEHR_DEFINITIONS Class
+=== Openehr_definitions Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*OPENEHR_DEFINITIONS*
+2+^h|*Openehr_definitions*
 
 h|*Description*
 2+a|Inheritance class to provide access to constants defined in other packages.
 
 h|*Inherit*
-2+|`<<_basic_definitions_class,BASIC_DEFINITIONS>>`
+2+|`<<_basic_definitions_class,Basic_definitions>>`
 
 h|*Attributes*
 ^h|*Signature*

@@ -16,7 +16,7 @@ h|*Functions*
 ^h|*Meaning*
 
 h|*1..1*
-|*creating_system_id* (): `<<_internet_id_class,INTERNET_ID>>`
+|*creating_system_id* (): `<<_internet_id_class,Internet_id>>`
 a|Identifier of the system that created the Version corresponding to this Object version id.
 
 h|*1..1*

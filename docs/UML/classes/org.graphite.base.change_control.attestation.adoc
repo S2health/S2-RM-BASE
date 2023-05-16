@@ -13,7 +13,7 @@ h|*Description*
 * indicating acknowledgement of content by intended recipient, e.g. GP who ordered a test result.
 
 h|*Inherit*
-2+|`<<_auditdetails_class,AuditDetails>>`
+2+|`<<_audit_details_class,Audit_details>>`
 
 h|*Attributes*
 ^h|*Signature*
@@ -30,10 +30,10 @@ h|*0..1*
 a|Proof of attestation.
 
 h|*0..1*
-|*items*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_ehr_uri_class[Dv_ehr_uri^]>`
+|*items*: `List<link:/releases/BASE/{base_release}/foundation_types.html#_uri_class[Uri^]>`
 a|Items attested, expressed as fully qualified runtime paths to the items in question. Although not recommended, these may include fine-grained items which have been attested in some other system. Otherwise it is assumed to be for the entire VERSION with which it is associated.
 
-TODO: fix type
+TODO: consider better type for refs into Original_version.data.
 
 h|*1..1*
 |*reason*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
@@ -47,5 +47,5 @@ h|*Invariants*
 2+a|__Items_valid__: `items /= Void implies not items.is_empty`
 
 h|
-2+a|__Reason_valid__: `(reason.generating_type.is_equal (“Dv_coded_text”) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code))`
+2+a|__Reason_valid__: `(reason.generating_type.is_equal (“DV_CODED_TEXT”) implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code))`
 |===

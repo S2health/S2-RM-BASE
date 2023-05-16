@@ -6,18 +6,18 @@ h|*Class*
 2+^h|*Feeder_audit*
 
 h|*Description*
-2+a|The `FEEDER_AUDIT` class defines the semantics of an audit trail which is constructed to describe the origin of data that have been transformed into openEHR form and committed to the system.
+2+a|The `Feeder_audit` class defines an audit trail describing the origin of data that have been ingested and committed to the system.
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*0..1*
-|*originating_system_item_ids*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_identifier_class[Dv_identifier^]>`
+|*originating_system_item_ids*: `List<<<_rwe_id_ref_class,Rwe_id_ref>>>`
 a|Identifiers used for the item in the originating system, e.g. filler and placer ids.
 
 h|*0..1*
-|*feeder_system_item_ids*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_identifier_class[Dv_identifier^]>`
+|*feeder_system_item_ids*: `List<<<_rwe_id_ref_class,Rwe_id_ref>>>`
 a|Identifiers used for the item in the feeder system, where the feeder system is distinct from the originating system.
 
 h|*0..1*

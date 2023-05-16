@@ -19,7 +19,7 @@ h|*0..1*
 |*day*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly' and so on.
 
-h|*1..1*
-|*time_of_day*: `<<_hour_specifier_class,Hour_specifier>>`
+h|*0..1*
+|*time_of_day*: `List<<<_hour_specifier_class,Hour_specifier>>>`
 a|
 |===

@@ -16,12 +16,14 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*uid*: `<<_uuid_class,UUID>>`
+|*uid*: `<<_uuid_class,Uuid>>`
 a|Optional globally unique object identifier for root points of archetyped structures.
 
 h|*1..1*
-|*name*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+|*name*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.
+
+TODO: in openEHR this can be a coded term. What do we prefer?
 
 h|*1..1*
 |*archetype_node_id*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`

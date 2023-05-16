@@ -21,7 +21,7 @@ h|*0..1*
 a|OpenPGP digital signature or digest of content committed in this Version.
 
 h|*1..1*
-|*commit_audit*: `<<_auditdetails_class,AuditDetails>>`
+|*commit_audit*: `<<_audit_details_class,Audit_details>>`
 a|Audit trail corresponding to the committal of this version to the `VERSIONED_OBJECT`.
 h|*Functions*
 ^h|*Signature*
@@ -55,7 +55,7 @@ Canonical form of Version object, created by serialising all attributes except
 signature.
 
 h|*1..1*
-|*owner_id* (): `link:/releases/BASE/{base_release}/base_types.html#_uuid_class[UUID^]` +
+|*owner_id* (): `link:/releases/BASE/{base_release}/base_types.html#_uuid_class[Uuid^]` +
  +
 __Post__: `Result.value.is_equal (uid.object_id.value)`
 a|Copy of the owning `VERSIONED_OBJECT._uid_` value; extracted from the local `_uid_` property's `_object_id_`.

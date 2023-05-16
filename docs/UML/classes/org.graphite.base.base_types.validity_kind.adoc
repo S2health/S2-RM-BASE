@@ -1,9 +1,9 @@
-=== VALIDITY_KIND Enumeration
+=== Validity_kind Enumeration
 
 [cols="^1,3,5"]
 |===
 h|*Enumeration*
-2+^h|*VALIDITY_KIND*
+2+^h|*Validity_kind*
 
 h|*Description*
 2+a|An enumeration of three values that may commonly occur in constraint models.
