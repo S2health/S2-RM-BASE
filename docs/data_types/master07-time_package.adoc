@@ -1,0 +1,26 @@
+= Ordered Package: Temporal
+
+== Overview
+
+The temporal types from the `base.data_types.ordered` package provide data types for date, date/time, time and duration, based on {iso_8601_official}[ISO 8601:2019 standard^]. They are formally defined in terms of the primitive `Date`, `Date_time`, `Time` and `Duration` types from the BASE component.
+
+They are illustrated below.
+
+[.text-center]
+.base.data_types.ordered package - temporal types
+image::{uml_diagrams_uri}/BASE-data_types.ordered-time.svg[id=base_data_types_time, align="center"]
+
+== Class Descriptions
+
+include::{uml_export_dir}/classes/{pkg}temporal_value.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}date_value.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}time_value.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}date_time_value.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}duration_value.adoc[]
+
+
+

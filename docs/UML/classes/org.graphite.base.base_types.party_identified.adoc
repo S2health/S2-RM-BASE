@@ -24,7 +24,7 @@ h|*0..1*
 a|Optional human-readable name (in String form).
 
 h|*0..1*
-|*identifiers*: `List<<<_rwe_id_ref_class,Rwe_id_ref>>>`
+|*identifiers*: `List<link:/releases/BASE/{base_release}/data_types.html#_rwe_id_ref_class[Rwe_id_ref^]>`
 a|One or more formal identifiers (possibly computable).
 
 TODO: fix type

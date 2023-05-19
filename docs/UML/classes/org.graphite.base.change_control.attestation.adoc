@@ -20,7 +20,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*attested_view*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_multimedia_class[Dv_multimedia^]`
+|*attested_view*: `@@`
 a|Optional visual representation of content attested e.g. screen image.
 
 TODO: fix data type.

@@ -6,7 +6,7 @@ The `timing` package contains classes that provide a structured model of represe
 
 [.text-center]
 .base_types.timing Package
-image::{uml_diagrams_uri}/BASE-base_types.timing.svg[id=timing_package, align="center"]
+image::{uml_diagrams_uri}/BASE-data_types.timing.svg[id=data_types_timing_package, align="center"]
 
 == Requirements
 

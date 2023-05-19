@@ -1,0 +1,13 @@
+= Amendment Record
+
+[cols="1,6,2,2", options="header"]
+|===
+|Issue|Details|Raiser, Implementer|Completed
+
+|[[latest_issue]]0.1.0
+|Initial Writing: based on openEHR and HL7 FHIR Data types.
+|T Beale
+|[[latest_issue_date]]10 Apr 2023
+
+|===
+

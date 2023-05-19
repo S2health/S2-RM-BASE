@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Locatable_ref*
 
 h|*Description*
-2+a|Reference to a `LOCATABLE` instance inside the top-level content structure inside a `VERSION<T>` identified by the `_id_` attribute. The `_path_` attribute is applied to the object that `VERSION._data_` points to.
+2+a|Reference to a `Locatable` instance inside the top-level content structure inside a `VERSION<T>` identified by the `_id_` attribute. The `_path_` attribute is applied to the object that `VERSION._data_` points to.
 
 h|*Inherit*
 2+|`<<_object_ref_class,Object_ref>>`

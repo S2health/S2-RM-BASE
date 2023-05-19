@@ -1,0 +1,19 @@
+=== Ehr_uri_ref Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Ehr_uri_ref*
+
+h|*Description*
+2+a|A `DV_EHR_URI` is a `DV_URI` which has the scheme name 'ehr', and which can only reference items in EHRs.
+
+Used to reference items in an EHR, which may be the same as the current EHR (containing this link), or another.
+
+h|*Inherit*
+2+|`<<_uri_ref_class,Uri_ref>>`
+
+
+h|*Invariants*
+2+a|__Scheme_valid__: `scheme.is_equal (Ehr_scheme)`
+|===

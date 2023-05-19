@@ -1,0 +1,34 @@
+=== Comparison_operator Enumeration
+
+[cols="^1,3,5"]
+|===
+h|*Enumeration*
+2+^h|*Comparison_operator*
+
+h|*Description*
+2+a|Enumeration of value comparators.
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|
+|<
+a|Real value is < recorded value.
+
+h|
+|>
+a|Real value is > recorded value.
+
+h|
+|<=
+a|Real value is \<= recorded value.
+
+h|
+|>=
+a|Real value is >= recorded value.
+
+h|
+|=
+a|Real value is equal to recorded value.
+|===

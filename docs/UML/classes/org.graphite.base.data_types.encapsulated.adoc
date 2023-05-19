@@ -9,14 +9,14 @@ h|*Description*
 2+a|Abstract class defining the common meta-data of all types of encapsulated data.
 
 h|*Inherit*
-2+|`link:/releases/GCM/{gcm_release}/data_types.html#_data_value_class[Data_value^]`
+2+|`<<_data_value_class,Data_value>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*0..1*
-|*language*: `<<_terminology_code_class,Terminology_code>>`
+|*language*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|Optional indicator of the localised language in which the data is written, if relevant. Coded from openEHR Code Set `languages`.
 
 h|*Invariants*

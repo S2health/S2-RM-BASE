@@ -16,19 +16,19 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*alternate_text*: `<<_string_class,String>>`
+|*alternate_text*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Text to display in lieu of multimedia display/replay.
 
 h|*0..1*
-|*uri*: `<<_uri_class,Uri>>`
+|*uri*: `link:/releases/BASE/{base_release}/foundation_types.html#_uri_class[Uri^]`
 a|URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference.
 
 h|*0..1*
-|*data*: `List<<<_byte_class,Byte>>>`
+|*data*: `List<link:/releases/BASE/{base_release}/foundation_types.html#_byte_class[Byte^]>`
 a|The actual data found at `_uri_`, if supplied inline, base64 encoded.
 
 h|*1..1*
-|*media_type*: `<<_terminology_code_class,Terminology_code>>`
+|*media_type*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|Data media type coded from openEHR code set  media types  (interface for the IANA MIME types code set).
 Example: image/jpeg; text/json.
 
@@ -41,11 +41,11 @@ h|*0..1*
 a|The thumbnail for this item, if one exists; mainly for graphics formats.
 
 h|*1..1*
-|*size*: `<<_integer_class,Integer>>`
+|*size*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
 a|Original size in bytes of unencoded encapsulated data. I.e. coding in base64, hexadecimal etc. do not change the value of this attribute.
 
 h|*0..1*
-|*media_attributes*: `<<_hash_class,Hash>><<<_string_class,String>>, <<_string_class,String>>>`
+|*media_attributes*: `link:/releases/BASE/{base_release}/foundation_types.html#_hash_class[Hash^]<link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^], link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]>`
 a|Key / value list of media attributes, e.g. image size, video duration etc.
 
 TODO: try to standardize keys?
@@ -54,11 +54,11 @@ h|*Functions*
 ^h|*Meaning*
 
 h|*1..1*
-|*is_external* (): `<<_boolean_class,Boolean>>`
+|*is_external* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|Computed from the value of the `_uri_` attribute: True if  the data is stored externally to the record, as indicated by `_uri_`. A copy may also be stored internally, in which case `_is_expanded_` is also true.
 
 h|*1..1*
-|*is_inline* (): `<<_boolean_class,Boolean>>`
+|*is_inline* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself.
 
 h|*Invariants*

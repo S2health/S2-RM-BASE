@@ -1,0 +1,14 @@
+=== Plain_text Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Plain_text*
+
+h|*Description*
+2+a|Plain text.
+
+h|*Inherit*
+2+|`<<_text_class,Text>>`
+
+|===

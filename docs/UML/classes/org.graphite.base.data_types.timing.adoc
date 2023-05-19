@@ -8,6 +8,9 @@ h|*Class*
 h|*Description*
 2+a|Representation of timing of events, either in the past or future. Two modes are supported: a history of occurrences, and a pattern of occurrences. Both may be used in the same instance.
 
+h|*Inherit*
+2+|`<<_data_value_class,Data_value>>`
+
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*

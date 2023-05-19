@@ -1,0 +1,22 @@
+=== Ratio_kind Enumeration
+
+[cols="^1,3,5"]
+|===
+h|*Enumeration*
+2+^h|*Ratio_kind*
+
+h|*Description*
+2+a|
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|
+|rational_fraction
+a|Numerator and denominator are both integers, and value is displayed in form of a fraction, e.g. 1/3, 2 1/4.
+
+h|
+|ratio
+a|
+|===

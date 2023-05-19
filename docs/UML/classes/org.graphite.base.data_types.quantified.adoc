@@ -1,0 +1,85 @@
+=== Quantified Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*__Quantified (abstract)__*
+
+h|*Description*
+2+a|Abstract class defining the concept of relative quantified  'amounts'. For relative quantities, the  `+` and  `-` operators are defined (unlike descendants of `DV_ABSOLUTE_QUANTITY`, such as the date/time types).
+
+h|*Inherit*
+2+|`<<_ordered_class,Ordered>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*measured*: `<<_measured_class,Measured>>`
+a|
+
+h|*1..1 +
+(redefined)*
+|*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_comparable_numeric_class[Comparable_Numeric^]`
+a|
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(effected)*
+|*is_equal* ( +
+other: `<<_quantified_class,Quantified>>[1]` +
+): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
+a|Value equality: return True if `this` and `_other_` are attached to objects considered to be equal in value.
+
+.Parameters +
+[horizontal]
+`_other_`:: Other object for comparison.
+
+h|*1..1 +
+(abstract)*
+|*less_than* __alias__ "<" ( +
+other: `<<_quantified_class,Quantified>>[1]` +
+): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
+a|Arithmetic value comparison. Returns True if current object is less than `_other_`. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.
+
+In conjunction with `=`, enables the definition of the related functions `_greater_than_()` etc.
+
+h|*1..1*
+|*add* __alias__ "+" ( +
+other: `<<_quantified_class,Quantified>>[1]` +
+): `<<_quantified_class,Quantified>>` +
+ +
+__Pre_comparable__: `is_strictly_comparable_to (other)`
+a|Sum of this amount and another. The value of accuracy in the result is either:
+
+* the sum of the accuracies of the operands, if both present, or;
+* both operand accuracies are unknown_accuracy_value.
+
+If the accuracy value is a percentage in one operand and not in the other, the form in the result is that of the larger operand.
+
+h|*1..1*
+|*subtract* __alias__ "-" ( +
+other: `<<_quantified_class,Quantified>>[1]` +
+): `<<_quantified_class,Quantified>>` +
+ +
+__Pre_comparable__: `is_strictly_comparable_to (other)`
+a|Difference of this amount and another. The value of `_accuracy_` in the result is either:
+
+* the sum of the accuracies of the operands, if both present, or;
+* unknown, if either or both operand accuracies are unknown.
+
+If the `_accuracy_` value is a percentage in one operand and not in the other, the form in the result is that of the larger operand.
+
+h|*1..1*
+|*multiply* __alias__ "&#42;" ( +
+factor: `link:/releases/BASE/{base_release}/foundation_types.html#_real_class[Real^][1]` +
+): `<<_quantified_class,Quantified>>`
+a|Product of this Amount and `_factor_`.
+
+h|*1..1*
+|*negative* __alias__ "-" (): `<<_quantified_class,Quantified>>`
+a|Negated version of current object, such as used for representing a difference, e.g. a weight loss.
+|===

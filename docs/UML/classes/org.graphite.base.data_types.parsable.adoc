@@ -16,22 +16,22 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*formalism*: `<<_string_class,String>>`
+|*formalism*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.
 
 h|*1..1*
-|*value*: `<<_string_class,String>>`
+|*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|The string, which may validly be empty in some syntaxes.
 
 h|*0..1*
-|*encoding*: `<<_terminology_code_class,Terminology_code>>`
+|*encoding*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*size* (): `<<_integer_class,Integer>>`
+|*size* (): `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
 a|Size in bytes of value.
 
 h|*Invariants*

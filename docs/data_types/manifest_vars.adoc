@@ -1,0 +1,5 @@
+:spec_title: Data Types Model
+:copyright_year: 2023
+:spec_status: TRIAL
+:keywords: EHR, clinical, data types, Graphite
+:description: Graphite Data Types Model

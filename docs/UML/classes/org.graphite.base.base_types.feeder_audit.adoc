@@ -13,15 +13,15 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*originating_system_item_ids*: `List<<<_rwe_id_ref_class,Rwe_id_ref>>>`
+|*originating_system_item_ids*: `List<link:/releases/BASE/{base_release}/data_types.html#_rwe_id_ref_class[Rwe_id_ref^]>`
 a|Identifiers used for the item in the originating system, e.g. filler and placer ids.
 
 h|*0..1*
-|*feeder_system_item_ids*: `List<<<_rwe_id_ref_class,Rwe_id_ref>>>`
+|*feeder_system_item_ids*: `List<link:/releases/BASE/{base_release}/data_types.html#_rwe_id_ref_class[Rwe_id_ref^]>`
 a|Identifiers used for the item in the feeder system, where the feeder system is distinct from the originating system.
 
 h|*0..1*
-|*original_content*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_encapsulated_class[Dv_encapsulated^]`
+|*original_content*: `link:/releases/BASE/{base_release}/data_types.html#_encapsulated_class[Encapsulated^]`
 a|Optional inline inclusion of or reference to original content corresponding to the openEHR content at this node. Typically a URI reference to a document or message in a persistent store associated with the EHR.
 
 h|*1..1*

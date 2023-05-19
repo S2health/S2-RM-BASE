@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*__Locatable (abstract)__*
 
 h|*Description*
-2+a|Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the `LOCATABLE` class, which defines the idea of  locatability in an archetyped structure. `LOCATABLE` defines a runtime name and an `_archetype_node_id_`.
+2+a|Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the `Locatable` class, which defines the idea of  locatability in an archetyped structure. `Locatable` defines a runtime name and an `_archetype_node_id_`.
 
 h|*Inherit*
 2+|`<<_pathable_class,Pathable>>`
@@ -33,7 +33,7 @@ At an archetype root point, the value of this attribute is always the stringifie
 
 h|*0..1*
 |*links*: `List<<<_link_class,Link>>>`
-a|Links to other archetyped structures (data whose root object inherits from `ARCHETYPED`, such as `Entry`, `SECTION` and so on). Links may be to structures in other compositions.
+a|Links to other archetyped structures (data whose root object inherits from `Archetyped`, such as `Entry`, `SECTION` and so on). Links may be to structures in other compositions.
 
 h|*0..1*
 |*archetype_details*: `<<_archetyped_class,Archetyped>>`

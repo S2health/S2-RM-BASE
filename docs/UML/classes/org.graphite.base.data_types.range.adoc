@@ -1,0 +1,30 @@
+=== Range Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Range<V>*
+
+h|*Description*
+2+a|A data value in the form of a range of Ordered values, as well as date/times. One-sided ranges are formed when one of the limits is void. The values of the limits, when present, are always understood to be included in the range.
+
+At least one limit has to be present.
+
+h|*Inherit*
+2+|`<<_data_value_class,Data_value>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*lower*: `V`
+a|Lower limit of range.
+
+h|*0..1*
+|*upper*: `V`
+a|Upper limit of range.
+
+h|*Invariants*
+2+a|__Validity__: `lower /= Void or upper /= Void`
+|===
