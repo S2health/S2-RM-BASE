@@ -1,13 +1,13 @@
 = Type Cross-Reference
 
-The following table provides a cross-reference from openEHR foundation types to their equivalents in common implementation formalisms. Where there is no equivalent listed, a specific library may still exist, or an implementation may be required of the openEHR specification.
+The following table provides a cross-reference from {product_name} foundation types to their equivalents in common implementation formalisms. Where there is no equivalent listed, a specific library may still exist, or an implementation may be required of the {product_name} specification.
 
 [cols="2,3,1,2,1", options="header"]
 |===
 |Type name +
- in openEHR             |Description                            |XML            |Java               |C#
+ in {product_name}             |Description                            |XML            |Java               |C#
 
-|`Octet`                |8-bit value.                           | -             |`Byte`             |`Byte`
+|`Byte`                |8-bit value.                           | -             |`Byte`             |`Byte`
 |`Character`            |a member of an 8-bit character-set.    |`string`       |`Character`        |`Char`
 |`Boolean`              |logical True/False values.             |`boolean`      |`Boolean`          |`Boolean`
 |`Integer`              |32-bit integers.                       |`decimal`      |`Integer`          |`Int32`
@@ -18,11 +18,11 @@ The following table provides a cross-reference from openEHR foundation types to 
 |`String`               |Unicode-enabled strings.               |`string`       |`String`           |`String`
 
 |`Array<T>`             |Contiguous Array.                      |`sequence`     |`Array<T>`         |`Array<T>`
-|`List<T>`              |Ordered List.                          |`sequence`     |`List<T>`          |`List<T>`
+|`List<T>`              |Comparable List.                          |`sequence`     |`List<T>`          |`List<T>`
 |`Set<T>`               |Unordered, unique membership container.|`all`          |`Set<T>`           |`HashSet<T>`
-|`Hash<K:Ordered, V>`   |Unique-keyed map.                      |(various)      |`Map<T>`           |`HashTable<T>`
+|`Hash<K:Comparable, V>`   |Unique-keyed map.                      |(various)      |`Map<T>`           |`HashTable<T>`
 
-|`Interval<T:Ordered>`  |Interval of ordered types.             | -             | -                 |
+|`Interval<T:Comparable>`  |Interval of ordered types.             | -             | -                 |
 
 |`Date`                 |Native date type.                      |`date`         |`java.util.Date`   |`DateTime`
 |`Time`                 |Native time type.                      |`time`         |`java.util.Date`   |`DateTime`

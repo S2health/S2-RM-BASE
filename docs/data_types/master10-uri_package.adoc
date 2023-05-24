@@ -2,7 +2,7 @@
 
 == Overview
 
-The `base.data_types.uri` package includes two types used for referring to information resources. The `DV_URI` type allows data values which are references to objects on the world wide web to be created. Its specialisation, `DV_EHR_URI`, enables any element in an openEHR record to be identified in the same way as other objects on the web. The `DV_EHR_URI` type is convenient, because it is a string, like any other URI, and is therefore easily transportable and processable. Because it has its own scheme space, 'ehr', instances can be globally unique, as long as EHR identification is globally unique. `DV_EHR_URIs` are used to express all runtime paths in the EHR. The `uri` Package is illustrated below.
+The `base.data_types.uri` package includes two types used for referring to information resources. The `DV_URI` type allows data values which are references to objects on the world wide web to be created. Its specialisation, `DV_EHR_URI`, enables any element in an {product_name} record to be identified in the same way as other objects on the web. The `DV_EHR_URI` type is convenient, because it is a string, like any other URI, and is therefore easily transportable and processable. Because it has its own scheme space, 'ehr', instances can be globally unique, as long as EHR identification is globally unique. `DV_EHR_URIs` are used to express all runtime paths in the EHR. The `uri` Package is illustrated below.
 
 [.text-center]
 .base.data_types.uri package
@@ -38,7 +38,7 @@ include::{uml_export_dir}/classes/{pkg}ehr_uri_ref.adoc[]
 
 === DV_EHR_URI Syntax
 
-The syntax of a `DV_EHR_URI` is an openEHR path, inside the 'ehr' URI scheme-space, and is one of the forms:
+The syntax of a `DV_EHR_URI` is an {product_name} path, inside the 'ehr' URI scheme-space, and is one of the forms:
 
 ----
 ehr://system_id/ehr_id/top_level_structure_locator/path_inside_top_level_structure
@@ -47,4 +47,4 @@ ehr:/ehr_id/top_level_structure_locator
 ehr:/ehr_id/top_level_structure_locator/path_inside_top_level_structure 
 ----
 
-The syntax is described in more detail in the {openehr_overview}#_ehr_uris[openEHR Architecture Overview]. `DV_EHR_URIs` are used as a mechanism for referencing in the EHR, ensuring readability by humans, as well as validity when extracts are transmitted elsewhere: even if the target of a path is not present, the path can be used to locate the missing item on demand.
+The syntax is described in more detail in the {openehr_overview}#_ehr_uris[{product_name} Architecture Overview]. `DV_EHR_URIs` are used as a mechanism for referencing in the EHR, ensuring readability by humans, as well as validity when extracts are transmitted elsewhere: even if the target of a path is not present, the path can be used to locate the missing item on demand.

@@ -20,9 +20,7 @@
 <li><a href="#_amendment_record">Amendment Record</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
 <ul class="sectlevel2">
-<li><a href="#_editor">Editor</a></li>
-<li><a href="#_contributors">Contributors</a></li>
-<li><a href="#_support">Support</a></li>
+<li><a href="#_prior_art">Prior Art</a></li>
 <li><a href="#_trademarks">Trademarks</a></li>
 </ul>
 </li>
@@ -185,7 +183,7 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="latest_issue"></a>0.1.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Initial Writing: based on openEHR Common IM.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initial Writing: based on the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener">openEHR Common IM</a>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="latest_issue_date"></a>10 Apr 2023</p>
@@ -199,39 +197,9 @@
 <h2 id="_acknowledgements"><a class="anchor" href="#_acknowledgements"></a>Acknowledgements</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_editor"><a class="anchor" href="#_editor"></a>Editor</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Graphite Informatics group.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_contributors"><a class="anchor" href="#_contributors"></a>Contributors</h3>
+<h3 id="_prior_art"><a class="anchor" href="#_prior_art"></a>Prior Art</h3>
 <div class="paragraph">
-<p>This specification benefited from input from the wider health informatics community. The openEHR Foundation would like to recognise the following people for their contributions.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>xxx</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_support"><a class="anchor" href="#_support"></a>Support</h3>
-<div class="paragraph">
-<p>The work reported in this paper has been funded in part by the following organisations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>xxx</p>
-</li>
-</ul>
+<p>This specification is largely derived from the Change Control section of the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener">openEHR Common IM</a> specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -239,13 +207,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>'openEHR' is a trademark of the openEHR Foundation</p>
+<p>'openEHR' is a registered trademark of the openEHR Foundation</p>
+</li>
+<li>
+<p>'Graphite Health' is a registered trademark of the Graphite Health</p>
 </li>
 <li>
 <p>'Java' is a registered trademark of Oracle Corporation</p>
 </li>
 <li>
-<p>'Microsoft' and '.Net' are trademarks of the Microsoft Corporation</p>
+<p>'Microsoft' and '.Net' are registered trademarks of the Microsoft Corporation</p>
 </li>
 </ul>
 </div>
@@ -293,7 +264,7 @@
 <div class="sect2">
 <h3 id="_history"><a class="anchor" href="#_history"></a>1.3. History</h3>
 <div class="paragraph">
-<p>This specification was derived from the Change Control section of the <a href="https://specifications.openehr.org/releases/RM/latest/common.html_change_control_package" target="_blank" rel="noopener">openEHR RM Common IM specification</a>.</p>
+<p>This specification was derived from the Change Control section of the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener">openEHR RM Common IM specification</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -326,10 +297,10 @@
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>2. Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As described in the Architecture Overview document, formal version control and change management are used in openEHR to support the construction of EHR and other repositories requiring the properties of consistency, indelibility, traceability and distributed sharing. The <code>change_control</code> package supplies the formal specification of these features in openEHR.</p>
+<p>As described in the Architecture Overview document, formal version control and change management are used in Graphite to support the construction of EHR and other repositories requiring the properties of consistency, indelibility, traceability and distributed sharing. The <code>change_control</code> package supplies the formal specification of these features in Graphite.</p>
 </div>
 <div class="paragraph">
-<p><a href="#change_control_package">Figure 1</a> illustrates the openEHR model of a Versioned object, and its constituent Versions. In this model, an instance of the class <code>VERSIONED_OBJECT&lt;T&gt;</code> provides the versioning facilities for one versioned item and is often referred to as a 'version container'. Although any kind of data can be versioned according to the model presented here, the use of versioning in openEHR is limited to 'top-level structures', such as EHR Compositions and Party objects in a demographic system.</p>
+<p><a href="#change_control_package">Figure 1</a> illustrates the Graphite model of a Versioned object, and its constituent Versions. In this model, an instance of the class <code>Versioned_object&lt;T&gt;</code> provides the versioning facilities for one versioned item and is often referred to as a 'version container'. Although any kind of data can be versioned according to the model presented here, the use of versioning in Graphite is limited to 'top-level structures', such as EHR Compositions and Party objects in a demographic system.</p>
 </div>
 <div id="change_control_package" class="imageblock text-center text-center">
 <div class="content">
@@ -338,7 +309,7 @@
 <div class="title">Figure 1. <code>common.change_control</code> Package</div>
 </div>
 <div class="paragraph">
-<p><a href="#version_control_structures">Figure 2</a> illustrates a single <code>VERSIONED_OBJECT</code> containing a number of <code>VERSIONs</code>. Although the figure implies physical containment of Versions by a Versioned object, this is only one possible implementation. Other implementations (e.g. using orthodox relational structures) might use references, separate compressed copies, or any other mechanism.</p>
+<p><a href="#version_control_structures">Figure 2</a> illustrates a single <code>Versioned_object</code> containing a number of <code>VERSIONs</code>. Although the figure implies physical containment of Versions by a Versioned object, this is only one possible implementation. Other implementations (e.g. using orthodox relational structures) might use references, separate compressed copies, or any other mechanism.</p>
 </div>
 <div id="version_control_structures" class="imageblock text-center text-center">
 <div class="content">
@@ -351,31 +322,31 @@
 <div class="sect3">
 <h4 id="_typing"><a class="anchor" href="#_typing"></a>2.1.1. Typing</h4>
 <div class="paragraph">
-<p>The classes <code>VERSIONED_OBJECT&lt;T&gt;</code>, <code>VERSION&lt;T&gt;</code>, <code>ORIGINAL_VERSION&lt;T&gt;</code> and <code>IMPORTED_VERSION&lt;T&gt;</code> are generic classes, with the generic parameter type T being the type of the data. This ensures that all versions in a given <code>VERSIONED_OBJECT</code> are of the same type, such as <code>Composition</code>, <code>FOLDER</code>, or <code>PARTY</code> and that the version container itself is properly typed.</p>
+<p>The classes <code>Versioned_object&lt;T&gt;</code>, <code>Version&lt;T&gt;</code>, <code>Original_version&lt;T&gt;</code> and <code>Imported_version&lt;T&gt;</code> are generic classes, with the generic parameter type T being the type of the data. This ensures that all versions in a given <code>Versioned_object</code> are of the same type, such as <code>Composition</code>, <code>FOLDER</code>, or <code>PARTY</code> and that the version container itself is properly typed.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_versioned_objects"><a class="anchor" href="#_versioned_objects"></a>2.1.2. Versioned Objects</h4>
 <div class="paragraph">
-<p>Each <code>VERSIONED_OBJECT</code> has a unique identifier recorded in the <code><em>uid</em></code> attribute (a <code>HIER_OBJECT_ID</code> typically containing a GUID), and a reference to the owning object (e.g. the owning EHR) in the <code><em>owner_id</em></code> attribute (this is typically also a GUID). The latter helps ensure that in storage systems, Versioned objects are always correctly allocated to their enclosing repository, such as an EHR.</p>
+<p>Each <code>Versioned_object</code> has a unique identifier recorded in the <code><em>uid</em></code> attribute (a <code>HIER_OBJECT_ID</code> typically containing a GUID), and a reference to the owning object (e.g. the owning EHR) in the <code><em>owner_id</em></code> attribute (this is typically also a GUID). The latter helps ensure that in storage systems, Versioned objects are always correctly allocated to their enclosing repository, such as an EHR.</p>
 </div>
 <div class="paragraph">
-<p>The data in a <code>VERSIONED_OBJECT</code> are in the form of a collection of instances of the two <code>VERSION&lt;T&gt;</code> subtypes, and are available only via the functional interface of <code>VERSIONED_OBJECT</code>. How the representation of this collection is implemented inside the <code>VERSIONED_OBJECT</code> is not defined by this specification, only the form of any given version is. Implementations of <code>VERSIONED_OBJECT</code> might range from the simple (all versions stored as full copies in a list) to a sophisticated compressed versioning approach as used in software file version control and some object databases. (The persistent data format of implementations of <code>VERSIONED_OBJECT</code> developed by different organisations will in general be incompatible. For purposes of sharing, an interoperable expression of <code>VERSIONED_OBJECT</code> is defined by the <code>X_VERSIONED_OBJECT</code> class in the EHR Extract IM.)</p>
+<p>The data in a <code>Versioned_object</code> are in the form of a collection of instances of the two <code>Version&lt;T&gt;</code> subtypes, and are available only via the functional interface of <code>Versioned_object</code>. How the representation of this collection is implemented inside the <code>Versioned_object</code> is not defined by this specification, only the form of any given version is. Implementations of <code>Versioned_object</code> might range from the simple (all versions stored as full copies in a list) to a sophisticated compressed versioning approach as used in software file version control and some object databases. (The persistent data format of implementations of <code>Versioned_object</code> developed by different organisations will in general be incompatible. For purposes of sharing, an interoperable expression of <code>Versioned_object</code> is defined by the <code>X_VERSIONED_OBJECT</code> class in the EHR Extract IM.)</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_version_and_its_subtypes"><a class="anchor" href="#_version_and_its_subtypes"></a>2.1.3. Version and its Subtypes</h4>
 <div class="paragraph">
-<p>Within a Versioned object, each version is an instance of a subtype of the class <code>VERSION&lt;T&gt;</code>. The abstract <code>VERSION</code> class defines the generic notion of a version containing some data, that has been committed to the repository as a member of a Contribution. Accordingly, it records the Contribution in the <code><em>contribution</em></code> attribute and the audit in <code><em>commit_audit</em></code>. A Version also knows its position in the version tree within the container. It has a version identifier, <code><em>uid</em></code>, and knows on which version in the tree it was based (i.e. what version was checked out to create the current version), <code><em>preceding_version_uid</em></code> (Void if it is the first version). Both of these identifiers are globally unique (see <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package"><code>base_types.identification</code> package</a> in the BASE component). These properties are abstract in the <code>VERSION</code> class, since they are defined as being stored or computed respectively in its subtypes.</p>
+<p>Within a Versioned object, each version is an instance of a subtype of the class <code>Version&lt;T&gt;</code>. The abstract <code>Version</code> class defines the generic notion of a version containing some data, that has been committed to the repository as a member of a Contribution. Accordingly, it records the Contribution in the <code><em>contribution</em></code> attribute and the audit in <code><em>commit_audit</em></code>. A Version also knows its position in the version tree within the container. It has a version identifier, <code><em>uid</em></code>, and knows on which version in the tree it was based (i.e. what version was checked out to create the current version), <code><em>preceding_version_uid</em></code> (Void if it is the first version). Both of these identifiers are globally unique (see <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package"><code>base_types.identification</code> package</a> in the BASE component). These properties are abstract in the <code>Version</code> class, since they are defined as being stored or computed respectively in its subtypes.</p>
 </div>
 <div class="paragraph">
-<p>All Versions in a given version container have a <code><em>uid</em></code> that includes the <code><em>uid</em></code> of the container; in other words, the <code><em>uid</em></code> of a Version is its container&#8217;s <code><em>uid</em></code> plus further version identification for that particular version with respect to others in the same container. The <code>VERSION</code>.<code><em>owner_id</em></code> function extracts the <code><em>uid</em></code> field of the owning <code>VERSIONED_OBJECT</code> from the <code><em>uid</em></code> of the <code>VERSION</code>.</p>
+<p>All Versions in a given version container have a <code><em>uid</em></code> that includes the <code><em>uid</em></code> of the container; in other words, the <code><em>uid</em></code> of a Version is its container&#8217;s <code><em>uid</em></code> plus further version identification for that particular version with respect to others in the same container. The <code>Version</code>.<code><em>owner_id</em></code> function extracts the <code><em>uid</em></code> field of the owning <code>Versioned_object</code> from the <code><em>uid</em></code> of the <code>Version</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>VERSION</code> class has two subtypes. The first, <code>ORIGINAL_VERSION&lt;T&gt;</code>, represents a Version created with original content (stored form of data property) at the time of creation (including from non-openEHR local feeder systems), and potentially attested (signed). It includes as attributes the current version (<code><em>uid</em></code>) and the preceding version (<code><em>preceding_version_uid</em></code>). It also knows the lifecycle state of its content. If it was the result of a merge (see <a href="#_version_merging">Section 4.2</a>) of versions other than the preceding version, the identifiers of these versions will be recorded in the attribute <code><em>other_input_version_uids</em></code>. All instances of <code>VERSION&lt;T&gt;</code> in non-distributed openEHR systems will be instances of <code>ORIGINAL_VERSION&lt;T&gt;</code>. The <code>ORIGINAL_VERSION</code> is also the unit of copying in a distributed environment.</p>
+<p>The <code>Version</code> class has two subtypes. The first, <code>Original_version&lt;T&gt;</code>, represents a Version created with original content (stored form of data property) at the time of creation (including from non-Graphite local feeder systems), and potentially attested (signed). It includes as attributes the current version (<code><em>uid</em></code>) and the preceding version (<code><em>preceding_version_uid</em></code>). It also knows the lifecycle state of its content. If it was the result of a merge (see <a href="#_version_merging">Section 4.2</a>) of versions other than the preceding version, the identifiers of these versions will be recorded in the attribute <code><em>other_input_version_uids</em></code>. All instances of <code>Version&lt;T&gt;</code> in non-distributed Graphite systems will be instances of <code>Original_version&lt;T&gt;</code>. The <code>Original_version</code> is also the unit of copying in a distributed environment.</p>
 </div>
 <div class="paragraph">
-<p>The second subtype is <code>IMPORTED_VERSION&lt;T&gt;</code>, and acts as a wrapper of an <code>ORIGINAL_VERSION&lt;T&gt;</code>. It has its own contribution and <code><em>commit_audit</em></code> (inherited from <code>VERSION&lt;T&gt;</code>), and contains the original version being imported in its <code><em>item</em></code> attribute. Its <code><em>uid</em></code> and <code><em>preceding_version</em></code> are defined as functions, returning the corresponding attribute values from the wrapped <code>ORIGINAL_VERSION</code> object (in other words, an <code>IMPORTED_VERSION</code> does not have its own version identifier distinct from the version it is wrapping). The semantics of importing are described below in <a href="#_copying">Section 4.1</a>. <a href="#instance_view_of_versioned_data">Figure 3</a> illustrates typical arrangements of <code>ORIGINAL_VERSION</code> and <code>IMPORTED_VERSION</code> objects within <code>VERSIONED_OBJECTs</code>, in turn within an EHR (if this is an EHR system), ultimately within an identified system. The two <code>VERSIONED_OBJECTs</code> are shown representing "medications" and "problem list", to give some idea of correspondence of versioning structures to logical data. Star icons represent digital signatures.</p>
+<p>The second subtype is <code>Imported_version&lt;T&gt;</code>, and acts as a wrapper of an <code>Original_version&lt;T&gt;</code>. It has its own contribution and <code><em>commit_audit</em></code> (inherited from <code>Version&lt;T&gt;</code>), and contains the original version being imported in its <code><em>item</em></code> attribute. Its <code><em>uid</em></code> and <code><em>preceding_version</em></code> are defined as functions, returning the corresponding attribute values from the wrapped <code>Original_version</code> object (in other words, an <code>Imported_version</code> does not have its own version identifier distinct from the version it is wrapping). The semantics of importing are described below in <a href="#_copying">Section 4.1</a>. <a href="#instance_view_of_versioned_data">Figure 3</a> illustrates typical arrangements of <code>Original_version</code> and <code>Imported_version</code> objects within <code>VERSIONED_OBJECTs</code>, in turn within an EHR (if this is an EHR system), ultimately within an identified system. The two <code>VERSIONED_OBJECTs</code> are shown representing "medications" and "problem list", to give some idea of correspondence of versioning structures to logical data. Star icons represent digital signatures.</p>
 </div>
 <div id="instance_view_of_versioned_data" class="imageblock text-center text-center">
 <div class="content">
@@ -392,7 +363,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>longitudinal data that stands as a proxy for the state or situation of the patient such as "Medications" or "Problem list" (persistent Compositions in openEHR) is created and maintained in one or more care delivery organisations, and shared across a larger number of organisations;</p>
+<p>longitudinal data that stands as a proxy for the state or situation of the patient such as "Medications" or "Problem list" (persistent Compositions in Graphite) is created and maintained in one or more care delivery organisations, and shared across a larger number of organisations;</p>
 </li>
 <li>
 <p>some EHRs in an EHR server in one location are mirrored into one or more other EHR servers (e.g. at care providers where the relevant patients are also treated); the mirroring process requires asynchronous synchronisation between servers to work seamlessly, regardless of the location, time, or author of any data created.</p>
@@ -400,10 +371,10 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>The <code><em>uid</em></code> attribute of the class <code>VERSIONED_OBJECT&lt;T&gt;</code> is in fact the Uid of the virtual version tree for a given logical item (such as the "problem list" of a certain patient) - that is to say, the <code><em>uid</em></code> will be the same in all copies of the same Versioned object in a distributed system.</p>
+<p>The <code><em>uid</em></code> attribute of the class <code>Versioned_object&lt;T&gt;</code> is in fact the Uid of the virtual version tree for a given logical item (such as the "problem list" of a certain patient) - that is to say, the <code><em>uid</em></code> will be the same in all copies of the same Versioned object in a distributed system.</p>
 </div>
 <div class="paragraph">
-<p>The versioning scheme used in openEHR guarantees that no matter where data are created or copied, there are no inconsistencies due to sharing, and that logical copies are explicitly represented. This is achieved by the design of Version identifiers.</p>
+<p>The versioning scheme used in Graphite guarantees that no matter where data are created or copied, there are no inconsistencies due to sharing, and that logical copies are explicitly represented. This is achieved by the design of Version identifiers.</p>
 </div>
 </div>
 <div class="sect3">
@@ -414,29 +385,29 @@
 <div class="ulist">
 <ul>
 <li>
-<p><em>addition of new item</em>: a new <code>VERSIONED_OBJECT</code> is created with a first <code>ORIGINAL_VERSION</code> whose data is the new item; the <code>ORIGINAL_VERSION.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>249|creation|</code>;</p>
+<p><em>addition of new item</em>: a new <code>Versioned_object</code> is created with a first <code>Original_version</code> whose data is the new item; the <code>Original_version.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>249|creation|</code>;</p>
 </li>
 <li>
-<p><em>deletion of existing item</em>: a new <code>ORIGINAL_VERSION</code> whose data attribute is set to Void is added to an existing <code>VERSIONED_OBJECT</code>; the <code>ORIGINAL_VERSION.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>523|deleted|</code>;</p>
+<p><em>deletion of existing item</em>: a new <code>Original_version</code> whose data attribute is set to Void is added to an existing <code>Versioned_object</code>; the <code>Original_version.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>523|deleted|</code>;</p>
 </li>
 <li>
-<p><em>modification of existing item</em>: a new <code>ORIGINAL_VERSION</code> whose data contains the updated form of the item content is added to an existing <code>VERSIONED_OBJECT</code>;</p>
+<p><em>modification of existing item</em>: a new <code>Original_version</code> whose data contains the updated form of the item content is added to an existing <code>Versioned_object</code>;</p>
 <div class="ulist">
 <ul>
 <li>
-<p>if the change is logically a correction (e.g. of wrongly entered data), the <code>ORIGINAL_VERSION.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>250|amendment|</code>;</p>
+<p>if the change is logically a correction (e.g. of wrongly entered data), the <code>Original_version.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>250|amendment|</code>;</p>
 </li>
 <li>
-<p>if the change is logically a change, addition etc to the content, the <code>ORIGINAL_VERSION.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>251|modification|</code>;</p>
+<p>if the change is logically a change, addition etc to the content, the <code>Original_version.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>251|modification|</code>;</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><em>import of item</em>: a new <code>IMPORTED_VERSION</code> is created, incorporating the received <code>ORIGINAL_VERSION</code>; the <code>IMPORTED_VERSION.<em>commit_audit</em>.<em>change_type</em></code> is set to the code for <code>249|creation|</code>.</p>
+<p><em>import of item</em>: a new <code>Imported_version</code> is created, incorporating the received <code>Original_version</code>; the <code>Imported_version.<em>commit_audit</em>.<em>change_type</em></code> is set to the code for <code>249|creation|</code>.</p>
 </li>
 <li>
-<p><em>attestation of item</em>: a new <code>ATTESTATION</code> is added to the attestations list of an existing <code>ORIGINAL_VERSION</code>; the <code>ATTESTATION.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>666|attestation|</code>.</p>
+<p><em>attestation of item</em>: a new <code>Attestation</code> is added to the attestations list of an existing <code>Original_version</code>; the <code>Attestation.<em>commit_audit</em>.<em>change_type</em></code> is set to the code <code>666|attestation|</code>.</p>
 </li>
 </ul>
 </div>
@@ -454,7 +425,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>These two changes together constitute a logical <em>change-set</em>, and would typically be included in the one Contribution. In general, there might be any combination of the logical change types in a single commit by an application, corresponding to a single real-world business event, such as a GP Encounter, although attestations, deletions and corrections will usually be the only change within a Contribution. In every case, regardless of the combination, a <code>CONTRIBUTION</code> object will be created, listing the affected <code>VERSION</code> objects, and including its own audit object, whose <code><em>change_type</em></code> attribute captures the aggregate of the changes in the Compositions making up its <code><em>versions</em></code>. This may sometimes be approximate, and is not expected to be used as a computable value. Typical values for <code>CONTRIBUTION.<em>audit</em>.<em>change_type</em></code>:</p>
+<p>These two changes together constitute a logical <em>change-set</em>, and would typically be included in the one Contribution. In general, there might be any combination of the logical change types in a single commit by an application, corresponding to a single real-world business event, such as a GP Encounter, although attestations, deletions and corrections will usually be the only change within a Contribution. In every case, regardless of the combination, a <code>Contribution</code> object will be created, listing the affected <code>Version</code> objects, and including its own audit object, whose <code><em>change_type</em></code> attribute captures the aggregate of the changes in the Compositions making up its <code><em>versions</em></code>. This may sometimes be approximate, and is not expected to be used as a computable value. Typical values for <code>Contribution.<em>audit</em>.<em>change_type</em></code>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -479,13 +450,13 @@
 <div class="sect3">
 <h4 id="_committal_and_audits"><a class="anchor" href="#_committal_and_audits"></a>2.1.6. Committal and Audits</h4>
 <div class="paragraph">
-<p>Audits are recorded in the form of instances of the class <code>AUDIT_DETAILS</code> (<code>common.generic</code> package), which defines a set of attributes which form an audit trail, namely <code><em>system_id</em></code>, <code><em>committer</em></code>, <code><em>time_committed</em></code>, <code><em>change_type</em></code>, and <code><em>description</em></code> or its subtype <code>ATTESTATION</code>, which adds a number of other attributes (see below). When an <code>ORIGINAL_VERSION</code> instance is created locally, the commit_audit attribute contains an audit object recording the local act of committal. However, if the Version being committed does not correspond to local data creation, but instead contains a copy of an <code>ORIGINAL_VERSION</code> originally created and commited elsewhere, it is committed locally as an instance of the <code>IMPORTED_VERSION</code> class. Both the contribution and commit_audit of the latter object correspond to the local act of committal, while the knowledge of the original Contribution and committal are retained inside the wrapped <code>ORIGINAL_VERSION</code> instance. Original versions can be copied any number of times; in each system into which they are imported, an <code>IMPORTED_VERSION</code> is created as a wrapper.</p>
+<p>Audits are recorded in the form of instances of the class <code>Audit_details</code>, which defines a set of attributes which form an audit trail, namely <code><em>system_id</em></code>, <code><em>committer</em></code>, <code><em>time_committed</em></code>, <code><em>change_type</em></code>, and <code><em>description</em></code> or its subtype <code>Attestation</code>, which adds a number of other attributes (see below). When an <code>Original_version</code> instance is created locally, the commit_audit attribute contains an audit object recording the local act of committal. However, if the Version being committed does not correspond to local data creation, but instead contains a copy of an <code>Original_version</code> originally created and committed elsewhere, it is committed locally as an instance of the <code>Imported_version</code> class. Both the contribution and commit_audit of the latter object correspond to the local act of committal, while the knowledge of the original Contribution and committal are retained inside the wrapped <code>Original_version</code> instance. Original versions can be copied any number of times; in each system into which they are imported, an <code>Imported_version</code> is created as a wrapper.</p>
 </div>
 <div class="paragraph">
 <p>This simple scheme ensures that the audit from initial creation - which is the clinically meaningful audit - is preserved no matter how many times the Version is copied to other systems; it also ensures that from the point of view of the version container, the local commit audit and Contribution always correspond to the local act of committal.</p>
 </div>
 <div class="paragraph">
-<p>The <code>CONTRIBUTION</code> class also contains an audit attribute. Whenever a <code>CONTRIBUTION</code> is committed, this attribute captures to the time, place and committer of the committal act; these three attributes (<code><em>system_id</em></code>, <code><em>committer</em></code>, <code><em>time_committed</em></code> of <code>AUDIT_DETAILS</code>) should be copied into the corresponding attributes of the commit_audit of each <code>VERSION</code> included in the <code>CONTRIBUTION</code>. This is done to enable sharing of versioned entities independently of which Contributions they were part of.</p>
+<p>The <code>Contribution</code> class also contains an audit attribute. Whenever a <code>Contribution</code> is committed, this attribute captures to the time, place and committer of the committal act; these three attributes (<code><em>system_id</em></code>, <code><em>committer</em></code>, <code><em>time_committed</em></code> of <code>Audit_details</code>) should be copied into the corresponding attributes of the commit_audit of each <code>Version</code> included in the <code>Contribution</code>. This is done to enable sharing of versioned entities independently of which Contributions they were part of.</p>
 </div>
 <div class="paragraph">
 <p>The <code><em>time_committed</em></code> attribute in both the Contribution and Version audits should reflect the time of committal to an EHR server, i.e. the time of availability to other users in the same system. It should therefore be computed on the server in implementations where the data are created in a separate client context.</p>
@@ -497,7 +468,7 @@
 <div class="sect3">
 <h4 id="_digital_signature"><a class="anchor" href="#_digital_signature"></a>2.1.7. Digital Signature</h4>
 <div class="paragraph">
-<p>At the time of committal of a Version, a digital signature of the object can be made. In this process, a Version object (an <code>ORIGINAL_VERSION</code> or <code>IMPORTED_VERSION</code>) is serialised into canonical form which is then hashed to produce a digest. If public key or equivalent infrastructure is in place so that users are able to sign content, a digital signature can be created from the hash, using the user&#8217;s private key. Either way, the result is then radix-64 encoded to create an ASCII string so as to remove or reduce potential problems with subsequent communication. The openPGP standard ensures that the trasformations and algorithms used to create the signature are indicated within it.</p>
+<p>At the time of committal of a Version, a digital signature of the object can be made. In this process, a Version object (an <code>Original_version</code> or <code>Imported_version</code>) is serialised into canonical form which is then hashed to produce a digest. If public key or equivalent infrastructure is in place so that users are able to sign content, a digital signature can be created from the hash, using the user&#8217;s private key. Either way, the result is then radix-64 encoded to create an ASCII string so as to remove or reduce potential problems with subsequent communication. The openPGP standard ensures that the trasformations and algorithms used to create the signature are indicated within it.</p>
 </div>
 <div class="paragraph">
 <p>The signature can serve two purposes. If only the hashing step is done, the digest acts as a data integrity check, indicating if the data have been tampered with after creation. If the signing step is carried out, it authenticates the user as the author of the content to readers of the content. In a versioned EHR system, it also acts as a non-repudiation measure, since the signature is stored permanently with the data. To circumvent hacking of the data, public notarisation of the signature can be used. The signature, if present, is generated according to the openPGP standard (<a href="https://tools.ietf.org/html/rfc4880" target="_blank" rel="noopener">IETF RFC 4880</a>), following the process shown below.</p>
@@ -509,22 +480,22 @@
 <div class="title">Figure 4. Version signature (using openPGP)</div>
 </div>
 <div class="paragraph">
-<p>The serialisation process works by the simple rule of serialising the entire Version object (note that the signature attribute will be Void at this point) into an agreed XML, ODIN or other text format, then applying the subsequent transformations to the serialised data, then writing the digest result back into the signature attribute. If the object to be serialised is an <code>IMPORTED_VERSION</code>, the process is the same - all attributes of the object are serialised and then used to generate a signature. The result will be that the <code>IMPORTED_VERSION</code> instance will carry its own signature which signifies the act of importing and making available locally an <code>ORIGINAL_VERSION</code> from another system.</p>
+<p>The serialisation process works by the simple rule of serialising the entire Version object (note that the signature attribute will be Void at this point) into an agreed XML, ODIN or other text format, then applying the subsequent transformations to the serialised data, then writing the digest result back into the signature attribute. If the object to be serialised is an <code>Imported_version</code>, the process is the same - all attributes of the object are serialised and then used to generate a signature. The result will be that the <code>Imported_version</code> instance will carry its own signature which signifies the act of importing and making available locally an <code>Original_version</code> from another system.</p>
 </div>
 <div class="paragraph tbd">
-<p><strong>To Be Determined</strong>: The exact serialisation is not yet defined by openEHR, but ODIN might be preferred since it has an unambiguous encoding of object structures, whereas different XML libraries can generate different XML from the same objects.</p>
+<p><strong>To Be Determined</strong>: The exact serialisation.</p>
 </div>
 <div class="paragraph">
 <p>It should be noted that the signing process here creates a signature of a logical form of the content, not a particular graphical or other directly human interpretable view. Usually the relationship between the data and what is seen on the screen is assumed to be 1:1 in a reliable system. If however the equivalent of a signature of a screen image or other literal form of the data are needed, then the Attestation form of the <code><em>commit_audit</em></code> is needed. This is described below.</p>
 </div>
 <div class="paragraph">
-<p>One of the most important uses of signatures in openEHR data is likely to be within EHR Extracts, since they can provide an assurance authenticity and integrity of the data to a receiver who has no knowledge of the quality of the processes used in the originating system.</p>
+<p>One of the most important uses of signatures in Graphite data is likely to be within EHR Extracts, since they can provide an assurance authenticity and integrity of the data to a receiver who has no knowledge of the quality of the processes used in the originating system.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_attestation"><a class="anchor" href="#_attestation"></a>2.1.8. Attestation</h4>
 <div class="paragraph">
-<p>The <code>ORIGINAL_VERSION.<em>attestations</em></code> attribute allows attestations to be associated with the data in an original version. Attestations are treated in openEHR as a kind of audit with additional attributes, and are described in detail in the <code>common.generic</code> package section of this specification. Any number of attestations to be associated with each Version in a Versioned object. Attestations can be added at any time after committal of the content being attested. They can be used as required by enter prise processes or legislation, and indicate by whom and when the item in question was attested. A digital "proof" is also required, although no assumption is made about the form of such proof.</p>
+<p>The <code>Original_version.<em>attestations</em></code> attribute allows attestations to be associated with the data in an original version. Attestations are treated in Graphite as a kind of audit with additional attributes, and are described in detail in the <code>common.generic</code> package section of this specification. Any number of attestations to be associated with each Version in a Versioned object. Attestations can be added at any time after committal of the content being attested. They can be used as required by enter prise processes or legislation, and indicate by whom and when the item in question was attested. A digital "proof" is also required, although no assumption is made about the form of such proof.</p>
 </div>
 <div class="paragraph">
 <p>Attestations may be used in different ways as follows.</p>
@@ -532,18 +503,18 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Signing content at committal: for some reason, the information being committed needs to be digitally signed. It may be that sensitive information is to be added to the EHR, e.g. recording the fact of sectioning of a patient under the mental health act, diagnosis of a fatal disease etc, or simply something which the user wants to sign. In this case, <code>ORIGINAL_VERSION.<em>commit_audit</em></code> is of type <code>ATTESTATION</code> rather than <code>AUDIT_DETAILS</code>.</p>
+<p>Signing content at committal: for some reason, the information being committed needs to be digitally signed. It may be that sensitive information is to be added to the EHR, e.g. recording the fact of sectioning of a patient under the mental health act, diagnosis of a fatal disease etc, or simply something which the user wants to sign. In this case, <code>Original_version.<em>commit_audit</em></code> is of type <code>Attestation</code> rather than <code>Audit_details</code>.</p>
 </li>
 <li>
-<p>Marking content for review and signing: data entered and committed by a data-entry person e.g. a secretary, transcriptionist or student need to be reviewed and signed by a senior clinician. Similarly to the above case, this will cause <code>ORIGINAL_VERSION.<em>commit_audit</em></code> to be of type <code>ATTESTATION</code>, but in this case, the Attestation will have its <code><em>is_pending</em></code> flag set True to indicate that attestation is required.</p>
+<p>Marking content for review and signing: data entered and committed by a data-entry person e.g. a secretary, transcriptionist or student need to be reviewed and signed by a senior clinician. Similarly to the above case, this will cause <code>Original_version.<em>commit_audit</em></code> to be of type <code>Attestation</code>, but in this case, the Attestation will have its <code><em>is_pending</em></code> flag set True to indicate that attestation is required.</p>
 </li>
 <li>
-<p>Post-committal signing: data committed with an Attestation in the is_pending state is reviewed and signed at a later point in tme by an appropriate member of staff. This action will cause an <code>ATTESTATION</code> to be added to the <code>ORIGINAL_VERSION.<em>attestations</em></code> list.</p>
+<p>Post-committal signing: data committed with an Attestation in the is_pending state is reviewed and signed at a later point in tme by an appropriate member of staff. This action will cause an <code>Attestation</code> to be added to the <code>Original_version.<em>attestations</em></code> list.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Normally, Attestations refer to the entire version to which they are attached. However, it is possible for an <code>ATTESTATION</code> instance to refer to some finer-grained item within the data of the version, such as a single <code>Entry</code> within a <code>Composition</code>.</p>
+<p>Normally, Attestations refer to the entire version to which they are attached. However, it is possible for an <code>Attestation</code> instance to refer to some finer-grained item within the data of the version, such as a single <code>Entry</code> within a <code>Composition</code>.</p>
 </div>
 <div class="paragraph">
 <p>When subsequent Versions are added, the existing Attestations can not be assumed to be valid for the new Version, since the nature of an attestation is that it records the witnessing of exactly the content displayed at the time of witnessing.</p>
@@ -558,16 +529,16 @@
 <div class="sect2">
 <h3 id="_version_lifecycle"><a class="anchor" href="#_version_lifecycle"></a>3.1. Version Lifecycle</h3>
 <div class="paragraph">
-<p>Content in Original versions has a lifecycle state associated with it, modelled using the <code>ORIGINAL_VERSION.<em>lifecycle_state</em></code> attribute, which is coded from the openEHR Terminology 'version lifecycle state' group. The possible values are <code>532|complete|</code>, <code>553|incomplete|</code>, <code>523|deleted|</code>, <code>800|inactive|</code> and <code>801|abandoned|</code>.</p>
+<p>Content in Original versions has a lifecycle state associated with it, modelled using the <code>Original_version.<em>lifecycle_state</em></code> attribute, which is coded from the openEHR Terminology 'version lifecycle state' group. The possible values are <code>532|complete|</code>, <code>553|incomplete|</code>, <code>523|deleted|</code>, <code>800|inactive|</code> and <code>801|abandoned|</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following diagram shows the formal state machine of the <code>ORIGINAL_VERSION.<em>lifecycle_state</em></code> attribute.</p>
+<p>The following diagram shows the formal state machine of the <code>Original_version.<em>lifecycle_state</em></code> attribute.</p>
 </div>
 <div id="version_lifecycle" class="imageblock text-center text-center">
 <div class="content">
 <img src="UML/diagrams/BASE-version_lifecycle.svg" alt="BASE version lifecycle">
 </div>
-<div class="title">Figure 5. <code>ORIGINAL_VERSION.<em>lifecycle_state</em></code> state machine</div>
+<div class="title">Figure 5. <code>Original_version.<em>lifecycle_state</em></code> state machine</div>
 </div>
 <div class="paragraph">
 <p>One basic rule that must be observed with the use of states is that any transition requires the commit of a <em>new version</em>, even if the content is otherwise unchanged. This also means that transitions through a number of successive states entails a number of commits, each recording one transition.</p>
@@ -596,7 +567,7 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 <p>At an implementation level, templated and archetyped data being committed in the <code>incomplete</code> state therefore respects the same template and archetype(s), but with all existence and cardinality lower limits set to zero.</p>
 </div>
 <div class="paragraph">
-<p>Transitioning from <code>incomplete</code> to <code>complete</code> states requires any missing fields to be populated. However, even if the <code>incomplete</code> content was technically valid and no new content is added, the transition to <code>complete</code> will generate a new <code>VERSION</code> regardless.</p>
+<p>Transitioning from <code>incomplete</code> to <code>complete</code> states requires any missing fields to be populated. However, even if the <code>incomplete</code> content was technically valid and no new content is added, the transition to <code>complete</code> will generate a new <code>Version</code> regardless.</p>
 </div>
 <div class="paragraph">
 <p>Systems and/or applications are responsible for implementing checks to find 'old' Versions in the <code>incomplete</code> state, and bring them to the relevant user&#8217;s notice, or automatically deleting them or progressing them to <code>complete</code> in a reasonable way.</p>
@@ -687,7 +658,7 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 <div class="sect2">
 <h3 id="_logical_deletion"><a class="anchor" href="#_logical_deletion"></a>3.2. Logical Deletion</h3>
 <div class="paragraph">
-<p>Within the lifecycle described above, deletion of existing top-level content items (i.e. the entire data contents of a Version) is somewhat of a special case in openEHR and in EHRs in general. Medicolegal and traceability requirements mean that information cannot be literally removed, since it must always be possible to revert back to a previous state of the record in which the deleted information is intact. Accordingly, information can only ever be logically deleted. This is achieved by the following procedure in the Version container in question:</p>
+<p>Within the lifecycle described above, deletion of existing top-level content items (i.e. the entire data contents of a Version) is somewhat of a special case in Graphite and in EHRs in general. Medicolegal and traceability requirements mean that information cannot be literally removed, since it must always be possible to revert back to a previous state of the record in which the deleted information is intact. Accordingly, information can only ever be logically deleted. This is achieved by the following procedure in the Version container in question:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -712,10 +683,10 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 <div class="sect2">
 <h3 id="_version_identification"><a class="anchor" href="#_version_identification"></a>3.3. Version Identification</h3>
 <div class="paragraph">
-<p>The version identification scheme described here is adapted from (<a href="#Hnìtynka2004">Hnìtynka &amp; Plášil&#44; 2004</a>). <code>VERSION</code> objects are identified by a <code><em>uid</em></code> attribute of type <code>OBJECT_VERSION_ID</code>, which is a three-part String identifier consisting of the sub-parts extractable via the accessors <code><em>object_id()</em></code>, <code><em>creating_system_id()</em></code> and <code><em>version_tree_id()</em></code> (see the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package"><code>base_types.identification</code> package</a> in the BASE component), in which the <code><em>object_id()</em></code> part is a copy of the <code><em>uid</em></code> of the owning <code>VERSIONED_OBJECT</code> version container.</p>
+<p>The version identification scheme described here is adapted from (<a href="#Hnìtynka2004">Hnìtynka &amp; Plášil&#44; 2004</a>). <code>Version</code> objects are identified by a <code><em>uid</em></code> attribute of type <code>OBJECT_VERSION_ID</code>, which is a three-part String identifier consisting of the sub-parts extractable via the accessors <code><em>object_id()</em></code>, <code><em>creating_system_id()</em></code> and <code><em>version_tree_id()</em></code> (see the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package"><code>base_types.identification</code> package</a> in the BASE component), in which the <code><em>object_id()</em></code> part is a copy of the <code><em>uid</em></code> of the owning <code>Versioned_object</code> version container.</p>
 </div>
 <div class="paragraph">
-<p>The following figure illustrates the scheme. The <code>VERSIONED_OBJECT.<em>uid</em></code> value - here, <code>"1234"</code> - is used as the <code><em>object_id()</em></code> part of the <code><em>uid</em></code> of every contained <code>VERSION</code>. Accordingly, each of those versions will have a <code><em>uid</em></code> following the pattern <code>"1234:system_id:version_tree_id"</code>. The use of the <code><em>version_tree_id</em></code> and <code><em>system_id</em></code> parts of the identifier are explained in the sections below. The function <code>VERSION.<em>owner_id()</em></code> is provided to enable a caller to easily obtain the 'owning version container' identifier.</p>
+<p>The following figure illustrates the scheme. The <code>Versioned_object.<em>uid</em></code> value - here, <code>"1234"</code> - is used as the <code><em>object_id()</em></code> part of the <code><em>uid</em></code> of every contained <code>Version</code>. Accordingly, each of those versions will have a <code><em>uid</em></code> following the pattern <code>"1234:system_id:version_tree_id"</code>. The use of the <code><em>version_tree_id</em></code> and <code><em>system_id</em></code> parts of the identifier are explained in the sections below. The function <code>Version.<em>owner_id()</em></code> is provided to enable a caller to easily obtain the 'owning version container' identifier.</p>
 </div>
 <div id="version_identification_system" class="imageblock text-center text-center">
 <div class="content">
@@ -724,7 +695,7 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 <div class="title">Figure 6. Version identification system</div>
 </div>
 <div class="paragraph">
-<p>The following figure provides an example of multiple <code>VERSIONs</code> within a <code>VERSIONED_OBJECT</code>, where one of the versions has been merged from another system. This highlights the identifiers; details of original and merged versions are described below.</p>
+<p>The following figure provides an example of multiple <code>VERSIONs</code> within a <code>Versioned_object</code>, where one of the versions has been merged from another system. This highlights the identifiers; details of original and merged versions are described below.</p>
 </div>
 <div id="version_identification_example" class="imageblock text-center text-center">
 <div class="content">
@@ -735,7 +706,7 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 <div class="sect3">
 <h4 id="_local_versioning"><a class="anchor" href="#_local_versioning"></a>3.3.1. Local Versioning</h4>
 <div class="paragraph">
-<p>The <code><em>version_tree_id</em></code> attribute of <code>VERSION.<em>uid</em></code> identifies a version of an item with respect to other versions in the same tree. The requirements of the identifier are the same as for typical versioning systems in use in software configuration management, and are as follows:</p>
+<p>The <code><em>version_tree_id</em></code> attribute of <code>Version.<em>uid</em></code> identifies a version of an item with respect to other versions in the same tree. The requirements of the identifier are the same as for typical versioning systems in use in software configuration management, and are as follows:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -751,7 +722,7 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 <p>A suitable scheme satisfying the above requirements for health information is the simplest possible, i.e. a single number representing the version. Version identifiers thus start at 1 and continue by single increments. The succession of version identifiers formed by changes over time is known as the "trunk" of the version tree.</p>
 </div>
 <div class="paragraph">
-<p>To support branching, a further pair of numbers is added. The first number identifies the branch (e.g. the 1st branch, 2nd branch etc from that trunk node), while the second identifies the version. Both of these numbers also start at '1'. The result of this is that version numbers like '1.1.1' (first version of first branch from trunk node 1), '2.3.3' (3rd version of 3rd branch from trunk node 2) are possible. Inside openEHR systems where sharing with other systems does not occur, it is expected that branched versioning will be used rarely; translation is likely to be the only reason (for example if a Portuguese translation of an English language version of a Composition is made).</p>
+<p>To support branching, a further pair of numbers is added. The first number identifies the branch (e.g. the 1st branch, 2nd branch etc from that trunk node), while the second identifies the version. Both of these numbers also start at '1'. The result of this is that version numbers like '1.1.1' (first version of first branch from trunk node 1), '2.3.3' (3rd version of 3rd branch from trunk node 2) are possible. Inside Graphite systems where sharing with other systems does not occur, it is expected that branched versioning will be used rarely; translation is likely to be the only reason (for example if a Portuguese translation of an English language version of a Composition is made).</p>
 </div>
 </div>
 <div class="sect3">
@@ -773,13 +744,13 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 </ul>
 </div>
 <div class="paragraph">
-<p>To satisfy these needs, two modifications are made to the identification scheme. The first is the addition of the <code><em>creating_system_id</em></code> attribute of <code>VERSION.<em>uid</em></code>, representing the system where the version was created. This is a machine processable identifier, such as a reverse internet address or GUID.</p>
+<p>To satisfy these needs, two modifications are made to the identification scheme. The first is the addition of the <code><em>creating_system_id</em></code> attribute of <code>Version.<em>uid</em></code>, representing the system where the version was created. This is a machine processable identifier, such as a reverse internet address or GUID.</p>
 </div>
 <div class="paragraph">
-<p>Whenever a new <code>ORIGINAL_VERSION</code> in a particular <code>VERSIONED_OBJECT</code> (with a particular UID) is created locally, the <code>VERSION.<em>uid.creating_system_id</em></code> is set to the identifier of the local system; if the version was imported, <code><em>creating_system_id</em></code> will already have been set to the identifier of the system of original creation.</p>
+<p>Whenever a new <code>Original_version</code> in a particular <code>Versioned_object</code> (with a particular Uid) is created locally, the <code>Version.<em>uid.creating_system_id</em></code> is set to the identifier of the local system; if the version was imported, <code><em>creating_system_id</em></code> will already have been set to the identifier of the system of original creation.</p>
 </div>
 <div class="paragraph">
-<p>The second modification is to require branching version identifiers to be used when local modifications are made to versions copied from elsewhere; this ensures that the modifications now being made in the target system are considered in a global sense as logical branches or variants rather than trunk versions which are made in the originating system. It also allows later trunk versions from the originating system to be copied at some future time to the target system without version identifier clashes. In summary, the scheme uses the tuple {<code><em>object_id</em></code>, <code><em>creating_system_id</em></code>, <code><em>version_tree_id</em></code>} to globally uniquely identify any openEHR <code>VERSION</code> object.</p>
+<p>The second modification is to require branching version identifiers to be used when local modifications are made to versions copied from elsewhere; this ensures that the modifications now being made in the target system are considered in a global sense as logical branches or variants rather than trunk versions which are made in the originating system. It also allows later trunk versions from the originating system to be copied at some future time to the target system without version identifier clashes. In summary, the scheme uses the tuple {<code><em>object_id</em></code>, <code><em>creating_system_id</em></code>, <code><em>version_tree_id</em></code>} to globally uniquely identify any Graphite <code>Version</code> object.</p>
 </div>
 </div>
 </div>
@@ -1565,7 +1536,7 @@ signature.</p>
 <div class="sect3">
 <h4 id="_the_copy_operation"><a class="anchor" href="#_the_copy_operation"></a>4.1.1. The Copy Operation</h4>
 <div class="paragraph">
-<p>In openEHR, the smallest unit of copying of content between systems that satisfies traceability requirements is the <code>ORIGINAL_VERSION</code>. In order to copy a <code>Observation</code> or even an <code>Composition</code> somewhere else and retain versioning capability, its enclosing <code>ORIGINAL_VERSION</code> object must be sent. When the type of content is a <code>Composition</code> for example, an <code>ORIGINAL_VERSION&lt;Composition&gt;</code> object is sent. At the receiving system various steps will occur depending on whether:</p>
+<p>In Graphite, the smallest unit of copying of content between systems that satisfies traceability requirements is the <code>Original_version</code>. In order to copy a <code>Observation</code> or even an <code>Composition</code> somewhere else and retain versioning capability, its enclosing <code>Original_version</code> object must be sent. When the type of content is a <code>Composition</code> for example, an <code>Original_version&lt;Composition&gt;</code> object is sent. At the receiving system various steps will occur depending on whether:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1587,10 +1558,10 @@ signature.</p>
 <p>In the first situation, there is not even an EHR (i.e. repository of Versioned objects for the patient in question) in the target system. A new one has to be created. As mentioned in the <a href="https://specifications.openehr.org/releases/RM/latest/ehr.html#_ehr_creation_semantics">EHR IM specification</a>, the newly created EHR should re-use the EHR identifier from the source system. This establishes the new EHR as an intentional clone of the source EHR (or more correctly, part of the family of EHRs making up the virtual EHR for that patient).</p>
 </div>
 <div class="paragraph">
-<p>If it is the first time any version of the item logically identified by its <code>ORIGINAL_VERSION.<em>uid.object_id()</em></code> (i.e. the <code><em>uid</em></code> of its original <code>VERSIONED_OBJECT</code>, common to all Versions in the same container) was received from the originating system, a new <code>VERSIONED_OBJECT&lt;T&gt;</code> (e.g. <code>VERSIONED_OBJECT&lt;Composition&gt;</code>) is created, with its uid set to the same value as the received <code>VERSION.<em>uid.object_id()</em></code>. This establishes the newly created <code>VERSIONED_OBJECT</code> as being a logical clone of the one from which the received <code>ORIGINAL_VERSION</code> was copied. If some version of the item had already been received, this step will have already occurred, and the requisite <code>VERSIONED_OBJECT</code> would already exist.</p>
+<p>If it is the first time any version of the item logically identified by its <code>Original_version.<em>uid.object_id()</em></code> (i.e. the <code><em>uid</em></code> of its original <code>Versioned_object</code>, common to all Versions in the same container) was received from the originating system, a new <code>Versioned_object&lt;T&gt;</code> (e.g. <code>Versioned_object&lt;Composition&gt;</code>) is created, with its uid set to the same value as the received <code>Version.<em>uid.object_id()</em></code>. This establishes the newly created <code>Versioned_object</code> as being a logical clone of the one from which the received <code>Original_version</code> was copied. If some version of the item had already been received, this step will have already occurred, and the requisite <code>Versioned_object</code> would already exist.</p>
 </div>
 <div class="paragraph">
-<p>An <code>IMPORTED_VERSION</code> instance is then created, its item set to the received <code>ORIGINAL_VERSION</code>, and it is committed in the normal way (i.e. as part of a Contribution). The <code>IMPORTED_VERSION</code> commit_audit and contribution attributes record the local act of committal. In this operation, the <code>ORIGINAL_VERSION</code> instance is never modified - it remains a faithful copy of its original, no matter how many systems it may be copied through.</p>
+<p>An <code>Imported_version</code> instance is then created, its item set to the received <code>Original_version</code>, and it is committed in the normal way (i.e. as part of a Contribution). The <code>Imported_version</code> commit_audit and contribution attributes record the local act of committal. In this operation, the <code>Original_version</code> instance is never modified - it remains a faithful copy of its original, no matter how many systems it may be copied through.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1599,7 +1570,7 @@ signature.</p>
 <p>In most cases, the received information will remain as is for the duration. However, in some cases, users at the receiver system might want to make modifications as well. This is likely to happen in the case of information items representing things like medication lists and allergies. When new versions are added locally to a copied object, the local system id is recorded in the <code><em>uid.creating_system_id()</em></code> attribute, while branching numbering is used in the <code><em>uid.version_tree_id()</em></code>.</p>
 </div>
 <div class="paragraph">
-<p>These copying scenarios are illustrated in the figure below. On the left hand-side of the figure, a version container (i.e. an instance of <code>VERSIONED_OBJECT</code>) with <code><em>uid</em></code> = <code>"1"</code> is shown; the first Version has <code><em>uid.creating_system_id</em></code> = <code>"sysA"</code>; <code><em>uid.version_tree_id</em></code> = <code>"1"</code>. Further local trunk and branch versions are also shown.</p>
+<p>These copying scenarios are illustrated in the figure below. On the left hand-side of the figure, a version container (i.e. an instance of <code>Versioned_object</code>) with <code><em>uid</em></code> = <code>"1"</code> is shown; the first Version has <code><em>uid.creating_system_id</em></code> = <code>"sysA"</code>; <code><em>uid.version_tree_id</em></code> = <code>"1"</code>. Further local trunk and branch versions are also shown.</p>
 </div>
 <div id="distributed_versioning" class="imageblock text-center text-center">
 <div class="content">
@@ -1608,7 +1579,7 @@ signature.</p>
 <div class="title">Figure 8. Distributed versioning</div>
 </div>
 <div class="paragraph">
-<p>When the first <code>ORIGINAL_VERSION</code> is copied (copy #1) to system B, it is committed as an <code>IMPORTED_VERSION</code> to a <code>VERSIONED_OBJECT</code> which is a clone of the original. Subsequent copies (copy #2 and copy #3) can be made of later versions from system A to system B, with the effect that the version tree can be recreated inside system B (if required; there is of course no obligation to do anything with the received information). Users in system B an also make modifications to the received Version copies; these modifications are shown in grey, as branched versions with <code><em>uid.creating_system_id</em></code> = <code>"sysB"</code>. Independently, users in system B will of course be creating other content locally, e.g. as shown on the right-hand side, where a Versioned object with <code><em>uid</em></code>= <code>"2"</code> has been created. Two places are indicated on the diagram where identification clashes could have occurred, but are prevented due to the use of the 3-part unique Version identifier scheme.</p>
+<p>When the first <code>Original_version</code> is copied (copy #1) to system B, it is committed as an <code>Imported_version</code> to a <code>Versioned_object</code> which is a clone of the original. Subsequent copies (copy #2 and copy #3) can be made of later versions from system A to system B, with the effect that the version tree can be recreated inside system B (if required; there is of course no obligation to do anything with the received information). Users in system B an also make modifications to the received Version copies; these modifications are shown in grey, as branched versions with <code><em>uid.creating_system_id</em></code> = <code>"sysB"</code>. Independently, users in system B will of course be creating other content locally, e.g. as shown on the right-hand side, where a Versioned object with <code><em>uid</em></code>= <code>"2"</code> has been created. Two places are indicated on the diagram where identification clashes could have occurred, but are prevented due to the use of the 3-part unique Version identifier scheme.</p>
 </div>
 <div class="paragraph">
 <p>Two rules are required to make this system work, as follows:</p>
@@ -1624,7 +1595,7 @@ signature.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>An important consequence of the way <code>IMPORTED_VERSION</code> is modelled is that in the Version containers resulting from copy operations, the commit times always reflect the local (more recent) act of committal, not the original committal of the information to the container where it was created. This ensures that a query for the state of a Version container at earlier commit times correctly returns what information existed at that time in that container, rather than giving the illusion that recently copied Versions were there earlier than the time of local committal (as would occur if the original commit time of the <code>ORIGINAL_VERSION</code> object was used for comparison purposes in such queries). Accordingly, such a query over an entire EHR or other versioned information repository always returns the state of the repository available to users at that time, regardless of how many later merges or copies were carried out. This is a key requirement for supporting medico-legal and historical investigations of stored information.</p>
+<p>An important consequence of the way <code>Imported_version</code> is modelled is that in the Version containers resulting from copy operations, the commit times always reflect the local (more recent) act of committal, not the original committal of the information to the container where it was created. This ensures that a query for the state of a Version container at earlier commit times correctly returns what information existed at that time in that container, rather than giving the illusion that recently copied Versions were there earlier than the time of local committal (as would occur if the original commit time of the <code>Original_version</code> object was used for comparison purposes in such queries). Accordingly, such a query over an entire EHR or other versioned information repository always returns the state of the repository available to users at that time, regardless of how many later merges or copies were carried out. This is a key requirement for supporting medico-legal and historical investigations of stored information.</p>
 </div>
 </div>
 </div>
@@ -1643,7 +1614,7 @@ signature.</p>
 <div class="title">Figure 9. Version merging</div>
 </div>
 <div class="paragraph">
-<p>In this figure, versions 1 and 2 of the content (e.g. a medication list) from Versioned object with <code><em>uid</em></code>= <code>1</code> are copied from system A (e.g. a GP) to system B (e.g. a hospital). In system B, changes are made to version 2, creating a branch (as an instance of <code>IMPORTED_VERSION&lt;T&gt;</code>) as required by the rules described above. These changes (modified medication list) are then imported back into system A. The system A user performs a merge operation to create a new trunk version 3, using the <code>sysB::2.1.2</code> and <code>sysA::2</code> content as input, in which he may do any of the following:</p>
+<p>In this figure, versions 1 and 2 of the content (e.g. a medication list) from Versioned object with <code><em>uid</em></code>= <code>1</code> are copied from system A (e.g. a GP) to system B (e.g. a hospital). In system B, changes are made to version 2, creating a branch (as an instance of <code>Imported_version&lt;T&gt;</code>) as required by the rules described above. These changes (modified medication list) are then imported back into system A. The system A user performs a merge operation to create a new trunk version 3, using the <code>sysB::2.1.2</code> and <code>sysA::2</code> content as input, in which he may do any of the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1659,7 +1630,7 @@ signature.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>In all cases, the result is that system A now has an up-to-date medication list for the patient, as judged by the merging clinician. The new Version is an instance of <code>ORIGINAL_VERSION&lt;T&gt;</code>, and the <code><em>other_input_version_uids</em></code> attribute is updated to include the <code>OBJECT_VERSION_ID</code> representing <code>sysB::2.1.2</code>. This should be done even if its content was not used in the merge, since it indicates which source versions were considered in the merge operation. It does not need to include <code>sysA::2</code>, since this is already known in the <code><em>preceding_version_uid</em></code>.</p>
+<p>In all cases, the result is that system A now has an up-to-date medication list for the patient, as judged by the merging clinician. The new Version is an instance of <code>Original_version&lt;T&gt;</code>, and the <code><em>other_input_version_uids</em></code> attribute is updated to include the <code>OBJECT_VERSION_ID</code> representing <code>sysB::2.1.2</code>. This should be done even if its content was not used in the merge, since it indicates which source versions were considered in the merge operation. It does not need to include <code>sysA::2</code>, since this is already known in the <code><em>preceding_version_uid</em></code>.</p>
 </div>
 <div class="paragraph">
 <p>If in system A a modification had been done to the <code>sysA::2</code> version, creating <code>sysA::3</code>, in parallel with the system B changes, then a conflict situation is likely when the merge attempt is made. This may need to be resolved by a human user, for whom an automated merge attempt could be presented on the screen as a starting point, much as current source code control tools do today.</p>
@@ -1742,10 +1713,10 @@ signature.</p>
 <div class="sect2">
 <h3 id="_moving_version_containers"><a class="anchor" href="#_moving_version_containers"></a>4.4. Moving Version Containers</h3>
 <div class="paragraph">
-<p>It will not be uncommon that whole <code>VERSIONED_OBJECTS</code> need to be moved to another system, e.g. due to a move of a complete patient record (due to the patient moving), or re-organisation of EHR data centres. The semantics of a move are different from those of copying: with a move, there is no longer a source instance after the operation; the destination instance becomes the primary instance.</p>
+<p>It will not be uncommon that whole Versioned objects need to be moved to another system, e.g. due to a move of a complete patient record (due to the patient moving), or re-organisation of EHR data centres. The semantics of a move are different from those of copying: with a move, there is no longer a source instance after the operation; the destination instance becomes the primary instance.</p>
 </div>
 <div class="paragraph">
-<p>When the move is effected, the identifier of the system in which the <code>VERSIONED_OBJECT</code> now exists will usually be different from what it was before. As a consequence, subsequent versions of the content created in a moved version container will now have the <code><em>uid.creating_system_id</em></code> set to the id of the new system. This creates another variation on the version lineage, one in which the <code><em>uid.creating_system_id</em></code> value can change in the trunk line, as shown in below.</p>
+<p>When the move is effected, the identifier of the system in which the <code>Versioned_object</code> now exists will usually be different from what it was before. As a consequence, subsequent versions of the content created in a moved version container will now have the <code><em>uid.creating_system_id</em></code> set to the id of the new system. This creates another variation on the version lineage, one in which the <code><em>uid.creating_system_id</em></code> value can change in the trunk line, as shown in below.</p>
 </div>
 <div id="moving_version_container" class="imageblock text-center text-center">
 <div class="content">
@@ -1767,7 +1738,7 @@ signature.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-18 15:36:18 -0600
+Last updated 2023-05-24 13:50:18 -0600
 </div>
 </div>
 </body>

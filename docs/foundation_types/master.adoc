@@ -28,13 +28,14 @@ include::master00-amendment_record.adoc[leveloffset=+1]
 
 == Acknowledgements
 
-=== Contributors
+=== Prior Art
 
-This specification has benefited from formal and informal input from the openEHR and wider health informatics community.
+This specification is largely derived from the {openehr_foundation_types}[{product_name} Foundation Types^] specification.
 
 === Trademarks
 
 * 'openEHR' is a registered trademark of the openEHR Foundation
+* 'Graphite Health' is a registered trademark of the Graphite Health
 
 
 //

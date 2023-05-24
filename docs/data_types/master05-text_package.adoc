@@ -20,7 +20,7 @@ Terminology Ids are likely to be of various types.
 . Terminology Id = `"local"`: this constant value means that the origin of allowable values is described within the archetype. This is coded to allow translation. The local archetype then only needs the set of codes and the local translation. The archetype may contain a translation table if required.
 . Terminology Id = `"[authority]"`. This might be `"openehr"`, `"centc251"`, `"hl7"`, etc;
 . The variant Terminology Id = `"[authority]:[Domain value set]"` could also be supported, although it should not generally be necessary, since all codes should be unique within a given issuing authority. Examples might be `"openehr:event math function"`, `"hl7:gender"`;
-. Terminology Id = `"SNOMED-CT"`, `"ICD10AM"`, etc. Idemtifiers of this kind must be unique values in an accepted set of terminologies from an authoritative source. These MUST be universally known. In openEHR, names from the US National Library of Medicine's UMLS terminology name list are used. See the `terminology` package in the {openehr_rm_support}#_terminology_package[Support IM specification^] for details.
+. Terminology Id = `"SNOMED-CT"`, `"ICD10AM"`, etc. Idemtifiers of this kind must be unique values in an accepted set of terminologies from an authoritative source. These MUST be universally known. In {product_name}, names from the US National Library of Medicine's UMLS terminology name list are used. See the `terminology` package in the {openehr_rm_support}#_terminology_package[Support IM specification^] for details.
 
 === Narrative Text
 
@@ -87,7 +87,7 @@ equivalents, classifiers, or something in between. The section below on Mappings
 
 === Integration Scenarios
 
-In cases where openEHR data is used to represent data originally represented in other formats, one common requirement is to be able to represent both the term chosen by the user at data capture time, and also the corresponding preferred term, where the two are different. This allows both the user's specific choice and the 'standard term' to be captured.
+In cases where {product_name} data is used to represent data originally represented in other formats, one common requirement is to be able to represent both the term chosen by the user at data capture time, and also the corresponding preferred term, where the two are different. This allows both the user's specific choice and the 'standard term' to be captured.
 
 Secondly, where term mappings are represented it is useful to be able to capture not just the code or code-phrase of the mapped term, but the preferred term or expression text, in order to make the mapped term self-standing in the data.
 
@@ -182,7 +182,7 @@ has no known allergies to penicillin or another class of medication that is bein
 proposed approach of using a generic negation 'modifier' to deal with such issues results in further
 problems. Consider the use of negation with liver - "no liver", "no palpable liver", "no liver disease",
 "no history of liver disease", "no liver function", "no liver function tests". The meaning of negated
-terms may be non-sensical and difficult to interpret.
+terms may be nonsensical and difficult to interpret.
 
 A basic principle of dealing with negatives is to realise that most naïve suggested use cases are quite
 ambiguous as stated. Does "no allergies" mean "no reported episode of allergy", "no allergic reactions
@@ -196,7 +196,7 @@ rather than a name. For example, in any `Entry` describing current problems, the
 the name/value pair "allergies: NONE". Here, "allergies" will be a `Coded_text`, and "NONE"
 will be either a `Coded_text` or a `Dv_text`; the two will be associated by a containing object,
 such as an instance of the `ELEMENT` class from the EHR RM. There is no explicit model of negation
-in openEHR.
+in {product_name}.
 
 === Mappings
 
@@ -288,7 +288,7 @@ which becomes available in the future.
 
 ==== Legacy Mapping Scenarios
 
-In cases where legacy data has to be converted to openEHR-compliant data, and only codes are available,
+In cases where legacy data has to be converted to {product_name}-compliant data, and only codes are available,
 e.g. ICD or ICPC codes, the following approach is recommended:
 
 * create a new `Dv_text` whose value is "(not available)"
@@ -310,7 +310,7 @@ indicate the language of the text item.
 
 Formatted text is represented by `Dv_text` and `Coded_text` instances.
 
-Formatting of the text in the `_value_` field of `Dv_text` and `Coded_text` instances may be indicated via the optional `_formatting_` attribute. How this attribute is used has changed from initial versions of the openEHR Reference Model.
+Formatting of the text in the `_value_` field of `Dv_text` and `Coded_text` instances may be indicated via the optional `_formatting_` attribute. How this attribute is used has changed from initial versions of the {product_name} Reference Model.
 
 A common model of text processing is of a processing pipeline that consumes readable text containing markings, which is then rendered into HTML, PDF or some other rendering format, and then displayed by a tool such as a web browser that consumes the latter format. Historical approaches to marking text were known as 'markup', such as nroff, troff, Latek, and then more recently, numerous formats whose base syntax is XML. These formats all have the disadvantages of poor human readability in raw form, and being specific to particular rendering engines, and are starting to fall out of favour for uses involving human reading of the raw text. Another common approach to formatting text is to use the _output format_, usually HTML, to express e.g. fonts, bolding etc. This is also problematic for human readability, being complicated by the use of CSS classes in tags, which then need to be defined.
 
@@ -330,7 +330,7 @@ Not all CommonMark features are allowed in the `_value_` field, if it contains m
 
 * HTML 'blocks';
 * raw HTML;
-* images - these may be included in openEHR content via the `Multimedia` types.
+* images - these may be included in {product_name} content via the `Multimedia` types.
 
 ==== Usage in Dv_text Instances
 

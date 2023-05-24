@@ -2,12 +2,12 @@
 
 == Version Lifecycle
 
-Content in Original versions has a lifecycle state associated with it, modelled using the `ORIGINAL_VERSION._lifecycle_state_` attribute, which is coded from the openEHR Terminology 'version lifecycle state' group. The possible values are `532|complete|`, `553|incomplete|`, `523|deleted|`, `800|inactive|` and `801|abandoned|`.
+Content in Original versions has a lifecycle state associated with it, modelled using the `Original_version._lifecycle_state_` attribute, which is coded from the openEHR Terminology 'version lifecycle state' group. The possible values are `532|complete|`, `553|incomplete|`, `523|deleted|`, `800|inactive|` and `801|abandoned|`.
 
-The following diagram shows the formal state machine of the `ORIGINAL_VERSION._lifecycle_state_` attribute.
+The following diagram shows the formal state machine of the `Original_version._lifecycle_state_` attribute.
 
 [.text-center]
-.`ORIGINAL_VERSION._lifecycle_state_` state machine
+.`Original_version._lifecycle_state_` state machine
 image::{uml_diagrams_uri}/BASE-version_lifecycle.svg[id=version_lifecycle, align="center"]
 
 One basic rule that must be observed with the use of states is that any transition requires the commit of a _new version_, even if the content is otherwise unchanged. This also means that transitions through a number of successive states entails a number of commits, each recording one transition.
@@ -22,7 +22,7 @@ NOTE: In the `incomplete` state, a limited form of invalidity is allowed: mandat
 
 At an implementation level, templated and archetyped data being committed in the `incomplete` state therefore respects the same template and archetype(s), but with all existence and cardinality lower limits set to zero.
 
-Transitioning from `incomplete` to `complete` states requires any missing fields to be populated. However, even if the `incomplete` content was technically valid and no new content is added, the transition to `complete` will generate a new `VERSION` regardless.
+Transitioning from `incomplete` to `complete` states requires any missing fields to be populated. However, even if the `incomplete` content was technically valid and no new content is added, the transition to `complete` will generate a new `Version` regardless.
 
 Systems and/or applications are responsible for implementing checks to find 'old' Versions in the `incomplete` state, and bring them to the relevant user's notice, or automatically deleting them or progressing them to `complete` in a reasonable way.
 
@@ -63,7 +63,7 @@ The most common of these transitions is likely to be `deactivate`, i.e. marking 
 
 == Logical Deletion
 
-Within the lifecycle described above, deletion of existing top-level content items (i.e. the entire data contents of a Version) is somewhat of a special case in openEHR and in EHRs in general. Medicolegal and traceability requirements mean that information cannot be literally removed, since it must always be possible to revert back to a previous state of the record in which the deleted information is intact. Accordingly, information can only ever be logically deleted. This is achieved by the following procedure in the Version container in question:
+Within the lifecycle described above, deletion of existing top-level content items (i.e. the entire data contents of a Version) is somewhat of a special case in {product_name} and in EHRs in general. Medicolegal and traceability requirements mean that information cannot be literally removed, since it must always be possible to revert back to a previous state of the record in which the deleted information is intact. Accordingly, information can only ever be logically deleted. This is achieved by the following procedure in the Version container in question:
 
 * create a new Version in the normal way;
 * delete its `_data_` (which will by default be a copy of the data of the previous Version);
@@ -74,15 +74,15 @@ Logical deletion can be used for various reasons, including patient direction to
 
 == Version Identification
 
-The version identification scheme described here is adapted from cite:[Hnìtynka2004]. `VERSION` objects are identified by a `_uid_` attribute of type `OBJECT_VERSION_ID`, which is a three-part String identifier consisting of the sub-parts extractable via the accessors `_object_id()_`, `_creating_system_id()_` and `_version_tree_id()_` (see the {openehr_base_types}#_identification_package[`base_types.identification` package] in the BASE component), in which the `__object_id()__` part is a copy of the `__uid__` of the owning `VERSIONED_OBJECT` version container.
+The version identification scheme described here is adapted from cite:[Hnìtynka2004]. `Version` objects are identified by a `_uid_` attribute of type `OBJECT_VERSION_ID`, which is a three-part String identifier consisting of the sub-parts extractable via the accessors `_object_id()_`, `_creating_system_id()_` and `_version_tree_id()_` (see the {openehr_base_types}#_identification_package[`base_types.identification` package] in the BASE component), in which the `__object_id()__` part is a copy of the `__uid__` of the owning `Versioned_object` version container.
 
-The following figure illustrates the scheme. The `VERSIONED_OBJECT._uid_` value - here, `"1234"` - is used as the `_object_id()_` part of the `_uid_` of every contained `VERSION`. Accordingly, each of those versions will have a `_uid_` following the pattern `"1234:system_id:version_tree_id"`. The use of the `_version_tree_id_` and `_system_id_` parts of the identifier are explained in the sections below. The function `VERSION._owner_id()_` is provided to enable a caller to easily obtain the 'owning version container' identifier.
+The following figure illustrates the scheme. The `Versioned_object._uid_` value - here, `"1234"` - is used as the `_object_id()_` part of the `_uid_` of every contained `Version`. Accordingly, each of those versions will have a `_uid_` following the pattern `"1234:system_id:version_tree_id"`. The use of the `_version_tree_id_` and `_system_id_` parts of the identifier are explained in the sections below. The function `Version._owner_id()_` is provided to enable a caller to easily obtain the 'owning version container' identifier.
 
 [.text-center]
 .Version identification system
 image::{diagrams_uri}/version_identification_system.svg[id=version_identification_system, align="center", width=80%]
 
-The following figure provides an example of multiple `VERSIONs` within a `VERSIONED_OBJECT`, where one of the versions has been merged from another system. This highlights the identifiers; details of original and merged versions are described below.
+The following figure provides an example of multiple `VERSIONs` within a `Versioned_object`, where one of the versions has been merged from another system. This highlights the identifiers; details of original and merged versions are described below.
 
 [.text-center]
 .Version identification Example
@@ -90,14 +90,14 @@ image::{diagrams_uri}/version_identification_example.svg[id=version_identificati
 
 === Local Versioning
 
-The `_version_tree_id_` attribute of `VERSION._uid_` identifies a version of an item with respect to other versions in the same tree. The requirements of the identifier are the same as for typical versioning systems in use in software configuration management, and are as follows:
+The `_version_tree_id_` attribute of `Version._uid_` identifies a version of an item with respect to other versions in the same tree. The requirements of the identifier are the same as for typical versioning systems in use in software configuration management, and are as follows:
 
 * to encode the relationship between versions in the version id, that is to say, version identifiers are constructed such that given a series of identifiers, the relative positions in the tree can be determined;
 * to allow for branches, so that variants of a particular node can be created; e.g. due to translation, or for training purposes.
 
 A suitable scheme satisfying the above requirements for health information is the simplest possible, i.e. a single number representing the version. Version identifiers thus start at 1 and continue by single increments. The succession of version identifiers formed by changes over time is known as the "trunk" of the version tree.
 
-To support branching, a further pair of numbers is added. The first number identifies the branch (e.g. the 1st branch, 2nd branch etc from that trunk node), while the second identifies the version. Both of these numbers also start at '1'. The result of this is that version numbers like '1.1.1' (first version of first branch from trunk node 1), '2.3.3' (3rd version of 3rd branch from trunk node 2) are possible. Inside openEHR systems where sharing with other systems does not occur, it is expected that branched versioning will be used rarely; translation is likely to be the only reason (for example if a Portuguese translation of an English language version of a Composition is made).
+To support branching, a further pair of numbers is added. The first number identifies the branch (e.g. the 1st branch, 2nd branch etc from that trunk node), while the second identifies the version. Both of these numbers also start at '1'. The result of this is that version numbers like '1.1.1' (first version of first branch from trunk node 1), '2.3.3' (3rd version of 3rd branch from trunk node 2) are possible. Inside {product_name} systems where sharing with other systems does not occur, it is expected that branched versioning will be used rarely; translation is likely to be the only reason (for example if a Portuguese translation of an English language version of a Composition is made).
 
 === Distributed Versioning
 
@@ -107,11 +107,11 @@ However, in a distributed environment where copying and subsequent modification 
 * it must be possible to send more recent versions from the original system to a target system that has already received earlier versions, and for these versions to be distinguishable from versions in the receiving system, including the previously imported versions - this enables the receiving system to know how and where to commit the received versions;
 * it must be guaranteed that any version of any object is uniquely identified globally, no matter whether it is a locally created trunk version, a locally created branch version or a version containing changes made to a copied version.
 
-To satisfy these needs, two modifications are made to the identification scheme. The first is the addition of the `_creating_system_id_` attribute of `VERSION._uid_`, representing the system where the version was created. This is a machine processable identifier, such as a reverse internet address or GUID.
+To satisfy these needs, two modifications are made to the identification scheme. The first is the addition of the `_creating_system_id_` attribute of `Version._uid_`, representing the system where the version was created. This is a machine processable identifier, such as a reverse internet address or GUID.
 
-Whenever a new `ORIGINAL_VERSION` in a particular `VERSIONED_OBJECT` (with a particular UID) is created locally, the `VERSION._uid.creating_system_id_` is set to the identifier of the local system; if the version was imported, `_creating_system_id_` will already have been set to the identifier of the system of original creation.
+Whenever a new `Original_version` in a particular `Versioned_object` (with a particular Uid) is created locally, the `Version._uid.creating_system_id_` is set to the identifier of the local system; if the version was imported, `_creating_system_id_` will already have been set to the identifier of the system of original creation.
 
-The second modification is to require branching version identifiers to be used when local modifications are made to versions copied from elsewhere; this ensures that the modifications now being made in the target system are considered in a global sense as logical branches or variants rather than trunk versions which are made in the originating system. It also allows later trunk versions from the originating system to be copied at some future time to the target system without version identifier clashes. In summary, the scheme uses the tuple {`_object_id_`, `_creating_system_id_`, `_version_tree_id_`} to globally uniquely identify any openEHR `VERSION` object.
+The second modification is to require branching version identifiers to be used when local modifications are made to versions copied from elsewhere; this ensures that the modifications now being made in the target system are considered in a global sense as logical branches or variants rather than trunk versions which are made in the originating system. It also allows later trunk versions from the originating system to be copied at some future time to the target system without version identifier clashes. In summary, the scheme uses the tuple {`_object_id_`, `_creating_system_id_`, `_version_tree_id_`} to globally uniquely identify any {product_name} `Version` object.
 
 == Class Descriptions
 

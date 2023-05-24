@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document describes the {product_name} Foundation Types, a collection of built-in and library types whose semantics are assumed by other  specifications.
+This document describes the {product_name} Foundation Types, a collection of built-in types whose semantics are assumed by other specifications.
 
 The intended audience includes implementers and health IT standards experts.
 
@@ -14,7 +14,7 @@ Prerequisite documents for reading this document include:
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {openehr_foundation_types}[{openehr_foundation_types}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {graphite_base_latest_foundation_types}[{graphite_base_latest_foundation_types}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]

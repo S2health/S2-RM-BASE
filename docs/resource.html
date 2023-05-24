@@ -20,7 +20,7 @@
 <li><a href="#_amendment_record">Amendment Record</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
 <ul class="sectlevel2">
-<li><a href="#_contributors">Contributors</a></li>
+<li><a href="#_prior_art">Prior Art</a></li>
 <li><a href="#_trademarks">Trademarks</a></li>
 </ul>
 </li>
@@ -155,9 +155,9 @@
 <h2 id="_acknowledgements"><a class="anchor" href="#_acknowledgements"></a>Acknowledgements</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_contributors"><a class="anchor" href="#_contributors"></a>Contributors</h3>
+<h3 id="_prior_art"><a class="anchor" href="#_prior_art"></a>Prior Art</h3>
 <div class="paragraph">
-<p>This specification has benefited from formal and informal input from the openEHR and wider health informatics community.</p>
+<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/latest/resource.html" target="_blank" rel="noopener">Graphite Resource</a> specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -166,6 +166,9 @@
 <ul>
 <li>
 <p>'openEHR' is a registered trademark of the openEHR Foundation</p>
+</li>
+<li>
+<p>'Graphite Health' is a registered trademark of the Graphite Health</p>
 </li>
 </ul>
 </div>
@@ -236,7 +239,7 @@
 <div class="sect2">
 <h3 id="_overview"><a class="anchor" href="#_overview"></a>2.1. Overview</h3>
 <div class="paragraph">
-<p>The openEHR BASE component <code>resource</code> package defines the structure and semantics of the general notion of an online resource which has been created by a human author, and consequently for which natural language is a factor. The package is illustrated below.</p>
+<p>The Graphite BASE component <code>resource</code> package defines the structure and semantics of the general notion of an online resource which has been created by a human author, and consequently for which natural language is a factor. The package is illustrated below.</p>
 </div>
 <div id="resource_package" class="imageblock text-center text-center">
 <div class="content">
@@ -247,7 +250,7 @@
 <div class="sect3">
 <h4 id="_natural_languages_and_translation"><a class="anchor" href="#_natural_languages_and_translation"></a>2.1.1. Natural Languages and Translation</h4>
 <div class="paragraph">
-<p>Authored resources contain natural language elements, and are therefore created in some original language, recorded in the <code><em>orginal_language</em></code> attribute of the <code>AUTHORED_RESOURCE</code> class. Information about translations is included in the translations attribute, which allows for one or more sets of translation details to be recorded. A resource is translated by doing the following:</p>
+<p>Authored resources contain natural language elements, and are therefore created in some original language, recorded in the <code><em>orginal_language</em></code> attribute of the <code>Authored_resource</code> class. Information about translations is included in the translations attribute, which allows for one or more sets of translation details to be recorded. A resource is translated by doing the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -255,10 +258,10 @@
 <p>translating every language-dependent element to the new language;</p>
 </li>
 <li>
-<p>adding a new <code>TRANSLATION_DETAILS</code> instance to translations, containing details about the translator, organisation, quality assurance and so on.</p>
+<p>adding a new <code>Translation_details</code> instance to translations, containing details about the translator, organisation, quality assurance and so on.</p>
 </li>
 <li>
-<p>any further translations to language-specific elements in a instances of descendent type of <code>AUTHORED_RESOURCE</code>.</p>
+<p>any further translations to language-specific elements in a instances of descendent type of <code>Authored_resource</code>.</p>
 </li>
 </ul>
 </div>
@@ -269,16 +272,16 @@
 <div class="sect3">
 <h4 id="_meta_data"><a class="anchor" href="#_meta_data"></a>2.1.2. Meta-data</h4>
 <div class="paragraph">
-<p>What is normally considered the 'meta-data' of a resource, i.e. its author, date of creation, purpose, and other descriptive items, is described by the <code>RESOURCE_DESCRIPTION</code> and <code>RESOURCE_DESCRIPTION_ITEM</code> classes. The parts of this that are in natural language, and therefore may require translated versions, are represented in instances of the <code>RESOURCE_DESCRIPTION_ITEM</code> class. Thus, if a <code>RESOURCE_DESCRIPTION</code> has more than one <code>RESOURCE_DESCRIPTION_ITEM</code>, each of these should carry exactly the same information in a different natural language.</p>
+<p>What is normally considered the 'meta-data' of a resource, i.e. its author, date of creation, purpose, and other descriptive items, is described by the <code>Resource_description</code> and <code>Resource_description_item</code> classes. The parts of this that are in natural language, and therefore may require translated versions, are represented in instances of the <code>Resource_description_item</code> class. Thus, if a <code>Resource_description</code> has more than one <code>Resource_description_item</code>, each of these should carry exactly the same information in a different natural language.</p>
 </div>
 <div class="paragraph">
-<p>The <code>AUTHORED_RESOURCE</code>.<code><em>description</em></code> attribute is optional, allowing for resources with no meta-data at all, e.g. resources in a partial state of construction. The translations attribute may still be required, since there may be other parts of the resource object (specified by a class into which <code>AUTHORED_RESOURCE</code> is inherited) that are language-dependent.</p>
+<p>The <code>Authored_resource</code>.<code><em>description</em></code> attribute is optional, allowing for resources with no meta-data at all, e.g. resources in a partial state of construction. The translations attribute may still be required, since there may be other parts of the resource object (specified by a class into which <code>Authored_resource</code> is inherited) that are language-dependent.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_revision_history"><a class="anchor" href="#_revision_history"></a>2.1.3. Revision History</h4>
 <div class="paragraph">
-<p>When the resource is considered to be in a state where changes to it should be controlled, the is_controlled attribute is set to True, and all subsequent changes should have an audit trail recorded. Usually controlled resources would be managed in a versioned repository (e.g. implemented by CVS, Subversion or similar systems), and audit information will be stored somewhere in the repository (e.g. in version control files). The revision_history attribute defined in the <code>AUTHORED_RESOURCE</code> class is intended to act as a documentary copy of the revision history as known inside the repository, for the benefit of users of the resource. Given that resources in different places may well be managed in different kinds of repositories, having a copy of the revision history in a standardised form within the resource enables it to be used interoperably by authoring and other tools.</p>
+<p>When the resource is considered to be in a state where changes to it should be controlled, the is_controlled attribute is set to True, and all subsequent changes should have an audit trail recorded. Usually controlled resources would be managed in a versioned repository (e.g. implemented by CVS, Subversion or similar systems), and audit information will be stored somewhere in the repository (e.g. in version control files). The revision_history attribute defined in the <code>Authored_resource</code> class is intended to act as a documentary copy of the revision history as known inside the repository, for the benefit of users of the resource. Given that resources in different places may well be managed in different kinds of repositories, having a copy of the revision history in a standardised form within the resource enables it to be used interoperably by authoring and other tools.</p>
 </div>
 <div class="paragraph">
 <p>Every change to a resource committed to the relevant repository causes a new addition to the revision_history.</p>
@@ -775,7 +778,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-18 15:36:11 -0600
+Last updated 2023-05-24 14:07:23 -0600
 </div>
 </div>
 </body>

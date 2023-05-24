@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*__Pathable (abstract)__*
 
 h|*Description*
-2+a|The `Pathable` class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of `Locatable`. The defining characteristics of `Pathable` objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The parent feature is defined as abstract in the model, and may be implemented in any way convenient.
+2+a|The `PATHABLE` class defines the pathing capabilities used by nearly all classes in the openEHR reference model, mostly via inheritance of `LOCATABLE`. The defining characteristics of `PATHABLE` objects are that they can locate child objects using paths, and they know their parent object in a compositional hierarchy. The parent feature is defined as abstract in the model, and may be implemented in any way convenient.
 
 h|*Inherit*
 2+|`link:/releases/BASE/{base_release}/foundation_types.html#_any_class[Any^]`

@@ -45,6 +45,9 @@ endif::[]
 |link:base_types.html[Base Types^]
 |Specification of basic health informatics types used in other specifications.
 
+|link:data_types.html[Data Types^]
+|Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.
+
 |link:change_control.html[Change Control^]
 |Specification of versioning for the EHR.
 

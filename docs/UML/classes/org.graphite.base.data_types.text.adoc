@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*__Text (abstract)__*
 
 h|*Description*
-2+a|A text item, which may contain any amount of legal characters arranged as e.g. words, sentences etc (i.e. one `DV_TEXT` may be more than one word). Visual formatting and hyperlinks may be included via markdown.
+2+a|A text item, which may contain any amount of legal characters arranged as e.g. words, sentences etc (i.e. one `Text` may be more than one word). Visual formatting and hyperlinks may be included via markdown.
 
 If the `_formatting_` field is set, the `_value_` field is affected as follows:
 
@@ -14,7 +14,7 @@ If the `_formatting_` field is set, the `_value_` field is affected as follows:
 * `_formatting_ = "plain_no_newlines"`: plain text with no newlines;
 * `_formatting_ = "markdown"`: text in markdown format; use of CommonMark strongly recommended.
 
-A `DV_TEXT` can be coded by adding mappings to it.
+A `Text` can be coded by adding mappings to it.
 
 h|*Inherit*
 2+|`<<_data_value_class,Data_value>>`

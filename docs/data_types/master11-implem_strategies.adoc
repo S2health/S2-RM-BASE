@@ -1,7 +1,7 @@
 = Implementation Strategies
 
 == Overview
-This section notes a few of the general challenges for mapping the openEHR data types to implementation
+This section notes a few of the general challenges for mapping the {product_name} data types to implementation
 technologies such as programming languages and XML. For specific guidelines, Implementation
 Technology Specification (ITS) document for each target formalism should be consulted.
 

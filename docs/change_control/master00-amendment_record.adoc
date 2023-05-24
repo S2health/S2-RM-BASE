@@ -5,7 +5,7 @@
 |Issue|Details|Raiser|Completed
 
 |[[latest_issue]]0.1.0
-|Initial Writing: based on openEHR Common IM.
+|Initial Writing: based on the {openehr_rm_common}#_change_control_package[openEHR Common IM^].
 |T Beale
 |[[latest_issue_date]]10 Apr 2023
 

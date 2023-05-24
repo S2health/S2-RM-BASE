@@ -19,7 +19,7 @@ Related documents include:
 
 == History
 
-This specification was derived from the Change Control section of the {openehr_rm_common}_change_control_package[openEHR RM Common IM specification^].
+This specification was derived from the Change Control section of the {openehr_rm_common}#_change_control_package[openEHR RM Common IM specification^].
 
 == Status
 

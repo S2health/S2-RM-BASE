@@ -2,7 +2,7 @@
 
 == Overview
 
-The `base.foundation_types.terminology` package provides leaf types used to represent a _terminology code_, i.e. a code within a _terminology_, and a _term_, which is the combination of a code and one rubric (natural language) string associated with it. Terminology codes are sometimes called _concept codes_ among terminology experts, and when used as references, _concept references_.
+The `base.foundation_types.terminology` package provides primitive types used to represent a _terminology code_, i.e. a code within a _terminology_, and a _term_, which is the combination of a code and one rubric (natural language) string associated with it. Terminology codes are sometimes called _concept codes_ among terminology experts, and when used as references, _concept references_.
 
 An instance of `Terminology_code` is a reference to any referenceable _entity_ within a terminology or ontology, which may be:
 

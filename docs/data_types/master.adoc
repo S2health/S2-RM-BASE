@@ -28,27 +28,18 @@ include::master00-amendment_record.adoc[leveloffset=+1]
 
 == Acknowledgements
 
-=== Editor
+=== Prior Art
 
-* Graphite Informatics group.
-
-=== Contributors
-
-This specification benefited from input from the wider health informatics community. The openEHR Foundation would like to recognise the following people for their contributions.
-
-* xxx
-
-=== Support
-
-The work reported in this paper has been funded in part by the following organisations:
-
-* xxx
+This specification draws from the  {openehr_rm_data_types}[openEHR Data Types^] specification and the {hl7_fhir_data_types}[HL7 FHIR Data Types^].
 
 === Trademarks
 
-* 'openEHR' is a trademark of the openEHR Foundation
+* 'openEHR' is a registered trademark of the openEHR Foundation
+* 'FHIR' is a registered trademark of HL7 International
+* 'Graphite Health' is a registered trademark of the Graphite Health
 * 'Java' is a registered trademark of Oracle Corporation
-* 'Microsoft' and '.Net' are trademarks of the Microsoft Corporation
+* 'Microsoft' and '.Net' are registered trademarks of the Microsoft Corporation
+
 
 //
 // --------------------------------------------- TOC -----------------------------------------------

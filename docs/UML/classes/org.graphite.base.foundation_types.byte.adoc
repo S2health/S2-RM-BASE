@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Byte*
 
 h|*Description*
-2+a|
+2+a|Type representing a built-in 8-bit value.
 
 h|*Inherit*
 2+|`<<_comparable_class,Comparable>>`
