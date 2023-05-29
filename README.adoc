@@ -1,4 +1,4 @@
-= GPS-BASE - Graphite Platform Specification - BASE component
+= Graphite Platform Specification - BASE component
 
 This repository contains the document and model sources (Asciidoctor and MagicDraw) for the Graphite Platform BASE specifications.
 
