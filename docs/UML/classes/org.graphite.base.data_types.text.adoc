@@ -28,32 +28,20 @@ h|*1..1*
 a|Displayable rendition of the item, regardless of its underlying structure. For `DV_CODED_TEXT`, this is the rubric of the complete term as provided by the terminology service.
 
 h|*0..1*
-|*formatting*: `<<_text_format_types_enumeration,Text_format_types>>`
-a|If set, contains one of the following values:
-
-* `"plain"`: use for plain text, possibly containing newlines, but otherwise unformatted (same as Void);
-* `"plain_no_newlines"`: use for text containing no newlines or other formatting;
-* `"markdown"`: use for markdown formatted text, strongly recommended in the format of the CommonMark specification.
-
-h|*0..1*
 |*mappings*: `List<<<_term_mapping_class,Term_mapping>>>`
 a|Terms from other terminologies most closely matching this term, typically used where the originator (e.g. pathology lab) of information uses a local terminology but also supplies one or more equivalents from well known terminologies (e.g. LOINC).
 
 h|*0..1*
-|*language*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
-a|Optional indicator of the localised language in which the value is written. Coded from openEHR Code Set  languages . Only used when either the text object is in a different language from the enclosing `Entry`, or else the text object is being used outside of an `Entry` or other enclosing structure which indicates the language.
+|*formatting*: `<<_text_format_types_enumeration,Text_format_types>>`
+a|If set, contains one of the following values:
 
-h|*0..1*
-|*encoding*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
-a|Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions.
+* `"plain"`: use for plain text, possibly containing newlines, but otherwise unformatted;
+* `"plain_no_newlines"`: use for text containing no newlines or other formatting;
+* `"markdown"`: use for markdown formatted text, strongly recommended in the format of the CommonMark specification.
+
+If not set, `"plain_no_newlines"` is assumed.
 
 h|*Invariants*
-2+a|__Language_valid__: `language /= Void implies code_set (Code_set_id_languages).has_code (language)`
-
-h|
-2+a|__Encoding_valid__: `encoding /= Void implies code_set (Code_set_id_character_sets).has_code (encoding)`
-
-h|
 2+a|__Mappings_valid__: `mappings /= void implies not mappings.is_empty`
 
 h|

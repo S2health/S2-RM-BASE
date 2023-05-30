@@ -158,6 +158,8 @@
 [.xcode]
 * link:/releases/BASE/{base_release}/data_types.html#_term_mapping_class[Term_mapping^]
 [.xcode]
+* link:/releases/BASE/{base_release}/data_types.html#_term_mapping_match_enumeration[Term_mapping_match^]
+[.xcode]
 * link:/releases/BASE/{base_release}/data_types.html#_text_class[Text^]
 [.xcode]
 * link:/releases/BASE/{base_release}/data_types.html#_text_format_types_enumeration[Text_format_types^]

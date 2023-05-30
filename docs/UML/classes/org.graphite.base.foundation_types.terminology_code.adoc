@@ -6,7 +6,9 @@ h|*Class*
 2+^h|*Terminology_code*
 
 h|*Description*
-2+a|Primitive type representing a standalone reference to a terminology concept, in the form of a terminology identifier, optional version, and a code or code string from the terminology.
+2+a|Primitive type representing a standalone reference to a terminology concept, in the form of a strin identifier, optional version, and a code or code string from the terminology.
+
+TODO: define terminology_id as 'terminology namespace', i.e. a name rather than a URI?
 
 h|*Inherit*
 2+|`<<_any_class,Any>>`

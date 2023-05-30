@@ -2,7 +2,7 @@
 
 == Overview
 
-The `base.data_types.ordered` package is illustrated below. Dates and Times are found in the next section.
+The `base.data_types.ordered` package defines types used to represent any kind of number-based data type used in science and medicine. It is illustrated below. Temporal types (dates and times) are described in the next section.
 
 [.text-center]
 .base.data_types.ordered package - quantities
@@ -10,45 +10,32 @@ image::{uml_diagrams_uri}/BASE-data_types.ordered-quantity.svg[id=base_data_type
 
 == Requirements
 
-=== Scores and Scales
+=== Stated Versus Observed Values
 
-Medicine is a domain in which symbols representing relative magnitudes are commonly used, without exact values being used. The main purpose is usually to classify patients into groups for which different decisions might be made. Such classifications are typically known as _scores_ or _scales_. For example the characterisation of pain as 'mild', 'medium', 'severe', or the reflex response to tendon percussion as pass:["-", "+/-", "+", "++", "+++", "++++"]. Many scores such as the Apgar Score, Glasgow Coma Scale (GCS), and Barthel Index are globally known and used.
+A basic distinction exists for any kind of quantitative data, between the stated and the observed form (or _a priori_ and _a posteriori_ forms). A stated quantity takes the form of a numeric value(s) and any qualifying properties required to provide the complete semantics.
 
-In some cases, there may be no way (or need) to precisely quantify such values because they reflect a subjective experience of the patient or informal judgment by the clinician. However, they are understood as being ordered, e.g. pass: [`++`] is arithmetically greater than pass:[`+`].
+The observed form involves _measurement_, which is an attempt to determine a true value of some real world phenomenon via the use of an observation method or device. Measurement involves a number of extra concepts, including:
 
-Similarly, even though the symbolic values for haemolysed blood in a urinalysis have approximate ranges stated for them, as shown below, these 'values' are not usable in the same way as true quantities.
+* _accuracy_: the likely difference between the measured result and the true value;
+* _reference range_: one or more value ranges relative to the specific subject of measurement, such as 'normal', 'high' and so on;
+* _value status_: an indication of the relationship between the real value and the measurement that allows for limitations in device measurement, for example a device may display the value '< 20μg', indicating that the real weight is below its bottom measurement threshold.
 
-* `"neg"`, `"trace"` (10 cells/&#956;l)
-* `"small"` (<25 cells/&#956;l)
-* `"moderate"` (<80 cells/&#956;l)
-* `"large"` (>200 cells/&#956;l)
-
-A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the https://www.researchgate.net/publication/228089364_Proposing_a_standardized_method_for_evaluating_patient_report_of_the_intensity_of_dyspnea_during_exercise_testing_in_COPD[Borg CR 10 scale] for perceived exertion. In both cases, values may be negative, zero or positive.
-
-=== Countable Things
-
-A common kind of data value in medicine is the dimensionless countable quantity, e.g.
-
-* number of doses: 2;
-* number of previous pregnancies: 1;
-* number of tablets: 3.
-
-Values of this type are always integral. Countable values need to be convertible to real numbers for statistical purposes, for example for a study of average number of pregnancies per couple.
-
-Some countable entities such as tablets are divisible into major fractions, typically halves and occasionally quarters.
+Reference ranges are particularly useful with pathology test results, e.g. serum sodium, and vital signs.
 
 === Dimensioned Quantities
 
-The most common kind of quantity is a measured, dimensioned quantity. Anything which is measurable (rather than countable) involves a number of data aspects, namely:
+The most common kind of quantity is a dimensioned quantity, consisting of a real number and units.
 
-* a magnitude whose value is a real number;
-* the physical property being measured, with the appropriate units;
-* a concept of precision, i.e. to what number of decimal places the value is recorded;
-* a concept of accuracy, i.e. the known or assumed error in the measurement due to instrumentation or human judgement.
-
-Examples of dimensioned quantities include:
+Examples of stated dimensioned quantities include:
 
 * systolic BP: 110 mmHg
+* height: 178 cm
+* rate of asthma attacks: 7 /week
+* weight loss: 2.5 kg
+
+Examples of stated dimensioned quantities include:
+
+* systolic BP: 110 ±5 mmHg
 * height: 178 cm
 * rate of asthma attacks: 7 /week
 * weight loss: 2.5 kg
@@ -99,6 +86,33 @@ Where there are multiple ranges, the important question is: _which range informa
 === Normal Range and Status in Laboratory data
 
 It is quite common for laboratories to include a normal range with each measured value, and/or a normal 'status', which indicates where the value lies with respect to the normal range. The latter will commonly take the form of markers like "HHH" (critically high), HH (abnormally high), H (borderline high), L, LL, LLL in HL7v2 messaging, although other schemes are undoubtedly used.
+
+=== Scores and Scales
+
+Medicine is a domain in which symbols representing relative magnitudes are commonly used, without exact values being used. The main purpose is usually to classify patients into groups for which different decisions might be made. Such classifications are typically known as _scores_ or _scales_. For example the characterisation of pain as 'mild', 'medium', 'severe', or the reflex response to tendon percussion as pass:["-", "+/-", "+", "++", "+++", "++++"]. Many scores such as the Apgar Score, Glasgow Coma Scale (GCS), and Barthel Index are globally known and used.
+
+In some cases, there may be no way (or need) to precisely quantify such values because they reflect a subjective experience of the patient or informal judgment by the clinician. However, they are understood as being ordered, e.g. pass: [`++`] is arithmetically greater than pass:[`+`].
+
+Similarly, even though the symbolic values for haemolysed blood in a urinalysis have approximate ranges stated for them, as shown below, these 'values' are not usable in the same way as true quantities.
+
+* `"neg"`, `"trace"` (10 cells/&#956;l)
+* `"small"` (<25 cells/&#956;l)
+* `"moderate"` (<80 cells/&#956;l)
+* `"large"` (>200 cells/&#956;l)
+
+A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the https://www.researchgate.net/publication/228089364_Proposing_a_standardized_method_for_evaluating_patient_report_of_the_intensity_of_dyspnea_during_exercise_testing_in_COPD[Borg CR 10 scale] for perceived exertion. In both cases, values may be negative, zero or positive.
+
+=== Countable Things
+
+A common kind of data value in medicine is the dimensionless countable quantity, e.g.
+
+* number of doses: 2;
+* number of previous pregnancies: 1;
+* number of tablets: 3.
+
+Values of this type are always integral. Countable values need to be convertible to real numbers for statistical purposes, for example for a study of average number of pregnancies per couple.
+
+Some countable entities such as tablets are divisible into major fractions, typically halves and occasionally quarters.
 
 == Design
 

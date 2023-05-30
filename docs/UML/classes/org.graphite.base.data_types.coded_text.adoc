@@ -6,11 +6,11 @@ h|*Class*
 2+^h|*Coded_text*
 
 h|*Description*
-2+a|A text item whose string value is a rubric from a controlled terminology, and whose code is given by `_concept_`.
+2+a|A text item whose string value is a rubric from a controlled terminology, and whose code is given by `_concept_`. The `_value_` may be a 'preferred term' (where this concept is supported by the terminology), or another term. In the latter case, a/the preferred term may be included in the `_mappings_`.
 
 Since `Coded_text` is a subtype of `Text`, it can be used in place of it, effectively allowing the type `Text` to mean  a text item, which may optionally be coded.
 
-Misuse: If the intention is to represent a term code attached in some way to a fragment of plain text, `Coded_text` should not be used; instead use a `Text` and a `Term_mapping` to a `Terminology_term`.
+If `_formatting_` is present it is limited to `markdown` and may consist only of emphasis and / or hyperlink of the whole `_value_`.
 
 h|*Inherit*
 2+|`<<_text_class,Text>>`
