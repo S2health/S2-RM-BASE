@@ -18,29 +18,27 @@ The observed form involves _measurement_, which is an attempt to determine a tru
 
 * _accuracy_: the likely difference between the measured result and the true value;
 * _reference range_: one or more value ranges relative to the specific subject of measurement, such as 'normal', 'high' and so on;
-* _value status_: an indication of the relationship between the real value and the measurement that allows for limitations in device measurement, for example a device may display the value '< 20μg', indicating that the real weight is below its bottom measurement threshold.
+* _value status_: an indication of the relationship between the real value and the measurement that allows for limitations in device measurement, for example a device may display the value '< 20μg', indicating that the real weight is below its bottom measurement threshold. Typical possibilities include less-than and greater-than, as well as 'approximate', common with patient-reported observations.
 
 Reference ranges are particularly useful with pathology test results, e.g. serum sodium, and vital signs.
 
+Measurement-related meta-data are not mandatory - a specific measured quantity may be stated in the same form as a stated quantity, as is typical for very common measurements such as patient vital signs.
+
 === Dimensioned Quantities
 
-The most common kind of quantity is a dimensioned quantity, consisting of a real number and units.
-
-Examples of stated dimensioned quantities include:
+The most common kind of quantity is a dimensioned quantity, consisting of a real number and units. Examples of stated dimensioned quantities include:
 
 * systolic BP: 110 mmHg
+* weight target: 78 kg
+
+Examples of observed dimensioned quantities include:
+
+* systolic BP: 140 mmHg
+* systolic BP: 140 ±5 mmHg
 * height: 178 cm
-* rate of asthma attacks: 7 /week
-* weight loss: 2.5 kg
+* rate of asthma attacks: 7 /week (approx)
 
-Examples of stated dimensioned quantities include:
-
-* systolic BP: 110 ±5 mmHg
-* height: 178 cm
-* rate of asthma attacks: 7 /week
-* weight loss: 2.5 kg
-
-=== Ratios and Proportions
+=== Ratios
 
 A common quantitative type in science and medicine is the proportion, or ratio, which is used in situations like the following:
 
@@ -70,22 +68,22 @@ Quantity ranges are ubiquitous in science and medicine, and may be defined for a
 
 A reference range is a quantity range attached to a measured value, and is common for laboratory result values. The typical form of a reference range found in a pathology result indicates what is considered the 'normal' range for a measured value. Examples of reference ranges:
 
-* normal range for serum Na is 135 - 145 mmol/L.
-* desirable total cholesterol: < 5.5 mmol/L (strictly this probably should be 2.0 - 5.5 mmol/L, but is not usually quoted this way as low cholesterol is not considered a problem.)
+* normal range for serum Na is 135 - 145 mmol/L;
+* desirable total cholesterol: < 5.5 mmol/L.
 
 Ranges can also be quoted for drug administrations, in which case they are usually thought of as the 'therapeutic' range. For example, the anticonvulsant drug Carbamazepine has a therapeutic range of 20 - 40 &#956;Mol/L. In some cases, there are multiple ranges associated with a drug, for example, Salicylate has a therapeutic range of 1.0 - 2.5 mmol/L and a toxic range > 3.6 mmol/L
 
 Various examples occur in which multiple ranges may be stated, including the following.
 
-* The administration recommendations for drugs which depend on the particular patient state. For example, the therapeutic range of Cyclosporin (an immunosuppressant) is a function of time post-transplant for the affected organ, e.g. kidney: < 6 months: 250 - 350 &#956;g/L, > 6 months: 100 - 200 &#956;g/L.
-* Normal ranges for blood IgG, IgA, IgM which vary significantly with the age in months from birth.
+* The administration recommendations for drugs which depend on the particular patient state. For example, the therapeutic range of Cyclosporin (an immunosuppressant) is a function of time post-transplant for the affected organ, e.g. kidney: < 6 months: 250 - 350 &#956;g/L, > 6 months: 100 - 200 &#956;g/L;
+* Normal ranges for blood IgG, IgA, IgM which vary significantly with the age in months from birth;
 * Progesterone and pituitary hormones have ranges which are different for different phases of the menstrual cycle and for menopause. This may result in 4 or 5 ranges given for one result. Only one will apply to any particular patient - but the exact phase of the cycle may be unknown - so the ranges may need to be associated with the value with no 'normal' range.
 
-Where there are multiple ranges, the important question is: _which range information is relevant to the actual data being recorded for the patient?_ In theory, only the range corresponding to the particular patient situation should be used, i.e. the range which applies after taking into account sex, age, smoking status, "professional athlete", organ transplanted, etc. In most cases, this is a single "normal" range, or a pair of ranges, typically "therapeutic" and "critical". However, practical factors complicate things. Firstly, data is sometimes supplied from pathology labs along with some or all of the applicable reference ranges, even though only some could possibly apply. This is particularly the case if the laboratory has no other data on the patient, and cannot evaluate which range applies. The requirement for faithfulness of recording might be extended to reference data supplied by laboratories, regardless of how irrelevant or arbitrarily chosen the reference data is, meaning that such data has to be stored in the record anyway. Secondly, there may be circumstances in which physicians want a number of reference ranges, even while knowing that only one range is applicable to the datum. Ranges above and below the relevant one might be useful to a physician wishing to determine how far out of range the datum is.
+=== Normal Status in Laboratory data
 
-=== Normal Range and Status in Laboratory data
+Some laboratories include a normal 'status', which indicates where the value lies with respect to the normal range. The latter might take the form of markers like "HHH" (critically high), "HH" (abnormally high), "H" (borderline high), "L", "LL", "LLL" in HL7v2 messaging, although other schemes are undoubtedly used.
 
-It is quite common for laboratories to include a normal range with each measured value, and/or a normal 'status', which indicates where the value lies with respect to the normal range. The latter will commonly take the form of markers like "HHH" (critically high), HH (abnormally high), H (borderline high), L, LL, LLL in HL7v2 messaging, although other schemes are undoubtedly used.
+TODO: check if this needs to be supported.
 
 === Scores and Scales
 
@@ -100,7 +98,7 @@ Similarly, even though the symbolic values for haemolysed blood in a urinalysis 
 * `"moderate"` (<80 cells/&#956;l)
 * `"large"` (>200 cells/&#956;l)
 
-A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the https://www.researchgate.net/publication/228089364_Proposing_a_standardized_method_for_evaluating_patient_report_of_the_intensity_of_dyspnea_during_exercise_testing_in_COPD[Borg CR 10 scale] for perceived exertion. In both cases, values may be negative, zero or positive.
+A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the modified Borg CR 10 scale cite:[Hareendran_et_al_2012] for perceived exertion. In both cases, values may be negative, zero or positive.
 
 === Countable Things
 
@@ -118,7 +116,7 @@ Some countable entities such as tablets are divisible into major fractions, typi
 
 === Basic Semantics
 
-In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "<" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called `Dv_ordered` is accordingly defined. This type is sub-typed into ordinals, scales and true quantities, represented by the classes `Dv_ordinal`, `DV_SCALE` and `Quantified` respectively.
+In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "<" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called `Dv_ordered` is accordingly defined. This type is sub-typed into ordinals, scales and true quantities, represented by the classes `Dv_ordinal` and `Quantified` respectively.
 
 `Dv_ordinal` is used for scores and scales as described in the requirements above. `Dv_ordinal` represents data values whose values are Integers, and which have symbolic or text names instead, such as pass:["+", "++", "+++"], or `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `Dv_ordinal` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`. `DV_SCALE` is similar to `Dv_ordinal`, and was introduced to support scales / scores containing Real values as well as Integers.
 
@@ -156,15 +154,11 @@ Ranges are modelled by the generic type `Dv_interval<T:Dv_ordered>` which enable
 
 === Proportions
 
-The `Dv_ratio` type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values, and a magnitude function which is computed as the result of the numerator/denominator division. The type attribute is used to indicate the logical type of the proportion. Supported types include:
+The `Proportion` type is provided to express relative proportions of two Quantities, e.g. rates of change, density etc.
 
-* _percent_: denominator is 100; usual presentation is "numerator %"
-* _unitary_: denominator is 1; usual presentation is "numerator"
-* _fraction_: numerator and denominator are both integer values; usual presentation is n/d, e.g. such as ½ or ¾, 1/2, 3/4 etc;
-* _integer_fraction_: numerator and denominator are both integer values; usual presentation is n/d; if numerator > denominator, display as "a b/c", i.e. the integer part followed by the remaining fraction part, e.g. 1½; this is the most likely form for expressing a number of tablets;
-* _ratio_: numerator and denominator can take any value; usual presentation is "numerator: denominator"
+=== Ratios
 
-Lastly, the `_is_integral_` function indicates that the numerator and denominator are both integer values; this is used for fractions (the fraction and integer_fraction types above) and other commonly occurring ratios where both parts are always integer values.
+The `Ratio` type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values. The `_type_` attribute is used to indicate the logical type of the proportion.
 
 == Class Descriptions
 
@@ -175,6 +169,8 @@ include::{uml_export_dir}/classes/{pkg}quantified.adoc[]
 include::{uml_export_dir}/classes/{pkg}quantity.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}count.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}proportion.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio.adoc[]
 

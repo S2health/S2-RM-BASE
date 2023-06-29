@@ -44,4 +44,8 @@ a|If `True`, indicates that when this object was created, `_accuracy_` was recor
 h|*0..1*
 |*other_reference_ranges*: `List<<<_reference_range_class,Reference_range>>>`
 a|Optional tagged other reference ranges for this value in its particular measurement context.
+
+h|*0..1*
+|*intepretation*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+a|Interpretation with respect to normal range, e.g. 'H', 'L' etc.
 |===

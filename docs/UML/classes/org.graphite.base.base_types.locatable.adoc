@@ -47,6 +47,10 @@ h|*0..1*
 |*code*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Optional field to carry code from bound terminology, e.g. LOINC or other.
 
+If populated, the code must match that found in a terminology service lookup for the internal code carried in the `_archetype_node_id_` field. Any other value will generate an error in validation.
+
+NOTE: not to be separately constrained in archetypes; this rule needs to be implemented in archetype tools.
+
 TODO: for GCM, default to Graphite LOINC extension
 h|*Functions*
 ^h|*Signature*

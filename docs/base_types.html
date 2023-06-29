@@ -2455,6 +2455,21 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <p>Optional field to carry code from bound terminology, e.g. LOINC or other.</p>
 </div>
 <div class="paragraph">
+<p>If populated, the code must match that found in a terminology service lookup for the internal code carried in the <code><em>archetype_node_id</em></code> field. Any other value will generate an error in validation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+not to be separately constrained in archetypes; this rule needs to be implemented in archetype tools.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
 <p>TODO: for GCM, default to Graphite LOINC extension</p>
 </div></div></td>
 </tr>

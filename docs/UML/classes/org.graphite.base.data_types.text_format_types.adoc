@@ -6,7 +6,7 @@ h|*Enumeration*
 2+^h|*Text_format_types*
 
 h|*Description*
-2+a|
+2+a|Enumeration of types of text formatting.
 
 h|*Attributes*
 ^h|*Signature*
@@ -14,13 +14,13 @@ h|*Attributes*
 
 h|
 |plain
-a|
+a|Plain text; no formatting marks or restrictions assumed.
 
 h|
 |plain_no_newlines
-a|
+a|Plain text with no newlines.
 
 h|
 |markdown
-a|
+a|Markdown; by default assumed to be CommonMark.
 |===
