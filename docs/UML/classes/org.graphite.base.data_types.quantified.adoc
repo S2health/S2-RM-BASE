@@ -17,12 +17,12 @@ h|*Attributes*
 
 h|*0..1*
 |*measured*: `<<_measured_class,Measured>>`
-a|
+a|Additional data elements for measured quantities, including precision, accuracy and reference ranges.
 
 h|*1..1 +
 (redefined)*
 |*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_comparable_numeric_class[Comparable_Numeric^]`
-a|
+a|The magnitude of the quantity.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*

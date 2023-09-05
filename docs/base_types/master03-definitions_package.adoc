@@ -18,3 +18,4 @@ include::{uml_export_dir}/classes/{pkg}validity_kind.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}version_status.adoc[]
 
+include::{uml_export_dir}/classes/{pkg}sample_function_kind.adoc[]

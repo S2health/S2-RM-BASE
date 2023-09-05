@@ -37,7 +37,7 @@ h|*0..1*
 a|Any identifier used in the system such as  "interim" ,  "final" , or numeric versions if available.
 
 h|*0..1*
-|*other_details*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*other_details*: `link:/releases/BASE/{base_release}/foundation_types.html#_hash_class[Hash^]<link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^], link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]>`
 a|Optional attribute to carry any custom meta-data. May be archetyped.
 
 h|*Invariants*

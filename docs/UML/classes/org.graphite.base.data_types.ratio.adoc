@@ -19,13 +19,13 @@ h|*Attributes*
 
 h|*1..1*
 |*numerator*: `Real`
-a|
+a|Numerator value of Ratio.
 
 h|*1..1*
 |*denominator*: `Real`
-a|
+a|Denominator value of Ratio.
 
 h|*1..1*
 |*type*: `<<_ratio_kind_enumeration,Ratio_kind>>`
-a|
+a|Type of ratio.
 |===

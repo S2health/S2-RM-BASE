@@ -16,7 +16,7 @@ h|*Attributes*
 
 h|*1..1*
 |*namespace*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for `_namespace_` are:
+a|Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g. `"terminology"`, `"demographic"`. These names are not yet standardised. Legal values for `_namespace_` are:
 
 * `"local"`
 * `"unknown"`

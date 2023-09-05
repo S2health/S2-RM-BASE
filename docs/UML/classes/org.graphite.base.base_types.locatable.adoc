@@ -57,10 +57,6 @@ h|*Functions*
 ^h|*Meaning*
 
 h|*1..1*
-|*concept* (): `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|Clinical concept of the archetype as a whole (= derived from the archetype_node_id' of the root node)
-
-h|*1..1*
 |*is_archetype_root* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|True if this node is the root of an archetyped structure.
 

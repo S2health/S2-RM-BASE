@@ -43,6 +43,7 @@
 <li><a href="#_openehr_definitions_class">3.2.2. Openehr_definitions Class</a></li>
 <li><a href="#_validity_kind_enumeration">3.2.3. Validity_kind Enumeration</a></li>
 <li><a href="#_version_status_enumeration">3.2.4. Version_status Enumeration</a></li>
+<li><a href="#_sample_function_kind_enumeration">3.2.5. Sample_function_kind Enumeration</a></li>
 </ul>
 </li>
 </ul>
@@ -599,6 +600,86 @@ of Date/Time fields.</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Value representing a version which is a build of the current base release. Rendered with the build number as a string in the form <code>N.M.P+B</code> e.g. <code>2.0.1+33</code>.</p>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_sample_function_kind_enumeration"><a class="anchor" href="#_sample_function_kind_enumeration"></a>3.2.5. Sample_function_kind Enumeration</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Enumeration</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Sample_function_kind</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">actual</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minimum</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maximum</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">median</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">variation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decrease</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">increase</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">change</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -1837,7 +1918,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>namespace</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g.  terminology ,  demographic . These names are not yet standardised. Legal values for <code><em>namespace</em></code> are:</p>
+<p>Namespace to which this identifier belongs in the local system context (and possibly in any other openEHR compliant environment) e.g. <code>"terminology"</code>, <code>"demographic"</code>. These names are not yet standardised. Legal values for <code><em>namespace</em></code> are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2480,13 +2561,6 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Clinical concept of the archetype as a whole (= derived from the archetype_node_id' of the root node)</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_archetype_root</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>True if this node is the root of an archetyped structure.</p>
@@ -2770,7 +2844,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_details</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_details</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_hash_class">Hash<sup></a>&lt;<a href="/releases/BASE/latest/foundation_types.html#_string_class">String</sup></a>, <a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional attribute to carry any custom meta-data. May be archetyped.</p>
 </div></div></td>
@@ -2795,9 +2869,9 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 <div class="paragraph">
 <p>The classes presented in this section provide a means of including references to external entities, including demographic entities, that are represented in external systems.</p>
 </div>
-<div id="entity_reference_package" class="imageblock text-center text-center">
+<div id="participation_package" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/BASE-base_types.entity_reference.svg" alt="BASE base types.entity reference">
+<img src="UML/diagrams/BASE-base_types.participation.svg" alt="BASE base types.participation">
 </div>
 <div class="title">Figure 7. base_types.entity_reference Package</div>
 </div>
@@ -3104,7 +3178,7 @@ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participati
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-24 03:54:16 -0600
+Last updated 2023-09-05 10:05:22 -0600
 </div>
 </div>
 </body>

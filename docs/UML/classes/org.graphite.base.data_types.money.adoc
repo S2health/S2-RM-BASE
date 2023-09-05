@@ -6,7 +6,9 @@ h|*Class*
 2+^h|*Money*
 
 h|*Description*
-2+a|TODO: determine if should be a Quantity
+2+a|Quantity type representing amount of currency.
+
+TODO: determine if should be a Quantity
 
 h|*Inherit*
 2+|`<<_quantified_class,Quantified>>`

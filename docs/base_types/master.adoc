@@ -57,7 +57,7 @@ include::master03-definitions_package.adoc[leveloffset=+1]
 include::master04-builtins_package.adoc[leveloffset=+1]
 include::master05-identification_package.adoc[leveloffset=+1]
 include::master06-archetyped_package.adoc[leveloffset=+1]
-include::master07-reference_package.adoc[leveloffset=+1]
+include::master07-participation_package.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

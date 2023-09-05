@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Date_time_value*
 
 h|*Description*
-2+a|
+2+a|A `Temporal_value` carrying a `Date_time` value.
 
 h|*Inherit*
 2+|`<<_temporal_value_class,Temporal_value>>`

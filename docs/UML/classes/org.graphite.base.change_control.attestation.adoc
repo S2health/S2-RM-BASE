@@ -29,14 +29,8 @@ h|*0..1*
 |*proof*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Proof of attestation.
 
-h|*0..1*
-|*items*: `List<link:/releases/BASE/{base_release}/foundation_types.html#_uri_class[Uri^]>`
-a|Items attested, expressed as fully qualified runtime paths to the items in question. Although not recommended, these may include fine-grained items which have been attested in some other system. Otherwise it is assumed to be for the entire VERSION with which it is associated.
-
-TODO: consider better type for refs into Original_version.data.
-
 h|*1..1*
-|*reason*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+|*attestion_type*: `@@`
 a|Reason of this attestation. Optionally coded by the openEHR Terminology group  attestation reason ; includes values like  authorisation ,  witness  etc.
 
 h|*1..1*

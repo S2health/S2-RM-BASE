@@ -25,7 +25,7 @@ h|*1..1*
 a|Type of change. Coded using the openEHR Terminology  audit change type  group.
 
 h|*0..1*
-|*description*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+|*reason*: `link:/releases/BASE/{base_release}/data_types.html#_plain_text_class[Plain_text^]`
 a|Reason for committal. This may be used to qualify the value in the `_change_type_` field. For example, if the change affects only the EHR directory, this field might be used to indicate 'Folder "episode 2018-02-16" added' or similar.
 
 h|*1..1*

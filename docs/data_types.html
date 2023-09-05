@@ -145,7 +145,7 @@
 </li>
 <li><a href="#_class_descriptions_5">5.4. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_ordinal_class">5.4.1. Ordinal Class</a></li>
+<li><a href="#_coded_ordinal_class">5.4.1. Coded_ordinal Class</a></li>
 <li><a href="#_quantified_class">5.4.2. Quantified Class</a></li>
 <li><a href="#_quantity_class">5.4.3. Quantity Class</a></li>
 <li><a href="#_count_class">5.4.4. Count Class</a></li>
@@ -532,9 +532,6 @@
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Items which are truly boolean data, such as true/false or yes/no answers.</p>
-</div>
-<div class="paragraph">
-<p>Misuse: <code>Dv_boolean</code> should not be used as a replacement for naively modelled enumerated types such as male/female etc. Such values should be coded, and in any case the enumeration often has more than two values.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -551,6 +548,20 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Boolean value of this item. Actual values may be language or implementation dependent.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>true_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Term to use for True value. If not set, the String 'True' is used.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>false_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Term to use for False value. If not set, the String 'False' is used.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1814,7 +1825,7 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 <div class="sect2">
 <h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>5.4. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_ordinal_class"><a class="anchor" href="#_ordinal_class"></a>5.4.1. Ordinal Class</h4>
+<h4 id="_coded_ordinal_class"><a class="anchor" href="#_coded_ordinal_class"></a>5.4.1. Coded_ordinal Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1824,7 +1835,7 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Ordinal</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Coded_ordinal</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -1875,7 +1886,7 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>symbol</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  <code>mild</code>, <code>moderate</code>, <code>severe</code>, or even the same number series as the values, e.g. 1, 2, 3.</p>
 </div></div></td>
@@ -1896,7 +1907,7 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
-other: <code><a href="#_ordinal_class">Ordinal</a>[1]</code><br>
+other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 ): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
 <br>
 <em>Pre_comparable</em>: <code>is_strictly_comparable_to (other)</code></p></td>
@@ -1938,13 +1949,17 @@ other: <code><a href="#_ordinal_class">Ordinal</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_measured_class">Measured</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional data elements for measured quantities, including precision, accuracy and reference ranges.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (redefined)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_comparable_numeric_class" target="_blank" rel="noopener">Comparable_Numeric</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The magnitude of the quantity.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -2387,17 +2402,23 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code>Real</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Numerator value of Ratio.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code>Real</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Denominator value of Ratio.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="#_ratio_kind_enumeration">Ratio_kind</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Type of ratio.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -2417,7 +2438,9 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Enumeration of forms of ratio.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2832,7 +2855,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A <code>Temporal_value</code> carrying a <code>Date</code> value.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
@@ -2856,7 +2881,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A <code>Temporal_value</code> carrying a <code>Time</code> value.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
@@ -2880,7 +2907,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A <code>Temporal_value</code> carrying a <code>Date_time</code> value.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
@@ -2904,7 +2933,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A <code>Temporal_value</code> carrying a <code>Duration</code> value.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
@@ -3185,7 +3216,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Time specified as a period, meaning 'every &lt;period&gt;'.</p>
+<p>Event occurrence time specified as a period, meaning 'every &lt;period&gt;'.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3200,7 +3231,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The period in which events recur.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -3220,7 +3253,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Event time occurrence specified as particular days of week or month or year.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
@@ -3235,13 +3270,15 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly' and so on.</p>
+<p>Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_of_day</strong>: <code>List&lt;<a href="#_hour_specifier_class">Hour_specifier</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Times of day within day(s).</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>

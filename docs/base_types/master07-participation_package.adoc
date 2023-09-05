@@ -6,7 +6,7 @@ The classes presented in this section provide a means of including references to
 
 [.text-center]
 .base_types.entity_reference Package
-image::{uml_diagrams_uri}/BASE-base_types.entity_reference.svg[id=entity_reference_package, align="center"]
+image::{uml_diagrams_uri}/BASE-base_types.participation.svg[id=participation_package, align="center"]
 
 == Design Principles
 
