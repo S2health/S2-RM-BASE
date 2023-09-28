@@ -1,5 +1,5 @@
-= Graphite Platform Specification - BASE component
+= S2 Specification - BASE component
 
-This repository contains the document and model sources (Asciidoctor and MagicDraw) for the Graphite Platform BASE specifications.
+This repository contains the document and model sources (Asciidoctor and MagicDraw) for the S2 BASE specifications.
 
 https://congenial-adventure-wl936kl.pages.github.io/[Specifications^].
