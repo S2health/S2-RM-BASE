@@ -1,4 +1,4 @@
-:spec_title: Graphite Change Control Model
+:spec_title: S2 Change Control Model
 :copyright_year: 2023
 :spec_status: STABLE
 :keywords: EHR, conformance

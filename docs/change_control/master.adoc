@@ -35,7 +35,7 @@ This specification is largely derived from the Change Control section of the {op
 === Trademarks
 
 * 'openEHR' is a registered trademark of the openEHR Foundation
-* 'Graphite Health' is a registered trademark of the Graphite Health
+* 'Graphite Health' is a registered trademark of Graphite Health
 * 'Java' is a registered trademark of Oracle Corporation
 * 'Microsoft' and '.Net' are registered trademarks of the Microsoft Corporation
 
@@ -46,7 +46,7 @@ This specification is largely derived from the Change Control section of the {op
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.graphite.base.change_control.
+:pkg: org.s2.base.change_control.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

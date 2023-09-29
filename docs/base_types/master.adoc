@@ -35,7 +35,7 @@ This specification is largely derived from the {openehr_base_types}[{product_nam
 === Trademarks
 
 * 'openEHR' is a registered trademark of the openEHR Foundation
-* 'Graphite Health' is a registered trademark of the Graphite Health
+* 'Graphite Health' is a registered trademark of Graphite Health
 
 //
 // --------------------------------------------- TOC -----------------------------------------------
@@ -48,7 +48,7 @@ This specification is largely derived from the {openehr_base_types}[{product_nam
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.graphite.base.base_types.
+:pkg: org.s2.base.base_types.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

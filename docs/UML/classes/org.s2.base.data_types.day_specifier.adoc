@@ -1,0 +1,25 @@
+=== Day_specifier Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Day_specifier*
+
+h|*Description*
+2+a|Event time occurrence specified as particular days of week or month or year.
+
+h|*Inherit*
+2+|`<<_time_specifier_class,Time_specifier>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*day*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+a|Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.
+
+h|*0..1*
+|*time_of_day*: `List<<<_hour_specifier_class,Hour_specifier>>>`
+a|Times of day within day(s).
+|===

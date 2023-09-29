@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="description" content="Graphite Base Types specification">
-<meta name="keywords" content="openehr, identifiers, types">
+<meta name="description" content="S2 Base Types specification">
+<meta name="keywords" content="openehr, s2, identifiers, types">
 <title>Base Types</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
@@ -40,10 +40,11 @@
 <li><a href="#_class_definitions">3.2. Class Definitions</a>
 <ul class="sectlevel3">
 <li><a href="#_basic_definitions_class">3.2.1. Basic_definitions Class</a></li>
-<li><a href="#_openehr_definitions_class">3.2.2. Openehr_definitions Class</a></li>
+<li><a href="#_s2_definitions_class">3.2.2. S2_definitions Class</a></li>
 <li><a href="#_validity_kind_enumeration">3.2.3. Validity_kind Enumeration</a></li>
 <li><a href="#_version_status_enumeration">3.2.4. Version_status Enumeration</a></li>
 <li><a href="#_sample_function_kind_enumeration">3.2.5. Sample_function_kind Enumeration</a></li>
+<li><a href="#_trend_kind_enumeration">3.2.6. Trend_kind Enumeration</a></li>
 </ul>
 </li>
 </ul>
@@ -193,7 +194,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-graphite.svg" alt="openEHR logo">
+<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg" alt="openEHR logo">
 </div>
 </div>
 </div>
@@ -208,7 +209,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platform Community</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a></th>
 </tr>
 </thead>
 <tbody>
@@ -221,7 +222,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: openehr, identifiers, types</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: openehr, s2, identifiers, types</p></td>
 </tr>
 </tbody>
 </table>
@@ -232,12 +233,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2016 - 2023 Graphite Platform Publishing</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2016 - 2023 S2 Foundation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -245,8 +246,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.graphitehealth.io/components/BASE/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
- Web: <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">specifications.GraphiteHealth.io</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
+ Web: <a href="https://specifications.s2health.io" target="_blank" rel="noopener">specifications.S2.io</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -287,7 +288,7 @@
 <div class="sect2">
 <h3 id="_prior_art"><a class="anchor" href="#_prior_art"></a>Prior Art</h3>
 <div class="paragraph">
-<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html" target="_blank" rel="noopener">Graphite Base Types</a> specification.</p>
+<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html" target="_blank" rel="noopener">S2 Base Types</a> specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -298,7 +299,7 @@
 <p>'openEHR' is a registered trademark of the openEHR Foundation</p>
 </li>
 <li>
-<p>'Graphite Health' is a registered trademark of the Graphite Health</p>
+<p>'Graphite Health' is a registered trademark of Graphite Health</p>
 </li>
 </ul>
 </div>
@@ -311,7 +312,7 @@
 <div class="sect2">
 <h3 id="_purpose"><a class="anchor" href="#_purpose"></a>1.1. Purpose</h3>
 <div class="paragraph">
-<p>This document describes the Graphite Base Types, a collection of general types used by other specifications.</p>
+<p>This document describes the S2 Base Types, a collection of general types used by other specifications.</p>
 </div>
 <div class="paragraph">
 <p>The intended audience includes implementers and health IT standards experts.</p>
@@ -333,7 +334,7 @@
 <div class="sect2">
 <h3 id="_status"><a class="anchor" href="#_status"></a>1.3. Status</h3>
 <div class="paragraph">
-<p>This specification is in the STABLE state. The development version of this document can be found at <a href="https://specifications.graphitehealth.io/releases/BASE/latest/base_types.html" target="_blank" rel="noopener">https://specifications.graphitehealth.io/releases/BASE/latest/base_types.html</a>.</p>
+<p>This specification is in the STABLE state. The development version of this document can be found at {S2base_latest_base_types}[{S2base_latest_base_types}^].</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -345,13 +346,13 @@
 <div class="sect2">
 <h3 id="_feedback"><a class="anchor" href="#_feedback"></a>1.4. Feedback</h3>
 <div class="paragraph">
-<p>Feedback may be provided on the <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">Graphite forum</a>.</p>
+<p>Feedback may be provided on the {S2specifications_forum}[S2 forum^].</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.graphitehealth.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.graphitehealth.io/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.s2health.io/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
 </div>
 </div>
 </div>
@@ -360,7 +361,7 @@
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>2. Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Graphite Base Types (<code>org.graphite.base_types</code> package) consist of basic types used globally throughout the Graphite components and specifications, including definitions, various enumerations, built-in types providing utility functions, identifier types and terminology-related types. The latter two categories are intended to support all kinds of references: to terminology terms, informational objects, real world entities.</p>
+<p>The S2 Base Types (<code>org.s2.base_types</code> package) consist of basic types used globally throughout the S2 components and specifications, including definitions, various enumerations, built-in types providing utility functions, identifier types and terminology-related types. The latter two categories are intended to support all kinds of references: to terminology terms, informational objects, real world entities.</p>
 </div>
 <div class="paragraph">
 <p>The package structure is illustrated below.</p>
@@ -379,7 +380,7 @@
 <div class="sect2">
 <h3 id="_overview_2"><a class="anchor" href="#_overview_2"></a>3.1. Overview</h3>
 <div class="paragraph">
-<p>The <code>base_types.definitions</code> package shown below defines symbolic definitions used by the Graphite models.</p>
+<p>The <code>base_types.definitions</code> package shown below defines symbolic definitions used by the S2 models.</p>
 </div>
 <div id="base_definition_types" class="imageblock text-center text-center">
 <div class="content">
@@ -452,7 +453,7 @@
 </table>
 </div>
 <div class="sect3">
-<h4 id="_openehr_definitions_class"><a class="anchor" href="#_openehr_definitions_class"></a>3.2.2. Openehr_definitions Class</h4>
+<h4 id="_s2_definitions_class"><a class="anchor" href="#_s2_definitions_class"></a>3.2.2. S2_definitions Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -462,7 +463,7 @@
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Openehr_definitions</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>S2_definitions</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -509,8 +510,7 @@
 <p>An enumeration of three values that may commonly occur in constraint models.</p>
 </div>
 <div class="paragraph">
-<p>Use as the type of any attribute within this model, which expresses constraint on some attribute in a class in a reference model. For example to indicate validity
-of Date/Time fields.</p>
+<p>Use as the type of any attribute within this model, which expresses constraint on some attribute in a class in a reference model. For example to indicate validity of Date/Time fields.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -658,12 +658,37 @@ of Date/Time fields.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">variation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_trend_kind_enumeration"><a class="anchor" href="#_trend_kind_enumeration"></a>3.2.6. Trend_kind Enumeration</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Enumeration</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Trend_kind</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">variation</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
@@ -1046,7 +1071,7 @@ property: <code><a href="/releases/BASE/latest/foundation_types.html#_terminolog
 <div class="sect2">
 <h3 id="_primitive_identifiers"><a class="anchor" href="#_primitive_identifiers"></a>5.4. Primitive Identifiers</h3>
 <div class="paragraph">
-<p>Three kinds of types are defined in this package. The abstract Uid type and its subtypes correspond to permanent, computationally reliable, primitive identifiers. Such identifiers are regarded as 'primitive' because they are treated as having no further internal structure, in the sense that part of such an identifier is not in general meaningful. The three subtypes <code>Uuid</code>, <code>Iso_oid</code> and <code>Internet_id</code> all have these properties, and are commonly accepted ways of uniquely identifying entities in computer systems. In Graphite (and generally in health informatics) they are usually used as parts of other identifiers.</p>
+<p>Three kinds of types are defined in this package. The abstract Uid type and its subtypes correspond to permanent, computationally reliable, primitive identifiers. Such identifiers are regarded as 'primitive' because they are treated as having no further internal structure, in the sense that part of such an identifier is not in general meaningful. The three subtypes <code>Uuid</code>, <code>Iso_oid</code> and <code>Internet_id</code> all have these properties, and are commonly accepted ways of uniquely identifying entities in computer systems. In S2 (and generally in health informatics) they are usually used as parts of other identifiers.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1173,7 +1198,7 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Model of a reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by <a href="https://www.rfc-editor.org/info/rfc1034" target="_blank" rel="noopener">IETF RFC 1034</a>.</p>
+<p>Reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by <a href="https://www.rfc-editor.org/info/rfc1034" target="_blank" rel="noopener">IETF RFC 1034</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1220,7 +1245,7 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 <p>Under this scheme, multiple versions in the same container all have the same value for <code><em>object_id</em></code>, whilst their location in the version tree is given by the combination of the version tree identifier and the identifier of the creating system.</p>
 </div>
 <div class="paragraph">
-<p>The requirements on the <code><em>creating_system_id</em></code> part of the identifier are that it be unique per system, and that it be easy to obtain or generate. It is also helpful if it is a meaningful identifier. The two most practical candidates appear to be Uuids (which are not meaningful, but are easy to generate) and reverse internet domain identifiers (these are easy to determine if the system has an internet address, and are meaningful and directly processable, however unconnected systems pose a problem). ISO OIDs might also be used. All of these identifier types are accommodated via the use of Uid. A full explanation of the version identification scheme and its capabilities is given in the <a href="https://specifications.graphitehealth.io/releases/BASE/latest/change_control.html#_change_control_package">openEHR <code>change_control</code> package</a>.</p>
+<p>The requirements on the <code><em>creating_system_id</em></code> part of the identifier are that it be unique per system, and that it be easy to obtain or generate. It is also helpful if it is a meaningful identifier. The two most practical candidates appear to be Uuids (which are not meaningful, but are easy to generate) and reverse internet domain identifiers (these are easy to determine if the system has an internet address, and are meaningful and directly processable, however unconnected systems pose a problem). ISO OIDs might also be used. All of these identifier types are accommodated via the use of Uid. A full explanation of the version identification scheme and its capabilities is given in the {S2base_change_control}#_change_control_package[openEHR <code>change_control</code> package].</p>
 </div>
 </div>
 <div class="sect3">
@@ -1244,7 +1269,7 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 <p>Ancestor class of identifiers of informational objects.</p>
 </div>
 <div class="paragraph">
-<p>Object identifiers are used inside an object to identify that object. To identify an object in another service, use an <code>Object_ref</code>, or else use a Uid for local objects identified by UID.</p>
+<p>Object identifiers are used inside an object to identify that object, in a similar way to a 'primary key' in a relational DB. To identify an object in another service, use an <code>Object_ref</code>, or else use a Uid for local objects identified by UID.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1903,7 +1928,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service.</p>
+<p>Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service. In a relational DB, equivalent to a 'foreign key' with extra meta-data.</p>
 </div>
 <div class="paragraph">
 <p>TODO: keep type?</p>
@@ -2469,7 +2494,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the <code>LOCATABLE</code> class, which defines the idea of  locatability in an archetyped structure. <code>LOCATABLE</code> defines a runtime name and an <code><em>archetype_node_id</em></code>.</p>
+<p>Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the <code>LOCATABLE</code> class, which defines the idea of  locatability in an archetyped structure. <code>Locatable</code> defines a runtime name and an <code><em>archetype_node_id</em></code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2490,22 +2515,22 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.</p>
-</div>
-<div class="paragraph">
-<p>TODO: in openEHR this can be a coded term. What do we prefer?</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>archetype_node_id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Design-time archetype identifier of this node taken from its generating archetype; used to build archetype paths. Always in the form of an at-code, e.g. <code>at0005</code>. This value enables a 'standardised' name for this node to be generated, by referring to the generating archetype local terminology.</p>
 </div>
 <div class="paragraph">
 <p>At an archetype root point, the value of this attribute is always the stringified form of the <code><em>archetype_id</em></code> found in the <code><em>archetype_details</em></code> object.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.</p>
+</div>
+<div class="paragraph">
+<p>TODO: in openEHR this can be a coded term. What do we prefer?</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2531,12 +2556,12 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>code</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>code</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional field to carry code from bound terminology, e.g. LOINC or other.</p>
+<p>Optional field to carry code from bound terminology, e.g. LOINC or other, describing the real entity whose data are in the subtree starting at this node, e.g. heart rate.This code may be pre-coordinated to include relevant modifiers e.g. 'average heart rate', 'maximum heart rate'. The data should carry</p>
 </div>
 <div class="paragraph">
-<p>If populated, the code must match that found in a terminology service lookup for the internal code carried in the <code><em>archetype_node_id</em></code> field. Any other value will generate an error in validation.</p>
+<p>If populated, the code must be in the subsumption of the concept found in a terminology service for the internal code carried in the <code><em>archetype_node_id</em></code> field. Any other value will generate an error in validation.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2549,9 +2574,6 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>TODO: for GCM, default to Graphite LOINC extension</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2679,7 +2701,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information.</p>
 </div>
@@ -2689,7 +2711,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The type attribute is used to indicate a clinical or domain-level meaning for the kind of link, for example 'problem' or 'issue'. If type values are designed appropriately, they can be used by the requestor of EHR extracts to categorise links which must be followed and which can be broken when the extract is created.</p>
 </div></div></td>
@@ -2881,7 +2903,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 <div class="sect3">
 <h4 id="_referring_to_external_entities"><a class="anchor" href="#_referring_to_external_entities"></a>7.2.1. Referring to External Entities</h4>
 <div class="paragraph">
-<p>External demographic parties (individuals, institutions, other autonomous entities) may be referenced from Graphite platform data either via a  <em>party proxy</em> reference, or via <em>participation</em>. The former expresses the notion of 'who', while the latter additionally enables representation of the type of interaction.</p>
+<p>External demographic parties (individuals, institutions, other autonomous entities) may be referenced from S2 platform data either via a  <em>party proxy</em> reference, or via <em>participation</em>. The former expresses the notion of 'who', while the latter additionally enables representation of the type of interaction.</p>
 </div>
 <div class="paragraph">
 <p>The <code>Party_proxy</code> class and descendants support the use of an external reference (<code>Party_proxy.<em>external_ref</em></code>) to the target party. For publicly identified parties, i.e. institutions and individual providers, the subtype <code>Party_identified</code> is used, which may also carry a modicum of identifying information, obviating the need for resolution in the external system in many circumstances. Parties related to the subject of the record may be represented via <code>Party_related</code>, which enables the relationship to be stated. Relationships are coded and include familial ones ('mother', 'uncle', etc) as well as relationships like 'donor', 'travelling companion' and so on.</p>
@@ -2909,7 +2931,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 <div class="sect3">
 <h4 id="_participation"><a class="anchor" href="#_participation"></a>7.2.2. Participation</h4>
 <div class="paragraph">
-<p>The Participation abstraction models the interaction of a Party in an activity. In the Graphite reference model, participations are modelled in two ways. In situations where the kind of participation is known and constant, it is modelled as a named attribute in the relevant reference model. For example, the <code><em>committer</em>: Party_proxy</code> attribute in <code>Audit_details</code> models a participation in which the function is 'committal'. Where the kind of participation is not known at design time, the <code>Participation</code> class is used to express the interaction, as well as the external reference.</p>
+<p>The Participation abstraction models the interaction of a Party in an activity. In the S2 reference model, participations are modelled in two ways. In situations where the kind of participation is known and constant, it is modelled as a named attribute in the relevant reference model. For example, the <code><em>committer</em>: Party_proxy</code> attribute in <code>Audit_details</code> models a participation in which the function is 'committal'. Where the kind of participation is not known at design time, the <code>Participation</code> class is used to express the interaction, as well as the external reference.</p>
 </div>
 </div>
 </div>
@@ -3077,7 +3099,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>relationship</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>relationship</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Relationship of subject of this Entry to the subject of the record. May be coded. If it is the patient, coded as  self.</p>
 </div></div></td>
@@ -3123,14 +3145,14 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>function</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>function</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The function of the Party in this participation. Note that a given party might participate in more than one way in a particular activity.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>role</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>role</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Role of participant within the organisation, e.g. cardiologist, senior nurse.</p>
 </div></div></td>
@@ -3144,7 +3166,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mode</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mode</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional field for recording the 'mode' of the performer / activity interaction, e.g. present, by telephone, by email etc.</p>
 </div></div></td>
@@ -3178,7 +3200,7 @@ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participati
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-05 10:05:22 -0600
+Last updated 2023-09-28 16:32:38 -0600
 </div>
 </div>
 </body>

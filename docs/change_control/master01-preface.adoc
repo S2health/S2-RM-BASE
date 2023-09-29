@@ -15,7 +15,7 @@ Prerequisite documents for reading this document include:
 Related documents include:
 
 * The {openehr_rm_support}[openEHR Support Information Model^];
-* The {graphite_base_base_types}[{product_name} BAse Types^].
+* The {S2base_base_types}[{product_name} BAse Types^].
 
 == History
 
@@ -23,7 +23,7 @@ This specification was derived from the Change Control section of the {openehr_r
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {graphite_base_latest_change_control}[{graphite_base_latest_change_control}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {S2base_latest_change_control}[{S2base_latest_change_control}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -31,7 +31,7 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {graphite_specifications_forum}[{product_name} specifications forum^].
+Feedback may be provided on the {S2specifications_forum}[{product_name} specifications forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 

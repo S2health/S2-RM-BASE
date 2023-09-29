@@ -1,6 +1,6 @@
 = Overview
 
-The {product_name} Foundation Types (`org.graphite.base.foundation_types` package) consists of primitive types assumed by and used throughout the {product_name} components and specifications. The types described here are specified in order to establish the names and minimal semantics of typical standard classes, and to provide a mapping point into implementation technologies.
+The {product_name} Foundation Types (`org.s2.base.foundation_types` package) consists of primitive types assumed by and used throughout the {product_name} components and specifications. The types described here are specified in order to establish the names and minimal semantics of typical standard classes, and to provide a mapping point into implementation technologies.
 
 The set of types chosen here is based on a common set derived from various published sources, including:
 

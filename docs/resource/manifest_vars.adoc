@@ -1,5 +1,5 @@
 :spec_title: Resource Model
 :copyright_year: 2003
 :spec_status: STABLE
-:keywords: openehr, resources
-:description: Graphite Resource Model specification
+:keywords: openehr, s2, resources
+:description: S2 Resource Model specification

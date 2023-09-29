@@ -1,7 +1,7 @@
 
 == Component BASE
 
-=== Model org.graphite.base
+=== Model org.s2.base
 
 ==== Package base_types
 
@@ -42,8 +42,6 @@
 [.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_object_version_id_class[Object_version_id^]
 [.xcode]
-* link:/releases/BASE/{base_release}/base_types.html#_openehr_definitions_class[Openehr_definitions^]
-[.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_participation_class[Participation^]
 [.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_party_identified_class[Party_identified^]
@@ -60,11 +58,15 @@
 [.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_quantity_converter_interface[Quantity_converter^]
 [.xcode]
+* link:/releases/BASE/{base_release}/base_types.html#_s2_definitions_class[S2_definitions^]
+[.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_sample_function_kind_enumeration[Sample_function_kind^]
 [.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_statistical_evaluator_interface[Statistical_evaluator^]
 [.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_terminology_id_class[Terminology_id^]
+[.xcode]
+* link:/releases/BASE/{base_release}/base_types.html#_trend_kind_enumeration[Trend_kind^]
 [.xcode]
 * link:/releases/BASE/{base_release}/base_types.html#_uuid_class[Uuid^]
 [.xcode]
@@ -134,7 +136,7 @@
 [.xcode]
 * link:/releases/BASE/{base_release}/data_types.html#_occurrence_pattern_class[Occurrence_pattern^]
 [.xcode]
-* link:/releases/BASE/{base_release}/data_types.html#_ordered_class[Ordered^]
+* link:/releases/BASE/{base_release}/data_types.html#_ordered_value_class[Ordered_value^]
 [.xcode]
 * link:/releases/BASE/{base_release}/data_types.html#_parsable_class[Parsable^]
 [.xcode]
@@ -161,10 +163,6 @@
 * link:/releases/BASE/{base_release}/data_types.html#_temporal_relation_enumeration[Temporal_relation^]
 [.xcode]
 * link:/releases/BASE/{base_release}/data_types.html#_temporal_value_class[Temporal_value^]
-[.xcode]
-* link:/releases/BASE/{base_release}/data_types.html#_term_mapping_class[Term_mapping^]
-[.xcode]
-* link:/releases/BASE/{base_release}/data_types.html#_term_mapping_match_enumeration[Term_mapping_match^]
 [.xcode]
 * link:/releases/BASE/{base_release}/data_types.html#_text_class[Text^]
 [.xcode]
@@ -194,6 +192,8 @@
 * link:/releases/BASE/{base_release}/foundation_types.html#_cardinality_class[Cardinality^]
 [.xcode]
 * link:/releases/BASE/{base_release}/foundation_types.html#_character_class[Character^]
+[.xcode]
+* link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]
 [.xcode]
 * link:/releases/BASE/{base_release}/foundation_types.html#_comparable_class[Comparable^]
 [.xcode]
@@ -244,8 +244,6 @@
 * link:/releases/BASE/{base_release}/foundation_types.html#_temporal_class[Temporal^]
 [.xcode]
 * link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]
-[.xcode]
-* link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]
 [.xcode]
 * link:/releases/BASE/{base_release}/foundation_types.html#_time_class[Time^]
 [.xcode]

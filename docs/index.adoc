@@ -4,7 +4,7 @@
 include::{ref_dir}/docs/boilerplate/basic_style_settings.adoc[]
 
 :keywords: base component
-:description: Graphite BASE Component
+:description: S2 BASE Component
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 

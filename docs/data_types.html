@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="description" content="Graphite Data Types Model">
-<meta name="keywords" content="EHR, clinical, data types, Graphite">
+<meta name="description" content="S2 Data Types Model">
+<meta name="keywords" content="EHR, clinical, data types, S2">
 <title>Data Types Model</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
@@ -88,20 +88,10 @@
 <li><a href="#_overview_3">4.3.1. Overview</a></li>
 <li><a href="#_negation">4.3.2. Negation</a></li>
 <li><a href="#_representation_of_meaning_modifying_terms">4.3.3. Representation of Meaning-Modifying Terms</a></li>
-<li><a href="#_mappings">4.3.4. Mappings</a>
+<li><a href="#_formatting_and_hyperlinking">4.3.4. Formatting and Hyperlinking</a>
 <ul class="sectlevel4">
-<li><a href="#_classification_broader_terms">4.3.4.1. Classification (Broader Terms)</a></li>
-<li><a href="#_equivalent_synonymous_terms">4.3.4.2. Equivalent / Synonymous Terms</a></li>
-<li><a href="#_post_hoc_coding_of_narrative">4.3.4.3. Post hoc Coding of Narrative</a></li>
-<li><a href="#_more_specific_mappings_narrower_terms">4.3.4.4. More Specific Mappings (Narrower Terms)</a></li>
-<li><a href="#_the_unified_medical_language_system_umls">4.3.4.5. The Unified Medical Language System (UMLS)</a></li>
-<li><a href="#_legacy_mapping_scenarios">4.3.4.6. Legacy Mapping Scenarios</a></li>
-</ul>
-</li>
-<li><a href="#_formatting_and_hyperlinking">4.3.5. Formatting and Hyperlinking</a>
-<ul class="sectlevel4">
-<li><a href="#_usage_in_plain_text_instances">4.3.5.1. Usage in Plain_text Instances</a></li>
-<li><a href="#_usage_in_coded_text_instances">4.3.5.2. Usage in Coded_text Instances</a></li>
+<li><a href="#_usage_in_plain_text_instances">4.3.4.1. Usage in Plain_text Instances</a></li>
+<li><a href="#_usage_in_coded_text_instances">4.3.4.2. Usage in Coded_text Instances</a></li>
 </ul>
 </li>
 </ul>
@@ -112,8 +102,6 @@
 <li><a href="#_plain_text_class">4.4.2. Plain_text Class</a></li>
 <li><a href="#_text_format_types_enumeration">4.4.3. Text_format_types Enumeration</a></li>
 <li><a href="#_coded_text_class">4.4.4. Coded_text Class</a></li>
-<li><a href="#_term_mapping_class">4.4.5. Term_mapping Class</a></li>
-<li><a href="#_term_mapping_match_enumeration">4.4.6. Term_mapping_match Enumeration</a></li>
 </ul>
 </li>
 </ul>
@@ -145,17 +133,18 @@
 </li>
 <li><a href="#_class_descriptions_5">5.4. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_coded_ordinal_class">5.4.1. Coded_ordinal Class</a></li>
-<li><a href="#_quantified_class">5.4.2. Quantified Class</a></li>
-<li><a href="#_quantity_class">5.4.3. Quantity Class</a></li>
-<li><a href="#_count_class">5.4.4. Count Class</a></li>
-<li><a href="#_proportion_class">5.4.5. Proportion Class</a></li>
-<li><a href="#_ratio_class">5.4.6. Ratio Class</a></li>
-<li><a href="#_ratio_kind_enumeration">5.4.7. Ratio_kind Enumeration</a></li>
-<li><a href="#_measured_class">5.4.8. Measured Class</a></li>
-<li><a href="#_reference_range_class">5.4.9. Reference_range Class</a></li>
-<li><a href="#_comparison_operator_enumeration">5.4.10. Comparison_operator Enumeration</a></li>
-<li><a href="#_range_class">5.4.11. Range Class</a></li>
+<li><a href="#_ordered_value_class">5.4.1. Ordered_value Class</a></li>
+<li><a href="#_coded_ordinal_class">5.4.2. Coded_ordinal Class</a></li>
+<li><a href="#_quantified_class">5.4.3. Quantified Class</a></li>
+<li><a href="#_quantity_class">5.4.4. Quantity Class</a></li>
+<li><a href="#_count_class">5.4.5. Count Class</a></li>
+<li><a href="#_proportion_class">5.4.6. Proportion Class</a></li>
+<li><a href="#_ratio_class">5.4.7. Ratio Class</a></li>
+<li><a href="#_ratio_kind_enumeration">5.4.8. Ratio_kind Enumeration</a></li>
+<li><a href="#_measured_class">5.4.9. Measured Class</a></li>
+<li><a href="#_reference_range_class">5.4.10. Reference_range Class</a></li>
+<li><a href="#_comparison_operator_enumeration">5.4.11. Comparison_operator Enumeration</a></li>
+<li><a href="#_range_class">5.4.12. Range Class</a></li>
 </ul>
 </li>
 <li><a href="#_syntaxes">5.5. Syntaxes</a>
@@ -259,7 +248,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-graphite.svg" alt="openEHR logo">
+<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg" alt="openEHR logo">
 </div>
 </div>
 </div>
@@ -274,7 +263,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platform Community</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a></th>
 </tr>
 </thead>
 <tbody>
@@ -287,7 +276,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, clinical, data types, Graphite</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, clinical, data types, S2</p></td>
 </tr>
 </tbody>
 </table>
@@ -298,12 +287,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2023 Graphite Platform Publishing</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2023 S2 Foundation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -311,8 +300,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.graphitehealth.io/components/BASE/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
- Web: <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">specifications.GraphiteHealth.io</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
+ Web: <a href="https://specifications.s2health.io" target="_blank" rel="noopener">specifications.S2.io</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -367,7 +356,7 @@
 <p>'FHIR' is a registered trademark of HL7 International</p>
 </li>
 <li>
-<p>'Graphite Health' is a registered trademark of the Graphite Health</p>
+<p>'Graphite Health' is a registered trademark of Graphite Health</p>
 </li>
 <li>
 <p>'Java' is a registered trademark of Oracle Corporation</p>
@@ -386,7 +375,7 @@
 <div class="sect2">
 <h3 id="_purpose"><a class="anchor" href="#_purpose"></a>1.1. Purpose</h3>
 <div class="paragraph">
-<p>This document defines the Graphite Data Types Model.</p>
+<p>This document defines the S2 Data Types Model.</p>
 </div>
 <div class="paragraph">
 <p>The intended audience includes implementers, integrators and health data managers.</p>
@@ -400,7 +389,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.graphitehealth.io/releases/BASE/latest/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>;</p>
+<p>The {S2overview}[openEHR Architecture Overview^];</p>
 </li>
 </ul>
 </div>
@@ -408,7 +397,7 @@
 <div class="sect2">
 <h3 id="_status"><a class="anchor" href="#_status"></a>1.3. Status</h3>
 <div class="paragraph">
-<p>This specification is in the TRIAL state. The development version of this document can be found at <a href="https://specifications.graphitehealth.io/releases/BASE/latest/data_types.html" target="_blank" rel="noopener">https://specifications.graphitehealth.io/releases/BASE/latest/data_types.html</a>.</p>
+<p>This specification is in the TRIAL state. The development version of this document can be found at {S2base_latest_data_types}[{S2base_latest_data_types}^].</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -420,13 +409,13 @@
 <div class="sect2">
 <h3 id="_feedback"><a class="anchor" href="#_feedback"></a>1.4. Feedback</h3>
 <div class="paragraph">
-<p>Feedback may be provided on the <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">Graphite forum</a>.</p>
+<p>Feedback may be provided on the {S2specifications_forum}[S2 forum^].</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.graphitehealth.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.graphitehealth.io/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.s2health.io/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
 </div>
 </div>
 </div>
@@ -437,13 +426,13 @@
 <div class="sect2">
 <h3 id="_overview"><a class="anchor" href="#_overview"></a>2.1. Overview</h3>
 <div class="paragraph">
-<p>This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Character</code>, <code>Octet</code>, <code>String</code>, <code>List&lt;T&gt;</code>, <code>Set&lt;T&gt;</code>, and <code>Array&lt;T&gt;</code>. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the {graphite_foundation_types}[Graphite Foundation Types^].</p>
+<p>This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Character</code>, <code>Octet</code>, <code>String</code>, <code>List&lt;T&gt;</code>, <code>Set&lt;T&gt;</code>, and <code>Array&lt;T&gt;</code>. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the {S2foundation_types}[S2 Foundation Types^].</p>
 </div>
 <div class="paragraph">
 <p>The data types described here inherit from the class <code>Data_value</code>. They have two distinct uses in reference models. Firstly, they may be used as 'data values' in reference model structures wherever the <code>Data_value</code> class appears. Additionally, specific subtypes of the data types described here can also be used as attribute types in other classes in reference models, such as date/times, coded terms and so on. The difference is that in the former case, only subtypes of <code>Data_value</code> may be used, whilst in the latter case, other types may be used as well, from the assumed set of basic types.</p>
 </div>
 <div class="paragraph">
-<p>Over and above the need to satisfy the functional requirements of clinical data, three concerns have driven the design of the Graphite data types:</p>
+<p>Over and above the need to satisfy the functional requirements of clinical data, three concerns have driven the design of the S2 data types:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -459,7 +448,7 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>Accordingly, the types defined here have been derived from the <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">Graphite Data Types</a> and the <a href="http://build.fhir.org/datatypes.html" target="_blank" rel="noopener">HL7 FHIR Data Types</a>.</p>
+<p>Accordingly, the types defined here have been derived from the <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">S2 Data Types</a> and the <a href="http://build.fhir.org/datatypes.html" target="_blank" rel="noopener">HL7 FHIR Data Types</a>.</p>
 </div>
 <div class="paragraph">
 <p>The <code>data_types</code> package is illustrated below.</p>
@@ -489,7 +478,7 @@
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract parent of all <code>Dv_</code> data value types.</p>
+<p>Abstract parent of all data value types.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -552,14 +541,14 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>true_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>true_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Term to use for True value. If not set, the String 'True' is used.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>false_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>false_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Term to use for False value. If not set, the String 'False' is used.</p>
 </div></div></td>
@@ -801,7 +790,7 @@
 <div class="sect4">
 <h5 id="_preferred_terms"><a class="anchor" href="#_preferred_terms"></a>4.2.2.3. Preferred Terms</h5>
 <div class="paragraph">
-<p>In cases where Graphite data is used to represent data originally represented in other formats, one common requirement is to be able to represent both the term chosen by the user at data capture time, and also the corresponding <em>preferred term</em>, if the two are different. This allows both the user&#8217;s specific choice and the standard text to be captured.</p>
+<p>In cases where S2 data is used to represent data originally represented in other formats, one common requirement is to be able to represent both the term chosen by the user at data capture time, and also the corresponding <em>preferred term</em>, if the two are different. This allows both the user&#8217;s specific choice and the standard text to be captured.</p>
 </div>
 <div class="paragraph">
 <p>Secondly, where term mappings are represented it is useful to be able to capture not just the code or code-phrase of the mapped term, but the preferred term or expression text, in order to make the mapped term self-standing in the data.</p>
@@ -823,7 +812,7 @@
 <div class="sect3">
 <h4 id="_overview_3"><a class="anchor" href="#_overview_3"></a>4.3.1. Overview</h4>
 <div class="paragraph">
-<p>All atomic text items are either instances of the type <code>Plain_text</code> or of <code>Coded_text</code>. Within archetyped structures, the parent type <code>Text</code> should be used wherever a coded or non-coded text item is allowed; <code>Coded_text</code> should be used wherever a text item must be coded, and <code>Plain_text</code> to force non-coded text. The <code>Text</code> type supports optional formatting and hyperlinking (see <a href="#_formatting_and_hyperlinking">Section 4.3.5</a> below). The class <code>Coded_text</code> captures the association of two things:</p>
+<p>All atomic text items are either instances of the type <code>Plain_text</code> or of <code>Coded_text</code>. Within archetyped structures, the parent type <code>Text</code> should be used wherever a coded or non-coded text item is allowed; <code>Coded_text</code> should be used wherever a text item must be coded, and <code>Plain_text</code> to force non-coded text. The <code>Text</code> type supports optional formatting and hyperlinking (see <a href="#_formatting_and_hyperlinking">Section 4.3.4</a> below). The class <code>Coded_text</code> captures the association of two things:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -839,7 +828,7 @@
 <p>The attribute <code>Terminology_code.<em>code_string</em></code> records a term code or post-coordinated code expression which may be used as an argument to a retrieval function in the terminology service to obtain the definition of the term or expression.</p>
 </div>
 <div class="paragraph">
-<p>The model of <code>Coded_text</code> is designed to capture the <em>actual</em> term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). If the user makes any modification to the text value during data entry, a <code>Plain_text</code> object and associated mapping (see <a href="#_mappings">Section 4.3.4</a>) must be used instead.</p>
+<p>The model of <code>Coded_text</code> is designed to capture the <em>actual</em> term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). If the user makes any modification to the text value during data entry, a <code>Plain_text</code> object and associated mapping (see <a href="#Mappings">[Mappings]</a>) must be used instead.</p>
 </div>
 </div>
 <div class="sect3">
@@ -884,79 +873,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mappings"><a class="anchor" href="#_mappings"></a>4.3.4. Mappings</h4>
-<div class="sect4">
-<h5 id="_classification_broader_terms"><a class="anchor" href="#_classification_broader_terms"></a>4.3.4.1. Classification (Broader Terms)</h5>
-<div class="paragraph">
-<p>Any text item, whether coded or not, may be classified with a coded term, for research, reporting or decision support purposes. For example, a GP working in tropical Australia may wish to write "Ross River infection", and be working with ICD9, which does not contain this term (although ICD9-CM does). He or she will use a plain text item, but will still be able to map it to an ICD9 classifier, such as the code for 'arbovirus infection NOS'. The same approach can be used for adding a classifying term to a coded text item.</p>
-</div>
-<div class="paragraph">
-<p>Classifying mappings are represented by adding a term to the mappings list of the original term. Each mapping is explicitly represented with an instance of <code>Term_mapping</code>, which indicates both the term being associated with the original text item, and a value of '&gt;' for the match attribute, which indicates that the mapping is 'broader'. The possible values of the match attribute are '&gt;' (broader), '&lt;' (narrower), and '=' (equivalent); they are taken from the ISO standards <a href="https://www.iso.org/standard/7776.html" target="_blank" rel="noopener">ISO 2788 - Guide to Establishment and development of monolingual thesauri</a> and <a href="https://www.iso.org/standard/12159.html" target="_blank" rel="noopener">ISO 5964 - Guide to Establishment and development of multilingual thesauri</a>.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_equivalent_synonymous_terms"><a class="anchor" href="#_equivalent_synonymous_terms"></a>4.3.4.2. Equivalent / Synonymous Terms</h5>
-<div class="paragraph">
-<p>Data from pathology laboratories has often been coded using a terminology local to the laboratory, due to lack of or economic infeasibility of using existing widespread terminologies for the job. However, some laboratories also supply a nearest equivalent code from a well-known terminology such as <a href="http://loinc.org">LOINC</a>, to enable the receiver of the data to process it in a more standard fashion. Here, 'equivalence' is taken to mean a term of the same meaning but from a different vocabulary.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_post_hoc_coding_of_narrative"><a class="anchor" href="#_post_hoc_coding_of_narrative"></a>4.3.4.3. Post hoc Coding of Narrative</h5>
-<div class="paragraph">
-<p>Mappings may be used to capture equivalent terms for tracts of narrative text, generated via natural language processing (NLP). In this case, the value of the <code><em>match</em></code> attribute is '=', indicating that the mapping is a synonym, and the <code><em>purpose</em></code> set to "NLP extraction" or similar.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_more_specific_mappings_narrower_terms"><a class="anchor" href="#_more_specific_mappings_narrower_terms"></a>4.3.4.4. More Specific Mappings (Narrower Terms)</h5>
-<div class="paragraph">
-<p>Occasionally, there is a need to create a mapping to a term of narrower meaning than the original text item. Circumstances in which this occurs include when a clinician wants to record a syndrome such as 'croup' or 'influenza', but the terminology does not contain these general terms, although it does contain more specific terms, e.g. 'viral laryngo-tracheitis' or 'influenza type A'. Clearly the clinician
-should be allowed to record what she wants (as plain text if necessary), but it should also be possible to add a mapping to the more precise term. For mappings to narrower terms, the value of the match attribute is '&lt;'.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_the_unified_medical_language_system_umls"><a class="anchor" href="#_the_unified_medical_language_system_umls"></a>4.3.4.5. The Unified Medical Language System (UMLS)</h5>
-<div class="paragraph">
-<p>TODO: check this section for Graphite 2023</p>
-</div>
-<div class="paragraph">
-<p>UMLS reference terms could potentially be supplied with instances of coded terms, in the form of the UMLS concept unique identifier, or 'CUI'. UMLS is a way of encoding terms developed at the National Library of Medicine in the United States, and consists of a meta-thesaurus, in which terms from any extant term set (such as <a href="http://www.who.int/classifications/icd/en/" target="_blank" rel="noopener">ICDx</a>, <a href="http://www.snomed.org" target="_blank" rel="noopener">SNOMED CT</a>, READ) can be cross-referenced.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_legacy_mapping_scenarios"><a class="anchor" href="#_legacy_mapping_scenarios"></a>4.3.4.6. Legacy Mapping Scenarios</h5>
-<div class="paragraph">
-<p>In cases where legacy data has to be converted to Graphite-compliant data, and only codes are available, e.g. ICD or ICPC codes, the following approach is recommended:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>create a new <code>Plain_text</code> instance whose <code><em>value</em></code> is "(not available)"</p>
-</li>
-<li>
-<p>add a mapping to the <code>Text</code>, with:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code><em>purpose</em></code> = <code>"legacy conversion"</code></p>
-</li>
-<li>
-<p><code><em>match</em></code> = <code>"="</code></p>
-</li>
-<li>
-<p><code><em>target</em></code> = <code>Terminology_code</code> object whose <code><em>code_string</em></code> and <code><em>terminology_id</em></code> are set to correspond to the available code in the legacy data.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>This expresses the reality that no text was ever recorded in the legacy system; rather a code was recorded directly in the data field. In the converted data, this code is more correctly considered a mapping.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_formatting_and_hyperlinking"><a class="anchor" href="#_formatting_and_hyperlinking"></a>4.3.5. Formatting and Hyperlinking</h4>
+<h4 id="_formatting_and_hyperlinking"><a class="anchor" href="#_formatting_and_hyperlinking"></a>4.3.4. Formatting and Hyperlinking</h4>
 <div class="paragraph">
 <p>Formatting of the text in the <code><em>value</em></code> field of <code>Text</code>  instances is indicated via the optional <code><em>formatting</em></code> attribute. This may be used to control the use of newlines and general text formatting, for which mark-down is supported.</p>
 </div>
@@ -991,12 +908,12 @@ should be allowed to record what she wants (as plain text if necessary), but it 
 <p>raw HTML;</p>
 </li>
 <li>
-<p>images - these may be included in Graphite content via the <code>Multimedia</code> types.</p>
+<p>images - these may be included in S2 content via the <code>Multimedia</code> types.</p>
 </li>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="_usage_in_plain_text_instances"><a class="anchor" href="#_usage_in_plain_text_instances"></a>4.3.5.1. Usage in Plain_text Instances</h5>
+<h5 id="_usage_in_plain_text_instances"><a class="anchor" href="#_usage_in_plain_text_instances"></a>4.3.4.1. Usage in Plain_text Instances</h5>
 <div class="paragraph">
 <p>In a concrete instance of <code>Plain_text</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes.</p>
 </div>
@@ -1041,7 +958,7 @@ should be allowed to record what she wants (as plain text if necessary), but it 
 </table>
 </div>
 <div class="sect4">
-<h5 id="_usage_in_coded_text_instances"><a class="anchor" href="#_usage_in_coded_text_instances"></a>4.3.5.2. Usage in Coded_text Instances</h5>
+<h5 id="_usage_in_coded_text_instances"><a class="anchor" href="#_usage_in_coded_text_instances"></a>4.3.4.2. Usage in Coded_text Instances</h5>
 <div class="paragraph">
 <p>In a concrete instance of <code>Coded_text</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes.</p>
 </div>
@@ -1137,13 +1054,6 @@ should be allowed to record what she wants (as plain text if necessary), but it 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mappings</strong>: <code>List&lt;<a href="#_term_mapping_class">Term_mapping</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Terms from other terminologies most closely matching this term, typically used where the originator (e.g. pathology lab) of information uses a local terminology but also supplies one or more equivalents from well known terminologies (e.g. LOINC).</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>formatting</strong>: <code><a href="#_text_format_types_enumeration">Text_format_types</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>If set, contains one of the following values:</p>
@@ -1167,12 +1077,6 @@ should be allowed to record what she wants (as plain text if necessary), but it 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Mappings_valid</em>: <code>mappings /= void implies not mappings.is_empty</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p><em>Formatting_valid</em>: <code>formatting /= void implies not formatting.is_empty</code></p>
 </div></div></td>
@@ -1296,194 +1200,6 @@ should be allowed to record what she wants (as plain text if necessary), but it 
 </div>
 <div class="paragraph">
 <p>TODO: for GCM, default to Graphite Snomed extension</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_term_mapping_class"><a class="anchor" href="#_term_mapping_class"></a>4.4.5. Term_mapping Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Term_mapping</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Represents a coded term mapped to a <code>Text</code>, and the relative match of the target term with respect to the mapped item. Plain or coded text items may appear in the EHR for which one or mappings in alternative terminologies are required. Mappings are only used to enable computer processing, so they can only be instances of <code>Coded_text</code>.</p>
-</div>
-<div class="paragraph">
-<p>Used for adding classification terms (e.g. adding ICD classifiers to SNOMED descriptive terms), or mapping into equivalents in other terminologies (e.g. across nursing vocabularies).</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>match</strong>: <code><a href="#_term_mapping_match_enumeration">Term_mapping_match</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The relative match of the target term with respect to the mapped text item. Result meanings:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>'&gt;'</code>: the mapping is to a broader term e.g. orginal text =  arbovirus infection , target =  viral infection</p>
-</li>
-<li>
-<p><code>'='</code>: the mapping is to a (supposedly) equivalent to the original item</p>
-</li>
-<li>
-<p><code>'&lt;'</code>: the mapping is to a narrower term. e.g. original text =  diabetes , mapping =  diabetes mellitus .</p>
-</li>
-<li>
-<p><code>'?'</code>: the kind of mapping is unknown.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The first three values are taken from the ISO standards 2788 ( Guide to Establishment and development of monolingual thesauri) and 5964 (Guide to Establishment and development of multilingual thesauri).</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>purpose</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Purpose of the mapping e.g. 'data mining', 'billing', 'interoperability', 'NLP extracted'.</p>
-</div>
-<div class="paragraph">
-<p>TODO: any vocabulary?</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>target</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The target term of the mapping.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>narrower</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post</em>: <code>match = ‘&lt;’ implies Result</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The mapping is to a narrower term.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>broader</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post</em>: <code>match = ‘&gt;’ implies Result</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The mapping is to a broader term.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>equivalent</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The mapping is to an equivalent term.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>unknown</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post</em>: <code>match = ‘?’ implies Result</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The kind of mapping is unknown.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_valid_match_code</strong> (<br>
-c: <code><a href="#_term_mapping_match_enumeration">Term_mapping_match</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post</em>: <code>Result := c = ‘&gt;’ or c = ‘=’ or c = ‘&lt;’ or c = ‘?’</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if match valid.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Purpose_valid</em>: <code>purpose /= Void implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Match_valid</em>: <code>is_valid_match_code (match)</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_term_mapping_match_enumeration"><a class="anchor" href="#_term_mapping_match_enumeration"></a>4.4.6. Term_mapping_match Enumeration</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Enumeration</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Term_mapping_match</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The mapping is equivalent to the original item.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The mapping is to a broader term e.g. orginal text =  arbovirus infection , target =  viral infection</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The mapping is to a narrower term. e.g. original text =  diabetes , mapping =  diabetes mellitus.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The kind of mapping is unknown.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1825,7 +1541,54 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 <div class="sect2">
 <h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>5.4. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_coded_ordinal_class"><a class="anchor" href="#_coded_ordinal_class"></a>5.4.1. Coded_ordinal Class</h4>
+<h4 id="_ordered_value_class"><a class="anchor" href="#_ordered_value_class"></a>5.4.1. Ordered_value Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Ordered_value (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Abstract parent of Data values that have a Comparable <code>value</code> as well as other fields which must be taken into account to define comparison operators ('&lt;' etc). Such operators can therefore only be formally defined externally.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_data_value_class">Data_value</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_comparable_class" target="_blank" rel="noopener">Comparable</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+The value -1 implies no limit, i.e. any number of decimal places.</p>
+</div>
+<div class="paragraph">
+<p>TODO:total number of digits v decimal points.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_coded_ordinal_class"><a class="anchor" href="#_coded_ordinal_class"></a>5.4.2. Coded_ordinal Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1877,7 +1640,7 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_class">Ordered</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1886,7 +1649,7 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  <code>mild</code>, <code>moderate</code>, <code>severe</code>, or even the same number series as the values, e.g. 1, 2, 3.</p>
 </div></div></td>
@@ -1919,7 +1682,7 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_quantified_class"><a class="anchor" href="#_quantified_class"></a>5.4.2. Quantified Class</h4>
+<h4 id="_quantified_class"><a class="anchor" href="#_quantified_class"></a>5.4.3. Quantified Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1934,12 +1697,12 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract class defining the concept of relative quantified  'amounts'. For relative quantities, the  <code>+</code> and  <code>-</code> operators are defined (unlike descendants of <code>DV_ABSOLUTE_QUANTITY</code>, such as the date/time types).</p>
+<p>Abstract class defining the concept of relative physical quantities. For relative quantities, the  <code>+</code> and  <code>-</code> operators are defined.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_class">Ordered</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2070,7 +1833,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_quantity_class"><a class="anchor" href="#_quantity_class"></a>5.4.3. Quantity Class</h4>
+<h4 id="_quantity_class"><a class="anchor" href="#_quantity_class"></a>5.4.4. Quantity Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2085,13 +1848,13 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Quantitified type representing  scientific  quantities, i.e. quantities expressed as a magnitude and units. Units are expressed in the UCUM syntax (<a href="http://unitsofmeasure.org/ucum.html">Unified Code for Units of Measure (UCUM)</a>, by Gunther Schadow and Clement J. McDonald of The Regenstrief Institute)  (case-sensitive form) by default, or another system if <code><em>units_system</em></code> is set.</p>
+<p>Type representing physical quantities, i.e. quantities expressed as a value and units.</p>
 </div>
 <div class="paragraph">
-<p>Can also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years (in the latter case, <code>DV_DURATION</code> may be used).</p>
+<p>Units are expressed as a <code>Coded_term</code> to allow the original units string (from user application) to be recorded in <code><em>units.value</em></code>, and the coded form to be recorded in <code><em>units.concept</em></code>.</p>
 </div>
 <div class="paragraph">
-<p>TODO: do we want to have an original_units field.</p>
+<p>Can also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years (in the latter case, <code>Duration_value</code> may be used).</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2105,7 +1868,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>units</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>units</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Quantity units, expressed as a code from either UCUM or the units system specified in <code><em>unit_system</em></code>, when set.</p>
 </div>
@@ -2130,6 +1893,14 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 (redefined)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>Real</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_measured_class">Measured</a>&lt;<a href="#_quantity_class">Quantity</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional data elements for measured quantities, including precision, accuracy and reference ranges.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -2206,7 +1977,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_count_class"><a class="anchor" href="#_count_class"></a>5.4.4. Count Class</h4>
+<h4 id="_count_class"><a class="anchor" href="#_count_class"></a>5.4.5. Count Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2221,7 +1992,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Countable quantities. Used for countable types such as pregnancies and steps (taken by a physiotherapy patient), number of cigarettes smoked in a day.</p>
+<p>Countable quantities. Used for countable types such as pregnancies and steps taken by a physiotherapy patient, number of cigarettes smoked in a day.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2241,11 +2012,19 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 <p>Integer value of the count.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_measured_class">Measured</a>&lt;<a href="#_count_class">Count</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional data elements for measured quantities, including precision, accuracy and reference ranges.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_proportion_class"><a class="anchor" href="#_proportion_class"></a>5.4.5. Proportion Class</h4>
+<h4 id="_proportion_class"><a class="anchor" href="#_proportion_class"></a>5.4.6. Proportion Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2292,6 +2071,14 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>Real</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Computed value of numerator / denominator.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_measured_class">Measured</a>&lt;<a href="#_proportion_class">Proportion</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional data elements for measured quantities, including precision, accuracy and reference ranges.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2369,7 +2156,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_class"><a class="anchor" href="#_ratio_class"></a>5.4.6. Ratio Class</h4>
+<h4 id="_ratio_class"><a class="anchor" href="#_ratio_class"></a>5.4.7. Ratio Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2408,23 +2195,31 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="#_ratio_kind_enumeration">Ratio_kind</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Type of ratio.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code>Real</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Denominator value of Ratio.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="#_ratio_kind_enumeration">Ratio_kind</a></code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>Real</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Type of ratio.</p>
+<p>The magnitude of the quantity.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>5.4.7. Ratio_kind Enumeration</h4>
+<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>5.4.8. Ratio_kind Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2449,16 +2244,16 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fraction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rational_fraction</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Numerator and denominator are both integer values; usual presentation is n/d, e.g. such as ½ or ¾, 1/2, 3/4 etc.</p>
+<p>Numerator and denominator are both integer values; usual presentation is n/d; if numerator &gt; denominator, display as "a b/c", i.e. the integer part followed by the remaining fraction part, e.g. 1½; this is a common form for expressing a number of tablets.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rational_fraction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fraction</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Numerator and denominator are both integer values; usual presentation is n/d; if numerator &gt; denominator, display as "a b/c", i.e. the integer part followed by the remaining fraction part, e.g. 1½; this is a common form for expressing a number of tablets.</p>
+<p>Numerator and denominator are both integer values; usual presentation is n/d, e.g. such as ½ or ¾, 1/2, 3/4 etc.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2472,7 +2267,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_measured_class"><a class="anchor" href="#_measured_class"></a>5.4.8. Measured Class</h4>
+<h4 id="_measured_class"><a class="anchor" href="#_measured_class"></a>5.4.9. Measured Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2494,13 +2289,6 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>normal_range</strong>: <code><a href="#_range_class">Range</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional normal range.</p>
-</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
@@ -2533,14 +2321,6 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
-The value -1 implies no limit, i.e. any number of decimal places.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accuracy</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_comparable_class" target="_blank" rel="noopener">Comparable</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Accuracy of measurement. A value of zero means no accuracy recorded.</p>
@@ -2555,23 +2335,30 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_reference_ranges</strong>: <code>List&lt;<a href="#_reference_range_class">Reference_range</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reference_ranges</strong>: <code>List&lt;<a href="#_reference_range_class">Reference_range</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional tagged other reference ranges for this value in its particular measurement context.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>intepretation</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>intepretation</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Interpretation with respect to normal range, e.g. 'H', 'L' etc.</p>
+<p>Interpretation with respect to normal/reference range, e.g. 'H', 'L' etc.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>interpretation_guide</strong>: <code><a href="#_text_class">Text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Interpretation guide, typically in the form of a list of reference ranges based on phenotype, age, pregnancy status and so on.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>5.4.9. Reference_range Class</h4>
+<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>5.4.10. Reference_range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2596,9 +2383,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Term whose value indicates the meaning of this range, e.g.  normal,  critical,  therapeutic  etc.</p>
+<p>Term whose value indicates the meaning of this range, e.g.  normal, raference range, critical,  therapeutic  etc.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2607,6 +2394,11 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data range for this meaning, e.g. critical  etc.</p>
 </div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>phenotype</strong>: <code><a href="#_text_class">Text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
@@ -2618,7 +2410,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>5.4.10. Comparison_operator Enumeration</h4>
+<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>5.4.11. Comparison_operator Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2680,7 +2472,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_range_class"><a class="anchor" href="#_range_class"></a>5.4.11. Range Class</h4>
+<h4 id="_range_class"><a class="anchor" href="#_range_class"></a>5.4.12. Range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2814,7 +2606,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_class">Ordered</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3268,7 +3060,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.</p>
 </div></div></td>
@@ -3383,7 +3175,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reference_event</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reference_event</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Reference event during day to which event being specified is linked, e.g. 'waking', 'going to bed', 'meal', 'breakfast', etc.</p>
 </div></div></td>
@@ -3654,6 +3446,13 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </div></div></td>
 </tr>
 <tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uri</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_uri_class" target="_blank" rel="noopener">Uri</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference.</p>
+</div></div></td>
+</tr>
+<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p><em>Language_valid</em>: <code>language /= Void implies code_set (Code_set_id_languages).has_code (language)</code></p>
@@ -3701,13 +3500,6 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>alternate_text</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Text to display in lieu of multimedia display/replay.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uri</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_uri_class" target="_blank" rel="noopener">Uri</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3850,10 +3642,17 @@ Example: image/jpeg; text/json.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The string, which may validly be empty in some syntaxes.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schema</strong>: <code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional schema id, may be a schema URI,</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3899,7 +3698,7 @@ Example: image/jpeg; text/json.</p>
 <div class="sect2">
 <h3 id="_overview_8"><a class="anchor" href="#_overview_8"></a>9.1. Overview</h3>
 <div class="paragraph">
-<p>The <code>base.data_types.uri</code> package includes two types used for referring to information resources. The <code>DV_URI</code> type allows data values which are references to objects on the world wide web to be created. Its specialisation, <code>DV_EHR_URI</code>, enables any element in an Graphite record to be identified in the same way as other objects on the web. The <code>DV_EHR_URI</code> type is convenient, because it is a string, like any other URI, and is therefore easily transportable and processable. Because it has its own scheme space, 'ehr', instances can be globally unique, as long as EHR identification is globally unique. <code>DV_EHR_URIs</code> are used to express all runtime paths in the EHR. The <code>uri</code> Package is illustrated below.</p>
+<p>The <code>base.data_types.uri</code> package includes two types used for referring to information resources. The <code>DV_URI</code> type allows data values which are references to objects on the world wide web to be created. Its specialisation, <code>DV_EHR_URI</code>, enables any element in an S2 record to be identified in the same way as other objects on the web. The <code>DV_EHR_URI</code> type is convenient, because it is a string, like any other URI, and is therefore easily transportable and processable. Because it has its own scheme space, 'ehr', instances can be globally unique, as long as EHR identification is globally unique. <code>DV_EHR_URIs</code> are used to express all runtime paths in the EHR. The <code>uri</code> Package is illustrated below.</p>
 </div>
 <div id="base_data_types_uri" class="imageblock text-center text-center">
 <div class="content">
@@ -4062,7 +3861,7 @@ Example: image/jpeg; text/json.</p>
 <div class="sect3">
 <h4 id="_dv_ehr_uri_syntax"><a class="anchor" href="#_dv_ehr_uri_syntax"></a>9.4.1. DV_EHR_URI Syntax</h4>
 <div class="paragraph">
-<p>The syntax of a <code>DV_EHR_URI</code> is an Graphite path, inside the 'ehr' URI scheme-space, and is one of the forms:</p>
+<p>The syntax of a <code>DV_EHR_URI</code> is an S2 path, inside the 'ehr' URI scheme-space, and is one of the forms:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4073,7 +3872,7 @@ ehr:/ehr_id/top_level_structure_locator/path_inside_top_level_structure</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The syntax is described in more detail in the <a href="https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html#_ehr_uris">Graphite Architecture Overview</a>. <code>DV_EHR_URIs</code> are used as a mechanism for referencing in the EHR, ensuring readability by humans, as well as validity when extracts are transmitted elsewhere: even if the target of a path is not present, the path can be used to locate the missing item on demand.</p>
+<p>The syntax is described in more detail in the <a href="https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html#_ehr_uris">S2 Architecture Overview</a>. <code>DV_EHR_URIs</code> are used as a mechanism for referencing in the EHR, ensuring readability by humans, as well as validity when extracts are transmitted elsewhere: even if the target of a path is not present, the path can be used to locate the missing item on demand.</p>
 </div>
 </div>
 </div>
@@ -4085,7 +3884,7 @@ ehr:/ehr_id/top_level_structure_locator/path_inside_top_level_structure</pre>
 <div class="sect2">
 <h3 id="_overview_9"><a class="anchor" href="#_overview_9"></a>10.1. Overview</h3>
 <div class="paragraph">
-<p>This section notes a few of the general challenges for mapping the Graphite data types to implementation
+<p>This section notes a few of the general challenges for mapping the S2 data types to implementation
 technologies such as programming languages and XML. For specific guidelines, Implementation
 Technology Specification (ITS) document for each target formalism should be consulted.</p>
 </div>
@@ -4178,7 +3977,7 @@ wrapper for example, for serialising and deserialising in and out of XML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-24 13:57:36 -0600
+Last updated 2023-09-28 16:32:38 -0600
 </div>
 </div>
 </body>

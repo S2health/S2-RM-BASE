@@ -162,6 +162,8 @@ The `Ratio` type is provided for representing true ratios, i.e. relative values,
 
 == Class Descriptions
 
+include::{uml_export_dir}/classes/{pkg}ordered_value.adoc[]
+
 include::{uml_export_dir}/classes/{pkg}coded_ordinal.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}quantified.adoc[]

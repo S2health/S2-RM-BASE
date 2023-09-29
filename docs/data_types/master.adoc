@@ -36,7 +36,7 @@ This specification draws from the  {openehr_rm_data_types}[openEHR Data Types^] 
 
 * 'openEHR' is a registered trademark of the openEHR Foundation
 * 'FHIR' is a registered trademark of HL7 International
-* 'Graphite Health' is a registered trademark of the Graphite Health
+* 'Graphite Health' is a registered trademark of Graphite Health
 * 'Java' is a registered trademark of Oracle Corporation
 * 'Microsoft' and '.Net' are registered trademarks of the Microsoft Corporation
 
@@ -53,7 +53,7 @@ This specification draws from the  {openehr_rm_data_types}[openEHR Data Types^] 
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.graphite.base.data_types.
+:pkg: org.s2.base.data_types.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

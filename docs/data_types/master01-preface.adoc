@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document defines the Graphite Data Types Model.
+This document defines the S2 Data Types Model.
 
 The intended audience includes implementers, integrators and health data managers.
 
@@ -10,11 +10,11 @@ The intended audience includes implementers, integrators and health data manager
 
 Prerequisite documents for reading this document include:
 
-* The {graphite_overview}[openEHR Architecture Overview^];
+* The {S2overview}[openEHR Architecture Overview^];
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {graphite_base_latest_data_types}[{graphite_base_latest_data_types}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {S2base_latest_data_types}[{S2base_latest_data_types}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -22,7 +22,7 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {graphite_specifications_forum}[{product_name} forum^].
+Feedback may be provided on the {S2specifications_forum}[{product_name} forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 

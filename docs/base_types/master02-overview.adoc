@@ -1,6 +1,6 @@
 = Overview
 
-The {product_name} Base Types (`org.graphite.base_types` package) consist of basic types used globally throughout the {product_name} components and specifications, including definitions, various enumerations, built-in types providing utility functions, identifier types and terminology-related types. The latter two categories are intended to support all kinds of references: to terminology terms, informational objects, real world entities.
+The {product_name} Base Types (`org.s2.base_types` package) consist of basic types used globally throughout the {product_name} components and specifications, including definitions, various enumerations, built-in types providing utility functions, identifier types and terminology-related types. The latter two categories are intended to support all kinds of references: to terminology terms, informational objects, real world entities.
 
 The package structure is illustrated below.
 

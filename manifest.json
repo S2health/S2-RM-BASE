@@ -1,8 +1,8 @@
 {
     "id": "BASE",
     "title": "Base Model",
-    "description": "Graphite Base Model Component",
-    "keywords": "base models, base model, openehr",
+    "description": "S2 Base Model Component",
+    "keywords": "base models, base model, S2",
     "specifications": [
         {
             "id": "architecture_overview",
@@ -13,35 +13,35 @@
             "micro_summary": "Global description of openEHR design principles and architecture",
             "copyright_year": "2003",
             "spec_status": "STABLE",
-            "keywords": "EHR, openehr, architecture"
+            "keywords": "EHR, openehr, s2, architecture"
         },
         {
             "id": "foundation_types",
             "title": "Foundation Types",
             "title_short": "Foundation Types",
-            "description": "Graphite Foundation Types specification",
+            "description": "S2 Foundation Types specification",
             "summary": "Specification of assumed, primitive and other foundation types required by all other specifications.",
             "micro_summary": "Values, Structures, Interval, Date/times",
             "copyright_year": "2017",
             "spec_status": "STABLE",
-            "keywords": "openehr, identifiers, types"
+            "keywords": "openehr, s2, identifiers, types"
         },
         {
             "id": "base_types",
             "title": "Base Types",
             "title_short": "Base Types",
-            "description": "Graphite Base Types specification",
+            "description": "S2 Base Types specification",
             "summary": "Specification of basic health informatics types used in other specifications.",
             "micro_summary": "Definitions, Identifiers",
             "copyright_year": "2016",
             "spec_status": "STABLE",
-            "keywords": "openehr, identifiers, types"
+            "keywords": "openehr, s2, identifiers, types"
         },
         {
             "id": "resource",
             "title": "Resource Model",
             "title_short": "Resource Model",
-            "description": "Graphite Resource Model specification",
+            "description": "S2 Resource Model specification",
             "summary": "The Resource specification defines a formal model of authoring and IP meta-data, language translation and annotations that can be used by classes defining any concrete type of authored resource, such as a document, archetype or template.",
             "micro_summary": "Authoring resources and translations",
             "classes": [
@@ -49,11 +49,11 @@
             ],
             "copyright_year": "2003",
             "spec_status": "STABLE",
-            "keywords": "openehr, resources"
+            "keywords": "openehr, s2, resources"
         },
         {
             "id": "change_control",
-            "title": "Graphite Change Control Model",
+            "title": "S2 Change Control Model",
             "title_short": "Change Control",
             "description": "Model of change and versioning",
             "summary": "The Change Control Model describes the semantics of versioning for systems of record, supporting distributed versioning and merging.",
@@ -68,10 +68,10 @@
     ],
     "expressions": [
         {
-            "id": "Graphite_UML-BASE.mdzip",
+            "id": "S2_UML-BASE.mdzip",
             "type": "uml",
             "title": "Base UML",
-            "description": "UML file for Graphite Base classes, as MagicDraw 19. Contains UML 2.5 standard XMI file."
+            "description": "UML file for S2 Base classes, as MagicDraw 19. Contains UML 2.5 standard XMI file."
         }
     ],
     "jira": {
