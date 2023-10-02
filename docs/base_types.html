@@ -2556,7 +2556,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>code</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>code</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional field to carry code from bound terminology, e.g. LOINC or other, describing the real entity whose data are in the subtree starting at this node, e.g. heart rate.This code may be pre-coordinated to include relevant modifiers e.g. 'average heart rate', 'maximum heart rate'. The data should carry</p>
 </div>
@@ -2701,7 +2701,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Used to describe the relationship, usually in clinical terms, such as  in response to  (the relationship between test results and an order),  follow-up to  and so on. Such relationships can represent any clinically meaningful connection between pieces of information.</p>
 </div>
@@ -2711,7 +2711,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The type attribute is used to indicate a clinical or domain-level meaning for the kind of link, for example 'problem' or 'issue'. If type values are designed appropriately, they can be used by the requestor of EHR extracts to categorise links which must be followed and which can be broken when the extract is created.</p>
 </div></div></td>
@@ -3099,7 +3099,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>relationship</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>relationship</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Relationship of subject of this Entry to the subject of the record. May be coded. If it is the patient, coded as  self.</p>
 </div></div></td>
@@ -3145,14 +3145,14 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>function</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>function</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The function of the Party in this participation. Note that a given party might participate in more than one way in a particular activity.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>role</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>role</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Role of participant within the organisation, e.g. cardiologist, senior nurse.</p>
 </div></div></td>
@@ -3166,7 +3166,7 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mode</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mode</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional field for recording the 'mode' of the performer / activity interaction, e.g. present, by telephone, by email etc.</p>
 </div></div></td>
@@ -3200,7 +3200,7 @@ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participati
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-28 16:32:38 -0600
+Last updated 2023-09-28 19:27:48 -0600
 </div>
 </div>
 </body>

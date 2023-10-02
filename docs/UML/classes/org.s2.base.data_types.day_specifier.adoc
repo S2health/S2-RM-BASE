@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*day*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*day*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.
 
 h|*0..1*

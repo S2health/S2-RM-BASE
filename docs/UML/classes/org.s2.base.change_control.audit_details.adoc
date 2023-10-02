@@ -21,7 +21,7 @@ h|*1..1*
 a|Time of committal of the item.
 
 h|*1..1*
-|*change_type*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*change_type*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Type of change. Coded using the openEHR Terminology  audit change type  group.
 
 h|*0..1*

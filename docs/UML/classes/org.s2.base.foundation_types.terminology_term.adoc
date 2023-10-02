@@ -1,9 +1,9 @@
-=== Coded_term Class
+=== Terminology_term Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Coded_term*
+2+^h|*Terminology_term*
 
 h|*Description*
 2+a|Leaf type representing a standalone term from a terminology, which consists of the term text and the code, i.e. a concept reference.

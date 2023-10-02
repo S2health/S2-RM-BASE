@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*reference_event*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*reference_event*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Reference event during day to which event being specified is linked, e.g. 'waking', 'going to bed', 'meal', 'breakfast', etc.
 
 h|*0..1*

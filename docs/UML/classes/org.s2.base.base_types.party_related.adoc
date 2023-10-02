@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*relationship*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*relationship*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Relationship of subject of this Entry to the subject of the record. May be coded. If it is the patient, coded as  self.
 
 h|*Invariants*

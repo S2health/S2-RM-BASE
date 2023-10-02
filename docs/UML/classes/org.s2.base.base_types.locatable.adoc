@@ -44,7 +44,7 @@ h|*0..1*
 a|Audit trail from non-openEHR system of original commit of information forming the content of this node, or from a conversion gateway which has synthesised this node.
 
 h|*0..1*
-|*code*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*code*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Optional field to carry code from bound terminology, e.g. LOINC or other, describing the real entity whose data are in the subtree starting at this node, e.g. heart rate.This code may be pre-coordinated to include relevant modifiers e.g. 'average heart rate', 'maximum heart rate'. The data should carry
 
 If populated, the code must be in the subsumption of the concept found in a terminology service for the internal code carried in the `_archetype_node_id_` field. Any other value will generate an error in validation.

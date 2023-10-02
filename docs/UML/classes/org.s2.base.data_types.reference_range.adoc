@@ -13,7 +13,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*type*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*type*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Term whose value indicates the meaning of this range, e.g.  normal, raference range, critical,  therapeutic  etc.
 
 h|*1..1*

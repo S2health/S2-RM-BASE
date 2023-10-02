@@ -541,14 +541,14 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>true_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>true_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Term to use for True value. If not set, the String 'True' is used.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>false_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>false_term</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Term to use for False value. If not set, the String 'False' is used.</p>
 </div></div></td>
@@ -1649,7 +1649,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  <code>mild</code>, <code>moderate</code>, <code>severe</code>, or even the same number series as the values, e.g. 1, 2, 3.</p>
 </div></div></td>
@@ -1868,7 +1868,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>units</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>units</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Quantity units, expressed as a code from either UCUM or the units system specified in <code><em>unit_system</em></code>, when set.</p>
 </div>
@@ -1886,6 +1886,13 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </div>
 <div class="paragraph">
 <p>TODO: review; status of UCUM in GCM (Stan)</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>original_units</strong>: <code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Original units text from display, if different from <code><em>units.text</em></code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2342,7 +2349,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>intepretation</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>intepretation</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Interpretation with respect to normal/reference range, e.g. 'H', 'L' etc.</p>
 </div></div></td>
@@ -2383,7 +2390,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Term whose value indicates the meaning of this range, e.g.  normal, raference range, critical,  therapeutic  etc.</p>
 </div></div></td>
@@ -3060,7 +3067,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.</p>
 </div></div></td>
@@ -3175,7 +3182,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reference_event</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_coded_term_class" target="_blank" rel="noopener">Coded_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reference_event</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Reference event during day to which event being specified is linked, e.g. 'waking', 'going to bed', 'meal', 'breakfast', etc.</p>
 </div></div></td>
@@ -3977,7 +3984,7 @@ wrapper for example, for serialising and deserialising in and out of XML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-28 16:32:38 -0600
+Last updated 2023-09-28 19:27:48 -0600
 </div>
 </div>
 </body>

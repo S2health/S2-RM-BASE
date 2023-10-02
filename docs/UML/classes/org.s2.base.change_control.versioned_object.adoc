@@ -88,7 +88,7 @@ h|*1..1*
 a|Return the most recently added trunk version.
 
 h|*1..1*
-|*trunk_lifecycle_state* (): `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]` +
+|*trunk_lifecycle_state* (): `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]` +
  +
 __Post__: `Result = latest_trunk_version.lifecycle_state`
 a|Return the lifecycle state from the latest trunk version. Useful for determining if the version container is logically deleted.

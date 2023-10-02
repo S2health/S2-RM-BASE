@@ -20,10 +20,10 @@ h|*1..1*
 a|Boolean value of this item. Actual values may be language or implementation dependent.
 
 h|*0..1*
-|*true_term*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*true_term*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Term to use for True value. If not set, the String 'True' is used.
 
 h|*0..1*
-|*false_term*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*false_term*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Term to use for False value. If not set, the String 'False' is used.
 |===

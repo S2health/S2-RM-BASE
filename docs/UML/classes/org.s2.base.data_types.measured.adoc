@@ -37,7 +37,7 @@ h|*0..1*
 a|Optional tagged other reference ranges for this value in its particular measurement context.
 
 h|*0..1*
-|*intepretation*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*intepretation*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Interpretation with respect to normal/reference range, e.g. 'H', 'L' etc.
 
 h|*0..1*
