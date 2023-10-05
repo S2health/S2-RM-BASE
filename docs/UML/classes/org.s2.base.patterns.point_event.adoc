@@ -1,0 +1,14 @@
+=== Point_event Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Point_event*
+
+h|*Description*
+2+a|Defines a single point event in a series.
+
+h|*Inherit*
+2+|`<<_event_class,Event>>`
+
+|===

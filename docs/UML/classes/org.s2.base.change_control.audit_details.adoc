@@ -29,7 +29,7 @@ h|*0..1*
 a|Reason for committal. This may be used to qualify the value in the `_change_type_` field. For example, if the change affects only the EHR directory, this field might be used to indicate 'Folder "episode 2018-02-16" added' or similar.
 
 h|*1..1*
-|*committer*: `link:/releases/BASE/{base_release}/base_types.html#_party_proxy_class[Party_proxy^]`
+|*committer*: `link:/releases/BASE/{base_release}/patterns.html#_party_proxy_class[Party_proxy^]`
 a|Identity and optional reference into identity management service, of user who committed the item.
 
 h|*Invariants*

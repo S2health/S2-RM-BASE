@@ -17,15 +17,15 @@ h|*1..1*
 a|Identifier of the system which handled the information item. This is the IT system owned by the organisation legally responsible for handling the data, and at which the data were previously created or passed by an earlier system.
 
 h|*0..1*
-|*location*: `<<_party_identified_class,Party_identified>>`
+|*location*: `link:/releases/BASE/{base_release}/patterns.html#_party_identified_class[Party_identified^]`
 a|Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the `PARTY_IDENTIFIED` object.
 
 h|*0..1*
-|*subject*: `<<_party_proxy_class,Party_proxy>>`
+|*subject*: `link:/releases/BASE/{base_release}/patterns.html#_party_proxy_class[Party_proxy^]`
 a|Identifiers for subject of the received information item.
 
 h|*0..1*
-|*provider*: `<<_party_identified_class,Party_identified>>`
+|*provider*: `link:/releases/BASE/{base_release}/patterns.html#_party_identified_class[Party_identified^]`
 a|Optional provider(s) who created, committed, forwarded or otherwise handled the item.
 
 h|*0..1*

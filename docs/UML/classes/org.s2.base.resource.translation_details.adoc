@@ -1,9 +1,9 @@
-=== TRANSLATION_DETAILS Class
+=== Translation_details Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*TRANSLATION_DETAILS*
+2+^h|*Translation_details*
 
 h|*Description*
 2+a|Class providing details of a natural language translation.

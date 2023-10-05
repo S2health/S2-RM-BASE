@@ -44,11 +44,11 @@
 </li>
 <li><a href="#_class_descriptions">2.2. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_authored_resource_class">2.2.1. AUTHORED_RESOURCE Class</a></li>
-<li><a href="#_translation_details_class">2.2.2. TRANSLATION_DETAILS Class</a></li>
-<li><a href="#_resource_description_class">2.2.3. RESOURCE_DESCRIPTION Class</a></li>
-<li><a href="#_resource_description_item_class">2.2.4. RESOURCE_DESCRIPTION_ITEM Class</a></li>
-<li><a href="#_resource_annotations_class">2.2.5. RESOURCE_ANNOTATIONS Class</a></li>
+<li><a href="#_authored_resource_class">2.2.1. Authored_resource Class</a></li>
+<li><a href="#_translation_details_class">2.2.2. Translation_details Class</a></li>
+<li><a href="#_resource_description_class">2.2.3. Resource_description Class</a></li>
+<li><a href="#_resource_description_item_class">2.2.4. Resource_description_item Class</a></li>
+<li><a href="#_resource_annotations_class">2.2.5. Resource_annotations Class</a></li>
 </ul>
 </li>
 </ul>
@@ -63,7 +63,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg" alt="openEHR logo">
+<img src="http://s2health.io/logo.png" alt="S2 logo">
 </div>
 </div>
 </div>
@@ -195,7 +195,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>.</p>
+<p>The <a href="https://specifications.s2health.io/releases/RM/latest/architecture_overview.html" target="_blank" rel="noopener">S2 Architecture Overview</a>.</p>
 </li>
 </ul>
 </div>
@@ -210,7 +210,7 @@
 <p>This specification was derived from the <a href="https://specifications.openehr.org/releases/BASE/latest/resource.html" target="_blank" rel="noopener">openEHR Resource specification</a>.</p>
 </div>
 <div class="paragraph">
-<p>This specification is in the STABLE state. The development version of this document can be found at {S2base_latest_resource}[{S2base_latest_resource}^].</p>
+<p>This specification is in the STABLE state. The development version of this document can be found at <a href="https://specifications.s2health.io/releases/BASE/latest/resource.html" target="_blank" rel="noopener">https://specifications.s2health.io/releases/BASE/latest/resource.html</a>.</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -222,7 +222,7 @@
 <div class="sect2">
 <h3 id="_feedback"><a class="anchor" href="#_feedback"></a>1.5. Feedback</h3>
 <div class="paragraph">
-<p>Feedback may be provided on the {S2specifications_forum}[S2 Specifications forum^].</p>
+<p>Feedback may be provided on the <a href="https://specifications.s2health.io" target="_blank" rel="noopener">S2 Specifications forum</a>.</p>
 </div>
 <div class="paragraph">
 <p>Issues may be raised on the <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
@@ -291,7 +291,7 @@
 <div class="sect2">
 <h3 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>2.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_authored_resource_class"><a class="anchor" href="#_authored_resource_class"></a>2.2.1. AUTHORED_RESOURCE Class</h4>
+<h4 id="_authored_resource_class"><a class="anchor" href="#_authored_resource_class"></a>2.2.1. Authored_resource Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -301,7 +301,7 @@
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>AUTHORED_RESOURCE (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Authored_resource (abstract)</em></strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -330,7 +330,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="#_resource_description_class">RESOURCE_DESCRIPTION</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="#_resource_description_class">Resource_description</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Description and lifecycle information of the resource.</p>
 </div></div></td>
@@ -344,14 +344,14 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>annotations</strong>: <code><a href="#_resource_annotations_class">RESOURCE_ANNOTATIONS</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>annotations</strong>: <code><a href="#_resource_annotations_class">Resource_annotations</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Annotations on individual items within the resource, keyed by path. The inner table takes the form of a Hash table of String values keyed by String tags.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>translations</strong>: <code>Hash&lt;<a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>,<a href="#_translation_details_class">TRANSLATION_DETAILS</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>translations</strong>: <code>Hash&lt;<a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>,<a href="#_translation_details_class">Translation_details</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>List of details for each natural translation made of this resource, keyed by language code. For each translation listed here, there must be corresponding sections in all language-dependent parts of the resource. The <code><em>original_language</em></code> does not appear in this list.</p>
 </div></div></td>
@@ -418,7 +418,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_translation_details_class"><a class="anchor" href="#_translation_details_class"></a>2.2.2. TRANSLATION_DETAILS Class</h4>
+<h4 id="_translation_details_class"><a class="anchor" href="#_translation_details_class"></a>2.2.2. Translation_details Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -428,7 +428,7 @@ translations.has_key (d.language.code_string)))</code></p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>TRANSLATION_DETAILS</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Translation_details</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -487,7 +487,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_resource_description_class"><a class="anchor" href="#_resource_description_class"></a>2.2.3. RESOURCE_DESCRIPTION Class</h4>
+<h4 id="_resource_description_class"><a class="anchor" href="#_resource_description_class"></a>2.2.3. Resource_description Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -497,7 +497,7 @@ translations.has_key (d.language.code_string)))</code></p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>RESOURCE_DESCRIPTION</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Resource_description</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -547,7 +547,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>parent_resource</strong>: <code><a href="#_authored_resource_class">AUTHORED_RESOURCE</a><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>parent_resource</strong>: <code><a href="#_authored_resource_class">Authored_resource</a><br>
 {default&#160;=&#160;}</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Reference to owning resource.</p>
@@ -635,7 +635,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code>Hash&lt;<a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>,<a href="#_resource_description_item_class">RESOURCE_DESCRIPTION_ITEM</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code>Hash&lt;<a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>,<a href="#_resource_description_item_class">Resource_description_item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Details of all parts of resource description that are natural language-dependent, keyed by language code.</p>
 </div></div></td>
@@ -644,7 +644,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_resource_description_item_class"><a class="anchor" href="#_resource_description_item_class"></a>2.2.4. RESOURCE_DESCRIPTION_ITEM Class</h4>
+<h4 id="_resource_description_item_class"><a class="anchor" href="#_resource_description_item_class"></a>2.2.4. Resource_description_item Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -654,7 +654,7 @@ translations.has_key (d.language.code_string)))</code></p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>RESOURCE_DESCRIPTION_ITEM</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Resource_description_item</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -720,7 +720,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_resource_annotations_class"><a class="anchor" href="#_resource_annotations_class"></a>2.2.5. RESOURCE_ANNOTATIONS Class</h4>
+<h4 id="_resource_annotations_class"><a class="anchor" href="#_resource_annotations_class"></a>2.2.5. Resource_annotations Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -730,7 +730,7 @@ translations.has_key (d.language.code_string)))</code></p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>RESOURCE_ANNOTATIONS</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Resource_annotations</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -778,7 +778,7 @@ translations.has_key (d.language.code_string)))</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-28 19:27:48 -0600
+Last updated 2023-10-04 21:17:27 -0600
 </div>
 </div>
 </body>

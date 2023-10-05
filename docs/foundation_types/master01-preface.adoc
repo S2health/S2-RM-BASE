@@ -10,11 +10,11 @@ The intended audience includes implementers and health IT standards experts.
 
 Prerequisite documents for reading this document include:
 
-* The {openehr_overview}[openEHR Architecture Overview^].
+* The {s2_rm_overview}[S2 Architecture Overview^].
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {S2base_latest_foundation_types}[{S2base_latest_foundation_types}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {s2_base_latest_foundation_types}[{s2_base_latest_foundation_types}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -22,7 +22,7 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {S2specifications_forum}[{product_name} Specifications forum^].
+Feedback may be provided on the {s2_specifications_forum}[{product_name} Specifications forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 

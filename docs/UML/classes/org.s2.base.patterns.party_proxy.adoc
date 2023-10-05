@@ -13,6 +13,6 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*external_ref*: `<<_object_ref_class,Object_ref>>`
+|*external_ref*: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^]`
 a|Optional reference to external representation of Party, for example in a MAster Patient Index.
 |===

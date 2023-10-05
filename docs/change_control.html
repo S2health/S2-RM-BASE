@@ -101,7 +101,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg" alt="openEHR logo">
+<img src="http://s2health.io/logo.png" alt="S2 logo">
 </div>
 </div>
 </div>
@@ -256,7 +256,7 @@
 <p>The <a href="https://specifications.openehr.org/releases/RM/latest/support.html" target="_blank" rel="noopener">openEHR Support Information Model</a>;</p>
 </li>
 <li>
-<p>The {S2base_base_types}[S2 BAse Types^].</p>
+<p>The <a href="https://specifications.s2health.io/releases/BASE/latest/base_types.html" target="_blank" rel="noopener">S2 Base Types</a>.</p>
 </li>
 </ul>
 </div>
@@ -270,7 +270,7 @@
 <div class="sect2">
 <h3 id="_status"><a class="anchor" href="#_status"></a>1.4. Status</h3>
 <div class="paragraph">
-<p>This specification is in the STABLE state. The development version of this document can be found at {S2base_latest_change_control}[{S2base_latest_change_control}^].</p>
+<p>This specification is in the STABLE state. The development version of this document can be found at <a href="https://specifications.s2health.io/releases/BASE/latest/change_control.html" target="_blank" rel="noopener">https://specifications.s2health.io/releases/BASE/latest/change_control.html</a>.</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -282,7 +282,7 @@
 <div class="sect2">
 <h3 id="_feedback"><a class="anchor" href="#_feedback"></a>1.5. Feedback</h3>
 <div class="paragraph">
-<p>Feedback may be provided on the {S2specifications_forum}[S2 specifications forum^].</p>
+<p>Feedback may be provided on the <a href="https://specifications.s2health.io" target="_blank" rel="noopener">S2 specifications forum</a>.</p>
 </div>
 <div class="paragraph">
 <p>Issues may be raised on the <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
@@ -331,7 +331,7 @@
 <p>Each <code>Versioned_object</code> has a unique identifier recorded in the <code><em>uid</em></code> attribute (a <code>HIER_OBJECT_ID</code> typically containing a GUID), and a reference to the owning object (e.g. the owning EHR) in the <code><em>owner_id</em></code> attribute (this is typically also a GUID). The latter helps ensure that in storage systems, Versioned objects are always correctly allocated to their enclosing repository, such as an EHR.</p>
 </div>
 <div class="paragraph">
-<p>The data in a <code>Versioned_object</code> are in the form of a collection of instances of the two <code>Version&lt;T&gt;</code> subtypes, and are available only via the functional interface of <code>Versioned_object</code>. How the representation of this collection is implemented inside the <code>Versioned_object</code> is not defined by this specification, only the form of any given version is. Implementations of <code>Versioned_object</code> might range from the simple (all versions stored as full copies in a list) to a sophisticated compressed versioning approach as used in software file version control and some object databases. (The persistent data format of implementations of <code>Versioned_object</code> developed by different organisations will in general be incompatible. For purposes of sharing, an interoperable expression of <code>Versioned_object</code> is defined by the <code>X_VERSIONED_OBJECT</code> class in the EHR Extract IM.)</p>
+<p>The data in a <code>Versioned_object</code> are in the form of a collection of instances of the two <code>Version&lt;T&gt;</code> subtypes, and are available only via the functional interface of <code>Versioned_object</code>. How the representation of this collection is implemented inside the <code>Versioned_object</code> is not defined by this specification, only the form of any given version is. Implementations of <code>Versioned_object</code> might range from the simple (all versions stored as full copies in a list) to a sophisticated compressed versioning approach as used in software file version control and some object databases. (The persistent data format of implementations of <code>Versioned_object</code> developed by different organisations will in general be incompatible. For purposes of sharing, an interoperable expression of <code>Versioned_object</code> is defined by the <code>X_Versioned_object</code> class in the EHR Extract IM.)</p>
 </div>
 </div>
 <div class="sect3">
@@ -346,7 +346,7 @@
 <p>The <code>Version</code> class has two subtypes. The first, <code>Original_version&lt;T&gt;</code>, represents a Version created with original content (stored form of data property) at the time of creation (including from non-S2 local feeder systems), and potentially attested (signed). It includes as attributes the current version (<code><em>uid</em></code>) and the preceding version (<code><em>preceding_version_uid</em></code>). It also knows the lifecycle state of its content. If it was the result of a merge (see <a href="#_version_merging">Section 4.2</a>) of versions other than the preceding version, the identifiers of these versions will be recorded in the attribute <code><em>other_input_version_uids</em></code>. All instances of <code>Version&lt;T&gt;</code> in non-distributed S2 systems will be instances of <code>Original_version&lt;T&gt;</code>. The <code>Original_version</code> is also the unit of copying in a distributed environment.</p>
 </div>
 <div class="paragraph">
-<p>The second subtype is <code>Imported_version&lt;T&gt;</code>, and acts as a wrapper of an <code>Original_version&lt;T&gt;</code>. It has its own contribution and <code><em>commit_audit</em></code> (inherited from <code>Version&lt;T&gt;</code>), and contains the original version being imported in its <code><em>item</em></code> attribute. Its <code><em>uid</em></code> and <code><em>preceding_version</em></code> are defined as functions, returning the corresponding attribute values from the wrapped <code>Original_version</code> object (in other words, an <code>Imported_version</code> does not have its own version identifier distinct from the version it is wrapping). The semantics of importing are described below in <a href="#_copying">Section 4.1</a>. <a href="#instance_view_of_versioned_data">Figure 3</a> illustrates typical arrangements of <code>Original_version</code> and <code>Imported_version</code> objects within <code>VERSIONED_OBJECTs</code>, in turn within an EHR (if this is an EHR system), ultimately within an identified system. The two <code>VERSIONED_OBJECTs</code> are shown representing "medications" and "problem list", to give some idea of correspondence of versioning structures to logical data. Star icons represent digital signatures.</p>
+<p>The second subtype is <code>Imported_version&lt;T&gt;</code>, and acts as a wrapper of an <code>Original_version&lt;T&gt;</code>. It has its own contribution and <code><em>commit_audit</em></code> (inherited from <code>Version&lt;T&gt;</code>), and contains the original version being imported in its <code><em>item</em></code> attribute. Its <code><em>uid</em></code> and <code><em>preceding_version</em></code> are defined as functions, returning the corresponding attribute values from the wrapped <code>Original_version</code> object (in other words, an <code>Imported_version</code> does not have its own version identifier distinct from the version it is wrapping). The semantics of importing are described below in <a href="#_copying">Section 4.1</a>. <a href="#instance_view_of_versioned_data">Figure 3</a> illustrates typical arrangements of <code>Original_version</code> and <code>Imported_version</code> objects within <code>Versioned_objects</code>, in turn within an EHR (if this is an EHR system), ultimately within an identified system. The two <code>Versioned_objects</code> are shown representing "medications" and "problem list", to give some idea of correspondence of versioning structures to logical data. Star icons represent digital signatures.</p>
 </div>
 <div id="instance_view_of_versioned_data" class="imageblock text-center text-center">
 <div class="content">
@@ -380,7 +380,7 @@
 <div class="sect3">
 <h4 id="_contributions"><a class="anchor" href="#_contributions"></a>2.1.5. Contributions</h4>
 <div class="paragraph">
-<p>Since a versioned repository (i.e. a collection of <code>VERSIONED_OBJECTs</code>) is by definition indelible, all logical changes including deletions, additions, modifications (including error corrections and content changes), importing and attestations of existing items, are achieved by physically committing new Versions, or for attestations, new Attestation objects to existing Versions. Each logical type of change is achieved as follows:</p>
+<p>Since a versioned repository (i.e. a collection of <code>Versioned_objects</code>) is by definition indelible, all logical changes including deletions, additions, modifications (including error corrections and content changes), importing and attestations of existing items, are achieved by physically committing new Versions, or for attestations, new Attestation objects to existing Versions. Each logical type of change is achieved as follows:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1408,7 +1408,7 @@ signature.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>committer</strong>: <code><a href="/releases/BASE/latest/base_types.html#_party_proxy_class" target="_blank" rel="noopener">Party_proxy</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>committer</strong>: <code><a href="/releases/BASE/latest/patterns.html#_party_proxy_class" target="_blank" rel="noopener">Party_proxy</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Identity and optional reference into identity management service, of user who committed the item.</p>
 </div></div></td>
@@ -1728,7 +1728,7 @@ signature.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-28 19:27:48 -0600
+Last updated 2023-10-04 21:17:27 -0600
 </div>
 </div>
 </body>

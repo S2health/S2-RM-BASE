@@ -1,9 +1,9 @@
-=== RESOURCE_ANNOTATIONS Class
+=== Resource_annotations Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*RESOURCE_ANNOTATIONS*
+2+^h|*Resource_annotations*
 
 h|*Description*
 2+a|Object representing annotations on an archetype. These can be of various forms, with a documentation form defined so far, which has a multi-level tabular structure [ [ [String value, String key], path key], language key]. Example instance, showing the documentation structure.
