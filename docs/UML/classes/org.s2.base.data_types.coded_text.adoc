@@ -22,6 +22,4 @@ h|*Attributes*
 h|*1..1*
 |*concept*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|The term of which the  `_value_` attribute is the textual rendition (i.e. rubric).
-
-TODO: for GCM, default to Graphite Snomed extension
 |===

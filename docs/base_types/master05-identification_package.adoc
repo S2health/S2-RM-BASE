@@ -143,8 +143,6 @@ include::{uml_export_dir}/classes/{pkg}terminology_id.adoc[leveloffset=+1]
 
 All `OBJECT_IDs` are used as identifier attributes within the thing they identify, in the same way as a database primary key. To refer to an identified object from another object, an instance of the class `OBJECT_REF` is used, in the same way as a database foreign key. This class supports distributed referencing, and includes the object namespace (typically 1:1 with some service, such as "terminology") and type. The general principle of object references is to be able to refer to an object available in a particular namespace or service. Usually they are used to refer to objects in other services, such as a demographic entity from within an EHR, but they may be used to refer to local objects as well. The type may be the concrete type of the referred-to object (e.g. "GP") or any proper ancestor (e.g. `PARTY`).
 
-TODO: keep type?
-
 === Class Descriptions
 
 include::{uml_export_dir}/classes/{pkg}object_ref.adoc[leveloffset=+1]

@@ -16,10 +16,10 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*null_flavour*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
-a|Flavour of null value, e.g. `253&#124;unknown&#124;`, `271&#124;no information&#124;`, `272&#124;masked&#124;`, and `273&#124;not applicable&#124;`.
+|*null_flavor*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+a|Flavor of null value, e.g. `253&#124;unknown&#124;`, `271&#124;no information&#124;`, `272&#124;masked&#124;`, and `273&#124;not applicable&#124;`.
 
-TODO: correct to Graphite codes
+TODO: correct to S2 codes
 
 h|*0..1*
 |*value*: `link:/releases/BASE/{base_release}/data_types.html#_data_value_class[Data_value^]`

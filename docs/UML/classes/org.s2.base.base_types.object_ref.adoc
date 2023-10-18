@@ -8,8 +8,6 @@ h|*Class*
 h|*Description*
 2+a|Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service. In a relational DB, equivalent to a 'foreign key' with extra meta-data.
 
-TODO: keep type?
-
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*

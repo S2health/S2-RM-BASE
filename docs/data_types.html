@@ -1197,9 +1197,6 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The term of which the  <code><em>value</em></code> attribute is the textual rendition (i.e. rubric).</p>
-</div>
-<div class="paragraph">
-<p>TODO: for GCM, default to Graphite Snomed extension</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1383,7 +1380,7 @@
 <div class="sect3">
 <h4 id="_normal_status_in_laboratory_data"><a class="anchor" href="#_normal_status_in_laboratory_data"></a>5.2.7. Normal Status in Laboratory data</h4>
 <div class="paragraph">
-<p>Some laboratories include a normal 'status', which indicates where the value lies with respect to the normal range. The latter might take the form of markers like "HHH" (critically high), "HH" (abnormally high), "H" (borderline high), "L", "LL", "LLL" in HL7v2 messaging, although other schemes are undoubtedly used.</p>
+<p>Most laboratories include a normal 'status', which indicates where the value lies with respect to the normal range. The latter might take the form of markers like "HHH" (critically high), "HH" (abnormally high), "H" (borderline high), "L", "LL", "LLL" in HL7v2 messaging, although other schemes are undoubtedly used.</p>
 </div>
 <div class="paragraph">
 <p>TODO: check if this needs to be supported.</p>
@@ -1870,22 +1867,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>units</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Quantity units, expressed as a code from either UCUM or the units system specified in <code><em>unit_system</em></code>, when set.</p>
-</div>
-<div class="paragraph">
-<p>In either case, the value is the code or syntax - normally formed of standard ASCII - which is in principal not the same as the display string, although in simple cases such as 'm' (for meters) it will be.</p>
-</div>
-<div class="paragraph">
-<p>Code system is a URI identifying a terminology containing units concepts from the  (<a href="https://www.hl7.org/fhir/terminologies-systems.html">HL7 FHIR terminologies list</a>).</p>
-</div>
-<div class="paragraph">
-<p><code>Terminology_term.text</code> field contains the displayable form of the unit, e.g. <code>'°C'</code>.</p>
-</div>
-<div class="paragraph">
-<p>Example values from UCUM: "kg/m^2", “mm[Hg]", "ms-1", "km/h".</p>
-</div>
-<div class="paragraph">
-<p>TODO: review; status of UCUM in GCM (Stan)</p>
+<p>Quantity units, expressed as a coded term from a recognized unit system, by default, SNOMED CT.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2062,7 +2044,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_quantity_class">Quantity</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>TODO: possibly needs to be a Quantified?</p>
+<p>Numerator of proportion.</p>
 </div></div></td>
 </tr>
 <tr>

@@ -21,17 +21,7 @@ h|*Attributes*
 
 h|*1..1*
 |*units*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
-a|Quantity units, expressed as a code from either UCUM or the units system specified in `_unit_system_`, when set.
-
-In either case, the value is the code or syntax - normally formed of standard ASCII - which is in principal not the same as the display string, although in simple cases such as 'm' (for meters) it will be.
-
-Code system is a URI identifying a terminology containing units concepts from the  (https://www.hl7.org/fhir/terminologies-systems.html[HL7 FHIR terminologies list]).
-
-`Terminology_term.text` field contains the displayable form of the unit, e.g. `'°C'`.
-
-Example values from UCUM: "kg/m^2", “mm[Hg]", "ms-1", "km/h".
-
-TODO: review; status of UCUM in GCM (Stan)
+a|Quantity units, expressed as a coded term from a recognized unit system, by default, SNOMED CT.
 
 h|*0..1*
 |*original_units*: `String`

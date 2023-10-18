@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*__Locatable (abstract)__*
 
 h|*Description*
-2+a|Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the `LOCATABLE` class, which defines the idea of  locatability in an archetyped structure. `Locatable` defines a runtime name and an `_archetype_node_id_`.
+2+a|Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the `Locatable` class, which defines the idea of  locatability in an archetyped structure. `Locatable` defines a runtime name and an `_archetype_node_id_`.
 
 h|*Inherit*
 2+|`<<_pathable_class,Pathable>>`
@@ -28,8 +28,6 @@ At an archetype root point, the value of this attribute is always the stringifie
 h|*1..1*
 |*name*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.
-
-TODO: in openEHR this can be a coded term. What do we prefer?
 
 h|*0..1*
 |*links*: `List<<<_link_class,Link>>>`

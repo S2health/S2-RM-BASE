@@ -81,7 +81,7 @@ Various examples occur in which multiple ranges may be stated, including the fol
 
 === Normal Status in Laboratory data
 
-Some laboratories include a normal 'status', which indicates where the value lies with respect to the normal range. The latter might take the form of markers like "HHH" (critically high), "HH" (abnormally high), "H" (borderline high), "L", "LL", "LLL" in HL7v2 messaging, although other schemes are undoubtedly used.
+Most laboratories include a normal 'status', which indicates where the value lies with respect to the normal range. The latter might take the form of markers like "HHH" (critically high), "HH" (abnormally high), "H" (borderline high), "L", "LL", "LLL" in HL7v2 messaging, although other schemes are undoubtedly used.
 
 TODO: check if this needs to be supported.
 

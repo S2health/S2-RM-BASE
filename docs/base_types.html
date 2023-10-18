@@ -1883,9 +1883,6 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <div class="paragraph">
 <p>All <code>OBJECT_IDs</code> are used as identifier attributes within the thing they identify, in the same way as a database primary key. To refer to an identified object from another object, an instance of the class <code>OBJECT_REF</code> is used, in the same way as a database foreign key. This class supports distributed referencing, and includes the object namespace (typically 1:1 with some service, such as "terminology") and type. The general principle of object references is to be able to refer to an object available in a particular namespace or service. Usually they are used to refer to objects in other services, such as a demographic entity from within an EHR, but they may be used to refer to local objects as well. The type may be the concrete type of the referred-to object (e.g. "GP") or any proper ancestor (e.g. <code>PARTY</code>).</p>
 </div>
-<div class="paragraph">
-<p>TODO: keep type?</p>
-</div>
 <div class="sect3">
 <h4 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>5.7.1. Class Descriptions</h4>
 <div class="sect4">
@@ -1905,9 +1902,6 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service. In a relational DB, equivalent to a 'foreign key' with extra meta-data.</p>
-</div>
-<div class="paragraph">
-<p>TODO: keep type?</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2470,7 +2464,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the <code>LOCATABLE</code> class, which defines the idea of  locatability in an archetyped structure. <code>Locatable</code> defines a runtime name and an <code><em>archetype_node_id</em></code>.</p>
+<p>Root class of all information model classes that can be archetyped. Most classes in the openEHR reference model inherit from the <code>Locatable</code> class, which defines the idea of  locatability in an archetyped structure. <code>Locatable</code> defines a runtime name and an <code><em>archetype_node_id</em></code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2504,9 +2498,6 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Runtime name of this fragment, used to build runtime paths. This is the term provided via a clinical application or batch process to name this EHR construct: its retention in the EHR faithfully preserves the original label by which this entry was known to end users.</p>
-</div>
-<div class="paragraph">
-<p>TODO: in openEHR this can be a coded term. What do we prefer?</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2661,13 +2652,10 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>The <code>LINK</code> type defines a logical relationship between two items, such as two <code>Entrys</code> or an <code>Entry</code> and a <code>COMPOSITION</code>. Links can be used across compositions, and across EHRs. Links can potentially be used between interior (i.e. non archetype root) nodes, although this probably should be prevented in archetypes. Multiple <code>LINKs</code> can be attached to the root object of any archetyped structure to give the effect of a 1&#8594;N link.</p>
+<p>The <code>Link</code> type defines a logical relationship between two items, such as two <code>Entrys</code> or an <code>Entry</code> and a <code>Composition</code>. Links can be used across compositions, and across EHRs. Multiple <code>Links</code> can be attached to the root object of any archetyped structure to give the effect of a 1&#8594;N link.</p>
 </div>
 <div class="paragraph">
-<p>1:1 and 1:N relationships between archetyped content elements (e.g. <code>Entrys</code>) can be expressed by using one, or more than one, respectively, <code>LINKs</code>. Chains of links can be used to see  problem threads  or other logical groupings of items.</p>
-</div>
-<div class="paragraph">
-<p>Links should be between archetyped structures only, i.e. between objects representing complete domain concepts because relationships between sub-elements of whole concepts are not necessarily meaningful, and may be downright confusing. Sensible links only exist between whole <code>Entrys</code>, <code>SECTIONs</code>, <code>COMPOSITIONs</code> and so on.</p>
+<p>1:1 and 1:N relationships between archetyped content elements (e.g. <code>Entrys</code>) can be expressed by using one, or more than one, respectively, <code>Links</code>. Chains of links can be used to see problem threads or other logical groupings of items.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2697,9 +2685,6 @@ not to be separately constrained in archetypes; this rule needs to be implemente
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>target</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_uri_class" target="_blank" rel="noopener">Uri</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The logical target object in the link relation, as per the linguistic sense of the meaning attribute.</p>
-</div>
-<div class="paragraph">
-<p>TODO: Can only be a URI pointing of some other EHR or Demographic Entity - how best to constrain?</p>
 </div></div></td>
 </tr>
 </tbody>
