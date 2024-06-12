@@ -1,0 +1,22 @@
+= Amendment Record
+
+[cols="1,6,2,2", options="header"]
+|===
+|Issue|Details|Raiser|Completed
+
+|[[latest_issue]]0.6.1
+|{spec_tickets}/SBASE-16[SBASE-16^]. Define `Locatable._code_` field as taxonomic marker, and move `Feeder_audit._original_code_` to `Locatable`.
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|[[latest_issue_date]]17 Oct 2023
+
+4+^h|*BASE Release 0.6.0*
+
+|0.6.0
+|Initial Writing: based on openEHR Base Types Model
+|T Beale
+|10 Apr 2023
+
+|===

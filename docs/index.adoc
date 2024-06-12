@@ -40,10 +40,10 @@ endif::[]
 |Specification |Description
 
 |link:foundation_types.html[Foundation Types^]
-|Specification of assumed, primitive and other foundation types required by  other specifications.
+|Specification of assumed, primitive and other foundation types required by other specifications.
 
-|link:base_types.html[Base Types^]
-|Specification of basic health informatics types used in other specifications.
+|link:model_support.html[Model Support^]
+|Specification of meta-model elements used in other specifications.
 
 |link:data_types.html[Data Types^]
 |Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.

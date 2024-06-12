@@ -10,37 +10,29 @@ image::{uml_diagrams_uri}/BASE-data_types.text.svg[id=base_data_types_text, alig
 
 == Requirements
 
-The sections below describe the requirements of text data types.
-
 === Plain Text
 
 Plain text items are used in clinical data in a number of cases, including:
 
 * recording of narrative statements, e.g. visual observations, image interpretations;
 * recording of patient responses, including quantities or dates not deemed sufficiently precise to be represented using structured quantitative or date/time date types;
-* recording of values that would normally be coded, but for which no terminology is available.
+* recording of values that would otherwise be coded, but for which no terminology is available.
 
 Plain text items may contain formatting, and may also have mappings to one or more terminology codes for various purposes, including reimbursement and research.
 
-=== Coded Terms
+=== Coded Text
 
 ==== Basic Requirements
 
 Coded terms from controlled terminologies are used in the health record to enable machine processing of the data, via:
 
-* _naming_: to identify the kind of entity that a statement is about, i.e. the target of the 'is-about' relation; this may include:
-** independent entities, such as a person or organ;
-** dependent entities such as a quality, e.g. blood pressure;
-** relational entities, such as a patient's participation in a physiotherapy programme;
-** other informational entities, e.g. previous utterances of the patient;
 * _description_: to describe a state or event, e.g. state that an intestinal infection is _listeria monocytogenes_, or that the patient has supra-ventricular tachycardia;
 * _classification_: to classify something into a specific category, e.g. to classify a specific procedure into a billing category;
-* _inferencing_: to determine if one item, e.g. a diagnosis of gestational diabetes, is included in a more general category, e.g. diabetes;
 * _translation_: codes may be rendered with a text value in a different language, if the terminology supports it i.e. if the requisite translation exists.
 
 The first two categories may be broadly understood as 'names and values' of things. Values are normally drawn from _value-sets_, which are specific subsets of a terminology.
 
-Classification is typically in the form of _additional_ code(s) to a descriptive code, leading to a requirement for record code _mappings_ for an initial code or text item. For example, a procedure may be coded locally as snomed_ct::10761101000119105|Vacuum assisted vaginal delivery|, but for billing purposes, with ICD11::JB20|Single spontaneous delivery|. The latter code would be added as a mapping of the former for the purpose of 'reimbursement'.
+Classification is typically in the form of _additional_ code(s) to a descriptive code, leading to a requirement to support code _mappings_ for an initial code or text item. For example, a procedure may be coded locally as `snomed_ct::10761101000119105|Vacuum assisted vaginal delivery|`, but for billing purposes, with `ICD11::JB20|Single spontaneous delivery|`. The latter code would be added as a mapping of the former for the purpose of 'reimbursement'.
 
 An overriding requirement for coded entities in the data are that they are independently intelligible, without resolution via a terminology service (which might not be available). Concretely this requires the term rubric (textual value) to be stored alongside the code.
 

@@ -1,0 +1,22 @@
+=== Date_time_value Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Date_time_value*
+
+h|*Description*
+2+a|A `Temporal_value` carrying a `Date_time` value.
+
+h|*Inherit*
+2+|`<<_temporal_value_class,Temporal_value>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(redefined)*
+|*magnitude*: `<<_date_time_class,Date_time>>`
+a|
+|===

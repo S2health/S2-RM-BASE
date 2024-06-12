@@ -5,7 +5,7 @@
 The `timing` package contains classes that provide a structured model of representation of timing of events in the past or future, in two forms: as a list of occurrences, and as a pattern. The latter supports common ways of stating times such as used in medication prescription. The timing package is shown below.
 
 [.text-center]
-.base_types.timing Package
+.model_support.timing Package
 image::{uml_diagrams_uri}/BASE-data_types.timing.svg[id=data_types_timing_package, align="center"]
 
 == Requirements

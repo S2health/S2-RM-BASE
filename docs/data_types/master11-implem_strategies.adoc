@@ -6,8 +6,8 @@ technologies such as programming languages and XML. For specific guidelines, Imp
 Technology Specification (ITS) document for each target formalism should be consulted.
 
 == Quantities and Ordered_numeric
-In the quantity package, the type `Quantified` is shown having an abstract property of type
-Ordered_numeric. This is intended to indicate that the type `Quantified` is distinguished by
+In the quantity package, the type `Measurable` is shown having an abstract property of type
+Ordered_numeric. This is intended to indicate that the type `Measurable` is distinguished by
 the magnitude property (compared to say `Dv_ordered`, which describes ordered things without having
 magnitudes). The type Ordered_numeric be mapped to various types in implementation technologies
 as follows:
@@ -19,8 +19,8 @@ as follows:
 All of these type systems currently suffer from not having a single type whose meaning is both
 "ordered" (having the function '<') and "numeric" (having the functions '+', '-', '*', '/') but in practice
 it does not matter much. For type systems with no convenient supertype of the numeric concrete
-types `Real`, `Integer`, `Double`, the `_magnitude_` property can safely be left out of `Quantified`;
-the only drawback is that code cannot call `Quantified`.`_magnitude_` polymorphically, e.g. in a
+types `Real`, `Integer`, `Double`, the `_magnitude_` property can safely be left out of `Measurable`;
+the only drawback is that code cannot call `Measurable`.`_magnitude_` polymorphically, e.g. in a
 statistical application processing `Quantity` and `Count` objects.
 
 == Unicode

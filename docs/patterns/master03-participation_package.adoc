@@ -5,8 +5,8 @@
 The classes presented in this section provide a means of including references to external entities, including demographic entities, that are represented in external systems.
 
 [.text-center]
-.base_types.entity_reference Package
-image::{uml_diagrams_uri}/BASE-base_types.participation.svg[id=participation_package, align="center"]
+.model_support.entity_reference Package
+image::{uml_diagrams_uri}/BASE-model_support.participation.svg[id=participation_package, align="center"]
 
 == Design Principles
 

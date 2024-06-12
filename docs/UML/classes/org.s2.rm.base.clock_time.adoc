@@ -1,0 +1,21 @@
+=== Clock_time Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Clock_time*
+
+h|*Description*
+2+a|Time in day expressed as a standard clock time.
+
+h|*Inherit*
+2+|`<<_hour_specifier_class,Hour_specifier>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*time*: `<<_time_class,Time>>`
+a|
+|===

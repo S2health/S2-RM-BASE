@@ -1,4 +1,4 @@
-:spec_title: Foundation Types
+:spec_title: S2 Foundation Types
 :copyright_year: 2017
 :spec_status: STABLE
 :keywords: openehr, s2, identifiers, types

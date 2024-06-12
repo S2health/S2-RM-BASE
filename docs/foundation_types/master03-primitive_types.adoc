@@ -10,16 +10,11 @@ This section describes primitive types assumed by all {product_name} models. The
  in {product_name} |Description
 
 |`Byte`     |a type whose value is an 8-bit value.
-|`Character`|a type whose value is a member of an 8-bit character-set
-             (ISO: "repertoire").
 |`Boolean`  |logical True/False values; usually physically represented as an 
              integer, but need not be.
-|`Integer`  |32-bit integers.
-|`Integer64`|64-bit integers.                                                   
-|`Real`     |32-bit real numbers in any interoperable representation, including
+|`Integer`  |Integers.
+|`Real`     |Real numbers in any interoperable representation, including
              single-width IEEE floating point.
-|`Double`   |64-bit real numbers, in any interoperable representation including
-            double-precision IEEE floating point.
 |`String`   |represents unicode-enabled strings.
 |===
 
@@ -39,8 +34,6 @@ include::{uml_export_dir}/classes/{pkg}boolean.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}comparable.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}character.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}byte.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}string.adoc[]
@@ -49,12 +42,6 @@ include::{uml_export_dir}/classes/{pkg}uri.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}numeric.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}comparable_numeric.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}integer.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}integer64.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}real.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}double.adoc[]

@@ -53,7 +53,7 @@ This specification draws from the  {openehr_rm_data_types}[openEHR Data Types^] 
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.s2.base.data_types.
+:pkg: org.s2.rm.base.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

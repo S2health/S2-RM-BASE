@@ -7,7 +7,7 @@
 <meta name="generator" content="Asciidoctor 2.0.16">
 <meta name="description" content="S2 Patterns Information Model specification">
 <meta name="keywords" content="EHR, data structures, reference model, S2">
-<title>Patterns Information Model</title>
+<title>S2 Patterns Information Model</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
 </head>
 <body class="book toc2 toc-left">
@@ -15,7 +15,7 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel0">
-<li><a href="#_patterns_information_model">Patterns Information Model</a>
+<li><a href="#_s2_patterns_information_model">S2 Patterns Information Model</a>
 <ul class="sectlevel1">
 <li><a href="#_amendment_record">Amendment Record</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
@@ -42,12 +42,10 @@
 <li><a href="#_semantics">2.3. Semantics</a></li>
 <li><a href="#_class_descriptions">2.4. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_item_class">2.4.1. Item Class</a></li>
-<li><a href="#_cluster_class">2.4.2. Cluster Class</a></li>
-<li><a href="#_element_class">2.4.3. Element Class</a></li>
+<li><a href="#_node_class">2.4.1. Node Class</a></li>
 </ul>
 </li>
-<li><a href="#_history_classes">2.5. History Classes</a>
+<li><a href="#_event_classes">2.5. Event Classes</a>
 <ul class="sectlevel3">
 <li><a href="#_basic_semantics">2.5.1. Basic Semantics</a></li>
 <li><a href="#_timing">2.5.2. Timing</a></li>
@@ -114,7 +112,7 @@
 </div>
 </div>
 </div>
-<h1 id="_patterns_information_model" class="sect0"><a class="anchor" href="#_patterns_information_model"></a>Patterns Information Model</h1>
+<h1 id="_s2_patterns_information_model" class="sect0"><a class="anchor" href="#_s2_patterns_information_model"></a>S2 Patterns Information Model</h1>
 <div class="openblock partintro">
 <div class="content">
 <table class="tableblock frame-all grid-all fit-content spread">
@@ -124,7 +122,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://s2health.org" target="_blank" rel="noopener">S2 Health</a></th>
 </tr>
 </thead>
 <tbody>
@@ -148,12 +146,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2023 S2 Foundation</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2024 S2 Health</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a> is an independent, non-profit foundation.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://s2health.org" target="_blank" rel="noopener">S2 Health</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -161,8 +159,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
- Web: <a href="https://specifications.s2health.io" target="_blank" rel="noopener">specifications.S2.io</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.s2health.org/components/BASE/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
+ Web: <a href="https://specifications.s2health.org" target="_blank" rel="noopener">https://specifications.s2health.org</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -188,10 +186,31 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.7.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-18" target="_blank" rel="noopener">SBASE-18</a>. Replace <code>Cluster</code> and <code>Element</code> with single <code>Node</code> type.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>19 Oct 2023</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-17" target="_blank" rel="noopener">SBASE-17</a>. Add <code>Element.<em>original_value</em></code> field to carry pre-normalized value where needed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17 Oct 2023</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.6.0</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.6.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Writing: based on openEHR and HL7 FHIR Data structures.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>10 Apr 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 Apr 2023</p></td>
 </tr>
 </tbody>
 </table>
@@ -205,7 +224,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Graphite Informatics group.</p>
+<p>Graphite Health Informatics group.</p>
 </li>
 </ul>
 </div>
@@ -213,7 +232,7 @@
 <div class="sect2">
 <h3 id="_contributors"><a class="anchor" href="#_contributors"></a>Contributors</h3>
 <div class="paragraph">
-<p>This specification benefited from input from the wider health informatics community. The openEHR Foundation would like to recognise the following people for their contributions.</p>
+<p>This specification benefited from input from the wider health informatics community. The S2 Foundation would like to recognise the following people for their contributions.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -226,7 +245,7 @@
 <div class="sect2">
 <h3 id="_support"><a class="anchor" href="#_support"></a>Support</h3>
 <div class="paragraph">
-<p>The work reported in this paper has been funded in part by the following organisations:</p>
+<p>The work reported in this specification has been funded in part by the following organisations:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -296,7 +315,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.s2health.io/releases/RM/latest/architecture_overview.html" target="_blank" rel="noopener">S2 Architecture Overview</a>.</p>
+<p>The <a href="https://specifications.s2health.org/releases/RM/latest/architecture_overview.html" target="_blank" rel="noopener">S2 Architecture Overview</a>.</p>
 </li>
 </ul>
 </div>
@@ -319,10 +338,10 @@
 <p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications/rm" target="_blank" rel="noopener">openEHR RM specifications forum</a>.</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.s2health.io/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://specifications.s2health.org/components/BASE/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.s2health.io/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.s2health.org/components/BASE/history" target="_blank" rel="noopener">BASE component Change Request tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -339,7 +358,7 @@
 <div class="sect2">
 <h3 id="_requirements"><a class="anchor" href="#_requirements"></a>2.1. Requirements</h3>
 <div class="paragraph">
-<p>The requirements for structured data in the EHR and other systems are essentially that low-level data can be expressed in standard structures. The structures which are commonly required are as follows:</p>
+<p>The requirements for structured data in the EHR and other systems are essentially that detailed data can be expressed in standard structures. The structures which are commonly required are as follows:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -389,8 +408,7 @@
 <div class="sect2">
 <h3 id="_semantics"><a class="anchor" href="#_semantics"></a>2.3. Semantics</h3>
 <div class="paragraph">
-<p>The <code>base.patterns.data_structures</code> package contains classes representing structures for recording events in past time. The
-<code>data_structures package</code> is illustrated below.</p>
+<p>The <code>base.patterns.data_structures</code> package contains classes representing structures for recording events in past time. The <code>data_structures package</code> is illustrated below.</p>
 </div>
 <div id="data_structures_package" class="imageblock text-center text-center">
 <div class="content">
@@ -402,7 +420,7 @@
 <div class="sect2">
 <h3 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>2.4. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_item_class"><a class="anchor" href="#_item_class"></a>2.4.1. Item Class</h4>
+<h4 id="_node_class"><a class="anchor" href="#_node_class"></a>2.4.1. Node Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -412,41 +430,20 @@
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Item (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Node</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>The abstract parent of <code>Cluster</code> and <code>ELEMENT</code> representation classes.</p>
+<p>Node carrying data about a real world Entity. May be represented as an atomic value, via the <code><em>value</em></code> field, or a further sub-structure, or both,</p>
+</div>
+<div class="paragraph">
+<p>If the <code><em>value</em></code> property is set, it carries the normalized value. In cases where this is different in a significant way from the originally captured value, the <code><em>original_value</em></code> is used to capture the latter. Cases include: conversion of units; terminology conversion / mapping.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_locatable_class" target="_blank" rel="noopener">Locatable</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_cluster_class"><a class="anchor" href="#_cluster_class"></a>2.4.2. Cluster Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Cluster</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_item_class">Item</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_locatable_class">Locatable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -455,62 +452,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>has_element_path</strong> (<br>
-a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>element_at_path</strong> (<br>
-a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
-): <code><a href="#_element_class">Element</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_element_class"><a class="anchor" href="#_element_class"></a>2.4.3. Element Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Element</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>The leaf variant of <code>ITEM</code>, to which a <code>DATA_VALUE</code> instance is attached.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_item_class">Item</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_flavor</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_flavor</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Flavor of null value, e.g. <code>253&#124;unknown&#124;</code>, <code>271&#124;no information&#124;</code>, <code>272&#124;masked&#124;</code>, and <code>273&#124;not applicable&#124;</code>.</p>
 </div>
@@ -520,16 +462,30 @@ a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/data_types.html#_data_value_class" target="_blank" rel="noopener">Data_value</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="#_data_value_class">Data_value</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property representing leaf value object of <code>ELEMENT</code>. In real data, any concrete subtype of <code>DATA_VALUE</code> can be used.</p>
+<p><em>Normalized</em> value within <code>Element</code>. Any concrete subtype of <code>Data_value</code> can be used.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_reason</strong>: <code><a href="/releases/BASE/latest/data_types.html#_text_class" target="_blank" rel="noopener">Text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_reason</strong>: <code><a href="#_text_class">Text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional specific reason for null value; if set, <code><em>null_flavour</em></code> must be set. Null reason may apply only to a minority of clinical data, commonly needed in reporting contexts.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>original_value</strong>: <code><a href="#_data_value_class">Data_value</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional property to record data value in the form captured in original application or system.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_node_class">Node</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Subordinate data items.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -539,7 +495,7 @@ a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_null</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_null</strong> (): <code><a href="#_boolean_class">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>True if value logically not known, e.g. if indeterminate, not asked etc.</p>
 </div></div></td>
@@ -573,7 +529,7 @@ a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class
 </div>
 </div>
 <div class="sect2">
-<h3 id="_history_classes"><a class="anchor" href="#_history_classes"></a>2.5. History Classes</h3>
+<h3 id="_event_classes"><a class="anchor" href="#_event_classes"></a>2.5. Event Classes</h3>
 <div class="paragraph">
 <p>The <code>history</code> classes formalise the concept of past, linear time, via which historical data of any structural complexity can be recorded. It supports both instantaneous and interval event samples within periodic and aperiodic series.</p>
 </div>
@@ -807,7 +763,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 <div class="sect3">
 <h4 id="_efficient_representation_of_fine_grained_device_data"><a class="anchor" href="#_efficient_representation_of_fine_grained_device_data"></a>2.5.7. Efficient Representation of Fine-grained Device Data</h4>
 <div class="paragraph">
-<p>A useful practical consequence of the Interval Event is that it allows long periods of stable data to be represented with a single Interval event, while interesting perturbations will be represented with a number of fine-grained Interval or Point Events. In the example in the next figure, Event instances are used represent 4 hours of data consisting to 14,400 x 1 second samples from a blood pressure monitor. The optional <code>INTERVAL_EVENT.<em>sample_count</em></code> attribute can be used to record the number of original samples summarised in the event. In the illustration, the <code><em>math_function</em></code> is shown as <code>146|mean|</code>; clearly in the first long period, the monitored datum was not absolutely flat. The implication is that the recording software was configured to regard variations in a small band (e.g. 5mm Hg) as insignificant, and only to create new Event objects when the underlying values moved outside the band. Another approach woould have been to create two Interval Event objects for each long period, one giving minimum value, the other maxium value, still based on the principle of generating one such pair for periods when the underlying data remained within specified limits. Regardless of the details, this general approach provides a way to include hours of fine-grained data from devices like vital signs monitors in very little space; the data simply need to be transfomed into equivalent openEHR History form first.</p>
+<p>A useful practical consequence of the Interval Event is that it allows long periods of stable data to be represented with a single Interval event, while interesting perturbations will be represented with a number of fine-grained Interval or Point Events. In the example in the next figure, Event instances are used represent 4 hours of data consisting of 14,400 x 1 second samples from a blood pressure monitor. The optional <code>INTERVAL_EVENT.<em>sample_count</em></code> attribute can be used to record the number of original samples summarised in the event. In the illustration, the <code><em>math_function</em></code> is shown as <code>146|mean|</code>; clearly in the first long period, the monitored datum was not absolutely flat. The implication is that the recording software was configured to regard variations in a small band (e.g. 5mm Hg) as insignificant, and only to create new Event objects when the underlying values moved outside the band. Another approach would have been to create two Interval Event objects for each long period, one giving minimum value, the other maximum value, still based on the principle of generating one such pair for periods when the underlying data remained within specified limits. Regardless of the details, this general approach provides a way to include hours of fine-grained data from devices like vital signs monitors in very little space; the data simply need to be transformed into equivalent openEHR History form first.</p>
 </div>
 <div id="history_data_compression" class="imageblock text-center text-center">
 <div class="content">
@@ -870,7 +826,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_locatable_class" target="_blank" rel="noopener">Locatable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_locatable_class">Locatable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -879,16 +835,16 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="#_date_time_class">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Time of this event. If the width is non-zero, it is the time point of the trailing edge of the event.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_node_class">Node</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The data of this event.</p>
+<p>Constituent Nodes for this event.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -898,7 +854,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>offset</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>offset</strong> (): <code><a href="#_duration_class">Duration</a></code><br>
 <br>
 <em>Post_condition</em>: <code>Result = time.diff(parent.origin)</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -970,21 +926,21 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>width</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>width</strong>: <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Duration of the time interval during which the values recorded under <code>data</code> are true and, if set, the values recorded under <code>state</code> are true. Void if an instantaneous event.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_count</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_count</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional count of original samples to which this event corresponds.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_function</strong>: <code><a href="/releases/BASE/latest/base_types.html#_sample_function_kind_enumeration" target="_blank" rel="noopener">Sample_function_kind</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_function</strong>: <code><a href="#_sample_function_kind_enumeration">Sample_function_kind</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml">openEHR vocabulary <code>event math function</code></a>. Default value <code>640&#124;actual&#124;</code>, meaning 'actual value'.</p>
 </div></div></td>
@@ -996,7 +952,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>interval_start_time</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>interval_start_time</strong> (): <code><a href="#_date_time_class">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Start time of the interval of this event.</p>
 </div></div></td>
@@ -1059,9 +1015,9 @@ which in this case is simply the time of measurement (the origin).</p>
 </div>
 <div id="participation_package" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/BASE-base_types.participation.svg" alt="BASE base types.participation">
+<img src="UML/diagrams/BASE-model_support.participation.svg" alt="BASE model support.participation">
 </div>
-<div class="title">Figure 10. base_types.entity_reference Package</div>
+<div class="title">Figure 10. model_support.entity_reference Package</div>
 </div>
 </div>
 <div class="sect2">
@@ -1129,7 +1085,7 @@ which in this case is simply the time of measurement (the origin).</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>external_ref</strong>: <code><a href="/releases/BASE/latest/base_types.html#_object_ref_class" target="_blank" rel="noopener">Object_ref</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>external_ref</strong>: <code><a href="#_object_ref_class">Object_ref</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional reference to external representation of Party, for example in a MAster Patient Index.</p>
 </div></div></td>
@@ -1199,14 +1155,14 @@ which in this case is simply the time of measurement (the origin).</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong>: <code><a href="#_string_class">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional human-readable name (in String form).</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>identifiers</strong>: <code>List&lt;<a href="/releases/BASE/latest/data_types.html#_rwe_id_ref_class" target="_blank" rel="noopener">Rwe_id_ref</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>identifiers</strong>: <code>List&lt;<a href="#_rwe_id_ref_class">Rwe_id_ref</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>One or more formal identifiers (possibly computable).</p>
 </div>
@@ -1265,7 +1221,7 @@ which in this case is simply the time of measurement (the origin).</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>relationship</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>relationship</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Relationship of subject of this Entry to the subject of the record. May be coded. If it is the patient, coded as  self.</p>
 </div></div></td>
@@ -1311,14 +1267,14 @@ which in this case is simply the time of measurement (the origin).</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>function</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>function</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The function of the Party in this participation. Note that a given party might participate in more than one way in a particular activity.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>role</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>role</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Role of participant within the organisation, e.g. cardiologist, senior nurse.</p>
 </div></div></td>
@@ -1332,14 +1288,14 @@ which in this case is simply the time of measurement (the origin).</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mode</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mode</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional field for recording the 'mode' of the performer / activity interaction, e.g. present, by telephone, by email etc.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_interval_class">Interval<sup></a>&lt;<a href="/releases/BASE/latest/foundation_types.html#_date_time_class">Date_time</sup></a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="#_interval_class">Interval</a>&lt;<a href="#_date_time_class">Date_time</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The time interval during which the participation took place, if it is used in an observational context (i.e. recording facts about the past); or the intended time interval of the participation when used in future contexts, such as EHR Instructions.</p>
 </div></div></td>
@@ -1372,7 +1328,7 @@ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participati
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-10-04 21:17:27 -0600
+Last updated 2023-10-26 22:53:16 -0600
 </div>
 </div>
 </body>

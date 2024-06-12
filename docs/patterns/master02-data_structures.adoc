@@ -2,7 +2,7 @@
 
 == Requirements
 
-The requirements for structured data in the EHR and other systems are essentially that low-level data can be expressed in standard structures. The structures which are commonly required are as follows:
+The requirements for structured data in the EHR and other systems are essentially that detailed data can be expressed in standard structures. The structures which are commonly required are as follows:
 
 * single values, e.g. weight, height, blood sugar;
 * lists of named/numbered elements, e.g. blood test results;
@@ -24,8 +24,7 @@ One of the motivations for defining logical data structures explicitly is to rem
 
 == Semantics
 
-The `base.patterns.data_structures` package contains classes representing structures for recording events in past time. The
-`data_structures package` is illustrated below.
+The `base.patterns.data_structures` package contains classes representing structures for recording events in past time. The `data_structures package` is illustrated below.
 
 [.text-center]
 .base.patterns.data_structures Package
@@ -33,14 +32,9 @@ image::{uml_diagrams_uri}/BASE-patterns.data_structures.svg[id=data_structures_p
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}item.adoc[]
+include::{uml_export_dir}/classes/{pkg}node.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}cluster.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}element.adoc[]
-
-
-== History Classes
+== Event Classes
 
 The `history` classes formalise the concept of past, linear time, via which historical data of any structural complexity can be recorded. It supports both instantaneous and interval event samples within periodic and aperiodic series.
 
@@ -167,7 +161,7 @@ second, an `ITEM_SINGLE` object containing a image within a `Dv_multimedia` inst
 
 === Efficient Representation of Fine-grained Device Data
 
-A useful practical consequence of the Interval Event is that it allows long periods of stable data to be represented with a single Interval event, while interesting perturbations will be represented with a number of fine-grained Interval or Point Events. In the example in the next figure, Event instances are used represent 4 hours of data consisting to 14,400 x 1 second samples from a blood pressure monitor. The optional `INTERVAL_EVENT._sample_count_` attribute can be used to record the number of original samples summarised in the event. In the illustration, the `_math_function_` is shown as `146|mean|`; clearly in the first long period, the monitored datum was not absolutely flat. The implication is that the recording software was configured to regard variations in a small band (e.g. 5mm Hg) as insignificant, and only to create new Event objects when the underlying values moved outside the band. Another approach woould have been to create two Interval Event objects for each long period, one giving minimum value, the other maxium value, still based on the principle of generating one such pair for periods when the underlying data remained within specified limits. Regardless of the details, this general approach provides a way to include hours of fine-grained data from devices like vital signs monitors in very little space; the data simply need to be transfomed into equivalent openEHR History form first.
+A useful practical consequence of the Interval Event is that it allows long periods of stable data to be represented with a single Interval event, while interesting perturbations will be represented with a number of fine-grained Interval or Point Events. In the example in the next figure, Event instances are used represent 4 hours of data consisting of 14,400 x 1 second samples from a blood pressure monitor. The optional `INTERVAL_EVENT._sample_count_` attribute can be used to record the number of original samples summarised in the event. In the illustration, the `_math_function_` is shown as `146|mean|`; clearly in the first long period, the monitored datum was not absolutely flat. The implication is that the recording software was configured to regard variations in a small band (e.g. 5mm Hg) as insignificant, and only to create new Event objects when the underlying values moved outside the band. Another approach would have been to create two Interval Event objects for each long period, one giving minimum value, the other maximum value, still based on the principle of generating one such pair for periods when the underlying data remained within specified limits. Regardless of the details, this general approach provides a way to include hours of fine-grained data from devices like vital signs monitors in very little space; the data simply need to be transformed into equivalent openEHR History form first.
 
 [.text-center]
 .Data compression effect of History with Interval Events

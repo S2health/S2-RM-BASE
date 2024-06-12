@@ -4,10 +4,28 @@
 |===
 |Issue|Details|Raiser, Implementer|Completed
 
-|[[latest_issue]]0.1.0
+|[[latest_issue]]0.7.0
+|{spec_tickets}/SBASE-18[SBASE-18^]. Replace `Cluster` and `Element` with single `Node` type.
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|[[latest_issue_date]]19 Oct 2023
+
+|
+|{spec_tickets}/SBASE-17[SBASE-17^]. Add `Element._original_value_` field to carry pre-normalized value where needed.
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|17 Oct 2023
+
+4+^h|*BASE Release 0.6.0*
+
+|0.6.0
 |Initial Writing: based on openEHR and HL7 FHIR Data structures.
 |T Beale
-|[[latest_issue_date]]10 Apr 2023
+|10 Apr 2023
 
 |===
 

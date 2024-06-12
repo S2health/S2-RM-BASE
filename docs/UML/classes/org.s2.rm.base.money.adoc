@@ -1,0 +1,28 @@
+=== Money Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Money*
+
+h|*Description*
+2+a|Quantity type representing amount of currency.
+
+TODO: determine if should be a Quantity
+
+h|*Inherit*
+2+|`<<_ordered_value_class,Ordered_value>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*currency*: `<<_terminology_code_class,Terminology_code>>`
+a|
+
+h|*1..1 +
+(redefined)*
+|*magnitude*: `Real`
+a|
+|===

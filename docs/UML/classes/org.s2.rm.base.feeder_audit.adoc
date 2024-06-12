@@ -1,0 +1,34 @@
+=== Feeder_audit Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Feeder_audit*
+
+h|*Description*
+2+a|The `Feeder_audit` class defines an audit trail describing the origin of data that have been ingested and committed to the system.
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*originating_system_item_ids*: `List<<<_rwe_id_ref_class,Rwe_id_ref>>>`
+a|Identifiers used for the item in the originating system, e.g. filler and placer ids.
+
+h|*0..1*
+|*feeder_system_item_ids*: `List<<<_rwe_id_ref_class,Rwe_id_ref>>>`
+a|Identifiers used for the item in the feeder system, where the feeder system is distinct from the originating system.
+
+h|*0..1*
+|*original_content*: `<<_encapsulated_class,Encapsulated>>`
+a|Optional inline inclusion of or reference to original content corresponding to the openEHR content at this node. Typically a URI reference to a document or message in a persistent store associated with the EHR.
+
+h|*1..1*
+|*originating_system_audit*: `<<_feeder_audit_details_class,Feeder_audit_details>>`
+a|Any audit information for the information item from the originating system.
+
+h|*0..1*
+|*feeder_system_audit*: `<<_feeder_audit_details_class,Feeder_audit_details>>`
+a|Any audit information for the information item from the feeder system, if different from the originating system.
+|===

@@ -1,0 +1,27 @@
+=== Customary_time Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Customary_time*
+
+h|*Description*
+2+a|Time in day expressed as a customary time, typically related to other events during the day such as meals, waking up etc.
+
+h|*Inherit*
+2+|`<<_hour_specifier_class,Hour_specifier>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*reference_event*: `<<_terminology_term_class,Terminology_term>>`
+a|Reference event during day to which event being specified is linked, e.g. 'waking', 'going to bed', 'meal', 'breakfast', etc.
+
+h|*0..1*
+|*temporal_relation*: `<<_temporal_relation_enumeration,Temporal_relation>>`
+a|Optional temporal relation to the reference event.
+
+TODO: this may be superfluous if the codes for `_time_` include the reference event.
+|===

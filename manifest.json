@@ -6,7 +6,7 @@
     "specifications": [
         {
             "id": "foundation_types",
-            "title": "Foundation Types",
+            "title": "S2 Foundation Types",
             "title_short": "Foundation Types",
             "description": "S2 Foundation Types specification",
             "summary": "Specification of assumed, primitive and other foundation types required by all other specifications.",
@@ -16,19 +16,19 @@
             "keywords": "openehr, s2, identifiers, types"
         },
         {
-            "id": "base_types",
-            "title": "Base Types",
-            "title_short": "Base Types",
-            "description": "S2 Base Types specification",
-            "summary": "Specification of basic health informatics types used in other specifications.",
-            "micro_summary": "Definitions, Identifiers",
-            "copyright_year": "2016",
+            "id": "model_support",
+            "title": "S2 Model support structures",
+            "title_short": "Model support",
+            "description": "S2 Model support specification",
+            "summary": "Specification of meta-model elements used in other specifications.",
+            "micro_summary": "Meta-model, Identifiers",
+            "copyright_year": "2023",
             "spec_status": "STABLE",
             "keywords": "openehr, s2, identifiers, types"
         },
         {
             "id": "resource",
-            "title": "Resource Model",
+            "title": "S2 Resource Model",
             "title_short": "Resource Model",
             "description": "S2 Resource Model specification",
             "summary": "The Resource specification defines a formal model of authoring and IP meta-data, language translation and annotations that can be used by classes defining any concrete type of authored resource, such as a document, archetype or template.",
@@ -42,7 +42,7 @@
         },
         {
             "id": "patterns",
-            "title": "Patterns Information Model",
+            "title": "S2 Patterns Information Model",
             "title_short": "Patterns",
             "description": "S2 Patterns Information Model specification",
             "micro_summary": "Common patterns",

@@ -1,0 +1,9 @@
+= Overview
+
+The {product_name} Base Types (`org.s2.model_support` package) consist of meta-model elements used globally throughout the {product_name} components and specifications, including definitions, various enumerations, built-in types providing utility functions, identifier types and terminology-related types. The latter two categories are intended to support all kinds of references: to terminology terms, informational objects, real world entities.
+
+The package structure is illustrated below.
+
+[.text-center]
+.base.model_support Package
+image::{uml_diagrams_uri}/BASE-model_support-packages.svg[id=model_support_packages, align="center"]
