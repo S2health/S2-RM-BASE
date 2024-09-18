@@ -1,12 +1,12 @@
-=== Aboutable Class
+=== Info_item Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*__Aboutable (abstract)__*
+2+^h|*__Info_item (abstract)__*
 
 h|*Description*
-2+a|
+2+a|Descendants are root points in information structures that are semantically independent.
 
 h|*Inherit*
 2+|`<<_locatable_class,Locatable>>`
@@ -26,4 +26,8 @@ NOTE: not to be separately constrained in archetypes; this rule needs to be impl
 h|*0..1*
 |*original_code*: `<<_terminology_term_class,Terminology_term>>`
 a|Original code defining this data item, May be more pre-coordinated than the `code` field, particularly for lab analytes.
+
+h|*0..1*
+|*links*: `List<<<_link_class,Link>>>`
+a|Links to other archetyped structures (data whose root object inherits from `ARCHETYPED`, such as `Entry`, `SECTION` and so on). Links may be to structures in other compositions.
 |===

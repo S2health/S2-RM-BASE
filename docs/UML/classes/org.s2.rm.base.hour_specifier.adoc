@@ -8,11 +8,4 @@ h|*Class*
 h|*Description*
 2+a|Abstract specification of a point in time during the day.
 
-h|*Attributes*
-^h|*Signature*
-^h|*Meaning*
-
-h|*0..1*
-|*duration*: `<<_duration_class,Duration>>`
-a|Optional duration. Void value indicates either an instantaneous event, or that the event duration is unknown or not important.
 |===

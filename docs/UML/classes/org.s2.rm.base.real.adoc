@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Real*
 
 h|*Description*
-2+a|Type used to represent decimal numbers. Corresponds to a single-precision floating point value in most languages.
+2+a|Type used to represent decimal numbers. Corresponds to a IEEE floating point types 'float' and 'double' in most languages.
 
 h|*Inherit*
 2+|`<<_numeric_class,Numeric>>`

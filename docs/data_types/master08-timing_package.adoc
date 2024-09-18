@@ -35,7 +35,240 @@ Some of the elements that need to be represented in timing specifications are:
 
 == Semantics
 
-TBD
+== Examples
+
+=== Every 8 hours
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "occurrence_times": [
+      {
+        "_type": "Period_specifier",
+        "period": {
+          "_type": "Duration",
+          "lower": "PT8H"
+        }
+      }
+    ]
+  }
+}
+----
+
+=== 3 times a day
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "occurrence_times": [
+      {
+        "_type": "Period_specifier",
+        "event_count": 3,
+        "period": "PT8H"
+      }
+    ]
+  }
+}
+----
+
+=== 3-4 times a day
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "occurrence_times": [
+      {
+        "_type": "Period_specifier",
+        "event_count": 3,
+        "event_count_upper": 4,
+        "period": "P1D"
+        }
+      }
+    ]
+  }
+}
+----
+
+=== 3 times a week for ½ hour
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "duration": "PT0.5H",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "occurrence_times": [
+      {
+        "_type": "Period_specifier",
+        "event_count": 3,
+        "period": "P1W"
+      }
+    ]
+  }
+}
+----
+
+=== With breakfast
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "occurrence_times": [
+      {
+        "_type": "Day_hour_specifier",
+        "times_of_day": [
+          {
+            "_type": "Customary_time",
+            "reference_event": {
+              "_type": "Terminology_term",
+              "description": "Breakfast time",
+              "concept": {
+                "_type": "Terminology_code",
+                "terminology_id": "snomed",
+                "code_string": "307160001"
+              }
+            },
+            "temporal_relation": "with"
+          }
+        ]
+      }
+    ]
+  }
+}
+----
+
+=== For 5 minutes, 10 minutes before meals
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "duration": "PT5M",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "occurrence_times": [
+      {
+        "_type": "Day_hour_specifier",
+        "day": {
+          "_type": "Terminology_term",
+          "description": "daily",
+          "concept": {
+            "_type": "Terminology_code",
+            "terminology_id": "snomed",
+            "code_string": "69620002"
+          }
+        },
+        "times_of_day": [
+          {
+            "_type": "Customary_time",
+            "reference_event": {
+              "_type": "Terminology_term",
+              "description": "Mealtimes",
+              "concept": {
+                "_type": "Terminology_code",
+                "terminology_id": "snomed",
+                "code_string": "309611000"
+              }
+            },
+            "offset": "PT10M",
+            "temporal_relation": "before"
+          }
+        ]
+      }
+    ]
+  }
+}
+----
+
+=== 3 times daily, 30 minutes before meals
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "occurrence_times": [
+      {
+        "_type": "Day_hour_specifier",
+        "event_count": 3,
+        "day": {
+          "_type": "Terminology_term",
+          "description": "daily",
+          "concept": {
+            "_type": "Terminology_code",
+            "terminology_id": "snomed",
+            "code_string": "69620002"
+          }
+        },
+        "times_of_day": [
+          {
+            "_type": "Customary_time",
+            "reference_event": {
+              "_type": "Terminology_term",
+              "description": "Mealtimes",
+              "concept": {
+                "_type": "Terminology_code",
+                "terminology_id": "snomed",
+                "code_string": "309611000"
+              }
+            },
+            "offset": "PT30M",
+            "temporal_relation": "before"
+          }
+        ]
+      }
+    ]
+  }
+}
+----
+
+=== Take every 2nd day, in the morning, until 20 have been taken
+
+[source,json]
+----
+{
+  "_type": "Timing",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "total_event_count": 20,
+    "occurrence_times": [
+      {
+        "_type": "Day_hour_specifier",
+        "day_period": "2",
+        "times_of_day": [
+          {
+            "_type": "Customary_time",
+            "reference_event": {
+              "_type": "Terminology_term",
+              "description": "Morning",
+              "concept": {
+                "_type": "Terminology_code",
+                "terminology_id": "snomed",
+                "code_string": "73775008"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+----
+
 
 == Class Descriptions
 
@@ -45,11 +278,11 @@ include::{uml_export_dir}/classes/{pkg}occurrence.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}occurrence_pattern.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}time_specifier.adoc[]
+include::{uml_export_dir}/classes/{pkg}occurrence_times_specifier.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}period_specifier.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}day_specifier.adoc[]
+include::{uml_export_dir}/classes/{pkg}day_hour_specifier.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}hour_specifier.adoc[]
 

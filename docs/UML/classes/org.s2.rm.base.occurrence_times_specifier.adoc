@@ -1,0 +1,22 @@
+=== Occurrence_times_specifier Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*__Occurrence_times_specifier (abstract)__*
+
+h|*Description*
+2+a|Times of occurrence of the event.
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*event_count_upper*: `Integer`
+a|Upper limit of number of events that occurred for this occurrence time.
+
+h|*0..1*
+|*event_count*: `Integer`
+a|Specific number of events that occurred for this occurrence time.
+|===

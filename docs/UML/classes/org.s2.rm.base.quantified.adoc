@@ -1,0 +1,25 @@
+=== Quantified Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*__Quantified (abstract)__*
+
+h|*Description*
+2+a|Ordered values that are quantified, i.e. with values that are arithmetically comparable. Operations such as multiplication and division are definable on Quantified entities.
+
+h|*Inherit*
+2+|`<<_ordered_value_class,Ordered_value>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*precision*: `<<_integer_class,Integer>>`
+a|Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+
+The value -1 implies no limit, i.e. any number of decimal places.
+
+Precision can be set to 0 to ensure there are not decimal points, which may be useful on fields that are normally only reported as integers, e.g. blood pressure.
+|===

@@ -16,8 +16,6 @@ The observed form involves _measurement_, which is an attempt to determine the t
 * _reference range_: one or more value ranges relative to the specific subject of measurement, such as 'normal', 'high' and so on;
 * _value status_: an indication of the relationship between the real value and the measurement that allows for limitations in device measurement, for example a device may display the value '< 20μg', indicating that the real weight is below its bottom measurement threshold. Typical possibilities include less-than and greater-than, as well as 'approximate', common with patient-reported observations.
 
-
-
 Reference ranges are particularly useful with pathology test results, e.g. serum sodium, and vital signs.
 
 === Dimensioned Quantities
@@ -125,7 +123,7 @@ The `rm.base.data_types.ordered package` addresses the above requirements and is
 .rm.base.data_types.ordered package - quantities
 image::{uml_diagrams_uri}/BASE-data_types.ordered-quantity.svg[id=base_data_types_quantity, align="center"]
 
-=== Basic Semantics
+=== Taxonomy
 
 In order to make sense of the requirements in a systematic way, a taxonomy for quantified entities is needed. The most basic characteristic of quantified values as described above is the distinction between stated and observed form. The stated form of an ordered data value is a pure type definition, e.g. for the type `Quantity`, `Ratio` etc. The abstract type `Ordered_value` is the ancestor of such types. The observed, or _measured_ form is distinct and is represented by the type `Measured<V>`, whose generic parameter may be any `Ordered_value`. The various ordered value types are descendents of the latter type, while the `Measured<V>` acts as a wrapper for any pure value, adding data specific to the act of measurement.
 
@@ -174,6 +172,10 @@ The `Proportion` type is provided to express relative proportions of two Quantit
 
 The `Ratio` type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values. The `_type_` attribute is used to indicate the logical type of the proportion.
 
+=== Titers
+
+TBD
+
 == Class Descriptions
 
 include::{uml_export_dir}/classes/{pkg}ordered_value.adoc[]
@@ -182,17 +184,27 @@ include::{uml_export_dir}/classes/{pkg}ordered_datum.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}coded_ordinal.adoc[]
 
+include::{uml_export_dir}/classes/{pkg}quantified.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}money.adoc[]
+
 include::{uml_export_dir}/classes/{pkg}measurable.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}simple_measurable.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}quantity.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}count.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}compound_measurable.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}proportion.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio_kind.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}titer.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}measured.adoc[]
 

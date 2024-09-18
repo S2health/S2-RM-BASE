@@ -17,6 +17,6 @@ h|*1..1*
 a|Date of the occurrence.
 
 h|*0..1*
-|*time_of_day*: `List<<<_hour_specifier_class,Hour_specifier>>>`
+|*times_of_day*: `List<<<_hour_specifier_class,Hour_specifier>>>`
 a|Time of day of the occurrence.
 |===

@@ -13,7 +13,7 @@ Units are expressed as a `Coded_term` to allow the original units string (from u
 Can also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years (in the latter case, `Duration_value` may be used).
 
 h|*Inherit*
-2+|`<<_measurable_class,Measurable>>`
+2+|`<<_simple_measurable_class,Simple_measurable>>`
 
 h|*Attributes*
 ^h|*Signature*
@@ -29,7 +29,7 @@ a|Additional data elements for measured quantities, including precision, accurac
 
 h|*1..1 +
 (redefined)*
-|*magnitude*: `Real`
+|*magnitude*: `<<_decimal_class,Decimal>>`
 a|
 h|*Functions*
 ^h|*Signature*

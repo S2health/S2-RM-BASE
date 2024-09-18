@@ -24,4 +24,8 @@ h|*0..1*
 a|Optional temporal relation to the reference event.
 
 TODO: this may be superfluous if the codes for `_time_` include the reference event.
+
+h|*0..1*
+|*offset*: `<<_duration_class,Duration>>`
+a|Optional time offset with respect to `reference_event`. May only be specified if `temporal_relation` is specified, and not equal to `'with'`.
 |===

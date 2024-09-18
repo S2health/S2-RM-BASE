@@ -9,6 +9,7 @@
 <meta name="keywords" content="openehr, s2, identifiers, types">
 <title>S2 Foundation Types</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
+<link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -48,16 +49,23 @@
 <ul class="sectlevel2">
 <li><a href="#_overview_2">3.1. Overview</a></li>
 <li><a href="#_unicode">3.2. Unicode</a></li>
-<li><a href="#_class_definitions_2">3.3. Class Definitions</a>
+<li><a href="#_string_based_primitive_identifiers">3.3. String-based Primitive Identifiers</a></li>
+<li><a href="#_class_definitions_2">3.4. Class Definitions</a>
 <ul class="sectlevel3">
-<li><a href="#_boolean_class">3.3.1. Boolean Class</a></li>
-<li><a href="#_comparable_class">3.3.2. Comparable Class</a></li>
-<li><a href="#_byte_class">3.3.3. Byte Class</a></li>
-<li><a href="#_string_class">3.3.4. String Class</a></li>
-<li><a href="#_uri_class">3.3.5. Uri Class</a></li>
-<li><a href="#_numeric_class">3.3.6. Numeric Class</a></li>
-<li><a href="#_integer_class">3.3.7. Integer Class</a></li>
-<li><a href="#_real_class">3.3.8. Real Class</a></li>
+<li><a href="#_boolean_class">3.4.1. Boolean Class</a></li>
+<li><a href="#_comparable_class">3.4.2. Comparable Class</a></li>
+<li><a href="#_byte_class">3.4.3. Byte Class</a></li>
+<li><a href="#_string_class">3.4.4. String Class</a></li>
+<li><a href="#_numeric_class">3.4.5. Numeric Class</a></li>
+<li><a href="#_integer_class">3.4.6. Integer Class</a></li>
+<li><a href="#_real_class">3.4.7. Real Class</a></li>
+<li><a href="#_uri_class">3.4.8. Uri Class</a>
+<ul class="sectlevel4">
+<li><a href="#_iso_oid_class">3.4.8.1. Iso_oid Class</a></li>
+<li><a href="#_uuid_class">3.4.8.2. Uuid Class</a></li>
+<li><a href="#_internet_id_class">3.4.8.3. Internet_id Class</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -523,7 +531,7 @@ other: <code><a href="#_comparable_class">Comparable</a>[1]</code><br>
 <div class="sect2">
 <h3 id="_overview_2"><a class="anchor" href="#_overview_2"></a>3.1. Overview</h3>
 <div class="paragraph">
-<p>This section describes primitive types assumed by all S2 models. These are types supported directly by most programing languages, and usually visible via either a class interface and/or a built-in primitive type. The following table lists the primitive types assumed by S2.</p>
+<p>This section describes primitive types assumed by all S2 models. These are types supported directly by most programing languages, and usually available via either a class interface and/or a built-in primitive type. The following table lists the primitive types assumed by S2.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -563,7 +571,7 @@ other: <code><a href="#_comparable_class">Comparable</a>[1]</code><br>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The figure below illustrates these types. Simple inheritance relationships are shown which facilitate the type descriptions below. Actual inheritance from or substitutability for an <code>Any</code> class is not assumed, and is shown only for convenience (e.g. to indicate that the '=' operator is available on any type). The type <code>Comparable_numeric</code> on the other hand is used to indicate assumed substitutability of numeric types, and is intended to be mapped to an equivalent type in a real type system (e.g. in Java, <code>java.lang.Number</code>). Data-oriented implementation type systems such as XML-schema do not have such operations.</p>
+<p>The figure below illustrates these types. Simple inheritance relationships are shown which facilitate the type descriptions below. Actual inheritance from or substitutability for an <code>Any</code> class is not assumed, and is shown only to indicate which operations are available on each type. Data-oriented implementation type systems such as XML-schema do not have such operations.</p>
 </div>
 <div id="foundation_types_primitive_types" class="imageblock text-center text-center">
 <div class="content">
@@ -579,9 +587,27 @@ other: <code><a href="#_comparable_class">Comparable</a>[1]</code><br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_definitions_2"><a class="anchor" href="#_class_definitions_2"></a>3.3. Class Definitions</h3>
+<h3 id="_string_based_primitive_identifiers"><a class="anchor" href="#_string_based_primitive_identifiers"></a>3.3. String-based Primitive Identifiers</h3>
+<div class="paragraph">
+<p>Various commonly-used identifiers are treated as being represented as Strings with particular syntaxes and operations. These include <code>Uri</code>, <code>Uuid</code> (aka Guid), <code>Iso_oid</code> and <code>Internet_id</code> (reverse internet domain). The use of String representation is indicated by these types having the <code>Value_type</code> stereotype and additionally having the tag 'native_type' set to <code>"String"</code>.</p>
+</div>
+<div class="paragraph">
+<p>Practically, such types are realised by String data representation with setters and accessors of the specific types. In Java for example, the following would be used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">uid</span><span class="tok-p">;</span> <span class="tok-c1">// really a Uuid</span>
+
+<span class="tok-kd">public</span> <span class="tok-nf">getUid</span><span class="tok-p">()</span> <span class="tok-p">{</span><span class="tok-k">return</span> <span class="tok-k">new</span> <span class="tok-n">Uuid</span><span class="tok-p">(</span><span class="tok-n">uid</span><span class="tok-p">);}</span>
+
+<span class="tok-kd">public</span> <span class="tok-nf">setUid</span> <span class="tok-p">(</span><span class="tok-n">Uuid</span> <span class="tok-n">aUid</span><span class="tok-p">)</span> <span class="tok-p">{</span><span class="tok-n">uid</span> <span class="tok-o">=</span> <span class="tok-n">aUid</span><span class="tok-p">.</span><span class="tok-na">value</span><span class="tok-p">;}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_class_definitions_2"><a class="anchor" href="#_class_definitions_2"></a>3.4. Class Definitions</h3>
 <div class="sect3">
-<h4 id="_boolean_class"><a class="anchor" href="#_boolean_class"></a>3.3.1. Boolean Class</h4>
+<h4 id="_boolean_class"><a class="anchor" href="#_boolean_class"></a>3.4.1. Boolean Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -706,7 +732,7 @@ other: <code><a href="#_boolean_class">Boolean</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_comparable_class"><a class="anchor" href="#_comparable_class"></a>3.3.2. Comparable Class</h4>
+<h4 id="_comparable_class"><a class="anchor" href="#_comparable_class"></a>3.4.2. Comparable Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -783,7 +809,7 @@ other: <code><a href="#_comparable_class">Comparable</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_byte_class"><a class="anchor" href="#_byte_class"></a>3.3.3. Byte Class</h4>
+<h4 id="_byte_class"><a class="anchor" href="#_byte_class"></a>3.4.3. Byte Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -809,7 +835,7 @@ other: <code><a href="#_comparable_class">Comparable</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_string_class"><a class="anchor" href="#_string_class"></a>3.3.4. String Class</h4>
+<h4 id="_string_class"><a class="anchor" href="#_string_class"></a>3.4.4. String Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -889,33 +915,7 @@ other: <code><a href="#_string_class">String</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_uri_class"><a class="anchor" href="#_uri_class"></a>3.3.5. Uri Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Uri</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>A kind of String constrained to obey the syntax of RFC 3986.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_string_class">String</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_numeric_class"><a class="anchor" href="#_numeric_class"></a>3.3.6. Numeric Class</h4>
+<h4 id="_numeric_class"><a class="anchor" href="#_numeric_class"></a>3.4.5. Numeric Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1004,7 +1004,7 @@ other: <code><a href="#_numeric_class">Numeric</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_integer_class"><a class="anchor" href="#_integer_class"></a>3.3.7. Integer Class</h4>
+<h4 id="_integer_class"><a class="anchor" href="#_integer_class"></a>3.4.6. Integer Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1158,7 +1158,7 @@ other: <code><a href="#_integer_class">Integer</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_real_class"><a class="anchor" href="#_real_class"></a>3.3.8. Real Class</h4>
+<h4 id="_real_class"><a class="anchor" href="#_real_class"></a>3.4.7. Real Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1173,7 +1173,7 @@ other: <code><a href="#_integer_class">Integer</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Type used to represent decimal numbers. Corresponds to a single-precision floating point value in most languages.</p>
+<p>Type used to represent decimal numbers. Corresponds to a IEEE floating point types 'float' and 'double' in most languages.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1308,6 +1308,94 @@ other: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="_uri_class"><a class="anchor" href="#_uri_class"></a>3.4.8. Uri Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Uri</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A kind of String constrained to obey the syntax of RFC 3986.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_iso_oid_class"><a class="anchor" href="#_iso_oid_class"></a>3.4.8.1. Iso_oid Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Iso_oid</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Model of ISO&#8217;s Object Identifier (oid) as defined by the standard ISO/IEC 8824. Oids are formed from integers separated by dots. Each non-leaf node in an Oid starting from the left corresponds to an assigning authority, and identifies that authority&#8217;s namespace, inside which the remaining part of the identifier is locally unique.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_uuid_class"><a class="anchor" href="#_uuid_class"></a>3.4.8.2. Uuid Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Uuid</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Model of the DCE Universal Unique Identifier or UUID which takes the form of hexadecimal integers separated by hyphens, following the pattern 8-4-4-4-12 as defined by the Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A. Also known as a GUID.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_internet_id_class"><a class="anchor" href="#_internet_id_class"></a>3.4.8.3. Internet_id Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Internet_id</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by <a href="https://www.rfc-editor.org/info/rfc1034" target="_blank" rel="noopener">IETF RFC 1034</a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -2075,7 +2163,7 @@ other: <code><a href="#_any_class">Any</a>[1]</code><br>
 <div class="sect2">
 <h3 id="_overview_5"><a class="anchor" href="#_overview_5"></a>6.1. Overview</h3>
 <div class="paragraph">
-<p>The primitive Date/Time types defined here are represented by classes defined in the package <code>base.foundation_types.time</code>. These are concrete types based on the <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank" rel="noopener">ISO 8601 (2019) date/time standard</a> semantics, which supports partial dates, times, and complex durations, all of which are needed in the biomedical and clinical domains. All types inherit a <code>String</code> physical representation from the <code>Temporal</code> class, and the Gregorian calendar is assumed.</p>
+<p>The primitive Time types defined here are represented by classes defined in the package <code>base.foundation_types.time</code>. These are concrete types based on the <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank" rel="noopener">ISO 8601 (2019) date/time standard</a> semantics, which supports partial dates, times, and complex durations, all of which are needed in the biomedical and clinical domains. All types inherit a <code>String</code> physical representation from the <code>Temporal</code> class, and the Gregorian calendar is assumed.</p>
 </div>
 <div class="paragraph">
 <p>The <code>time</code> package is shown below.</p>
@@ -2293,7 +2381,7 @@ For reasons of readability in data, it is strongly recommended that the 'extende
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Average_days_in_month</strong>: <code><a href="#_real_class">Real</a>&#160;=&#160;30.42</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Average_days_in_month</strong>: <code><a href="#_decimal_class">Decimal</a>&#160;=&#160;30.42</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Used for conversions of durations containing months to days and / or seconds.</p>
 </div></div></td>
@@ -2314,7 +2402,7 @@ For reasons of readability in data, it is strongly recommended that the 'extende
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Average_days_in_year</strong>: <code><a href="#_real_class">Real</a>&#160;=&#160;365.24</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Average_days_in_year</strong>: <code><a href="#_decimal_class">Decimal</a>&#160;=&#160;365.24</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Used for conversions of durations containing years to days and / or seconds.</p>
 </div></div></td>
@@ -2363,14 +2451,14 @@ For reasons of readability in data, it is strongly recommended that the 'extende
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nominal_days_in_month</strong>: <code><a href="#_real_class">Real</a>&#160;=&#160;30.42</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nominal_days_in_month</strong>: <code><a href="#_decimal_class">Decimal</a>&#160;=&#160;30.42</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Used for conversions of durations containing months to days and / or seconds.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nominal_days_in_year</strong>: <code><a href="#_real_class">Real</a>&#160;=&#160;365.24</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nominal_days_in_year</strong>: <code><a href="#_decimal_class">Decimal</a>&#160;=&#160;365.24</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Used for conversions of durations containing years to days and / or seconds.</p>
 </div></div></td>
@@ -2685,7 +2773,7 @@ allowing the <code>W</code> designator in the same expression as other designato
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="#_string_class">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Representation of all descendants is a single String.</p>
 </div></div></td>
@@ -2991,7 +3079,7 @@ A small deviation to the ISO 8601:2004 standard in this class is that the time <
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>fractional_second</strong> (): <code><a href="#_real_class">Real</a></code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>fractional_second</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
 <br>
 <em>Pre</em>: <code>not second_unknown</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -3227,7 +3315,7 @@ a_time: <code><a href="#_time_class">Time</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>fractional_second</strong> (): <code><a href="#_real_class">Real</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>fractional_second</strong> (): <code><a href="#_decimal_class">Decimal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Extract the fractional seconds part of the date/time (i.e. following to any decimal sign) as a Real, or return 0.0 if not present.</p>
 </div></div></td>
@@ -3594,7 +3682,7 @@ a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>divide</strong> <em>alias</em> "/" (<br>
-a_val: <code><a href="#_real_class">Real</a>[1]</code><br>
+a_val: <code><a href="#_decimal_class">Decimal</a>[1]</code><br>
 ): <code><a href="#_duration_class">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic division of a duration by a number.</p>

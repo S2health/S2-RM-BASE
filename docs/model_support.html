@@ -68,58 +68,46 @@
 <li><a href="#_overview_4">5.1. Overview</a></li>
 <li><a href="#_requirements">5.2. Requirements</a></li>
 <li><a href="#_design_approach">5.3. Design Approach</a></li>
-<li><a href="#_primitive_identifiers">5.4. Primitive Identifiers</a>
+<li><a href="#_instance_identifiers">5.4. Instance Identifiers</a>
 <ul class="sectlevel3">
-<li><a href="#_class_descriptions">5.4.1. Class Descriptions</a>
+<li><a href="#_identifying_versions_within_openehr_versioned_containers">5.4.1. Identifying Versions within openEHR Versioned Containers</a></li>
+<li><a href="#_class_descriptions">5.4.2. Class Descriptions</a>
 <ul class="sectlevel4">
-<li><a href="#_primitive_id_class">5.4.1.1. Primitive_id Class</a></li>
-<li><a href="#_iso_oid_class">5.4.1.2. Iso_oid Class</a></li>
-<li><a href="#_uuid_class">5.4.1.3. Uuid Class</a></li>
-<li><a href="#_internet_id_class">5.4.1.4. Internet_id Class</a></li>
+<li><a href="#_object_id_class">5.4.2.1. Object_id Class</a></li>
+<li><a href="#_object_version_id_class">5.4.2.2. Object_version_id Class</a></li>
+<li><a href="#_version_tree_id_class">5.4.2.3. Version_tree_id Class</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_instance_identifiers">5.5. Instance Identifiers</a>
+<li><a href="#_knowledge_artifact_identifiers">5.5. Knowledge Artifact Identifiers</a>
 <ul class="sectlevel3">
-<li><a href="#_identifying_versions_within_openehr_versioned_containers">5.5.1. Identifying Versions within openEHR Versioned Containers</a></li>
-<li><a href="#_class_descriptions_2">5.5.2. Class Descriptions</a>
+<li><a href="#_character_set">5.5.1. Character Set</a></li>
+<li><a href="#_case">5.5.2. Case</a></li>
+<li><a href="#_archetype_identifiers">5.5.3. Archetype Identifiers</a></li>
+<li><a href="#_terminology_identifiers">5.5.4. Terminology Identifiers</a></li>
+<li><a href="#_equivalence">5.5.5. Equivalence</a></li>
+<li><a href="#_class_descriptions_2">5.5.6. Class Descriptions</a>
 <ul class="sectlevel4">
-<li><a href="#_object_id_class">5.5.2.1. Object_id Class</a></li>
-<li><a href="#_object_version_id_class">5.5.2.2. Object_version_id Class</a></li>
-<li><a href="#_version_tree_id_class">5.5.2.3. Version_tree_id Class</a></li>
+<li><a href="#_artifact_id_class">5.5.6.1. Artifact_id Class</a></li>
+<li><a href="#_archetype_id_class">5.5.6.2. Archetype_id Class</a></li>
+<li><a href="#_archetype_hrid_class">5.5.6.3. Archetype_hrid Class</a></li>
+<li><a href="#_terminology_id_class">5.5.6.4. Terminology_id Class</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_knowledge_artifact_identifiers">5.6. Knowledge Artifact Identifiers</a>
+<li><a href="#_references">5.6. References</a>
 <ul class="sectlevel3">
-<li><a href="#_character_set">5.6.1. Character Set</a></li>
-<li><a href="#_case">5.6.2. Case</a></li>
-<li><a href="#_archetype_identifiers">5.6.3. Archetype Identifiers</a></li>
-<li><a href="#_terminology_identifiers">5.6.4. Terminology Identifiers</a></li>
-<li><a href="#_equivalence">5.6.5. Equivalence</a></li>
-<li><a href="#_class_descriptions_3">5.6.6. Class Descriptions</a>
+<li><a href="#_class_descriptions_3">5.6.1. Class Descriptions</a>
 <ul class="sectlevel4">
-<li><a href="#_artifact_id_class">5.6.6.1. Artifact_id Class</a></li>
-<li><a href="#_archetype_id_class">5.6.6.2. Archetype_id Class</a></li>
-<li><a href="#_archetype_hrid_class">5.6.6.3. Archetype_hrid Class</a></li>
-<li><a href="#_terminology_id_class">5.6.6.4. Terminology_id Class</a></li>
+<li><a href="#_object_ref_class">5.6.1.1. Object_ref Class</a></li>
+<li><a href="#_locatable_ref_class">5.6.1.2. Locatable_ref Class</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_references">5.7. References</a>
-<ul class="sectlevel3">
-<li><a href="#_class_descriptions_4">5.7.1. Class Descriptions</a>
-<ul class="sectlevel4">
-<li><a href="#_object_ref_class">5.7.1.1. Object_ref Class</a></li>
-<li><a href="#_locatable_ref_class">5.7.1.2. Locatable_ref Class</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_syntaxes">5.8. Syntaxes</a></li>
+<li><a href="#_syntaxes">5.7. Syntaxes</a></li>
 </ul>
 </li>
 <li><a href="#_archetyped_package">6. Archetyped Package</a>
@@ -1010,7 +998,7 @@ v: <code><a href="#_numeric_class">Numeric</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>convert_value</strong> (<br>
-value: <code><a href="#_real_class">Real</a>[1]</code>,<br>
+value: <code><a href="#_decimal_class">Decimal</a>[1]</code>,<br>
 from_units: <code><a href="#_string_class">String</a>[1]</code>,<br>
 to_units: <code><a href="#_string_class">String</a>[1]</code>,<br>
 property: <code><a href="#_terminology_code_class">Terminology_code</a>[1]</code><br>
@@ -1072,154 +1060,12 @@ property: <code><a href="#_terminology_code_class">Terminology_code</a>[1]</code
 </div>
 </div>
 <div class="sect2">
-<h3 id="_primitive_identifiers"><a class="anchor" href="#_primitive_identifiers"></a>5.4. Primitive Identifiers</h3>
-<div class="paragraph">
-<p>Three kinds of types are defined in this package. The abstract Uid type and its subtypes correspond to permanent, computationally reliable, primitive identifiers. Such identifiers are regarded as 'primitive' because they are treated as having no further internal structure, in the sense that part of such an identifier is not in general meaningful. The three subtypes <code>Uuid</code>, <code>Iso_oid</code> and <code>Internet_id</code> all have these properties, and are commonly accepted ways of uniquely identifying entities in computer systems. In S2 (and generally in health informatics) they are usually used as parts of other identifiers.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Uuids are also commonly known as GUIDs, which may be used as a synonym within implementations.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>A consequence of the string representation approach used in these classes is that to set an attribute of type Uid from a string value, as would be done when reading from a database, de-serialising from XML or another text form, a piece of code that inspects the string structure has to be used in order to decide which of the subtypes of <code>Uid</code> it is. This is a safe thing to do, since all three subtypes have mutually exclusive string patterns, and can easily be distinguished.</p>
-</div>
-<div class="sect3">
-<h4 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>5.4.1. Class Descriptions</h4>
-<div class="sect4">
-<h5 id="_primitive_id_class"><a class="anchor" href="#_primitive_id_class"></a>5.4.1.1. Primitive_id Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Primitive_id (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract parent of classes representing unique identifiers which identify information entities in a durable way. UIDs only ever identify one IE in time or space and are never re-used.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="#_string_class">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The value of the id.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Value_valid</em>: <code>not value.empty</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_iso_oid_class"><a class="anchor" href="#_iso_oid_class"></a>5.4.1.2. Iso_oid Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Iso_oid</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Model of ISO&#8217;s Object Identifier (oid) as defined by the standard ISO/IEC 8824. Oids are formed from integers separated by dots. Each non-leaf node in an Oid starting from the left corresponds to an assigning authority, and identifies that authority&#8217;s namespace, inside which the remaining part of the identifier is locally unique.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_primitive_id_class">Primitive_id</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_uuid_class"><a class="anchor" href="#_uuid_class"></a>5.4.1.3. Uuid Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Uuid</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Model of the DCE Universal Unique Identifier or UUID which takes the form of hexadecimal integers separated by hyphens, following the pattern 8-4-4-4-12 as defined by the Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A. Also known as a GUID.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_primitive_id_class">Primitive_id</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_internet_id_class"><a class="anchor" href="#_internet_id_class"></a>5.4.1.4. Internet_id Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Internet_id</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by <a href="https://www.rfc-editor.org/info/rfc1034" target="_blank" rel="noopener">IETF RFC 1034</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_primitive_id_class">Primitive_id</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_instance_identifiers"><a class="anchor" href="#_instance_identifiers"></a>5.5. Instance Identifiers</h3>
+<h3 id="_instance_identifiers"><a class="anchor" href="#_instance_identifiers"></a>5.4. Instance Identifiers</h3>
 <div class="paragraph">
 <p>The <code>OBJECT_ID</code> type and its descendants define instance identifiers for use within openEHR systems.</p>
 </div>
 <div class="sect3">
-<h4 id="_identifying_versions_within_openehr_versioned_containers"><a class="anchor" href="#_identifying_versions_within_openehr_versioned_containers"></a>5.5.1. Identifying Versions within openEHR Versioned Containers</h4>
+<h4 id="_identifying_versions_within_openehr_versioned_containers"><a class="anchor" href="#_identifying_versions_within_openehr_versioned_containers"></a>5.4.1. Identifying Versions within openEHR Versioned Containers</h4>
 <div class="paragraph">
 <p>The <code>OBJECT_VERSION_ID</code> defines the semantics of the scheme used in openEHR for identifying versions within a versioned container, and uses a three-part identifier, consisting of:</p>
 </div>
@@ -1252,9 +1098,9 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 </div>
 </div>
 <div class="sect3">
-<h4 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>5.5.2. Class Descriptions</h4>
+<h4 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>5.4.2. Class Descriptions</h4>
 <div class="sect4">
-<h5 id="_object_id_class"><a class="anchor" href="#_object_id_class"></a>5.5.2.1. Object_id Class</h5>
+<h5 id="_object_id_class"><a class="anchor" href="#_object_id_class"></a>5.4.2.1. Object_id Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1309,7 +1155,7 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 </table>
 </div>
 <div class="sect4">
-<h5 id="_object_version_id_class"><a class="anchor" href="#_object_version_id_class"></a>5.5.2.2. Object_version_id Class</h5>
+<h5 id="_object_version_id_class"><a class="anchor" href="#_object_version_id_class"></a>5.4.2.2. Object_version_id Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1361,7 +1207,7 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 </table>
 </div>
 <div class="sect4">
-<h5 id="_version_tree_id_class"><a class="anchor" href="#_version_tree_id_class"></a>5.5.2.3. Version_tree_id Class</h5>
+<h5 id="_version_tree_id_class"><a class="anchor" href="#_version_tree_id_class"></a>5.4.2.3. Version_tree_id Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1475,24 +1321,24 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 </div>
 </div>
 <div class="sect2">
-<h3 id="_knowledge_artifact_identifiers"><a class="anchor" href="#_knowledge_artifact_identifiers"></a>5.6. Knowledge Artifact Identifiers</h3>
+<h3 id="_knowledge_artifact_identifiers"><a class="anchor" href="#_knowledge_artifact_identifiers"></a>5.5. Knowledge Artifact Identifiers</h3>
 <div class="paragraph">
 <p>Knowledge artifact identifiers are defined under the <code>Artifact_id</code> hierarchy.</p>
 </div>
 <div class="sect3">
-<h4 id="_character_set"><a class="anchor" href="#_character_set"></a>5.6.1. Character Set</h4>
+<h4 id="_character_set"><a class="anchor" href="#_character_set"></a>5.5.1. Character Set</h4>
 <div class="paragraph">
 <p>TBD</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_case"><a class="anchor" href="#_case"></a>5.6.2. Case</h4>
+<h4 id="_case"><a class="anchor" href="#_case"></a>5.5.2. Case</h4>
 <div class="paragraph">
 <p>TBD</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_archetype_identifiers"><a class="anchor" href="#_archetype_identifiers"></a>5.6.3. Archetype Identifiers</h4>
+<h4 id="_archetype_identifiers"><a class="anchor" href="#_archetype_identifiers"></a>5.5.3. Archetype Identifiers</h4>
 <div class="paragraph">
 <p>The <code>ARCHETYPE_ID</code> subtype defines a multi-axial identifier for openEHR archetypes and templates, meaning that each identifier instance denotes a single archetype within a multi-dimensional space. The space is can be thought of as 3-dimensional, or as a versioned 2-dimensional space, consisting of the following axes:</p>
 </div>
@@ -1542,11 +1388,11 @@ Uuids are also commonly known as GUIDs, which may be used as a synonym within im
 </ul>
 </div>
 <div class="paragraph">
-<p>The grammar of archetype identifiers is given below in <a href="#_syntaxes">Section 5.8</a>.</p>
+<p>The grammar of archetype identifiers is given below in <a href="#_syntaxes">Section 5.7</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_terminology_identifiers"><a class="anchor" href="#_terminology_identifiers"></a>5.6.4. Terminology Identifiers</h4>
+<h4 id="_terminology_identifiers"><a class="anchor" href="#_terminology_identifiers"></a>5.5.4. Terminology Identifiers</h4>
 <div class="paragraph">
 <p>The <code>TERMINOLOGY_ID</code> subtype defines a globally unique single string identifier for terminologies. Terminology identifier values may include a version, either as part of the name, and/or according to the syntax defined in section 4.3.12 below. Examples of terminology identifiers include:</p>
 </div>
@@ -1582,15 +1428,15 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_equivalence"><a class="anchor" href="#_equivalence"></a>5.6.5. Equivalence</h4>
+<h4 id="_equivalence"><a class="anchor" href="#_equivalence"></a>5.5.5. Equivalence</h4>
 <div class="paragraph">
 <p>Although there are anomalies in some published terminologies and between some versions or editions of the same terminology, two terminology identifiers that are the same, disregarding the version part, can usually be considered as semantic equivalents in the terminology world. However, depending on which source of strings have been chosen for the name part of the identifier, two different identifiers may also indicate the same terminology, e.g. "ICD10AM_2000" (NLM identifier used in UMLS) and "ICD10AM(2nd_ed)" refer to the same thing.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>5.6.6. Class Descriptions</h4>
+<h4 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>5.5.6. Class Descriptions</h4>
 <div class="sect4">
-<h5 id="_artifact_id_class"><a class="anchor" href="#_artifact_id_class"></a>5.6.6.1. Artifact_id Class</h5>
+<h5 id="_artifact_id_class"><a class="anchor" href="#_artifact_id_class"></a>5.5.6.1. Artifact_id Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1624,7 +1470,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_archetype_id_class"><a class="anchor" href="#_archetype_id_class"></a>5.6.6.2. Archetype_id Class</h5>
+<h5 id="_archetype_id_class"><a class="anchor" href="#_archetype_id_class"></a>5.5.6.2. Archetype_id Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1665,7 +1511,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_archetype_hrid_class"><a class="anchor" href="#_archetype_hrid_class"></a>5.6.6.3. Archetype_hrid Class</h5>
+<h5 id="_archetype_hrid_class"><a class="anchor" href="#_archetype_hrid_class"></a>5.5.6.3. Archetype_hrid Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1853,7 +1699,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_terminology_id_class"><a class="anchor" href="#_terminology_id_class"></a>5.6.6.4. Terminology_id Class</h5>
+<h5 id="_terminology_id_class"><a class="anchor" href="#_terminology_id_class"></a>5.5.6.4. Terminology_id Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1903,14 +1749,14 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_references"><a class="anchor" href="#_references"></a>5.7. References</h3>
+<h3 id="_references"><a class="anchor" href="#_references"></a>5.6. References</h3>
 <div class="paragraph">
 <p>All <code>OBJECT_IDs</code> are used as identifier attributes within the thing they identify, in the same way as a database primary key. To refer to an identified object from another object, an instance of the class <code>OBJECT_REF</code> is used, in the same way as a database foreign key. This class supports distributed referencing, and includes the object namespace (typically 1:1 with some service, such as "terminology") and type. The general principle of object references is to be able to refer to an object available in a particular namespace or service. Usually they are used to refer to objects in other services, such as a demographic entity from within an EHR, but they may be used to refer to local objects as well. The type may be the concrete type of the referred-to object (e.g. "GP") or any proper ancestor (e.g. <code>PARTY</code>).</p>
 </div>
 <div class="sect3">
-<h4 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>5.7.1. Class Descriptions</h4>
+<h4 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>5.6.1. Class Descriptions</h4>
 <div class="sect4">
-<h5 id="_object_ref_class"><a class="anchor" href="#_object_ref_class"></a>5.7.1.1. Object_ref Class</h5>
+<h5 id="_object_ref_class"><a class="anchor" href="#_object_ref_class"></a>5.6.1.1. Object_ref Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1974,7 +1820,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_locatable_ref_class"><a class="anchor" href="#_locatable_ref_class"></a>5.7.1.2. Locatable_ref Class</h5>
+<h5 id="_locatable_ref_class"><a class="anchor" href="#_locatable_ref_class"></a>5.6.1.2. Locatable_ref Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2039,7 +1885,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_syntaxes"><a class="anchor" href="#_syntaxes"></a>5.8. Syntaxes</h3>
+<h3 id="_syntaxes"><a class="anchor" href="#_syntaxes"></a>5.7. Syntaxes</h3>
 <div class="paragraph">
 <p>TODO: synchronise the syntax below with model.</p>
 </div>
@@ -2526,13 +2372,6 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>links</strong>: <code>List&lt;<a href="#_link_class">Link</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Links to other archetyped structures (data whose root object inherits from <code>ARCHETYPED</code>, such as <code>Entry</code>, <code>SECTION</code> and so on). Links may be to structures in other compositions.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>archetype_details</strong>: <code><a href="#_archetyped_class">Archetyped</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Details of archetyping used on this node.</p>
@@ -2787,21 +2626,21 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>location</strong>: <code><a href="#_party_identified_class">Party_identified</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>location</strong>: <code><a href="#_entity_ref_node_class">Entity_ref_node</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Identifier of the particular site/facility within an organisation which handled the item. For computability, this identifier needs to be e.g. a PKI identifier which can be included in the identifier list of the <code>PARTY_IDENTIFIED</code> object.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subject</strong>: <code><a href="#_party_proxy_class">Party_proxy</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subject</strong>: <code><a href="#_entity_ref_node_class">Entity_ref_node</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Identifiers for subject of the received information item.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>provider</strong>: <code><a href="#_party_identified_class">Party_identified</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>provider</strong>: <code><a href="#_entity_ref_node_class">Entity_ref_node</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional provider(s) who created, committed, forwarded or otherwise handled the item.</p>
 </div></div></td>

@@ -17,11 +17,11 @@ h|*0..1*
 a|Period bounding history of events.
 
 h|*0..1*
-|*total_count*: `Integer`
+|*total_event_count*: `Integer`
 a|
 
 h|*0..1*
-|*times*: `List<<<_time_specifier_class,Time_specifier>>>`
+|*occurrence_times*: `List<<<_occurrence_times_specifier_class,Occurrence_times_specifier>>>`
 a|Times at which event took place or should take place.
 
 h|*Invariants*

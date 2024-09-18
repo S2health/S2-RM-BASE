@@ -10,17 +10,18 @@ h|*Description*
 
 * medication formulations
 * admixture proportions (e.g. 3mg / L), densities, rates
-* albumin:creatinine ratio
+* rate of events per time
+* ratios of count per volume, mass etc.
 
 h|*Inherit*
-2+|`<<_measurable_class,Measurable>>`
+2+|`<<_compound_measurable_class,Compound_measurable>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*numerator*: `<<_quantity_class,Quantity>>`
+|*numerator*: `<<_simple_measurable_class,Simple_measurable>>`
 a|Numerator of proportion.
 
 h|*1..1*
@@ -30,11 +31,6 @@ a|Denominator of ratio.
 h|*0..1*
 |*measured*: `<<_measured_class,Measured>><<<_proportion_class,Proportion>>>`
 a|Additional data elements for measured quantities, including precision, accuracy and reference ranges.
-
-h|*1..1 +
-(redefined)*
-|*magnitude*: `Real`
-a|Computed value of numerator / denominator.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
@@ -50,8 +46,7 @@ a|Value equality: return True if `this` and `_other_` are attached to objects co
 [horizontal]
 `_other_`:: Other object for comparison.
 
-h|*1..1 +
-(effected)*
+h|*1..1*
 |*less_than* __alias__ "<" ( +
 other: `<<_proportion_class,Proportion>>[1]` +
 ): `<<_boolean_class,Boolean>>`
@@ -59,24 +54,28 @@ a|Arithmetic value comparison. Returns True if current object is less than `_oth
 
 In conjunction with `=`, enables the definition of the related functions `_greater_than_()` etc.
 
-h|*1..1 +
-(redefined)*
+h|*1..1*
 |*add* __alias__ "+" ( +
 other: `<<_proportion_class,Proportion>>[1]` +
 ): `<<_proportion_class,Proportion>>`
 a|Sum of two strictly comparable proportions.
 
-h|*1..1 +
-(redefined)*
+h|*1..1*
 |*subtract* __alias__ "-" ( +
 other: `<<_proportion_class,Proportion>>[1]` +
 ): `<<_proportion_class,Proportion>>`
 a|Difference between two strictly comparable proportions.
 
-h|*1..1 +
-(redefined)*
+h|*1..1*
 |*multiply* __alias__ "&#42;" ( +
 factor: `<<_real_class,Real>>[1]` +
 ): `<<_proportion_class,Proportion>>`
 a|Product of this Proportion and `_factor_`.
+
+h|*1..1 +
+(effected)*
+|*effective_value* (): `<<_decimal_class,Decimal>>` +
+ +
+__Post_result__: `Result = numerator.effective_value() / denominator.effective_value()`
+a|
 |===

@@ -2,7 +2,7 @@
 
 == Overview
 
-This section describes primitive types assumed by all {product_name} models. These are types supported directly by most programing languages, and usually visible via either a class interface and/or a built-in primitive type. The following table lists the primitive types assumed by {product_name}.
+This section describes primitive types assumed by all {product_name} models. These are types supported directly by most programing languages, and usually available via either a class interface and/or a built-in primitive type. The following table lists the primitive types assumed by {product_name}.
 
 [cols="1,4", options="header"]
 |===
@@ -18,7 +18,7 @@ This section describes primitive types assumed by all {product_name} models. The
 |`String`   |represents unicode-enabled strings.
 |===
 
-The figure below illustrates these types. Simple inheritance relationships are shown which facilitate the type descriptions below. Actual inheritance from or substitutability for an `Any` class is not assumed, and is shown only for convenience (e.g. to indicate that the '=' operator is available on any type). The type `Comparable_numeric` on the other hand is used to indicate assumed substitutability of numeric types, and is intended to be mapped to an equivalent type in a real type system (e.g. in Java, `java.lang.Number`). Data-oriented implementation type systems such as XML-schema do not have such operations.
+The figure below illustrates these types. Simple inheritance relationships are shown which facilitate the type descriptions below. Actual inheritance from or substitutability for an `Any` class is not assumed, and is shown only to indicate which operations are available on each type. Data-oriented implementation type systems such as XML-schema do not have such operations.
 
 [.text-center]
 .`base.foundation_types.primitive_types` Package
@@ -27,6 +27,21 @@ image::{uml_diagrams_uri}/BASE-foundation_types.primitive_types.svg[id=foundatio
 == Unicode
 
 It is assumed in the {product_name} specifications that Unicode is supported by the type `String`. Unicode is needed for all Asian, Arabic and other script languages, for both data values (particularly plain text and coded text) and for many predefined string attributes of the classes in the {product_name} Reference Model. It encompasses all existing character sets. In {product_name}, UTF-8 encoding is universally assumed.
+
+== String-based Primitive Identifiers
+
+Various commonly-used identifiers are treated as being represented as Strings with particular syntaxes and operations. These include `Uri`, `Uuid` (aka Guid), `Iso_oid` and `Internet_id` (reverse internet domain). The use of String representation is indicated by these types having the `Value_type` stereotype and additionally having the tag 'native_type' set to `"String"`.
+
+Practically, such types are realised by String data representation with setters and accessors of the specific types. In Java for example, the following would be used.
+
+[source, java]
+----
+private String uid; // really a Uuid
+
+public getUid() {return new Uuid(uid);}
+
+public setUid (Uuid aUid) {uid = aUid.value;}
+----
 
 == Class Definitions
 
@@ -38,10 +53,16 @@ include::{uml_export_dir}/classes/{pkg}byte.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}string.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}uri.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}numeric.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}integer.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}real.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}uri.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}iso_oid.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}uuid.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}internet_id.adoc[leveloffset=+1]

@@ -1,0 +1,14 @@
+=== Compound_measurable Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*__Compound_measurable (abstract)__*
+
+h|*Description*
+2+a|Measurable values with two or more component elements.
+
+h|*Inherit*
+2+|`<<_measurable_class,Measurable>>`
+
+|===

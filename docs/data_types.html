@@ -9,6 +9,7 @@
 <meta name="keywords" content="EHR, clinical, data types, S2">
 <title>Data Types Model</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
+<link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -125,11 +126,12 @@
 </li>
 <li><a href="#_design_2">5.3. Design</a>
 <ul class="sectlevel3">
-<li><a href="#_basic_semantics">5.3.1. Basic Semantics</a></li>
+<li><a href="#_taxonomy">5.3.1. Taxonomy</a></li>
 <li><a href="#_measured_values">5.3.2. Measured Values</a></li>
 <li><a href="#_quantity_ranges">5.3.3. Quantity Ranges</a></li>
 <li><a href="#_proportions">5.3.4. Proportions</a></li>
 <li><a href="#_ratios_2">5.3.5. Ratios</a></li>
+<li><a href="#_titers">5.3.6. Titers</a></li>
 </ul>
 </li>
 <li><a href="#_class_descriptions_5">5.4. Class Descriptions</a>
@@ -137,16 +139,21 @@
 <li><a href="#_ordered_value_class">5.4.1. Ordered_value Class</a></li>
 <li><a href="#_ordered_datum_class">5.4.2. Ordered_datum Class</a></li>
 <li><a href="#_coded_ordinal_class">5.4.3. Coded_ordinal Class</a></li>
-<li><a href="#_measurable_class">5.4.4. Measurable Class</a></li>
-<li><a href="#_quantity_class">5.4.5. Quantity Class</a></li>
-<li><a href="#_count_class">5.4.6. Count Class</a></li>
-<li><a href="#_proportion_class">5.4.7. Proportion Class</a></li>
-<li><a href="#_ratio_class">5.4.8. Ratio Class</a></li>
-<li><a href="#_ratio_kind_enumeration">5.4.9. Ratio_kind Enumeration</a></li>
-<li><a href="#_measured_class">5.4.10. Measured Class</a></li>
-<li><a href="#_reference_range_class">5.4.11. Reference_range Class</a></li>
-<li><a href="#_comparison_operator_enumeration">5.4.12. Comparison_operator Enumeration</a></li>
-<li><a href="#_range_class">5.4.13. Range Class</a></li>
+<li><a href="#_quantified_class">5.4.4. Quantified Class</a></li>
+<li><a href="#_money_class">5.4.5. Money Class</a></li>
+<li><a href="#_measurable_class">5.4.6. Measurable Class</a></li>
+<li><a href="#_simple_measurable_class">5.4.7. Simple_measurable Class</a></li>
+<li><a href="#_quantity_class">5.4.8. Quantity Class</a></li>
+<li><a href="#_count_class">5.4.9. Count Class</a></li>
+<li><a href="#_compound_measurable_class">5.4.10. Compound_measurable Class</a></li>
+<li><a href="#_proportion_class">5.4.11. Proportion Class</a></li>
+<li><a href="#_ratio_class">5.4.12. Ratio Class</a></li>
+<li><a href="#_ratio_kind_enumeration">5.4.13. Ratio_kind Enumeration</a></li>
+<li><a href="#_titer_class">5.4.14. Titer Class</a></li>
+<li><a href="#_measured_class">5.4.15. Measured Class</a></li>
+<li><a href="#_reference_range_class">5.4.16. Reference_range Class</a></li>
+<li><a href="#_comparison_operator_enumeration">5.4.17. Comparison_operator Enumeration</a></li>
+<li><a href="#_range_class">5.4.18. Range Class</a></li>
 </ul>
 </li>
 </ul>
@@ -170,18 +177,30 @@
 <li><a href="#_overview_6">7.1. Overview</a></li>
 <li><a href="#_requirements_4">7.2. Requirements</a></li>
 <li><a href="#_semantics_2">7.3. Semantics</a></li>
-<li><a href="#_class_descriptions_7">7.4. Class Descriptions</a>
+<li><a href="#_examples">7.4. Examples</a>
 <ul class="sectlevel3">
-<li><a href="#_timing_class">7.4.1. Timing Class</a></li>
-<li><a href="#_occurrence_class">7.4.2. Occurrence Class</a></li>
-<li><a href="#_occurrence_pattern_class">7.4.3. Occurrence_pattern Class</a></li>
-<li><a href="#_time_specifier_class">7.4.4. Time_specifier Class</a></li>
-<li><a href="#_period_specifier_class">7.4.5. Period_specifier Class</a></li>
-<li><a href="#_day_specifier_class">7.4.6. Day_specifier Class</a></li>
-<li><a href="#_hour_specifier_class">7.4.7. Hour_specifier Class</a></li>
-<li><a href="#_clock_time_class">7.4.8. Clock_time Class</a></li>
-<li><a href="#_customary_time_class">7.4.9. Customary_time Class</a></li>
-<li><a href="#_temporal_relation_enumeration">7.4.10. Temporal_relation Enumeration</a></li>
+<li><a href="#_every_8_hours">7.4.1. Every 8 hours</a></li>
+<li><a href="#_3_times_a_day">7.4.2. 3 times a day</a></li>
+<li><a href="#_3_4_times_a_day">7.4.3. 3-4 times a day</a></li>
+<li><a href="#_3_times_a_week_for_hour">7.4.4. 3 times a week for ½ hour</a></li>
+<li><a href="#_with_breakfast">7.4.5. With breakfast</a></li>
+<li><a href="#_for_5_minutes_10_minutes_before_meals">7.4.6. For 5 minutes, 10 minutes before meals</a></li>
+<li><a href="#_3_times_daily_30_minutes_before_meals">7.4.7. 3 times daily, 30 minutes before meals</a></li>
+<li><a href="#_take_every_2nd_day_in_the_morning_until_20_have_been_taken">7.4.8. Take every 2nd day, in the morning, until 20 have been taken</a></li>
+</ul>
+</li>
+<li><a href="#_class_descriptions_7">7.5. Class Descriptions</a>
+<ul class="sectlevel3">
+<li><a href="#_timing_class">7.5.1. Timing Class</a></li>
+<li><a href="#_occurrence_class">7.5.2. Occurrence Class</a></li>
+<li><a href="#_occurrence_pattern_class">7.5.3. Occurrence_pattern Class</a></li>
+<li><a href="#_occurrence_times_specifier_class">7.5.4. Occurrence_times_specifier Class</a></li>
+<li><a href="#_period_specifier_class">7.5.5. Period_specifier Class</a></li>
+<li><a href="#_day_hour_specifier_class">7.5.6. Day_hour_specifier Class</a></li>
+<li><a href="#_hour_specifier_class">7.5.7. Hour_specifier Class</a></li>
+<li><a href="#_clock_time_class">7.5.8. Clock_time Class</a></li>
+<li><a href="#_customary_time_class">7.5.9. Customary_time Class</a></li>
+<li><a href="#_temporal_relation_enumeration">7.5.10. Temporal_relation Enumeration</a></li>
 </ul>
 </li>
 </ul>
@@ -192,7 +211,7 @@
 <ul class="sectlevel3">
 <li><a href="#_requirements_5">8.1.1. Requirements</a></li>
 <li><a href="#_design_3">8.1.2. Design</a></li>
-<li><a href="#_examples">8.1.3. Examples</a></li>
+<li><a href="#_examples_2">8.1.3. Examples</a></li>
 </ul>
 </li>
 <li><a href="#_class_descriptions_8">8.2. Class Descriptions</a>
@@ -1437,7 +1456,7 @@
 <div class="title">Figure 3. rm.base.data_types.ordered package - quantities</div>
 </div>
 <div class="sect3">
-<h4 id="_basic_semantics"><a class="anchor" href="#_basic_semantics"></a>5.3.1. Basic Semantics</h4>
+<h4 id="_taxonomy"><a class="anchor" href="#_taxonomy"></a>5.3.1. Taxonomy</h4>
 <div class="paragraph">
 <p>In order to make sense of the requirements in a systematic way, a taxonomy for quantified entities is needed. The most basic characteristic of quantified values as described above is the distinction between stated and observed form. The stated form of an ordered data value is a pure type definition, e.g. for the type <code>Quantity</code>, <code>Ratio</code> etc. The abstract type <code>Ordered_value</code> is the ancestor of such types. The observed, or <em>measured</em> form is distinct and is represented by the type <code>Measured&lt;V&gt;</code>, whose generic parameter may be any <code>Ordered_value</code>. The various ordered value types are descendents of the latter type, while the <code>Measured&lt;V&gt;</code> acts as a wrapper for any pure value, adding data specific to the act of measurement.</p>
 </div>
@@ -1521,6 +1540,12 @@
 <p>The <code>Ratio</code> type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values. The <code><em>type</em></code> attribute is used to indicate the logical type of the proportion.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_titers"><a class="anchor" href="#_titers"></a>5.3.6. Titers</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>5.4. Class Descriptions</h3>
@@ -1540,7 +1565,7 @@
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract parent of Data values that have a Comparable <code>value</code> as well as other fields which must be taken into account to define comparison operators ('&lt;' etc). Such operators can therefore only be formally defined externally.</p>
+<p>Abstract parent of ordered Data values. The `effective_value`function returns the numeric value, which is derived in different ways in descendants.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1548,27 +1573,15 @@
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_datum_class">Ordered_datum</a></code></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_comparable_class">Comparable</a></code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(abstract)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.</p>
-</div>
-<div class="paragraph">
-<p>The value -1 implies no limit, i.e. any number of decimal places.</p>
-</div>
-<div class="paragraph">
-<p>Precision can be set to 0 to ensure there are not decimal points, which may be useful on fields that are normally only reported as integers, e.g. blood pressure.</p>
-</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -1661,17 +1674,16 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="#_coded_text_class">Coded_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  <code>mild</code>, <code>moderate</code>, <code>severe</code>, or even the same number series as the values, e.g. 1, 2, 3.</p>
+<p>Rank within ordered enumeration of values.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code>Real</code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="#_coded_text_class">Coded_text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Value in ordered enumeration of values.</p>
+<p>Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  <code>mild</code>, <code>moderate</code>, <code>severe</code>, or even the same number series as the values, e.g. 1, 2, 3.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1690,11 +1702,120 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 <p>True if this Ordinal value is less than <code><em>other</em></code>.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
+<br>
+<em>Post_result</em>: <code>Result = magnitude</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_measurable_class"><a class="anchor" href="#_measurable_class"></a>5.4.4. Measurable Class</h4>
+<h4 id="_quantified_class"><a class="anchor" href="#_quantified_class"></a>5.4.4. Quantified Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Quantified (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Ordered values that are quantified, i.e. with values that are arithmetically comparable. Operations such as multiplication and division are definable on Quantified entities.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.</p>
+</div>
+<div class="paragraph">
+<p>The value -1 implies no limit, i.e. any number of decimal places.</p>
+</div>
+<div class="paragraph">
+<p>Precision can be set to 0 to ensure there are not decimal points, which may be useful on fields that are normally only reported as integers, e.g. blood pressure.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_money_class"><a class="anchor" href="#_money_class"></a>5.4.5. Money Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Money</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Quantity type representing amount of currency.</p>
+</div>
+<div class="paragraph">
+<p>TODO: determine if should be a Quantity</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_quantified_class">Quantified</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>currency</strong>: <code><a href="#_terminology_code_class">Terminology_code</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
+<br>
+<em>unnamed1</em>:</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_measurable_class"><a class="anchor" href="#_measurable_class"></a>5.4.6. Measurable Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1709,12 +1830,38 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Quantified entities that are either derived by measurement in the real world, or that represent target values, safe values or some other relation to real world measurables.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_quantified_class">Quantified</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_simple_measurable_class"><a class="anchor" href="#_simple_measurable_class"></a>5.4.7. Simple_measurable Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Simple_measurable (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Abstract class defining the concept of relative physical quantities. For relative quantities, the  <code>+</code> and  <code>-</code> operators are defined.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1722,8 +1869,7 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_numeric_class">Numeric</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The magnitude of the quantity.</p>
@@ -1738,7 +1884,7 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (effected)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
-other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
+other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
 ): <code><a href="#_boolean_class">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Value equality: return True if <code>this</code> and <code><em>other</em></code> are attached to objects considered to be equal in value.</p>
@@ -1761,7 +1907,7 @@ other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (abstract)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
-other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
+other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
 ): <code><a href="#_boolean_class">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Arithmetic value comparison. Returns True if current object is less than <code><em>other</em></code>. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.</p>
@@ -1773,8 +1919,8 @@ other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
-): <code><a href="#_measurable_class">Measurable</a></code><br>
+other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
+): <code><a href="#_simple_measurable_class">Simple_measurable</a></code><br>
 <br>
 <em>Pre_comparable</em>: <code>is_strictly_comparable_to (other)</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1797,8 +1943,8 @@ other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
-): <code><a href="#_measurable_class">Measurable</a></code><br>
+other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
+): <code><a href="#_simple_measurable_class">Simple_measurable</a></code><br>
 <br>
 <em>Pre_comparable</em>: <code>is_strictly_comparable_to (other)</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1822,23 +1968,31 @@ other: <code><a href="#_measurable_class">Measurable</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
 factor: <code><a href="#_real_class">Real</a>[1]</code><br>
-): <code><a href="#_measurable_class">Measurable</a></code></p></td>
+): <code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Product of this Amount and <code><em>factor</em></code>.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>negative</strong> <em>alias</em> "-" (): <code><a href="#_measurable_class">Measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>negative</strong> <em>alias</em> "-" (): <code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Negated version of current object, such as used for representing a difference, e.g. a weight loss.</p>
 </div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
+<br>
+<em>Post_result</em>: <code>Result = magnitude</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_quantity_class"><a class="anchor" href="#_quantity_class"></a>5.4.5. Quantity Class</h4>
+<h4 id="_quantity_class"><a class="anchor" href="#_quantity_class"></a>5.4.8. Quantity Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1864,7 +2018,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1888,7 +2042,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code>Real</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
@@ -1966,7 +2120,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_count_class"><a class="anchor" href="#_count_class"></a>5.4.6. Count Class</h4>
+<h4 id="_count_class"><a class="anchor" href="#_count_class"></a>5.4.9. Count Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1986,7 +2140,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2012,7 +2166,33 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_proportion_class"><a class="anchor" href="#_proportion_class"></a>5.4.7. Proportion Class</h4>
+<h4 id="_compound_measurable_class"><a class="anchor" href="#_compound_measurable_class"></a>5.4.10. Compound_measurable Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Compound_measurable (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Measurable values with two or more component elements.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_proportion_class"><a class="anchor" href="#_proportion_class"></a>5.4.11. Proportion Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2038,14 +2218,17 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 <p>admixture proportions (e.g. 3mg / L), densities, rates</p>
 </li>
 <li>
-<p>albumin:creatinine ratio</p>
+<p>rate of events per time</p>
+</li>
+<li>
+<p>ratios of count per volume, mass etc.</p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_compound_measurable_class">Compound_measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2054,7 +2237,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_quantity_class">Quantity</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Numerator of proportion.</p>
 </div></div></td>
@@ -2071,14 +2254,6 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_measured_class">Measured</a>&lt;<a href="#_proportion_class">Proportion</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Additional data elements for measured quantities, including precision, accuracy and reference ranges.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code>Real</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Computed value of numerator / denominator.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2110,8 +2285,7 @@ other: <code><a href="#_proportion_class">Proportion</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
 other: <code><a href="#_proportion_class">Proportion</a>[1]</code><br>
 ): <code><a href="#_boolean_class">Boolean</a></code></p></td>
@@ -2123,8 +2297,7 @@ other: <code><a href="#_proportion_class">Proportion</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
 other: <code><a href="#_proportion_class">Proportion</a>[1]</code><br>
 ): <code><a href="#_proportion_class">Proportion</a></code></p></td>
@@ -2133,8 +2306,7 @@ other: <code><a href="#_proportion_class">Proportion</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
 other: <code><a href="#_proportion_class">Proportion</a>[1]</code><br>
 ): <code><a href="#_proportion_class">Proportion</a></code></p></td>
@@ -2143,8 +2315,7 @@ other: <code><a href="#_proportion_class">Proportion</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
 factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 ): <code><a href="#_proportion_class">Proportion</a></code></p></td>
@@ -2152,11 +2323,19 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>Product of this Proportion and <code><em>factor</em></code>.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
+<br>
+<em>Post_result</em>: <code>Result = numerator.effective_value() / denominator.effective_value()</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_class"><a class="anchor" href="#_ratio_class"></a>5.4.8. Ratio Class</h4>
+<h4 id="_ratio_class"><a class="anchor" href="#_ratio_class"></a>5.4.12. Ratio Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2174,12 +2353,25 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>Ratio of values, i.e. where the numerator and denominator are both pure numbers. The <code>Ratio_kind</code> enumeration is used to control the type attribute to be one of a defined set.</p>
 </div>
 <div class="paragraph">
-<p>Used for recording titers (e.g. 1:128), concentration ratios, e.g. Na:K (unitary denominator).</p>
+<p>Used to record:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>concentration ratio, e.g. Na:K (unitary denominator);</p>
+</li>
+<li>
+<p>ratio of two analytes e.g. white cells to red cells</p>
+</li>
+<li>
+<p>albumin:creatinine ratio</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_compound_measurable_class">Compound_measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2188,7 +2380,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code>Real</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Numerator value of Ratio.</p>
 </div></div></td>
@@ -2202,24 +2394,29 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code>Real</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Denominator value of Ratio.</p>
 </div></div></td>
 </tr>
 <tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code>Real</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The magnitude of the quantity.</p>
-</div></div></td>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
+<br>
+<em>Post_result</em>: <code>Result = lhs/rhs</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>5.4.9. Ratio_kind Enumeration</h4>
+<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>5.4.13. Ratio_kind Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2267,7 +2464,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_measured_class"><a class="anchor" href="#_measured_class"></a>5.4.10. Measured Class</h4>
+<h4 id="_titer_class"><a class="anchor" href="#_titer_class"></a>5.4.14. Titer Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2277,7 +2474,61 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Measured&lt;V&gt;</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Titer</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Used for recording titers (e.g. 1:128).</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_compound_measurable_class">Compound_measurable</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>analyte_factor</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>dilution_factor</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
+<br>
+<em>Post_result</em>: <code>Result = analyte_factor / dilution_factor</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_measured_class"><a class="anchor" href="#_measured_class"></a>5.4.15. Measured Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Measured&lt;M&gt;</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -2353,14 +2604,14 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>V</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>M</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>5.4.11. Reference_range Class</h4>
+<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>5.4.16. Reference_range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2412,7 +2663,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>5.4.12. Comparison_operator Enumeration</h4>
+<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>5.4.17. Comparison_operator Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2474,7 +2725,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_range_class"><a class="anchor" href="#_range_class"></a>5.4.13. Range Class</h4>
+<h4 id="_range_class"><a class="anchor" href="#_range_class"></a>5.4.18. Range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2571,7 +2822,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_quantified_class">Quantified</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2579,9 +2830,21 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_temporal_class">Temporal</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
+<br>
+<em>Post_result</em>: <code>Result = magnitude</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -2815,14 +3078,255 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </div>
 <div class="sect2">
 <h3 id="_semantics_2"><a class="anchor" href="#_semantics_2"></a>7.3. Semantics</h3>
-<div class="paragraph">
-<p>TBD</p>
+
+</div>
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>7.4. Examples</h3>
+<div class="sect3">
+<h4 id="_every_8_hours"><a class="anchor" href="#_every_8_hours"></a>7.4.1. Every 8 hours</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Period_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;period&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+          <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Duration&quot;</span><span class="tok-p">,</span>
+          <span class="tok-nt">&quot;lower&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;PT8H&quot;</span>
+        <span class="tok-p">}</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_times_a_day"><a class="anchor" href="#_3_times_a_day"></a>7.4.2. 3 times a day</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Period_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;event_count&quot;</span><span class="tok-p">:</span> <span class="tok-mi">3</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;period&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;PT8H&quot;</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_4_times_a_day"><a class="anchor" href="#_3_4_times_a_day"></a>7.4.3. 3-4 times a day</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Period_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;event_count&quot;</span><span class="tok-p">:</span> <span class="tok-mi">3</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;event_count_upper&quot;</span><span class="tok-p">:</span> <span class="tok-mi">4</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;period&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;P1D&quot;</span>
+        <span class="tok-p">}</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_times_a_week_for_hour"><a class="anchor" href="#_3_times_a_week_for_hour"></a>7.4.4. 3 times a week for ½ hour</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;duration&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;PT0.5H&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Period_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;event_count&quot;</span><span class="tok-p">:</span> <span class="tok-mi">3</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;period&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;P1W&quot;</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_with_breakfast"><a class="anchor" href="#_with_breakfast"></a>7.4.5. With breakfast</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;times_of_day&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+          <span class="tok-p">{</span>
+            <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Customary_time&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;reference_event&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+              <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Breakfast time&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+                <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_code&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;terminology_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;snomed&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;code_string&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;307160001&quot;</span>
+              <span class="tok-p">}</span>
+            <span class="tok-p">},</span>
+            <span class="tok-nt">&quot;temporal_relation&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;with&quot;</span>
+          <span class="tok-p">}</span>
+        <span class="tok-p">]</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_for_5_minutes_10_minutes_before_meals"><a class="anchor" href="#_for_5_minutes_10_minutes_before_meals"></a>7.4.6. For 5 minutes, 10 minutes before meals</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;duration&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;PT5M&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;day&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+          <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
+          <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;daily&quot;</span><span class="tok-p">,</span>
+          <span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+            <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_code&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;terminology_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;snomed&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;code_string&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;69620002&quot;</span>
+          <span class="tok-p">}</span>
+        <span class="tok-p">},</span>
+        <span class="tok-nt">&quot;times_of_day&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+          <span class="tok-p">{</span>
+            <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Customary_time&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;reference_event&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+              <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Mealtimes&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+                <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_code&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;terminology_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;snomed&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;code_string&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;309611000&quot;</span>
+              <span class="tok-p">}</span>
+            <span class="tok-p">},</span>
+            <span class="tok-nt">&quot;offset&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;PT10M&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;temporal_relation&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;before&quot;</span>
+          <span class="tok-p">}</span>
+        <span class="tok-p">]</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_times_daily_30_minutes_before_meals"><a class="anchor" href="#_3_times_daily_30_minutes_before_meals"></a>7.4.7. 3 times daily, 30 minutes before meals</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;event_count&quot;</span><span class="tok-p">:</span> <span class="tok-mi">3</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;day&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+          <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
+          <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;daily&quot;</span><span class="tok-p">,</span>
+          <span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+            <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_code&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;terminology_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;snomed&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;code_string&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;69620002&quot;</span>
+          <span class="tok-p">}</span>
+        <span class="tok-p">},</span>
+        <span class="tok-nt">&quot;times_of_day&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+          <span class="tok-p">{</span>
+            <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Customary_time&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;reference_event&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+              <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Mealtimes&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+                <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_code&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;terminology_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;snomed&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;code_string&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;309611000&quot;</span>
+              <span class="tok-p">}</span>
+            <span class="tok-p">},</span>
+            <span class="tok-nt">&quot;offset&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;PT30M&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;temporal_relation&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;before&quot;</span>
+          <span class="tok-p">}</span>
+        <span class="tok-p">]</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_take_every_2nd_day_in_the_morning_until_20_have_been_taken"><a class="anchor" href="#_take_every_2nd_day_in_the_morning_until_20_have_been_taken"></a>7.4.8. Take every 2nd day, in the morning, until 20 have been taken</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+  <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+  <span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;total_event_count&quot;</span><span class="tok-p">:</span> <span class="tok-mi">20</span><span class="tok-p">,</span>
+    <span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+      <span class="tok-p">{</span>
+        <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;day_period&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;2&quot;</span><span class="tok-p">,</span>
+        <span class="tok-nt">&quot;times_of_day&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+          <span class="tok-p">{</span>
+            <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Customary_time&quot;</span><span class="tok-p">,</span>
+            <span class="tok-nt">&quot;reference_event&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+              <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Morning&quot;</span><span class="tok-p">,</span>
+              <span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
+                <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Terminology_code&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;terminology_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;snomed&quot;</span><span class="tok-p">,</span>
+                <span class="tok-nt">&quot;code_string&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;73775008&quot;</span>
+              <span class="tok-p">}</span>
+            <span class="tok-p">}</span>
+          <span class="tok-p">}</span>
+        <span class="tok-p">]</span>
+      <span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_7"><a class="anchor" href="#_class_descriptions_7"></a>7.4. Class Descriptions</h3>
+<h3 id="_class_descriptions_7"><a class="anchor" href="#_class_descriptions_7"></a>7.5. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_timing_class"><a class="anchor" href="#_timing_class"></a>7.4.1. Timing Class</h4>
+<h4 id="_timing_class"><a class="anchor" href="#_timing_class"></a>7.5.1. Timing Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2863,11 +3367,25 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>Historical series of occurrences of a kind of event. May be used to specify future occurrences.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>event_duration</strong>: <code><a href="#_duration_class">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional duration. Void value indicates either an instantaneous event, or that the event duration is unknown or not important.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>event_duration_upper</strong>: <code><a href="#_duration_class">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional upper limit of event duration.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_occurrence_class"><a class="anchor" href="#_occurrence_class"></a>7.4.2. Occurrence Class</h4>
+<h4 id="_occurrence_class"><a class="anchor" href="#_occurrence_class"></a>7.5.2. Occurrence Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2899,7 +3417,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_of_day</strong>: <code>List&lt;<a href="#_hour_specifier_class">Hour_specifier</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>times_of_day</strong>: <code>List&lt;<a href="#_hour_specifier_class">Hour_specifier</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Time of day of the occurrence.</p>
 </div></div></td>
@@ -2908,7 +3426,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_occurrence_pattern_class"><a class="anchor" href="#_occurrence_pattern_class"></a>7.4.3. Occurrence_pattern Class</h4>
+<h4 id="_occurrence_pattern_class"><a class="anchor" href="#_occurrence_pattern_class"></a>7.5.3. Occurrence_pattern Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2940,12 +3458,12 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_count</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_event_count</strong>: <code>Integer</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>times</strong>: <code>List&lt;<a href="#_time_specifier_class">Time_specifier</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>occurrence_times</strong>: <code>List&lt;<a href="#_occurrence_times_specifier_class">Occurrence_times_specifier</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Times at which event took place or should take place.</p>
 </div></div></td>
@@ -2960,7 +3478,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_time_specifier_class"><a class="anchor" href="#_time_specifier_class"></a>7.4.4. Time_specifier Class</h4>
+<h4 id="_occurrence_times_specifier_class"><a class="anchor" href="#_occurrence_times_specifier_class"></a>7.5.4. Occurrence_times_specifier Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2970,12 +3488,12 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Time_specifier (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Occurrence_times_specifier (abstract)</em></strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Specification of date and time in customary terms.</p>
+<p>Times of occurrence of the event.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2984,15 +3502,24 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>event_count</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>event_count_upper</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Upper limit of number of events that occurred for this occurrence time.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>event_count</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specific number of events that occurred for this occurrence time.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_period_specifier_class"><a class="anchor" href="#_period_specifier_class"></a>7.4.5. Period_specifier Class</h4>
+<h4 id="_period_specifier_class"><a class="anchor" href="#_period_specifier_class"></a>7.5.5. Period_specifier Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3012,7 +3539,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_occurrence_times_specifier_class">Occurrence_times_specifier</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3026,11 +3553,16 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>The period in which events recur.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period_upper</strong>: <code><a href="#_duration_class">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_day_specifier_class"><a class="anchor" href="#_day_specifier_class"></a>7.4.6. Day_specifier Class</h4>
+<h4 id="_day_hour_specifier_class"><a class="anchor" href="#_day_hour_specifier_class"></a>7.5.6. Day_hour_specifier Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3040,7 +3572,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Day_specifier</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Day_hour_specifier</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3050,7 +3582,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_time_specifier_class">Time_specifier</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_occurrence_times_specifier_class">Occurrence_times_specifier</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3061,21 +3593,38 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specification of the day as a specific day(s) of week, 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.</p>
+<p>Specification of the day as a specific day(s) of week or month, e.g.:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Void means 'every day'.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_of_day</strong>: <code>List&lt;<a href="#_hour_specifier_class">Hour_specifier</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>times_of_day</strong>: <code>List&lt;<a href="#_hour_specifier_class">Hour_specifier</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Times of day within day(s).</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day_period</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Days specified as a regular period, where a value N means every N days.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_hour_specifier_class"><a class="anchor" href="#_hour_specifier_class"></a>7.4.7. Hour_specifier Class</h4>
+<h4 id="_hour_specifier_class"><a class="anchor" href="#_hour_specifier_class"></a>7.5.7. Hour_specifier Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3093,23 +3642,11 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>Abstract specification of a point in time during the day.</p>
 </div></div></td>
 </tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>duration</strong>: <code><a href="#_duration_class">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional duration. Void value indicates either an instantaneous event, or that the event duration is unknown or not important.</p>
-</div></div></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_clock_time_class"><a class="anchor" href="#_clock_time_class"></a>7.4.8. Clock_time Class</h4>
+<h4 id="_clock_time_class"><a class="anchor" href="#_clock_time_class"></a>7.5.8. Clock_time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3145,7 +3682,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_customary_time_class"><a class="anchor" href="#_customary_time_class"></a>7.4.9. Customary_time Class</h4>
+<h4 id="_customary_time_class"><a class="anchor" href="#_customary_time_class"></a>7.5.9. Customary_time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3189,11 +3726,18 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>TODO: this may be superfluous if the codes for <code><em>time</em></code> include the reference event.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>offset</strong>: <code><a href="#_duration_class">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional time offset with respect to <code>reference_event</code>. May only be specified if <code>temporal_relation</code> is specified, and not equal to <code>'with'</code>.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_temporal_relation_enumeration"><a class="anchor" href="#_temporal_relation_enumeration"></a>7.4.10. Temporal_relation Enumeration</h4>
+<h4 id="_temporal_relation_enumeration"><a class="anchor" href="#_temporal_relation_enumeration"></a>7.5.10. Temporal_relation Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3340,7 +3884,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_examples"><a class="anchor" href="#_examples"></a>8.1.3. Examples</h4>
+<h4 id="_examples_2"><a class="anchor" href="#_examples_2"></a>8.1.3. Examples</h4>
 <div class="paragraph">
 <p>The following examples show how to use the classes to represent some common encapsulated data types.</p>
 </div>

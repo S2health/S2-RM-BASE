@@ -14,7 +14,7 @@ h|*Functions*
 
 h|*1..1*
 |*convert_value* ( +
-value: `<<_real_class,Real>>[1]`, +
+value: `<<_decimal_class,Decimal>>[1]`, +
 from_units: `<<_string_class,String>>[1]`, +
 to_units: `<<_string_class,String>>[1]`, +
 property: `<<_terminology_code_class,Terminology_code>>[1]` +

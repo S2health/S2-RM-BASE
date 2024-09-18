@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*value*: `<<_string_class,String>>`
+|*value*: `String`
 a|Representation of all descendants is a single String.
 h|*Functions*
 ^h|*Signature*

@@ -22,4 +22,12 @@ a|Pattern form of timing representation.
 h|*0..1*
 |*history*: `List<<<_occurrence_class,Occurrence>>>`
 a|Historical series of occurrences of a kind of event. May be used to specify future occurrences.
+
+h|*0..1*
+|*event_duration*: `<<_duration_class,Duration>>`
+a|Optional duration. Void value indicates either an instantaneous event, or that the event duration is unknown or not important.
+
+h|*0..1*
+|*event_duration_upper*: `<<_duration_class,Duration>>`
+a|Optional upper limit of event duration.
 |===

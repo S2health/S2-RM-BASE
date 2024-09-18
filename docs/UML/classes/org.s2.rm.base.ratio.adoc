@@ -8,17 +8,21 @@ h|*Class*
 h|*Description*
 2+a|Ratio of values, i.e. where the numerator and denominator are both pure numbers. The `Ratio_kind` enumeration is used to control the type attribute to be one of a defined set.
 
-Used for recording titers (e.g. 1:128), concentration ratios, e.g. Na:K (unitary denominator).
+Used to record:
+
+* concentration ratio, e.g. Na:K (unitary denominator);
+* ratio of two analytes e.g. white cells to red cells
+* albumin:creatinine ratio
 
 h|*Inherit*
-2+|`<<_measurable_class,Measurable>>`
+2+|`<<_compound_measurable_class,Compound_measurable>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*numerator*: `Real`
+|*numerator*: `<<_decimal_class,Decimal>>`
 a|Numerator value of Ratio.
 
 h|*1..1*
@@ -26,11 +30,16 @@ h|*1..1*
 a|Type of ratio.
 
 h|*1..1*
-|*denominator*: `Real`
+|*denominator*: `<<_decimal_class,Decimal>>`
 a|Denominator value of Ratio.
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
 
 h|*1..1 +
-(redefined)*
-|*magnitude*: `Real`
-a|The magnitude of the quantity.
+(effected)*
+|*effective_value* (): `<<_decimal_class,Decimal>>` +
+ +
+__Post_result__: `Result = lhs/rhs`
+a|
 |===

@@ -1,0 +1,11 @@
+=== M Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*M*
+
+h|*Description*
+2+a|
+
+|===

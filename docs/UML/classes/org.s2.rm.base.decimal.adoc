@@ -1,0 +1,30 @@
+=== Decimal Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Decimal*
+
+h|*Description*
+2+a|Type defining an arbitrary-precision signed decimal number. A given number is defined by its:
+
+* precision: total number of digits
+* scale: number of digits to the right of the decimal point.
+
+The number 12.3456 thus has precision 6 and scale 4.
+
+h|*Inherit*
+2+|`<<_numeric_class,Numeric>>`
+
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*precision* (): `Integer`
+a|Returns the total number of digits of the number.
+
+h|*1..1*
+|*scale* (): `Integer`
+a|The number of decimal places of the number.
+|===

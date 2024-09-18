@@ -93,7 +93,7 @@ a|Arithmetic multiplication a duration by a number.
 
 h|*1..1*
 |*divide* __alias__ "/" ( +
-a_val: `<<_real_class,Real>>[1]` +
+a_val: `<<_decimal_class,Decimal>>[1]` +
 ): `<<_duration_class,Duration>>`
 a|Arithmetic division of a duration by a number.
 
