@@ -29,4 +29,8 @@ a|Name of the  class (concrete or abstract) of object to which this identifier t
 h|*1..1*
 |*id*: `<<_object_id_class,Object_id>>`
 a|Globally unique id of an object, regardless of where it is stored.
+
+h|*1..1*
+|*is_self*: `Boolean`
+a|True if this reference stands for the 'self' or subject (typically a patient) of information.
 |===

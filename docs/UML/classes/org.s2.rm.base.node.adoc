@@ -34,12 +34,6 @@ a|Subordinate data items.
 h|*0..1*
 |*value*: `<<_data_value_class,Data_value>>`
 a|_Normalized_ value within `Element`. Any concrete subtype of `Data_value` can be used.
-
-h|*0..1*
-|*original_value*: `<<_data_value_class,Data_value>>`
-a|Optional property to record data value in the form captured in original application or system.
-
-Use only for original values that might be useful to the end user of the converted information, e.g. a quantity in original units.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*

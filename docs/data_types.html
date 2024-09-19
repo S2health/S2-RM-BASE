@@ -139,21 +139,17 @@
 <li><a href="#_ordered_value_class">5.4.1. Ordered_value Class</a></li>
 <li><a href="#_ordered_datum_class">5.4.2. Ordered_datum Class</a></li>
 <li><a href="#_coded_ordinal_class">5.4.3. Coded_ordinal Class</a></li>
-<li><a href="#_quantified_class">5.4.4. Quantified Class</a></li>
-<li><a href="#_money_class">5.4.5. Money Class</a></li>
-<li><a href="#_measurable_class">5.4.6. Measurable Class</a></li>
-<li><a href="#_simple_measurable_class">5.4.7. Simple_measurable Class</a></li>
-<li><a href="#_quantity_class">5.4.8. Quantity Class</a></li>
-<li><a href="#_count_class">5.4.9. Count Class</a></li>
-<li><a href="#_compound_measurable_class">5.4.10. Compound_measurable Class</a></li>
-<li><a href="#_proportion_class">5.4.11. Proportion Class</a></li>
-<li><a href="#_ratio_class">5.4.12. Ratio Class</a></li>
-<li><a href="#_ratio_kind_enumeration">5.4.13. Ratio_kind Enumeration</a></li>
-<li><a href="#_titer_class">5.4.14. Titer Class</a></li>
-<li><a href="#_measured_class">5.4.15. Measured Class</a></li>
-<li><a href="#_reference_range_class">5.4.16. Reference_range Class</a></li>
-<li><a href="#_comparison_operator_enumeration">5.4.17. Comparison_operator Enumeration</a></li>
-<li><a href="#_range_class">5.4.18. Range Class</a></li>
+<li><a href="#_money_class">5.4.4. Money Class</a></li>
+<li><a href="#_measurable_class">5.4.5. Measurable Class</a></li>
+<li><a href="#_quantity_class">5.4.6. Quantity Class</a></li>
+<li><a href="#_count_class">5.4.7. Count Class</a></li>
+<li><a href="#_proportion_class">5.4.8. Proportion Class</a></li>
+<li><a href="#_ratio_class">5.4.9. Ratio Class</a></li>
+<li><a href="#_ratio_kind_enumeration">5.4.10. Ratio_kind Enumeration</a></li>
+<li><a href="#_measured_class">5.4.11. Measured Class</a></li>
+<li><a href="#_reference_range_class">5.4.12. Reference_range Class</a></li>
+<li><a href="#_comparison_operator_enumeration">5.4.13. Comparison_operator Enumeration</a></li>
+<li><a href="#_range_class">5.4.14. Range Class</a></li>
 </ul>
 </li>
 </ul>
@@ -1573,15 +1569,29 @@
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_datum_class">Ordered_datum</a></code></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_comparable_class">Comparable</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The magnitude of the quantity.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.</p>
+</div>
+<div class="paragraph">
+<p>The value -1 implies no limit, i.e. any number of decimal places.</p>
+</div>
+<div class="paragraph">
+<p>Precision can be set to 0 to ensure there are not decimal points, which may be useful on fields that are normally only reported as integers, e.g. blood pressure.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -1674,16 +1684,17 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Rank within ordered enumeration of values.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="#_coded_text_class">Coded_text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  <code>mild</code>, <code>moderate</code>, <code>severe</code>, or even the same number series as the values, e.g. 1, 2, 3.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Rank within ordered enumeration of values.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1695,16 +1706,13 @@
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
 other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
-): <code><a href="#_boolean_class">Boolean</a></code><br>
-<br>
-<em>Pre_comparable</em>: <code>is_strictly_comparable_to (other)</code></p></td>
+): <code><a href="#_boolean_class">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>True if this Ordinal value is less than <code><em>other</em></code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
 <br>
 <em>Post_result</em>: <code>Result = magnitude</code></p></td>
@@ -1714,51 +1722,7 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_quantified_class"><a class="anchor" href="#_quantified_class"></a>5.4.4. Quantified Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Quantified (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Ordered values that are quantified, i.e. with values that are arithmetically comparable. Operations such as multiplication and division are definable on Quantified entities.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.</p>
-</div>
-<div class="paragraph">
-<p>The value -1 implies no limit, i.e. any number of decimal places.</p>
-</div>
-<div class="paragraph">
-<p>Precision can be set to 0 to ensure there are not decimal points, which may be useful on fields that are normally only reported as integers, e.g. blood pressure.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_money_class"><a class="anchor" href="#_money_class"></a>5.4.5. Money Class</h4>
+<h4 id="_money_class"><a class="anchor" href="#_money_class"></a>5.4.4. Money Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1781,7 +1745,7 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_quantified_class">Quantified</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1790,32 +1754,20 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>currency</strong>: <code><a href="#_terminology_code_class">Terminology_code</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
-<br>
-<em>unnamed1</em>:</p></td>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_measurable_class"><a class="anchor" href="#_measurable_class"></a>5.4.6. Measurable Class</h4>
+<h4 id="_measurable_class"><a class="anchor" href="#_measurable_class"></a>5.4.5. Measurable Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1835,33 +1787,7 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_quantified_class">Quantified</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_simple_measurable_class"><a class="anchor" href="#_simple_measurable_class"></a>5.4.7. Simple_measurable Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Simple_measurable (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract class defining the concept of relative physical quantities. For relative quantities, the  <code>+</code> and  <code>-</code> operators are defined.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1869,130 +1795,18 @@ other: <code><a href="#_coded_ordinal_class">Coded_ordinal</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_numeric_class">Numeric</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The magnitude of the quantity.</p>
 </div></div></td>
 </tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
-other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
-): <code><a href="#_boolean_class">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Value equality: return True if <code>this</code> and <code><em>other</em></code> are attached to objects considered to be equal in value.</p>
-</div>
-<div class="hdlist">
-<div class="title">Parameters<br></div>
-<table>
-<tr>
-<td class="hdlist1">
-<code><em>other</em></code>
-</td>
-<td class="hdlist2">
-<p>Other object for comparison.</p>
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
-other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
-): <code><a href="#_boolean_class">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Arithmetic value comparison. Returns True if current object is less than <code><em>other</em></code>. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.</p>
-</div>
-<div class="paragraph">
-<p>In conjunction with <code>=</code>, enables the definition of the related functions <code><em>greater_than</em>()</code> etc.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
-): <code><a href="#_simple_measurable_class">Simple_measurable</a></code><br>
-<br>
-<em>Pre_comparable</em>: <code>is_strictly_comparable_to (other)</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Sum of this amount and another. The value of accuracy in the result is either:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the sum of the accuracies of the operands, if both present, or;</p>
-</li>
-<li>
-<p>both operand accuracies are unknown_accuracy_value.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the accuracy value is a percentage in one operand and not in the other, the form in the result is that of the larger operand.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-other: <code><a href="#_simple_measurable_class">Simple_measurable</a>[1]</code><br>
-): <code><a href="#_simple_measurable_class">Simple_measurable</a></code><br>
-<br>
-<em>Pre_comparable</em>: <code>is_strictly_comparable_to (other)</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Difference of this amount and another. The value of <code><em>accuracy</em></code> in the result is either:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the sum of the accuracies of the operands, if both present, or;</p>
-</li>
-<li>
-<p>unknown, if either or both operand accuracies are unknown.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the <code><em>accuracy</em></code> value is a percentage in one operand and not in the other, the form in the result is that of the larger operand.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
-factor: <code><a href="#_real_class">Real</a>[1]</code><br>
-): <code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Product of this Amount and <code><em>factor</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>negative</strong> <em>alias</em> "-" (): <code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Negated version of current object, such as used for representing a difference, e.g. a weight loss.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = magnitude</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_quantity_class"><a class="anchor" href="#_quantity_class"></a>5.4.8. Quantity Class</h4>
+<h4 id="_quantity_class"><a class="anchor" href="#_quantity_class"></a>5.4.6. Quantity Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2018,7 +1832,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2051,8 +1865,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
 other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 ): <code><a href="#_quantity_class">Quantity</a></code></p></td>
@@ -2061,8 +1874,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
 other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 ): <code><a href="#_quantity_class">Quantity</a></code></p></td>
@@ -2071,8 +1883,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
 factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 ): <code><a href="#_quantity_class">Quantity</a></code></p></td>
@@ -2104,8 +1915,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
 other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 ): <code><a href="#_boolean_class">Boolean</a></code></p></td>
@@ -2120,7 +1930,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_count_class"><a class="anchor" href="#_count_class"></a>5.4.9. Count Class</h4>
+<h4 id="_count_class"><a class="anchor" href="#_count_class"></a>5.4.7. Count Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2140,7 +1950,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2166,33 +1976,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_compound_measurable_class"><a class="anchor" href="#_compound_measurable_class"></a>5.4.10. Compound_measurable Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Compound_measurable (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Measurable values with two or more component elements.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_proportion_class"><a class="anchor" href="#_proportion_class"></a>5.4.11. Proportion Class</h4>
+<h4 id="_proportion_class"><a class="anchor" href="#_proportion_class"></a>5.4.8. Proportion Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2228,7 +2012,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_compound_measurable_class">Compound_measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2237,7 +2021,7 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_simple_measurable_class">Simple_measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_quantity_class">Quantity</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Numerator of proportion.</p>
 </div></div></td>
@@ -2254,6 +2038,14 @@ other: <code><a href="#_quantity_class">Quantity</a>[1]</code><br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_measured_class">Measured</a>&lt;<a href="#_proportion_class">Proportion</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Additional data elements for measured quantities, including precision, accuracy and reference ranges.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The magnitude of the quantity.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2324,8 +2116,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
 <br>
 <em>Post_result</em>: <code>Result = numerator.effective_value() / denominator.effective_value()</code></p></td>
@@ -2335,7 +2126,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_class"><a class="anchor" href="#_ratio_class"></a>5.4.12. Ratio Class</h4>
+<h4 id="_ratio_class"><a class="anchor" href="#_ratio_class"></a>5.4.9. Ratio Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2371,19 +2162,12 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_compound_measurable_class">Compound_measurable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_measurable_class">Measurable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Numerator value of Ratio.</p>
-</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
@@ -2394,9 +2178,24 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Numerator value of Ratio.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Denominator value of Ratio.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_decimal_class">Decimal</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The magnitude of the quantity.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2405,8 +2204,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
 <br>
 <em>Post_result</em>: <code>Result = lhs/rhs</code></p></td>
@@ -2416,7 +2214,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>5.4.13. Ratio_kind Enumeration</h4>
+<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>5.4.10. Ratio_kind Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2464,61 +2262,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_titer_class"><a class="anchor" href="#_titer_class"></a>5.4.14. Titer Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Titer</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Used for recording titers (e.g. 1:128).</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_compound_measurable_class">Compound_measurable</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>analyte_factor</strong>: <code><a href="#_integer_class">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>dilution_factor</strong>: <code>Integer</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = analyte_factor / dilution_factor</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_measured_class"><a class="anchor" href="#_measured_class"></a>5.4.15. Measured Class</h4>
+<h4 id="_measured_class"><a class="anchor" href="#_measured_class"></a>5.4.11. Measured Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2611,7 +2355,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>5.4.16. Reference_range Class</h4>
+<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>5.4.12. Reference_range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2663,7 +2407,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>5.4.17. Comparison_operator Enumeration</h4>
+<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>5.4.13. Comparison_operator Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2725,7 +2469,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_range_class"><a class="anchor" href="#_range_class"></a>5.4.18. Range Class</h4>
+<h4 id="_range_class"><a class="anchor" href="#_range_class"></a>5.4.14. Range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2822,7 +2566,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_quantified_class">Quantified</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_ordered_value_class">Ordered_value</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2830,7 +2574,8 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="#_temporal_class">Temporal</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
@@ -2840,8 +2585,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
 <br>
 <em>Post_result</em>: <code>Result = magnitude</code></p></td>

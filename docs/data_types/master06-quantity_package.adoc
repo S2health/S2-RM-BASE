@@ -184,27 +184,19 @@ include::{uml_export_dir}/classes/{pkg}ordered_datum.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}coded_ordinal.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}quantified.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}money.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}measurable.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}simple_measurable.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}quantity.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}count.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}compound_measurable.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}proportion.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio_kind.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}titer.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}measured.adoc[]
 
