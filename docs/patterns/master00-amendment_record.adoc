@@ -4,13 +4,39 @@
 |===
 |Issue|Details|Raiser, Implementer|Completed
 
-|[[latest_issue]]0.7.0
-|{spec_tickets}/SBASE-18[SBASE-18^]. Replace `Cluster` and `Element` with single `Node` type.
+|[[latest_issue]]0.8.5
+|{spec_tickets}/SBASE-52[SBASE-52^]. Change `Measured.interpretation` to `s2.QuantitativeInterpretationValues`; +
+ {spec_tickets}/SBASE-49[SBASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`; +
+ {spec_tickets}/SBASE-29[SBASE-29^]. Refactor `Node` to `Entity_ref_node` and `Info_node`.
 |J Coyle, +
 N Davis, +
 S Huff, +
 T Beale
 |[[latest_issue_date]]19 Oct 2023
+
+|0.7.5
+|{spec_tickets}/SBASE-51[SBASE-51^]. Improve `Timing` type; +
+{spec_tickets}/SBASE-47[SBASE-47^]. Refactor `Locatable.code` and `original_code`; add `Info_item`; +
+{spec_tickets}/SBASE-33[SBASE-33^]. Specify terminology for built-in attributes in BASE classes; +
+{spec_tickets}/SBASE-31[SBASE-31^]. Change `Coded_ordinal.magnitude` to `Integer`; +
+{spec_tickets}/SBASE-8[SBASE-8^]. Define `null_flavour` codes to use in `Node`;`` +
+{spec_tickets}/SBASE-14[SBASE-14^]. Define the meaning of `Ordered_value.precision`; +
+{spec_tickets}/SBASE-15[SBASE-15^]. Represent normal status in quantitative lab result values; +
+{spec_tickets}/SBASE-5[SBASE-5^]. Clarify meaning of `Terminology_code.terminology_id`; +
+{spec_tickets}/SBASE-2[SBASE-2^]. Convert use or Real to Decimal types across RM
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|17 Nov 2023
+
+|0.7.0
+|{spec_tickets}/SBASE-18[SBASE-18^]. Replace `Cluster` and `Element` with single `Node` type.
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|19 Oct 2023
 
 |
 |{spec_tickets}/SBASE-17[SBASE-17^]. Add `Element._original_value_` field to carry pre-normalized value where needed.
