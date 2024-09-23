@@ -76,10 +76,4 @@ h|*1..1*
 factor: `<<_real_class,Real>>[1]` +
 ): `<<_proportion_class,Proportion>>`
 a|Product of this Proportion and `_factor_`.
-
-h|*1..1*
-|*effective_value* (): `<<_decimal_class,Decimal>>` +
- +
-__Post_result__: `Result = numerator.effective_value() / denominator.effective_value()`
-a|
 |===
