@@ -131,7 +131,6 @@
 <li><a href="#_quantity_ranges">5.3.3. Quantity Ranges</a></li>
 <li><a href="#_proportions">5.3.4. Proportions</a></li>
 <li><a href="#_ratios_2">5.3.5. Ratios</a></li>
-<li><a href="#_titers">5.3.6. Titers</a></li>
 </ul>
 </li>
 <li><a href="#_class_descriptions_5">5.4. Class Descriptions</a>
@@ -280,7 +279,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE latest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: TRIAL</p></td>
 </tr>
 <tr>
@@ -339,10 +338,41 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.1.0</p></td>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.5</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.8.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-52" target="_blank" rel="noopener">SBASE-52</a>. Change <code>Measured.interpretation</code> to <code>s2.QuantitativeInterpretationValues</code>;<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>19 Oct 2023</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.7.5</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-51" target="_blank" rel="noopener">SBASE-51</a>. Improve <code>Timing</code> type;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-33" target="_blank" rel="noopener">SBASE-33</a>. Specify terminology for built-in attributes in BASE classes;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-31" target="_blank" rel="noopener">SBASE-31</a>. Change <code>Coded_ordinal.magnitude</code> to <code>Integer</code>;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-8" target="_blank" rel="noopener">SBASE-8</a>. Define <code>null_flavour</code> codes to use in <code>Node</code>;``<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-14" target="_blank" rel="noopener">SBASE-14</a>. Define the meaning of <code>Ordered_value.precision</code>;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-15" target="_blank" rel="noopener">SBASE-15</a>. Represent normal status in quantitative lab result values;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-5" target="_blank" rel="noopener">SBASE-5</a>. Clarify meaning of <code>Terminology_code.terminology_id</code>;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-2" target="_blank" rel="noopener">SBASE-2</a>. Convert use of <code>Real</code> to <code>Decimal</code> types across RM.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17 Nov 2023</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Writing: based on openEHR and HL7 FHIR Data types.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>10 Apr 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 Apr 2023</p></td>
 </tr>
 </tbody>
 </table>
@@ -438,7 +468,7 @@
 <div class="sect2">
 <h3 id="_overview"><a class="anchor" href="#_overview"></a>2.1. Overview</h3>
 <div class="paragraph">
-<p>This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Character</code>, <code>Octet</code>, <code>String</code>, <code>List&lt;T&gt;</code>, <code>Set&lt;T&gt;</code>, and <code>Array&lt;T&gt;</code>. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the <a href="https://specifications.s2health.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">S2 Foundation Types</a>.</p>
+<p>This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Character</code>, <code>Octet</code>, <code>String</code>, <code>List&lt;T&gt;</code>, <code>Set&lt;T&gt;</code>, and <code>Array&lt;T&gt;</code>. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the <a href="https://specifications.s2health.org/releases/BASE/Release-0.8.5/foundation_types.html" target="_blank" rel="noopener">S2 Foundation Types</a>.</p>
 </div>
 <div class="paragraph">
 <p>The data types described here inherit from the class <code>Data_value</code>. They have two distinct uses in reference models. Firstly, they may be used as 'data values' in reference model structures wherever the <code>Data_value</code> class appears. Additionally, specific subtypes of the data types described here can also be used as attribute types in other classes in reference models, such as date/times, coded terms and so on. The difference is that in the former case, only subtypes of <code>Data_value</code> may be used, whilst in the latter case, other types may be used as well, from the assumed set of basic types.</p>
@@ -1536,12 +1566,6 @@
 <p>The <code>Ratio</code> type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values. The <code><em>type</em></code> attribute is used to indicate the logical type of the proportion.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_titers"><a class="anchor" href="#_titers"></a>5.3.6. Titers</h4>
-<div class="paragraph">
-<p>TBD</p>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>5.4. Class Descriptions</h3>
@@ -2115,13 +2139,6 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>Product of this Proportion and <code><em>factor</em></code>.</p>
 </div></div></td>
 </tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = numerator.effective_value() / denominator.effective_value()</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -2197,18 +2214,6 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The magnitude of the quantity.</p>
 </div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_value</strong> (): <code><a href="#_decimal_class">Decimal</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = lhs/rhs</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -4159,7 +4164,7 @@ ehr:/ehr_id/top_level_structure_locator/path_inside_top_level_structure</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The syntax is described in more detail in the <a href="https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html#_ehr_uris">S2 Architecture Overview</a>. <code>DV_EHR_URIs</code> are used as a mechanism for referencing in the EHR, ensuring readability by humans, as well as validity when extracts are transmitted elsewhere: even if the target of a path is not present, the path can be used to locate the missing item on demand.</p>
+<p>The syntax is described in more detail in the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/architecture_overview.html#_ehr_uris">S2 Architecture Overview</a>. <code>DV_EHR_URIs</code> are used as a mechanism for referencing in the EHR, ensuring readability by humans, as well as validity when extracts are transmitted elsewhere: even if the target of a path is not present, the path can be used to locate the missing item on demand.</p>
 </div>
 </div>
 </div>

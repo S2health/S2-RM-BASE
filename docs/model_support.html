@@ -178,7 +178,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE latest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
 </tr>
 <tr>
@@ -237,13 +237,31 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.6.1</p></td>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.5</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.7.5</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.7.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-47" target="_blank" rel="noopener">SBASE-47</a>. Refactor <code>Locatable.code</code> and <code>original_code</code>; add <code>Info_item</code>;<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>19 Oct 2023</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.7.0</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-16" target="_blank" rel="noopener">SBASE-16</a>. Define <code>Locatable.<em>code</em></code> field as taxonomic marker, and move <code>Feeder_audit.<em>original_code</em></code> to <code>Locatable</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
 N Davis,<br>
 S Huff,<br>
 T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>17 Oct 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17 Oct 2023</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.6.0</strong></p></th>
@@ -264,7 +282,7 @@ T Beale</p></td>
 <div class="sect2">
 <h3 id="_prior_art"><a class="anchor" href="#_prior_art"></a>Prior Art</h3>
 <div class="paragraph">
-<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html" target="_blank" rel="noopener">S2 Base Types</a> specification.</p>
+<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/model_support.html" target="_blank" rel="noopener">S2 Base Types</a> specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -302,7 +320,7 @@ T Beale</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>.</p>
+<p>The <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>.</p>
 </li>
 </ul>
 </div>
@@ -1814,13 +1832,6 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>id</strong>: <code><a href="#_object_id_class">Object_id</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Globally unique id of an object, regardless of where it is stored.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_self</strong>: <code>Boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this reference stands for the 'self' or subject (typically a patient) of information.</p>
 </div></div></td>
 </tr>
 </tbody>
