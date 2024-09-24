@@ -18,7 +18,7 @@ T Beale
 4+^h|*BASE Release 0.7.5*
 
 |0.7.5
-{spec_tickets}/SBASE-33[SBASE-33^]. Specify terminology for built-in attributes in BASE classes; +
+|{spec_tickets}/SBASE-33[SBASE-33^]. Specify terminology for built-in attributes in BASE classes; +
 {spec_tickets}/SBASE-8[SBASE-8^]. Define `null_flavour` codes to use in `Node`.
 |J Coyle, +
 N Davis, +

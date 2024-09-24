@@ -131,7 +131,6 @@
 <li><a href="#_quantity_ranges">5.3.3. Quantity Ranges</a></li>
 <li><a href="#_proportions">5.3.4. Proportions</a></li>
 <li><a href="#_ratios_2">5.3.5. Ratios</a></li>
-<li><a href="#_titers">5.3.6. Titers</a></li>
 </ul>
 </li>
 <li><a href="#_class_descriptions_5">5.4. Class Descriptions</a>
@@ -343,10 +342,41 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.1.0</p></td>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.5</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.8.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-52" target="_blank" rel="noopener">SBASE-52</a>. Change <code>Measured.interpretation</code> to <code>s2.QuantitativeInterpretationValues</code>;<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>19 Oct 2023</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.7.5</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-51" target="_blank" rel="noopener">SBASE-51</a>. Improve <code>Timing</code> type;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-33" target="_blank" rel="noopener">SBASE-33</a>. Specify terminology for built-in attributes in BASE classes;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-31" target="_blank" rel="noopener">SBASE-31</a>. Change <code>Coded_ordinal.magnitude</code> to <code>Integer</code>;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-8" target="_blank" rel="noopener">SBASE-8</a>. Define <code>null_flavour</code> codes to use in <code>Node</code>;``<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-14" target="_blank" rel="noopener">SBASE-14</a>. Define the meaning of <code>Ordered_value.precision</code>;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-15" target="_blank" rel="noopener">SBASE-15</a>. Represent normal status in quantitative lab result values;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-5" target="_blank" rel="noopener">SBASE-5</a>. Clarify meaning of <code>Terminology_code.terminology_id</code>;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-2" target="_blank" rel="noopener">SBASE-2</a>. Convert use of <code>Real</code> to <code>Decimal</code> types across RM.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17 Nov 2023</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Writing: based on openEHR and HL7 FHIR Data types.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>10 Apr 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 Apr 2023</p></td>
 </tr>
 </tbody>
 </table>
@@ -1538,12 +1568,6 @@
 <h4 id="_ratios_2"><a class="anchor" href="#_ratios_2"></a>5.3.5. Ratios</h4>
 <div class="paragraph">
 <p>The <code>Ratio</code> type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values. The <code><em>type</em></code> attribute is used to indicate the logical type of the proportion.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_titers"><a class="anchor" href="#_titers"></a>5.3.6. Titers</h4>
-<div class="paragraph">
-<p>TBD</p>
 </div>
 </div>
 </div>
