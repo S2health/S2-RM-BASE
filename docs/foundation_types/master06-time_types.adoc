@@ -2,7 +2,7 @@
 
 == Overview
 
-The primitive Date/Time types defined here are represented by classes defined in the package `base.foundation_types.time`. These are concrete types based on the {iso_8601_official}[ISO 8601 (2019) date/time standard^] semantics, which supports partial dates, times, and complex durations, all of which are needed in the biomedical and clinical domains. All types inherit a `String` physical representation from the `Temporal` class, and the Gregorian calendar is assumed.
+The primitive Time types defined here are represented by classes defined in the package `base.foundation_types.time`. These are concrete types based on the {iso_8601_official}[ISO 8601 (2019) date/time standard^] semantics, which supports partial dates, times, and complex durations, all of which are needed in the biomedical and clinical domains. All types inherit a `String` physical representation from the `Temporal` class, and the Gregorian calendar is assumed.
 
 The `time` package is shown below.
 

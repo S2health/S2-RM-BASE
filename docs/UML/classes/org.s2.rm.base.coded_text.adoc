@@ -1,0 +1,25 @@
+=== Coded_text Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Coded_text*
+
+h|*Description*
+2+a|A text item whose string value is a rubric from a controlled terminology, and whose code is given by `_concept_`. The `_value_` may be a 'preferred term' (where this concept is supported by the terminology), or another term. In the latter case, a/the preferred term may be included in the `_mappings_`.
+
+Since `Coded_text` is a subtype of `Text`, it can be used in place of it, effectively allowing the type `Text` to mean  a text item, which may optionally be coded.
+
+If `_formatting_` is present it is limited to `markdown` and may consist only of emphasis and / or hyperlink of the whole `_value_`.
+
+h|*Inherit*
+2+|`<<_text_class,Text>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*term*: `<<_terminology_term_class,Terminology_term>>`
+a|The term of which the  `_value_` attribute is the textual rendition (i.e. rubric).
+|===

@@ -1,4 +1,4 @@
-:spec_title: Patterns Information Model
+:spec_title: S2 Patterns Information Model
 :copyright_year: 2023
 :spec_status: TRIAL
 :keywords: EHR, data structures, reference model, S2

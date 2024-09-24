@@ -49,7 +49,7 @@ This specification is largely derived from the {openehr_foundation_types}[{produ
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.s2.base.foundation_types.
+:pkg: org.s2.rm.base.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

@@ -1,0 +1,23 @@
+= Definitions Package
+
+== Overview
+
+The `model_support.definitions` package shown below defines symbolic definitions used by the {product_name} models.
+
+[.text-center]
+.base.model_support.definitions package
+image::{uml_diagrams_uri}/BASE-model_support.definitions.svg[id=base_definition_types, align="center", width=65%]
+
+== Class Definitions
+
+include::{uml_export_dir}/classes/{pkg}basic_definitions.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}s2_definitions.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}validity_kind.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}version_status.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}sample_function_kind.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}trend_kind.adoc[]

@@ -1,0 +1,67 @@
+//
+// ============================================ Asciidoc HEADER =============================================
+//
+include::{ref_dir}/docs/boilerplate/book_style_settings.adoc[]
+include::manifest_vars.adoc[]
+include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
+
+//
+// ============================================ Asciidoc PREAMBLE =============================================
+//
+
+image::{s2_logo}["S2 logo",align="center"]
+
+= {spec_title}
+
+include::{ref_dir}/docs/boilerplate/full_front_block.adoc[]
+include::{ref_dir}/docs/references/reference_definitions.adoc[]
+
+//
+// ============================================= Asciidoc BODY ===============================================
+//
+
+include::master00-amendment_record.adoc[leveloffset=+1]
+
+//
+// --------------------------------------------- Preface -----------------------------------------------
+//
+
+== Acknowledgements
+
+=== Prior Art
+
+This specification is largely derived from the {openehr_model_support}[{product_name} Base Types^] specification.
+
+=== Trademarks
+
+* 'openEHR' is a registered trademark of the openEHR Foundation
+* 'Graphite Health' is a registered trademark of Graphite Health
+
+//
+// --------------------------------------------- TOC -----------------------------------------------
+//
+//toc::[left]
+
+//
+// --------------------------------------------- CHAPTERS -----------------------------------------------
+//
+:sectnums:
+
+ifdef::package_qualifiers[]
+:pkg: org.s2.rm.base.
+endif::[]
+
+include::master01-preface.adoc[leveloffset=+1]
+include::master02-overview.adoc[leveloffset=+1]
+include::master03-definitions_package.adoc[leveloffset=+1]
+include::master04-builtins_package.adoc[leveloffset=+1]
+include::master05-identification_package.adoc[leveloffset=+1]
+include::master06-archetyped_package.adoc[leveloffset=+1]
+
+//
+// --------------------------------------------- REFERENCES -----------------------------------------------
+//
+//:sectnums!:
+//== References
+//
+//bibliography::[]

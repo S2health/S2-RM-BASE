@@ -5,40 +5,16 @@
 The classes presented in this section provide a means of including references to external entities, including demographic entities, that are represented in external systems.
 
 [.text-center]
-.base_types.entity_reference Package
-image::{uml_diagrams_uri}/BASE-base_types.participation.svg[id=participation_package, align="center"]
+.model_support.entity_reference Package
+image::{uml_diagrams_uri}/BASE-model_support.participation.svg[id=participation_package, align="center"]
 
 == Design Principles
 
 === Referring to External Entities
 
-External demographic parties (individuals, institutions, other autonomous entities) may be referenced from {product_name} platform data either via a  _party proxy_ reference, or via _participation_. The former expresses the notion of 'who', while the latter additionally enables representation of the type of interaction.
-
-The `Party_proxy` class and descendants support the use of an external reference (`Party_proxy._external_ref_`) to the target party. For publicly identified parties, i.e. institutions and individual providers, the subtype `Party_identified` is used, which may also carry a modicum of identifying information, obviating the need for resolution in the external system in many circumstances. Parties related to the subject of the record may be represented via `Party_related`, which enables the relationship to be stated. Relationships are coded and include familial ones ('mother', 'uncle', etc) as well as relationships like 'donor', 'travelling companion' and so on.
-
-The subject of the record (i.e. patient) is represented in the record with `Party_self`, which includes no identifying information.
-
-==== Party_self and Referring to the Patient from the EHR
-
-There are two approaches that may be used to refer to the record subject in a demographic service or patient master index (PMI) from within the EHR, as follows.
-
-* The `_external_ref_` attribute is not set on any instances of `Party_self`, i.e. nowhere in the EHR. This is the most secure approach, and means that the link between the EHR and patient has to be represented outside the EHR, in a dedicated service. Compromise (e.g. theft) of EHR data does not directly identify the patient or expose patient demographic details.
-* The `_external_ref_` is set in every instance of `Party_self`, enabling direct resolution from within the EHR data. Compromise of the EHR data runs the risk of identifying the patient.
-
-=== Participation
-
-The Participation abstraction models the interaction of a Party in an activity. In the {product_name} reference model, participations are modelled in two ways. In situations where the kind of participation is known and constant, it is modelled as a named attribute in the relevant reference model. For example, the `_committer_: Party_proxy` attribute in `Audit_details` models a participation in which the function is 'committal'. Where the kind of participation is not known at design time, the `Participation` class is used to express the interaction, as well as the external reference.
-
+External demographic parties (individuals, institutions, other autonomous entities) may be referenced from {product_name} platform data either via a direct `Entity_ref_node` reference, or via a _participation_ object. The former indicates the entity, with the kind of participation being known, while the latter additionally enables representation of the type of participation.
 
 == Class Descriptions
-
-include::{uml_export_dir}/classes/{pkg}party_proxy.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}party_self.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}party_identified.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}party_related.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}participation.adoc[]
 

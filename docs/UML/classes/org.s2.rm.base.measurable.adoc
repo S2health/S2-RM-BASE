@@ -1,0 +1,22 @@
+=== Measurable Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*__Measurable (abstract)__*
+
+h|*Description*
+2+a|Quantified entities that are either derived by measurement in the real world, or that represent target values, safe values or some other relation to real world measurables.
+
+h|*Inherit*
+2+|`<<_ordered_value_class,Ordered_value>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(redefined)*
+|*magnitude*: `<<_numeric_class,Numeric>>`
+a|The magnitude of the quantity.
+|===

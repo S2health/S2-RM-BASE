@@ -4,10 +4,22 @@
 |===
 |Issue|Details|Raiser|Completed
 
-|[[latest_issue]]0.1.0
+4+^h|*BASE Release 0.8.5*
+
+4+^h|*BASE Release 0.7.5*
+
+|[[latest_issue]]0.7.5
+|{spec_tickets}/SBASE-2[SBASE-2^]. Convert use of `Real` to `Decimal` types across RM.
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|[[latest_issue_date]]17 Nov 2023
+
+|0.1.0
 |Initial Writing: based on openEHR Foundation types.
 |T Beale
-|[[latest_issue_date]]10 Apr 2023
+|10 Apr 2023
 
 |===
 

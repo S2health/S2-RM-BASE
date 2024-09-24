@@ -4,10 +4,20 @@
 |===
 |Issue|Details|Raiser|Completed
 
-|[[latest_issue]]0.1.0
+4+^h|*BASE Release 0.8.5*
+
+|[[latest_issue]]0.8.5
+|{spec_tickets}/SBASE-49[SBASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`.
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|[[latest_issue_date]]19 Oct 2023
+
+|0.1.0
 |Initial Writing: based on the {openehr_rm_common}#_change_control_package[openEHR Common IM^].
 |T Beale
-|[[latest_issue_date]]10 Apr 2023
+|10 Apr 2023
 
 |===
 

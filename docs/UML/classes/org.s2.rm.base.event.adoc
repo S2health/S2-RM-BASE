@@ -1,0 +1,37 @@
+=== Event Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*__Event (abstract)__*
+
+h|*Description*
+2+a|Defines the abstract notion of a single event in a series. This class is generic, allowing types to be generated which are locked to particular spatial types, such as `EVENT<ITEM_LIST>`. Subtypes express point or intveral data.
+
+h|*Inherit*
+2+|`<<_locatable_class,Locatable>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*time*: `<<_date_time_class,Date_time>>`
+a|Time of this event. If the width is non-zero, it is the time point of the trailing edge of the event.
+
+h|*1..1*
+|*items*: `List<<<_node_class,Node>>>`
+a|Constituent Nodes for this event.
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*offset* (): `<<_duration_class,Duration>>` +
+ +
+__Post_condition__: `Result = time.diff(parent.origin)`
+a|Offset of this event from origin, computed as time.diff(parent.origin).
+
+h|*Invariants*
+2+a|__Offset_validity1__: `offset /= Void and then offset = time.diff (parent.origin)`
+|===

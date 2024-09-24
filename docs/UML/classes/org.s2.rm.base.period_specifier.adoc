@@ -1,0 +1,25 @@
+=== Period_specifier Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Period_specifier*
+
+h|*Description*
+2+a|Event occurrence time specified as a period, meaning 'every <period>'.
+
+h|*Inherit*
+2+|`<<_occurrence_times_specifier_class,Occurrence_times_specifier>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*period*: `<<_duration_class,Duration>>`
+a|The period in which events recur.
+
+h|*0..1*
+|*period_upper*: `<<_duration_class,Duration>>`
+a|
+|===

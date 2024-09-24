@@ -2,19 +2,15 @@
 
 == Overview
 
-The `base.data_types.ordered` package defines types used to represent any kind of number-based data type used in science and medicine. It is illustrated below. Temporal types (dates and times) are described in the next section.
-
-[.text-center]
-.base.data_types.ordered package - quantities
-image::{uml_diagrams_uri}/BASE-data_types.ordered-quantity.svg[id=base_data_types_quantity, align="center"]
+The `rm.base.data_types.ordered` package defines types used to represent number-based data types used in science and medicine. Temporal types (dates and times) are described in the next section.
 
 == Requirements
 
 === Stated Versus Observed Values
 
-A basic distinction exists for any kind of quantitative data, between the stated and the observed form (or _a priori_ and _a posteriori_ forms). A stated quantity takes the form of a numeric value(s) and any qualifying properties required to provide the complete semantics.
+A basic distinction for quantitative data is between the stated and the observed forms (or _a priori_ and _a posteriori_ forms). A stated quantity takes the form of a numeric value and any qualifying properties required to provide the complete semantics.
 
-The observed form involves _measurement_, which is an attempt to determine a true value of some real world phenomenon via the use of an observation method or device. Measurement involves a number of extra concepts, including:
+The observed form involves _measurement_, which is an attempt to determine the true value of some measurable real world phenomenon via the use of a method or device. Measurement involves a number of extra concepts, including:
 
 * _accuracy_: the likely difference between the measured result and the true value;
 * _reference range_: one or more value ranges relative to the specific subject of measurement, such as 'normal', 'high' and so on;
@@ -22,14 +18,12 @@ The observed form involves _measurement_, which is an attempt to determine a tru
 
 Reference ranges are particularly useful with pathology test results, e.g. serum sodium, and vital signs.
 
-Measurement-related meta-data are not mandatory - a specific measured quantity may be stated in the same form as a stated quantity, as is typical for very common measurements such as patient vital signs.
-
 === Dimensioned Quantities
 
 The most common kind of quantity is a dimensioned quantity, consisting of a real number and units. Examples of stated dimensioned quantities include:
 
 * systolic BP: 110 mmHg
-* weight target: 78 kg
+* weight: 78 kg
 
 Examples of observed dimensioned quantities include:
 
@@ -38,28 +32,34 @@ Examples of observed dimensioned quantities include:
 * height: 178 cm
 * rate of asthma attacks: 7 /week (approx)
 
+=== Percentages
+
+TODO: complete 
+
+Percentages are common in medicine, e.g. % red cell distribution width (RDW) which is the width of a distribution of RBC widths.
+
 === Ratios
 
-A common quantitative type in science and medicine is the proportion, or ratio, which is used in situations like the following:
+A common quantitative type in science and medicine is the ratio, which consists of _two numbers_ and is used in situations like the following:
 
 * 1:128 (a titer);
 * Na:K concentration ratio (unitary denominator);
-* albumin:creatinine ratio;
-* % e.g. red cell distribution width (RDW) which is the width of a distribution of RBC widths.
+* albumin:creatinine ratio; TODO: check.
 
-In general ratios have real number values, even if many examples appear to be integer ratios. Proportions with unitary denominator and % (denominator = 100) are common.
+In general ratios have real number values, even if some consist only of integer values.
 
-=== Formulations
+=== Physical Proportions
 
-A concept superficially similar to proportions and ratios is formulations of materials, such as a solid in a liquid e.g.:
+A _proportion_ consists of _two physical quantities_, such as the proportion of two ingredients in a formulation of medication or the proportion of solid in a liquid e.g.:
 
 * 250 mg / 500 ml (solute/solvent)
+* 150 μg thyroxine in a 0.5g stable base
 
 Although a single solute/single solvent formulation appears to have the same form as a ratio, the general form is for any number of substances to be mixed together, usually according to a particular procedure. Formulations are therefore not candidates for direct modelling as fine-grained quantities, but instead are constructed by archetyping a higher-level structure, each leaf element of which contains the required kind of Quantity.
 
-=== Quantity Ranges
+=== Ranges
 
-Quantity ranges are ubiquitous in science and medicine, and may be defined for any kind of measured phenomenon. Examples include:
+Ranges are ubiquitous in science and medicine, and take both stated and observed forms. Examples include:
 
 * healthy weight range, e.g. 48kg - 60kg
 * normal range for urinalysis in pregnancy - protein, e.g. "nil" - "trace"
@@ -68,37 +68,40 @@ Quantity ranges are ubiquitous in science and medicine, and may be defined for a
 
 A reference range is a quantity range attached to a measured value, and is common for laboratory result values. The typical form of a reference range found in a pathology result indicates what is considered the 'normal' range for a measured value. Examples of reference ranges:
 
-* normal range for serum Na is 135 - 145 mmol/L;
-* desirable total cholesterol: < 5.5 mmol/L.
+* normal range for serum Na is 135 - 145 mmol/l;
+* desirable total cholesterol: < 5.5 mmol/l.
 
-Ranges can also be quoted for drug administrations, in which case they are usually thought of as the 'therapeutic' range. For example, the anticonvulsant drug Carbamazepine has a therapeutic range of 20 - 40 &#956;Mol/L. In some cases, there are multiple ranges associated with a drug, for example, Salicylate has a therapeutic range of 1.0 - 2.5 mmol/L and a toxic range > 3.6 mmol/L
+Ranges can also be quoted for drug administrations, in which case they are usually thought of as the 'therapeutic' range. For example, the anticonvulsant drug Carbamazepine has a therapeutic range of 20 - 40 &#956;Mol/l. In some cases, there are multiple ranges associated with a drug, for example, Salicylate has a therapeutic range of 1.0 - 2.5 mmol/l and a toxic range > 3.6 mmol/l
 
 Various examples occur in which multiple ranges may be stated, including the following.
 
-* The administration recommendations for drugs which depend on the particular patient state. For example, the therapeutic range of Cyclosporin (an immunosuppressant) is a function of time post-transplant for the affected organ, e.g. kidney: < 6 months: 250 - 350 &#956;g/L, > 6 months: 100 - 200 &#956;g/L;
+* The administration recommendations for drugs which depend on the particular patient state. For example, the therapeutic range of Cyclosporin (an immunosuppressant) is a function of time post-transplant for the affected organ, e.g. kidney: < 6 months: 250 - 350 &#956;g/l, > 6 months: 100 - 200 &#956;g/l;
 * Normal ranges for blood IgG, IgA, IgM which vary significantly with the age in months from birth;
 * Progesterone and pituitary hormones have ranges which are different for different phases of the menstrual cycle and for menopause. This may result in 4 or 5 ranges given for one result. Only one will apply to any particular patient - but the exact phase of the cycle may be unknown - so the ranges may need to be associated with the value with no 'normal' range.
 
 === Normal Status in Laboratory data
 
-Most laboratories include a normal 'status', which indicates where the value lies with respect to the normal range. The latter might take the form of markers like "HHH" (critically high), "HH" (abnormally high), "H" (borderline high), "L", "LL", "LLL" in HL7v2 messaging, although other schemes are undoubtedly used.
+Most laboratories include a normal status with each result, which indicates where the value lies with respect to the normal range. Normal status comes in two forms:
 
-TODO: check if this needs to be supported.
+* a logically Boolean 'abnormal' or 'normal' value;
+* values indicating a relationship with a normal range, e.g. 'very low' | 'low' | 'normal' | 'high' | 'very high'.
 
-=== Scores and Scales
+=== Scores
 
 Medicine is a domain in which symbols representing relative magnitudes are commonly used, without exact values being used. The main purpose is usually to classify patients into groups for which different decisions might be made. Such classifications are typically known as _scores_ or _scales_. For example the characterisation of pain as 'mild', 'medium', 'severe', or the reflex response to tendon percussion as pass:["-", "+/-", "+", "++", "+++", "++++"]. Many scores such as the Apgar Score, Glasgow Coma Scale (GCS), and Barthel Index are globally known and used.
 
-In some cases, there may be no way (or need) to precisely quantify such values because they reflect a subjective experience of the patient or informal judgment by the clinician. However, they are understood as being ordered, e.g. pass: [`++`] is arithmetically greater than pass:[`+`].
+In some cases, there may be no way (or need) to precisely quantify such values because they reflect a subjective experience of the patient or informal judgment by the clinician. However, they are understood as being ordered, e.g. pass:[`++`] is greater than pass:[`+`].
 
-Similarly, even though the symbolic values for haemolysed blood in a urinalysis have approximate ranges stated for them, as shown below, these 'values' are not usable in the same way as true quantities.
+A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the modified Borg CR 10 scale cite:[Hareendran_et_al_2012] for perceived exertion. In both cases, values may be negative, zero or positive.
+
+=== Semi-quantitative Values
+
+Certain quantities are represented by a process sometimes known as 'bucketing', rather than with point values. This involves stating which value range of a number of ranges an observable falls into. The effect is to convert real quantities into a relatively small number of named value ranges which are easier to understand and work with, such as the following for protein in urine:
 
 * `"neg"`, `"trace"` (10 cells/&#956;l)
 * `"small"` (<25 cells/&#956;l)
 * `"moderate"` (<80 cells/&#956;l)
 * `"large"` (>200 cells/&#956;l)
-
-A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the modified Borg CR 10 scale cite:[Hareendran_et_al_2012] for perceived exertion. In both cases, values may be negative, zero or positive.
 
 === Countable Things
 
@@ -114,13 +117,39 @@ Some countable entities such as tablets are divisible into major fractions, typi
 
 == Design
 
-=== Basic Semantics
+The `rm.base.data_types.ordered package` addresses the above requirements and is illustrated below.
 
-In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "<" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called `Dv_ordered` is accordingly defined. This type is sub-typed into ordinals, scales and true quantities, represented by the classes `Dv_ordinal` and `Quantified` respectively.
+[.text-center]
+.rm.base.data_types.ordered package - quantities
+image::{uml_diagrams_uri}/BASE-data_types.ordered-quantity.svg[id=base_data_types_quantity, align="center"]
 
-`Dv_ordinal` is used for scores and scales as described in the requirements above. `Dv_ordinal` represents data values whose values are Integers, and which have symbolic or text names instead, such as pass:["+", "++", "+++"], or `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `Dv_ordinal` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`. `DV_SCALE` is similar to `Dv_ordinal`, and was introduced to support scales / scores containing Real values as well as Integers.
+=== Taxonomy
 
-In contrast to `Dv_ordinal`, instances of `Quantified` and all its subtypes have precise numeric magnitudes. Accordingly, `Quantified` introduces the properties `_magnitude_` and `_magnitude_status_`. The `_magnitude_` attribute is guaranteed to be available on any `Quantified`, carrying the effective value, regardless of the particular subtype. The optional `_magnitude_status_` attribute can be used to provide a non-quantified indication of accuracy, and takes the following values:
+In order to make sense of the requirements in a systematic way, a taxonomy for quantified entities is needed. The most basic characteristic of quantified values as described above is the distinction between stated and observed form. The stated form of an ordered data value is a pure type definition, e.g. for the type `Quantity`, `Ratio` etc. The abstract type `Ordered_value` is the ancestor of such types. The observed, or _measured_ form is distinct and is represented by the type `Measured<V>`, whose generic parameter may be any `Ordered_value`. The various ordered value types are descendents of the latter type, while the `Measured<V>` acts as a wrapper for any pure value, adding data specific to the act of measurement.
+
+The abstract `Ordered_value` type has descendants representing temporal types, ordinals, measurables and money.
+
+`Coded_ordinal` is used for scores as described in the requirements above. `Coded_ordinal` represents data values whose values are generally Integers, and which have symbolic or text names instead, such as pass:["+", "++", "+++"], or `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `Coded_ordinal` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`.
+
+In contrast to `Coded_ordinal`, instances of `Measurable` and all its subtypes have precise numeric magnitudes. Accordingly, `Measurable` introduces the property `_magnitude_`, which is guaranteed to be available on any `Measurable`, carrying the effective value, regardless of the particular subtype.
+
+The `Measurable` class has the subtypes `Proportion`, `Ratio`, `Quantity`, and `Count`.
+
+`Quantity` is used to represent amounts of measurable things, and has a real number magnitude, precision, units and accuracy. The `_units_` attribute contains the scientific unit represented as a Terminology term, where the `description` field would be used for the displayable form of the units.
+
+In some cases, such as metric units, the UCUM code and the display form are the same, e.g. 'kg'. However this is not the general case, and many common units have different display and code forms, e.g. degrees Celcius:  '°C' and 'Cel'. In general the unit display name should be looked up if it is not known in context that the code is directly displayable. The `_units_display_name_` attribute may be used if the displayable form of the units is required in the data, and/or terminology lookup is not available or desirable. Unit names may be language dependent, particularly older units.
+
+A valid units string always implies a measured _property_, such as force or pressure. If unit strings are compared in the application environment to determine if they measure the same property (e.g. `"bar"` and `"kPa"` are both units of 'pressure'), which enables the `_is_strictly_comparable_to()_` function defined on `Ordered_value` to be properly specified on `Quantity`.
+
+The type `Count` has an integer magnitude and is used to record naturally countable things such as number of previous pregnancies, number of steps taken by a recovering stroke victim and so on. There are no units in a `Count`. Countable quantities can be used to create instances of `Quantity`, such as during a statistical study which average tobacco consumption over a time period. Such a computation might cause the creation of `Quantity` objects representing values like {magnitude = 5.85, units = '/ week'}
+
+=== Measured Values
+
+An important difference exists between values that are stated (e.g. as targets) and values that are measured in the real world. In the latter case, accuracy and precision are often recorded, and in clinical medicine, reference ranges relevant to the patient are often included as well.
+
+The `Measured` class provides a place to record these extra data items, and may be instantiated in any instance of a descendant `Measurable` that represents a measurement.
+
+The optional `_magnitude_status_` attribute can be used to provide a non-quantified indication of accuracy, and takes the following values:
 
 * `"="` : magnitude is a point value
 * `"<"` : value is < magnitude
@@ -130,23 +159,6 @@ In contrast to `Dv_ordinal`, instances of `Quantified` and all its subtypes have
 * `"~"` : value is approximately magnitude
 
 If not present, the meaning is `"="`.
-
-Logically, an accuracy attribute should also be included in `Quantified`, but as its modelling is different in the subtypes in a way that does not easily lend itself to a common ancestor, it is only included in the subtypes.
-
-The `Quantified` class has the subtypes `Dv_ratio`, `Quantity`, `Count`, and `Dv_duration` (see date_time package). The type `Count` has an integer magnitude and is used to record naturally countable things such as number of previous pregnancies, number of steps taken by a recovering stroke victim and so on. There are no units or precision in a `Count`. Countable quantities can be used to create instances of `Quantity`, such as during a statistical study which average tobacco
-consumption over a time period. Such a computation might cause the creation of `Quantity` objects representing values like {magnitude = 5.85, units = '/ week'}
-
-`Quantity` is used to represent amounts of measurable things, and has a real number magnitude, precision, units and accuracy. The `_units_` attribute contains the scientific unit in a parsable form defined by default by the {ucum}[Unified Code for Units of Measure (UCUM)^] (case-sensitive form), or by another system or terminology specified in the `_units_system_` attribute. In some cases, such as metric units, the UCUM code and the display form are the same, e.g. 'kg'. However this is not the general case, and many common units have different display and code forms, e.g. degrees Celcius:  '°C' and 'Cel'. In general the unit display name should be looked up if it is not known in context that the code is directly displayable. The `_units_display_name_` attribute may be used if the displayable form of the units is required in the data, and/or terminology lookup is not available or desirable. Unit names may be language dependent, particularly older units.
-
-A valid units string always implies a measured _property_, such as force or pressure. If unit strings are compared in the application environment to determine if they measure the same property (e.g. `"bar"` and `"kPa"` are both units of 'pressure'), which enables the `_is_strictly_comparable_to()_` function defined on `Dv_ordered` to be properly specified on `Quantity`.
-
-NOTE: while these semantics will allow comparison of e.g. two pressures recorded in `mbar and mmHg, or even two accelerations whose units are `"m.s^-2"` and `"m/s^2"`, they provide no guarantee that this is a sensible thing to do in terms of domain semantics: comparing a blood pressure to an atmospheric pressure for example may or may not make any sense. It is not within the scope of the quantity package to express such semantics - this is up to application software which uses Quantities found in specific places in the data.
-
-=== Measured Values
-
-An important difference exists between values that are stated (e.g. as targets) and values that are measured in the real world. In the latter case, accuracy and precision are often recorded, and in clinical medicine, reference ranges relevant to the patient are often included as well.
-
-The `Measured` class provides a place to record these extra data items, and may be instantiated in any instance of a descendant `Quantified` that represents a measurement.
 
 === Quantity Ranges
 
@@ -164,9 +176,13 @@ The `Ratio` type is provided for representing true ratios, i.e. relative values,
 
 include::{uml_export_dir}/classes/{pkg}ordered_value.adoc[]
 
+include::{uml_export_dir}/classes/{pkg}ordered_datum.adoc[]
+
 include::{uml_export_dir}/classes/{pkg}coded_ordinal.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}quantified.adoc[]
+include::{uml_export_dir}/classes/{pkg}money.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}measurable.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}quantity.adoc[]
 
@@ -186,34 +202,4 @@ include::{uml_export_dir}/classes/{pkg}comparison_operator.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}range.adoc[]
 
-== Syntaxes
-
-=== Units Syntax
-
-The BNF syntax specification of the units string, adapted from {ucum}[UCUM^] (case-sensitive form) is as follows:  
-
-[source, ebnf]
---------
-units = '/' exp_units | units '.' exp_units | units '/' exp_units | exp_units ;
-exp_units = unit_group exponent | unit_group ;
-unit_group = PREFIX annot_unit | annot_unit | '(' exp_units ')' | factor ;
-annot_unit = unit_name [ '{' ANNOTATION '}' ] | '{' ANNOTATION '}' ;
-factor = Integer ;
-exponent = [ SIGN ] Integer ;
-
-PREFIX = 'Y' |'Z' | 'E' | 'P' | 'T' | 'G' | 'M' | 'k' | 'h' | 'da' | 'd' | 'c' | 'm' | 'μ' | 'n' | 'p' | 'f' | 'a' | 'z' | 'y' ;
-UNIT_NAME = ? [a-zA-Z_%]+ ?;   (* replace regex with values from unit tables *)
-ANNOTATION = ? [a-zA-Z'.]+ ?;  (* replace regex with values from unit tables *)
-SUFFIX = ? [a-zA-Z0-9'_]+ ?;   (* replace regex with values from unit tables *)
-SIGN = '+' | '-' ;
-Integer = ? [0-9]+ ?;          (* regex *)
---------
-
-This proposal is comprehensive, covering all useful unit systems, including SI, various imperial, customary measures, and some obscure measures, as well as clinically specific additions. Metric prefixes, meaning-changing textual suffixes (e.g. "[Hg]" in "mm[Hg]") and non-meaning-changing annotations (e.g. "kg {total}") are recognised. With this syntax, units can be simply expressed in strings such as:
-
-```
-"kg/m^2", "m.s^-1", "km/h", "mm[Hg]"
-```
-
-and so on.
 
