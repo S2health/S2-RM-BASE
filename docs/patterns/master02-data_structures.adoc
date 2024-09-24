@@ -2,68 +2,97 @@
 
 == Requirements
 
-The requirements for structured data in the EHR and other systems are essentially that detailed data can be expressed in standard structures. The structures which are commonly required are as follows:
+Representation of clinical data requires the following categories of content:
 
-* single values, e.g. weight, height, blood sugar;
-* lists of named/numbered elements, e.g. blood test results;
-* tables of values with named columns and/or named rows, e.g. visual acuity results;
+=== Inline Data
+
+Data that is the primary representation of some content occurs in the following form:
+
 * trees of values, e.g. biochemistry, microbiology results;
 * histories of values, each of which takes any of the above forms, e.g. a time series of blood pressures, glucose levels, or imaging data.
 
-== Design Principles
+[.tbd]
+TBD; more
 
-The design principle which particularly applies to the data structure models described here is the need to provide explicit specifications for logical structures using the same generic representation, such as hierarchy. The logical structures include tables, lists, trees, and the concept of history.
+=== Entity References
 
-Regardless of whether such structures are treated as pure presentation or as having semantic significance, there are at various reasons for explicitly including the semantics of logical structures which are represented in a generic way such as hierarchy, including:
+Some data items are semantically references to real world entities such as persons, devices, places, processes etc. The latter are represented by digital twin objects, either inside or outside the clinical data environment. Entity reference objects need to be able to represent the following, in any any all combinations:
 
-* it is essential for interoperability that a structure such as a logical table, list or linear history be encoded into the generic representation in the same way by all senders and receivers of information, otherwise there is no guarantee that any communicating party's software processes the structures in the intended fashion;
-* software implementors can develop software which explicitly captures the logical structures as functional interfaces which are used as the only way of building such structures. Such interfaces (assuming they are bug-free) guarantee that all application software always creates correct structures - there is no need to rely on caller software each time making low level calls to create a table or list out of hierarchy elements;
-* the use of a functional interface for such types means that application software at the receiver's end can always process incoming information in its intended form, enabling correct presentation of data on the screen.
+* a coded term indicating just the type of entity, e.g. 'obstetric ultrasound machine`;
+* a reference to an information object in an appropriate system (eMPI, inventory, etc) system;
+* a data 'thumbnail', which is configurable outside the RM, and consists of a copy of any data elements from the reference target that are to be inlined for convenience in the referring data.
 
-One of the motivations for defining logical data structures explicitly is to remove the ambiguity in recording structure and time in previous EHR specifications and standards, including {openehr_gehr}[The Good European Health Record^], {iso_13606}[ISO 13606^], {hl7_cda}[HL7 CDA^] and {hl7_fhir}[HL7 FHIR^] specifications. The approach in these standards to representing time and structure is to use undifferentiated hierarchical structures - there is no specification about how a table or a time series might be represented. Where single values are recorded, an attribute meaning 'time of recording' is usually set; if a time series was required, there is no clear guideline as to how to model it. The standardised approach used here removes all such ambiguity, and improves the quality of data and software.
+The formal reference (second item above) may include one or more of:
 
-== Semantics
+* a machine identifier, e.g. a system-generated Guid for a Person object;
+* a real-world identifier for the entity, e.g. a government-issued social security number;
+* a multi-part match 'key', i.e. one or more other attributes of the entity that may be used to reliably match it in case other methods fail.
 
-The `base.patterns.data_structures` package contains classes representing structures for recording events in past time. The `data_structures package` is illustrated below.
+None of these methods is guaranteed to work in all circumstances. The first method can fail if machine identifiers are not preserved across technology upgrades, product replacements etc. while the last is not inherently reliable if it doesn't include externally issued identifiers. The second method is usually fairly reliable, if the issuing organization and its systems are long-term reliable. More than one method may be required to resolve the reference in some circumstances.
+
+=== Citations of Previously Captured Data
+
+A third case is the ability to cite inline a previously recorded information item that is not itself a distinct entity, e.g. a previous diagnosis, high blood pressure or similar.
+
+[.tbd]
+TBD: not yet supported.
+
+== Overview
+
+The `base.patterns.data_structures` package contains classes representing inline data, including time series; and entity references. and is illustrated below.
 
 [.text-center]
 .base.patterns.data_structures Package
 image::{uml_diagrams_uri}/BASE-patterns.data_structures.svg[id=data_structures_package, align="center"]
 
-== Class Descriptions
+== Structure Representation
 
-include::{uml_export_dir}/classes/{pkg}node.adoc[]
+Representation of structures other tan time series is supported by a number of 'node' classes. The general concept is that any 'data point' can be fractal, and may consist of literally one data item, or a sub-structure of further detail, or both. A typical example is a structure representing body location. A single data value representation is typically a coded term from a terminology such as SNOMED CT. More detailed anatomical location information may consist of subordinate data points representing e.g. centre point, radius, distance from morphological features and so on. In general, any set of 'data points' is always potentially a set of trees. Where there is sub-structure, the single parent element is usually a summary, coded, and/or stringified representation of the details.
 
-== Event Classes
+This structure is formalised in the `Node` class, in which the `_value_` property records a single item of type `Data_value` and the `_items_` property provides the sub-tree of subordinate elements, each of which is another `Node`.
+
+The `Node` class is abstract, and has two concrete descendants: `Info_node`, for representing inline data, and `Entity_ref_node`, for representing references to the information representations (digital twins) of independent entities, such as devices, persons etc.
+
+The `Entity_ref_node` property `_is_self_` is provided to allow an entity reference to be marked to indicate that it is the subject of the information containing the reference, where this has meaning. The main use of this is to create references from within person-oriented records such as health records that indicate that the subject of a particular piece of information is the same as the subject of the record. Where this is used, the `_entity_ref_` property would typically not be populated, for reasons of security (i.e. to prevent any link from personal health or other data to identifying information). 
+
+=== Class Descriptions
+
+include::{uml_export_dir}/classes/{pkg}node.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}info_node.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}entity_ref_node.adoc[leveloffset=+1]
+
+== Time Series Representation
 
 The `history` classes formalise the concept of past, linear time, via which historical data of any structural complexity can be recorded. It supports both instantaneous and interval event samples within periodic and aperiodic series.
 
 Regardless of whether the actual data consist of a single sample or many, they are represented in the same way: as a history of events, i.e. as a time series, allowing all software to access data in a uniform way, whether it be a single measurement of weight, a long series of three- or four-dimensional images, or a series of encapsulated multimedia items. The type of data contained in a History structure may be any openEHR data, including text, coded, quantitative, time, or multimedia. In the case of quantitative and date/time data (`rm.data_types.quantity` package in {openehr_rm_data_types}#_quantity_package[openEHR Data Types^]), the data are formally quantitative, but for the vast majority of cases of other types of data (text, coded etc), there is an obvious quantitative interpretation associated with the values. An example is samples whose data values are coded terms such as 'low', 'normal', 'high', 'critical high', representing blood pressure measurements over time.
 
-Instantaneous events are representing using the type `POINT_EVENT`, for which the value (`_data_` attribute) always represents an actual instantaneous value of a datum at a point in time. However, time series data may also be represented using the `INTERVAL_EVENT` type, enabling values other than 'actual' to be recorded for intervals of time. Events recorded in this form are accordingly tagged with a mathematical function, such as 'actual', 'mean', 'change' and so on, as defined by the openEHR {openehr_terminology_xml}[`event math function` vocabulary^].
+Instantaneous events are representing using the type `Point_event`, for which the value (`_data_` attribute) always represents an actual instantaneous value of a datum at a point in time. However, time series data may also be represented using the `Interval_event` type, enabling values other than 'actual' to be recorded for intervals of time. Events recorded in this form are accordingly tagged with a mathematical function, such as 'actual', 'mean', 'change' and so on, as defined by the openEHR {openehr_terminology_xml}[`event math function` vocabulary^].
 
 The model also supports the inclusion of 'summary' data, i.e. a textual or image item which summarises in some way the entire history.
 
-In formal terms, the model defines the constrained generic (otherwise known as 'template' or 'parameterised') types `HISTORY<T->Cluster>`, `EVENT<T->Cluster>`, `POINT_EVENT<T>`, and `INTERVAL_EVENT<T>` where the `_type_` parameter is constrained to the `Cluster` type, and defines the type of the data recorded in an instance of `HISTORY`. The effect is that repeated instances of spatially complex data can recur in time, corresponding to the way data are actually measured. An aperiodic series of `POINT_EVENT` instances would typically be used to represent manual measurements repeated in time. Periodic histories of `INTERVAL_EVENT` instances would typically be used to represent vital signs monitor output (which is usually delivered in averaged form potentially with additional minimum and maximum values).
+In formal terms, the model defines the constrained generic (otherwise known as 'template' or 'parameterised') types `History<T->Cluster>`, ``Event`<T->Cluster>`, `Point_event<T>`, and `Interval_event<T>` where the `_type_` parameter is constrained to the `Cluster` type, and defines the type of the data recorded in an instance of `History`. The effect is that repeated instances of spatially complex data can recur in time, corresponding to the way data are actually measured. An aperiodic series of `Point_event` instances would typically be used to represent manual measurements repeated in time. Periodic histories of `Interval_event` instances would typically be used to represent vital signs monitor output (which is usually delivered in averaged form potentially with additional minimum and maximum values).
 
-As with all other parts of the openEHR reference model, the `history` package is designed so that archetypes define the domain semantics of `HISTORY` instances. The `history` package is shown on the left of <<data_structures_package>>.
+As with all other parts of the openEHR reference model, the `history` package is designed so that archetypes define the domain semantics of `History` instances. The `history` package is shown on the left of <<data_structures_package>>.
 
 === Basic Semantics
 
-The intention of the History model is to represent time-based data for which every sample in the series is a measurement of the same phenomenon (e.g. patient heart rate) and is obtained using the same measurement method (e.g. pulse oximeter). Samples taken in this way can be reliably treated as comparable, i.e. representing changes in the same phenomenon over time, and accordingly can be safely used for time-based computation, such as graphing, statistical analysis and so on. A History can contain any mixture of `POINT_EVENT` and `INTERVAL_EVENT` instances. Clearly it is impossible for the model to guarantee completely correct usage on its own, however there two major safeguards.
+The intention of the History model is to represent time-based data for which every sample in the series is a measurement of the same phenomenon (e.g. patient heart rate) and is obtained using the same measurement method (e.g. pulse oximeter). Samples taken in this way can be reliably treated as comparable, i.e. representing changes in the same phenomenon over time, and accordingly can be safely used for time-based computation, such as graphing, statistical analysis and so on. A History can contain any mixture of `Point_event` and `Interval_event` instances. Clearly it is impossible for the model to guarantee completely correct usage on its own, however there two major safeguards.
 
-Firstly, the use of generic types forces the type of the data in each Event to be the same. A History of type `HISTORY<ITEM_LIST>` therefore constrains the type of the data at each Event (`EVENT._item_`) to be of type `ITEM_LIST` and nothing else.
+Firstly, the use of generic types forces the type of the data in each Event to be the same. A History of type `History<Node>` therefore constrains the type of the data at each Event (``Event`._item_`) to be of type `Node` and nothing else.
 
 Secondly, the use of archetyping (typically within openEHR Observation archetypes) ensures the actual structure of the `Cluster` subtype is defined in the same way for every sample - e.g. a two-item list representing systolic and diastolic blood pressure.
 
 === Timing
 
-An instance of the `HISTORY` class contains the `_origin_: DV_DATE_TIME` attribute, indicating what is considered the '0-point' of the time series, and a series of instances of the `EVENT` subtype, each containing a `_time_: DV_DATE_TIME` attribute representing the absolute time of the event. The relative offset
-of any Event is computed as the difference between the `EVENT._time_` and `HISTORY._origin_` by the `EVENT._offset_` function. For Interval events (i.e. instances of `INTERVAL_EVENT`), the `_time_` attribute always refers to the end time of the event, since this is the time at which the data (e.g. average) are true.
+An instance of the `History` class contains the `_origin_: Date_time` attribute, indicating what is considered the '0-point' of the time series, and a series of instances of the ``Event`` subtype, each containing a `_time_: Date_time` attribute representing the absolute time of the event. The relative offset
+of any Event is computed as the difference between the ``Event`._time_` and `History._origin_` by the ``Event`._offset_` function. For Interval events (i.e. instances of `Interval_event`), the `_time_` attribute always refers to the end time of the event, since this is the time at which the data (e.g. average) are true.
 
-The origin time of a History does not have to be the time of the first sample - it might be the time of an event such as child-birth with respect to which the samples are recorded, e.g. Apgar scores (Apgar is a 0-10 score indicating the health of a newborn based on breathing, heartrate, colour, muscletone and reflexes) at 1 and 3 minute offsets.
+The origin time of a History does not have to be the time of the first sample - it might be the time of an event such as child-birth with respect to which the samples are recorded, e.g. Apgar scores (Apgar is a 0-10 score indicating the health of a newborn based on breathing, heart rate, colour, muscle tone and reflexes) at 1 and 3 minute offsets.
 
-Periodicity and aperiodicity are expressed via the `_is_periodic_` and `_period_` attributes. For a periodic time-series, `_period_` is set to the period duration value and `_is_periodic_` returns `True`. The total duration of the History is given by the `HISTORY._duration_` function. The following figure illustrates a number of variations in History periodicity and Event type.
+Periodicity and aperiodicity are expressed via the `_is_periodic_` and `_period_` attributes. For a periodic time-series, `_period_` is set to the period duration value and `_is_periodic_` returns `True`. The total duration of the History is given by the `History._duration_` function. The following figure illustrates a number of variations in History periodicity and Event type.
 
 [.text-center]
 .Variation in History periodicity and Event width
@@ -71,22 +100,22 @@ image::{diagrams_uri}/history_period.svg[id=history_period, align="center", widt
 
 === Point Events
 
-The simplest kind of Event in a History is a 'point' event, expressed by instances of the class `POINT_EVENT`, representing an instantaneous value. A `HISTORY` instance may be composed solely of Point events, as would be the case with a number of blood pressure values measured over time as the patient changes position. An Apgar result is a typical example of aperiodic point data, typically consisting of 2 or 3 events, each containing 5 values and a 6th value repersenting the Apgar score for that time point. Point data may also be available from monitoring devices. For fine-granularity (e.g. 1 second) data, the number of samples may be too voluminous for the health record, and more efficient recording in the form of summary Interval events (see below) might be desired. The diagram below  illustrates the structure of a `HISTORY` containing `POINT_EVENTs`.
+The simplest kind of Event in a History is a 'point' event, expressed by instances of the class `Point_event`, representing an instantaneous value. A `History` instance may be composed solely of Point events, as would be the case with a number of blood pressure values measured over time as the patient changes position. An Apgar result is a typical example of aperiodic point data, typically consisting of 2 or 3 events, each containing 5 values and a 6th value repersenting the Apgar score for that time point. Point data may also be available from monitoring devices. For fine-granularity (e.g. 1 second) data, the number of samples may be too voluminous for the health record, and more efficient recording in the form of summary Interval events (see below) might be desired. The diagram below  illustrates the structure of a `History` containing `Point_events`.
 
 [.text-center]
-.Structure of `HISTORY<T>` of `POINT_EVENTs`
+.Structure of `History<T>` of `Point_events`
 image::{diagrams_uri}/history_bp.svg[id=history_bp, align="center"]
 
 === Interval Events
 
-Instances of the `INTERVAL_EVENT` class are used to express values corresponding to an interval in time. The `INTERVAL_EVENT._width_` attribute defines the duration of the interval; and the inherited `_time_` value corresponds to the _trailing edge_ of the event.
+Instances of the `Interval_event` class are used to express values corresponding to an interval in time. The `Interval_event._width_` attribute defines the duration of the interval; and the inherited `_time_` value corresponds to the _trailing edge_ of the event.
 
 The semantics of the Interval event type in this model are that the values effectively summarise actual instantaneous values of a datum that have occurred during the period of the event interval. The mathematical meaning of the data value of any particular interval event is given by the `_math_function_` attribute. This is coded by the {openehr_terminology_xml}[openEHR vocabulary `event math function`], and takes values such as `145|minimum|`, `144|maximum|`, `146|mean|`, `147|change|` and so on. The math function value on a particular event applies to all the data points attached to the event `_data_` attribute.
 
 The particular math functions used in each Interval event in a History may vary throughout the History; for example, one 4-hour Interval event might contain data representing average values, while a following event might contain data representing maximum values for the same or a later time point. Such data can be conveniently used for generating sophisticated graphs of the underlying datum over time. The next figure illustrates a History containing 2 pairs of 4-hour blood pressure Interval events, with each pair containing maximum and mean blood pressure value structures for `+4h` and `+8h` timepoints (each of which consist of a systolic and diastolic value).
 
 [.text-center]
-.Structure of `HISTORY<T>` of `INTERVAL_EVENTs`
+.Structure of `History<T>` of `Interval_events`
 image::{diagrams_uri}/history_bp_math.svg[id=history_bp_math, align="center"]
 
 Interval events can overlap other interval or point events within the same History. A situation where this may occur is with measurement of different periods of vital signs, such as 4-hourly blood pressure events, overlapped by a 24-hour event which contains the values over a period of 6 x 4 hour periods. In general a long Interval event can overlap any combination of Point or Interval events, as shown in the following figure.
@@ -100,7 +129,7 @@ image::{diagrams_uri}/history_event_overlapping.png[id=history_event_overlapping
 One sub-category of interval data that deserves mention is change data. There are three event math function terms used for indicating changes in data values as follows:
 
 * `147|change|`: this means that the value recorded is the difference between the value now and the value some time previously. It can be positive or negative;
-* `522|increase|`: the value recorded for the change is positive. The name (i.e. `ELEMENT._name_`) chosen for the item in an archetype carries the semantic of positivity e.g. 'increase of ....; rise of....; ....gain' etc;
+* `522|increase|`: the value recorded for the change is positive. The name (i.e. `Node._name_`) chosen for the item in an archetype carries the semantic of positivity e.g. 'increase of ....; rise of....; ....gain' etc;
 * `521|decrease|`: the value recorded for the change is positive. But the name chosen for the item carries the semantic of negativity e.g. 'decrease of ....; fall of ....; .... loss'.
 
 The following examples show how the data and these math functions are coordinated.
@@ -154,34 +183,18 @@ event which accompanies more detailed historical data. Examples where this arise
 * graphical summary of a dynamic challenge test such as Glucose tolerance test;
 * some comment about the pattern of values on a set of observed values in series.
 
-Such data are accommodated within the model via the optional `HISTORY._summary_` attribute, which is
+Such data are accommodated within the model via the optional `History._summary_` attribute, which is
 itself a structure, archetypable separately from the structure of the main data. In the first example
-above, the summary data might consist of an `ITEM_SINGLE` object containing a textual report; in the
-second, an `ITEM_SINGLE` object containing a image within a `Dv_multimedia` instance.
+above, the summary data might consist of an `Info_node` object containing a textual report; in the
+second, an `Info_node` object containing a image within a `Dv_multimedia` instance.
 
-=== Efficient Representation of Fine-grained Device Data
+=== Efficient Representation of Real-time Device Data
 
-A useful practical consequence of the Interval Event is that it allows long periods of stable data to be represented with a single Interval event, while interesting perturbations will be represented with a number of fine-grained Interval or Point Events. In the example in the next figure, Event instances are used represent 4 hours of data consisting of 14,400 x 1 second samples from a blood pressure monitor. The optional `INTERVAL_EVENT._sample_count_` attribute can be used to record the number of original samples summarised in the event. In the illustration, the `_math_function_` is shown as `146|mean|`; clearly in the first long period, the monitored datum was not absolutely flat. The implication is that the recording software was configured to regard variations in a small band (e.g. 5mm Hg) as insignificant, and only to create new Event objects when the underlying values moved outside the band. Another approach would have been to create two Interval Event objects for each long period, one giving minimum value, the other maximum value, still based on the principle of generating one such pair for periods when the underlying data remained within specified limits. Regardless of the details, this general approach provides a way to include hours of fine-grained data from devices like vital signs monitors in very little space; the data simply need to be transformed into equivalent openEHR History form first.
+A useful practical consequence of the Interval Event is that it allows long periods of stable data to be represented with a single Interval event, while interesting perturbations will be represented with a number of fine-grained Interval or Point Events. In the example in the next figure, Event instances are used represent 4 hours of data consisting of 14,400 x 1 second samples from a blood pressure monitor. The optional `Interval_event._sample_count_` attribute can be used to record the number of original samples summarised in the event. In the illustration, the `_math_function_` is shown as `146|mean|`; clearly in the first long period, the monitored datum was not absolutely flat. The implication is that the recording software was configured to regard variations in a small band (e.g. 5mm Hg) as insignificant, and only to create new Event objects when the underlying values moved outside the band. Another approach would have been to create two Interval Event objects for each long period, one giving minimum value, the other maximum value, still based on the principle of generating one such pair for periods when the underlying data remained within specified limits. Regardless of the details, this general approach provides a way to include hours of fine-grained data from devices like vital signs monitors in very little space; the data simply need to be transformed into equivalent openEHR History form first.
 
 [.text-center]
 .Data compression effect of History with Interval Events
 image::{diagrams_uri}/history_data_compression.svg[id=history_data_compression, align="center"]
-
-=== State
-
-A feature particular to a model of recording historical data for scientific and clinical use is the ability to record 'state'. In openEHR, 'state' is understood as time-based information about the whole entity from which the values recorded in the `_data_` attribute are recorded. The `_state_` attribute thus records data necessary for the correct interpretation of the primary values recorded in the `_data_` attribute. An example is where the primary datum is heart rate (values representing rate of the heart beating). Useful state data may include anything else from the owning entity (a human being) that affects the heart rate, such as the level of exertion of the subject (resting, after 3 minutes hard cycling etc). In clinical situations, the state data are often crucial to the safe use of the primary data, since the latter might be normal or abnormal depending on the patient state.
-
-In openEHR there are two ways of recording state. One is via the use of a separate `HISTORY` structure within the `Observation` class (see `ehr.composition.content.entry` package). The other is via the use of the state attribute of type `Cluster` defined in the class `EVENT` itself. Experience with openEHR archetypes and systems has shown that the latter method corresponds to the most common clinical need, which is to be able to record the state at the time of the event (the other method allows for the recording of independent state events). A simple example is the recording of 3 glucose levels during a glucose tolerance test. The state information for each event is, respectively (in a typical test):
-
-* 0-minute sample: 'post 8-hour fast;
-* 1-hour sample: 'post 75g oral glucose challenge';
-* 2-hour sample: 'post 75g oral glucose challenge'.
-
-The History structure for this example is illustrated in the following figure.
-
-[.text-center]
-.State in `HISTORY`
-image::{diagrams_uri}/history_ogtt.svg[id=history_ogtt, align="center"]
 
 === Class Descriptions
 

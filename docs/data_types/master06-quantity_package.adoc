@@ -172,10 +172,6 @@ The `Proportion` type is provided to express relative proportions of two Quantit
 
 The `Ratio` type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values. The `_type_` attribute is used to indicate the logical type of the proportion.
 
-=== Titers
-
-TBD
-
 == Class Descriptions
 
 include::{uml_export_dir}/classes/{pkg}ordered_value.adoc[]

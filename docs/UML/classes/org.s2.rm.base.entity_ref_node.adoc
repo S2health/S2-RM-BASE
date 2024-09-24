@@ -20,4 +20,8 @@ h|*Attributes*
 h|*0..1*
 |*entity_ref*: `<<_object_ref_class,Object_ref>>`
 a|Entity's information system (i.e. digital twin) identifier.
+
+h|*1..1*
+|*is_self*: `Boolean`
+a|True if this reference stands for the 'self' or subject (typically a patient) of information.
 |===
