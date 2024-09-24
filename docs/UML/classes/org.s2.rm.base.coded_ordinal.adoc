@@ -44,10 +44,4 @@ h|*1..1*
 other: `<<_coded_ordinal_class,Coded_ordinal>>[1]` +
 ): `<<_boolean_class,Boolean>>`
 a|True if this Ordinal value is less than `_other_`.
-
-h|*1..1*
-|*effective_value* (): `<<_decimal_class,Decimal>>` +
- +
-__Post_result__: `Result = magnitude`
-a|
 |===

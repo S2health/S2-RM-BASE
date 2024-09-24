@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*__Ordered_value (abstract)__*
 
 h|*Description*
-2+a|Abstract parent of ordered Data values. The `effective_value`function returns the numeric value, which is derived in different ways in descendants.
+2+a|Abstract parent of ordered Data values.
 
 h|*Inherit*
 2+|`<<_ordered_datum_class,Ordered_datum>>`
