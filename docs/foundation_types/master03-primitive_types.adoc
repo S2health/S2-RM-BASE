@@ -13,7 +13,7 @@ This section describes primitive types assumed by all {product_name} models. The
 |`Boolean`  |logical True/False values; usually physically represented as an 
              integer, but need not be.
 |`Integer`  |Integers.
-|`Real`     |Real numbers in any interoperable representation, including
+|`Decimal`     |Real numbers in any interoperable representation, including
              single-width IEEE floating point.
 |`String`   |represents unicode-enabled strings.
 |===

@@ -40,13 +40,13 @@ h|*1..1 +
 (effected)*
 |*divide* __alias__ "/" ( +
 other: `<<_integer_class,Integer>>[1]` +
-): `<<_real_class,Real>>`
+): `<<_decimal_class,Decimal>>`
 a|Integer division.
 
 h|*1..1 +
 (effected)*
 |*exponent* __alias__ "^" ( +
-other: `<<_real_class,Real>>[1]` +
+other: `<<_decimal_class,Decimal>>[1]` +
 ): `<<_real_class,Real>>`
 a|Integer exponentiation.
 

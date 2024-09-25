@@ -19,13 +19,4 @@ h|*1..1 +
 (redefined)*
 |*magnitude*: `<<_temporal_class,Temporal>>`
 a|
-h|*Functions*
-^h|*Signature*
-^h|*Meaning*
-
-h|*1..1*
-|*effective_value* (): `<<_decimal_class,Decimal>>` +
- +
-__Post_result__: `Result = magnitude`
-a|
 |===
