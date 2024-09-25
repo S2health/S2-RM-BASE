@@ -12,6 +12,9 @@ Should not be used in place of more permanent relationships between demographic 
 
 GRAPHITE: equivalent of Attribution CEM
 
+h|*Inherit*
+2+|`<<_locatable_class,Locatable>>`
+
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
