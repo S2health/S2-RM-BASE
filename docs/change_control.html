@@ -124,7 +124,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
 </tr>
 <tr>
@@ -183,6 +183,9 @@
 </thead>
 <tbody>
 <tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.6</strong></p></th>
+</tr>
+<tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.5</strong></p></th>
 </tr>
 <tr>
@@ -195,7 +198,7 @@ N Davis,<br>
 S Huff,<br>
 T Beale</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a id="latest_issue_date"></a>19 Oct 2023</p>
+<p><a id="latest_issue_date"></a>27 Sep 2024</p>
 </div></div></td>
 </tr>
 <tr>
@@ -262,7 +265,7 @@ T Beale</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>;</p>
+<p>The <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.6/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>;</p>
 </li>
 </ul>
 </div>
@@ -275,7 +278,7 @@ T Beale</p></td>
 <p>The <a href="https://specifications.openehr.org/releases/RM/latest/support.html" target="_blank" rel="noopener">openEHR Support Information Model</a>;</p>
 </li>
 <li>
-<p>The <a href="https://specifications.s2health.org/releases/BASE/Release-0.8.5/model_support.html" target="_blank" rel="noopener">S2 Base Types</a>.</p>
+<p>The <a href="https://specifications.s2health.org/releases/BASE/Release-0.8.6/model_support.html" target="_blank" rel="noopener">S2 Base Types</a>.</p>
 </li>
 </ul>
 </div>
@@ -356,7 +359,7 @@ T Beale</p></td>
 <div class="sect3">
 <h4 id="_version_and_its_subtypes"><a class="anchor" href="#_version_and_its_subtypes"></a>2.1.3. Version and its Subtypes</h4>
 <div class="paragraph">
-<p>Within a Versioned object, each version is an instance of a subtype of the class <code>Version&lt;T&gt;</code>. The abstract <code>Version</code> class defines the generic notion of a version containing some data, that has been committed to the repository as a member of a Contribution. Accordingly, it records the Contribution in the <code><em>contribution</em></code> attribute and the audit in <code><em>commit_audit</em></code>. A Version also knows its position in the version tree within the container. It has a version identifier, <code><em>uid</em></code>, and knows on which version in the tree it was based (i.e. what version was checked out to create the current version), <code><em>preceding_version_uid</em></code> (Void if it is the first version). Both of these identifiers are globally unique (see <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/model_support.html#_identification_package"><code>model_support.identification</code> package</a> in the BASE component). These properties are abstract in the <code>Version</code> class, since they are defined as being stored or computed respectively in its subtypes.</p>
+<p>Within a Versioned object, each version is an instance of a subtype of the class <code>Version&lt;T&gt;</code>. The abstract <code>Version</code> class defines the generic notion of a version containing some data, that has been committed to the repository as a member of a Contribution. Accordingly, it records the Contribution in the <code><em>contribution</em></code> attribute and the audit in <code><em>commit_audit</em></code>. A Version also knows its position in the version tree within the container. It has a version identifier, <code><em>uid</em></code>, and knows on which version in the tree it was based (i.e. what version was checked out to create the current version), <code><em>preceding_version_uid</em></code> (Void if it is the first version). Both of these identifiers are globally unique (see <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.6/model_support.html#_identification_package"><code>model_support.identification</code> package</a> in the BASE component). These properties are abstract in the <code>Version</code> class, since they are defined as being stored or computed respectively in its subtypes.</p>
 </div>
 <div class="paragraph">
 <p>All Versions in a given version container have a <code><em>uid</em></code> that includes the <code><em>uid</em></code> of the container; in other words, the <code><em>uid</em></code> of a Version is its container&#8217;s <code><em>uid</em></code> plus further version identification for that particular version with respect to others in the same container. The <code>Version</code>.<code><em>owner_id</em></code> function extracts the <code><em>uid</em></code> field of the owning <code>Versioned_object</code> from the <code><em>uid</em></code> of the <code>Version</code>.</p>
@@ -699,7 +702,7 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 <div class="sect2">
 <h3 id="_version_identification"><a class="anchor" href="#_version_identification"></a>3.3. Version Identification</h3>
 <div class="paragraph">
-<p>The version identification scheme described here is adapted from (<a href="#Hnìtynka2004">Hnìtynka &amp; Plášil&#44; 2004</a>). <code>Version</code> objects are identified by a <code><em>uid</em></code> attribute of type <code>OBJECT_VERSION_ID</code>, which is a three-part String identifier consisting of the sub-parts extractable via the accessors <code><em>object_id()</em></code>, <code><em>creating_system_id()</em></code> and <code><em>version_tree_id()</em></code> (see the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/model_support.html#_identification_package"><code>model_support.identification</code> package</a> in the BASE component), in which the <code><em>object_id()</em></code> part is a copy of the <code><em>uid</em></code> of the owning <code>Versioned_object</code> version container.</p>
+<p>The version identification scheme described here is adapted from (<a href="#Hnìtynka2004">Hnìtynka &amp; Plášil&#44; 2004</a>). <code>Version</code> objects are identified by a <code><em>uid</em></code> attribute of type <code>OBJECT_VERSION_ID</code>, which is a three-part String identifier consisting of the sub-parts extractable via the accessors <code><em>object_id()</em></code>, <code><em>creating_system_id()</em></code> and <code><em>version_tree_id()</em></code> (see the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.6/model_support.html#_identification_package"><code>model_support.identification</code> package</a> in the BASE component), in which the <code><em>object_id()</em></code> part is a copy of the <code><em>uid</em></code> of the owning <code>Versioned_object</code> version container.</p>
 </div>
 <div class="paragraph">
 <p>The following figure illustrates the scheme. The <code>Versioned_object.<em>uid</em></code> value - here, <code>"1234"</code> - is used as the <code><em>object_id()</em></code> part of the <code><em>uid</em></code> of every contained <code>Version</code>. Accordingly, each of those versions will have a <code><em>uid</em></code> following the pattern <code>"1234:system_id:version_tree_id"</code>. The use of the <code><em>version_tree_id</em></code> and <code><em>system_id</em></code> parts of the identifier are explained in the sections below. The function <code>Version.<em>owner_id()</em></code> is provided to enable a caller to easily obtain the 'owning version container' identifier.</p>
@@ -831,7 +834,7 @@ In the <code>incomplete</code> state, a limited form of invalidity is allowed: m
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>all_version_ids</strong> (): <code>List&lt;<a href="#_object_version_id_class">Object_version_id</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>all_version_ids</strong> (): <code>List&lt;<a href="#_object_id_class">Object_id</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Return a list of ids of all versions in this object.</p>
 </div></div></td>
@@ -855,7 +858,7 @@ a_time<br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>has_version_id</strong> (<br>
-a_version_uid: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code><br>
+a_version_uid: <code><a href="#_object_id_class">Object_id</a>[1]</code><br>
 ): <code><a href="#_boolean_class">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>True if a version with <code><em>a_version_uid</em></code> exists.</p>
@@ -864,7 +867,7 @@ a_version_uid: <code><a href="#_object_version_id_class">Object_version_id</a>[1
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>version_with_id</strong> (<br>
-a_version_uid: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code><br>
+a_version_uid: <code><a href="#_object_id_class">Object_id</a>[1]</code><br>
 ): <code><a href="#_version_class">Version</a></code><br>
 <br>
 <em>Pre</em>: <code>has_version_id (a_ver_id)</code></p></td>
@@ -875,7 +878,7 @@ a_version_uid: <code><a href="#_object_version_id_class">Object_version_id</a>[1
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_original_version</strong> (<br>
-a_version_uid: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code><br>
+a_version_uid: <code><a href="#_object_id_class">Object_id</a>[1]</code><br>
 ): <code><a href="#_boolean_class">Boolean</a></code><br>
 <br>
 <em>Pre</em>: <code>has_version_id(a_ver_id)</code></p></td>
@@ -928,8 +931,8 @@ a_time<br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>commit_original_version</strong> (<br>
 a_contribution: <code><a href="#_object_ref_class">Object_ref</a>[1]</code>,<br>
-a_new_version_uid: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code>,<br>
-a_preceding_version_id: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code>,<br>
+a_new_version_uid: <code><a href="#_object_id_class">Object_id</a>[1]</code>,<br>
+a_preceding_version_id: <code><a href="#_object_id_class">Object_id</a>[1]</code>,<br>
 an_audit: <code><a href="#_audit_details_class">Audit_details</a>[1]</code>,<br>
 a_lifecycle_state: <code><a href="#_coded_text_class">Coded_text</a>[1]</code>,<br>
 a_data: <code>T[1]</code>,<br>
@@ -945,12 +948,12 @@ signing_key: <code><a href="#_string_class">String</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>commit_original_merged_version</strong> (<br>
 a_contribution: <code><a href="#_object_ref_class">Object_ref</a>[1]</code>,<br>
-a_new_version_uid: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code>,<br>
-a_preceding_version_id: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code>,<br>
+a_new_version_uid: <code><a href="#_object_id_class">Object_id</a>[1]</code>,<br>
+a_preceding_version_id: <code><a href="#_object_id_class">Object_id</a>[1]</code>,<br>
 an_audit: <code><a href="#_audit_details_class">Audit_details</a>[1]</code>,<br>
 a_lifecycle_state: <code><a href="#_coded_text_class">Coded_text</a>[1]</code>,<br>
 a_data: <code>T[1]</code>,<br>
-an_other_input_uids: <code>List&lt;<a href="#_object_version_id_class">Object_version_id</a>&gt;[1]</code>,<br>
+an_other_input_uids: <code>List&lt;<a href="#_object_id_class">Object_id</a>&gt;[1]</code>,<br>
 signing_key: <code><a href="#_string_class">String</a>[1]</code><br>
 ): <code>void</code><br>
 <br>
@@ -974,7 +977,7 @@ a_version: <code><a href="#_original_version_class">Original_version</a>[1]</cod
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>commit_attestation</strong> (<br>
 an_attestation: <code><a href="#_attestation_class">Attestation</a>[1]</code>,<br>
-a_ver_id: <code><a href="#_object_version_id_class">Object_version_id</a>[1]</code>,<br>
+a_ver_id: <code><a href="#_object_id_class">Object_id</a>[1]</code>,<br>
 signing_key: <code><a href="#_string_class">String</a>[1]</code><br>
 ): <code>void</code><br>
 <br>
@@ -1070,7 +1073,7 @@ and is_original_version(a_ver_id)</code></p></td>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong> (): <code><a href="#_object_version_id_class">Object_version_id</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong> (): <code><a href="#_object_id_class">Object_id</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Unique identifier of this <code>VERSION</code>, in the form of an <code>{object_id, a version_tree_id, creating_system_id}</code> triple, where the <code><em>object_id</em></code> has the same value as the containing <code>VERSIONED_OBJECT <em>uid</em></code>.</p>
 </div></div></td>
@@ -1078,7 +1081,7 @@ and is_original_version(a_ver_id)</code></p></td>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>preceding_version_uid</strong> (): <code><a href="#_object_version_id_class">Object_version_id</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>preceding_version_uid</strong> (): <code><a href="#_object_id_class">Object_id</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Unique identifier of the version of which this version is a modification; Void if this is the first version.</p>
 </div></div></td>
@@ -1170,21 +1173,21 @@ signature.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong>: <code><a href="#_object_version_id_class">Object_version_id</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong>: <code><a href="#_object_id_class">Object_id</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Stored version of inheritance precursor.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>preceding_version_uid</strong>: <code><a href="#_object_version_id_class">Object_version_id</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>preceding_version_uid</strong>: <code><a href="#_object_id_class">Object_id</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Stored version of inheritance precursor.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_input_version_uids</strong>: <code>List&lt;<a href="#_object_version_id_class">Object_version_id</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_input_version_uids</strong>: <code>List&lt;<a href="#_object_id_class">Object_id</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Identifiers of other versions whose content was merged into this version, if any.</p>
 </div></div></td>
@@ -1286,7 +1289,7 @@ signature.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong> (): <code><a href="#_object_version_id_class">Object_version_id</a></code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uid</strong> (): <code><a href="#_object_id_class">Object_id</a></code><br>
 <br>
 <em>Post</em>: <code>Result = item.uid</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1296,7 +1299,7 @@ signature.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>preceding_version_uid</strong> (): <code><a href="#_object_version_id_class">Object_version_id</a></code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>preceding_version_uid</strong> (): <code><a href="#_object_id_class">Object_id</a></code><br>
 <br>
 <em>Post</em>: <code>Result = item.preceding_version_uid</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">

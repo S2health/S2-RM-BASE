@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Object_ref*
 
 h|*Description*
-2+a|Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service. In a relational DB, equivalent to a 'foreign key' with extra meta-data.
+2+a|Class describing a reference to a `Locatable` instance whose identifier is `_id_`., which may exist locally or be maintained outside the current namespace, e.g. in another service. In a relational DB, equivalent to a 'foreign key' with extra meta-data.
 
 h|*Attributes*
 ^h|*Signature*
@@ -29,4 +29,19 @@ a|Name of the  class (concrete or abstract) of object to which this identifier t
 h|*1..1*
 |*id*: `<<_object_id_class,Object_id>>`
 a|Globally unique id of an object, regardless of where it is stored.
+
+h|*0..1*
+|*path*: `<<_string_class,String>>`
+a|The path to an instance, as an absolute path with respect to the object found at `VERSION._data_`. An empty path means that the object referred to by `_id_` is being specified.
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*as_uri* (): `<<_string_class,String>>`
+a|A URI form of the reference, created by concatenating the following:
+
+* scheme, e.g. `ehr:`, derived from `_namespace_`
+* `_id.value_`
+* `/` + `_path_`, where `_path_` is non-empty
 |===

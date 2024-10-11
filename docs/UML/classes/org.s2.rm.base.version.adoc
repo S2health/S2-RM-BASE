@@ -29,12 +29,12 @@ h|*Functions*
 
 h|*1..1 +
 (abstract)*
-|*uid* (): `<<_object_version_id_class,Object_version_id>>`
+|*uid* (): `<<_object_id_class,Object_id>>`
 a|Unique identifier of this `VERSION`, in the form of an `{object_id, a version_tree_id, creating_system_id}` triple, where the `_object_id_` has the same value as the containing `VERSIONED_OBJECT _uid_`.
 
 h|*1..1 +
 (abstract)*
-|*preceding_version_uid* (): `<<_object_version_id_class,Object_version_id>>`
+|*preceding_version_uid* (): `<<_object_id_class,Object_id>>`
 a|Unique identifier of the version of which this version is a modification; Void if this is the first version.
 
 h|*1..1 +

@@ -51,8 +51,6 @@ The requirements on the `_creating_system_id_` part of the identifier are that i
 
 include::{uml_export_dir}/classes/{pkg}object_id.adoc[leveloffset=+1]
 
-include::{uml_export_dir}/classes/{pkg}object_version_id.adoc[leveloffset=+1]
-
 include::{uml_export_dir}/classes/{pkg}version_tree_id.adoc[leveloffset=+1]
 
 == Knowledge Artifact Identifiers
@@ -126,8 +124,6 @@ All `OBJECT_IDs` are used as identifier attributes within the thing they identif
 === Class Descriptions
 
 include::{uml_export_dir}/classes/{pkg}object_ref.adoc[leveloffset=+1]
-
-include::{uml_export_dir}/classes/{pkg}locatable_ref.adoc[leveloffset=+1]
 
 [[_syntaxes]]
 == Syntaxes
