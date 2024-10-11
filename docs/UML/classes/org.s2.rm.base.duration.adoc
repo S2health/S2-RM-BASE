@@ -87,7 +87,7 @@ a|Arithmetic subtraction of a duration from a duration, via conversion to second
 
 h|*1..1*
 |*multiply* __alias__ "&#42;" ( +
-a_val: `<<_real_class,Real>>[1]` +
+a_val: `<<_decimal_class,Decimal>>[1]` +
 ): `<<_duration_class,Duration>>`
 a|Arithmetic multiplication a duration by a number.
 

@@ -4,15 +4,17 @@
 |===
 |Issue|Details|Raiser, Implementer|Completed
 
+4+^h|*BASE Release 0.8.6*
+
 4+^h|*BASE Release 0.8.5*
 
-|[[latest_issue]]0.8.5
-|{spec_tickets}/SBASE-52[SBASE-52^]. Change `Measured.interpretation` to `s2.QuantitativeInterpretationValues`; +
+|0.8.5
+|[[latest_issue]]{spec_tickets}/SBASE-52[SBASE-52^]. Change `Measured.interpretation` to `s2.QuantitativeInterpretationValues`; +
 |J Coyle, +
 N Davis, +
 S Huff, +
 T Beale
-|[[latest_issue_date]]19 Oct 2023
+|[[latest_issue_date]]27 Sep 2024
 
 4+^h|*BASE Release 0.7.5*
 

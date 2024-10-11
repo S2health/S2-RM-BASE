@@ -9,7 +9,7 @@ h|*Description*
 2+a|Countable quantities. Used for countable types such as pregnancies and steps taken by a physiotherapy patient, number of cigarettes smoked in a day.
 
 h|*Inherit*
-2+|`<<_simple_measurable_class,Simple_measurable>>`
+2+|`<<_measurable_class,Measurable>>`
 
 h|*Attributes*
 ^h|*Signature*

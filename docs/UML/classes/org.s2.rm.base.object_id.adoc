@@ -6,9 +6,11 @@ h|*Class*
 2+^h|*Object_id*
 
 h|*Description*
-2+a|Ancestor class of identifiers of informational objects.
+2+a|Identifier of of an `object_version` instance.
 
-Object identifiers are used inside an object to identify that object, in a similar way to a 'primary key' in a relational DB. To identify an object in another service, use an `Object_ref`, or else use a Uid for local objects identified by UID.
+Object identifiers are used inside an object to identify that object, in a similar way to a 'primary key' in a relational DB. To identify an object in another service, use an `Object_ref`,
+
+If used in a 3-part form, takes the lexical form: `object_id  '::' creating_system_id  '::' version_tree_id`.
 
 h|*Attributes*
 ^h|*Signature*
@@ -24,6 +26,18 @@ h|*Functions*
 h|*1..1*
 |*object_id* (): `<<_uuid_class,Uuid>>`
 a|Unique identifier for logical object of which this identifier identifies one version; normally the `_object_id_` will be the unique identifier of the version container containing the version referred to by this `OBJECT_VERSION_ID` instance.
+
+h|*1..1*
+|*creating_system_id* (): `<<_internet_id_class,Internet_id>>`
+a|Identifier of the system that created the Version corresponding to this Object version id.
+
+h|*1..1*
+|*version_tree_id* (): `<<_version_tree_id_class,Version_tree_id>>`
+a|Tree identifier of this version with respect to other versions in the same version tree, as either 1 or 3 part dot-separated numbers, e.g.  1 ,  2.1.4 .
+
+h|*1..1*
+|*is_branch* (): `<<_boolean_class,Boolean>>`
+a|True if this version identifier represents a branch.
 
 h|*Invariants*
 2+a|__Has_extension_valid__: `extension.is_empty xor has_extension`

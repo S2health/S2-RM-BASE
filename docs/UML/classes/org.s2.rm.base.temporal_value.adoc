@@ -9,23 +9,14 @@ h|*Description*
 2+a|Parent of Data value types based on the primitive Temporal types. Uses a direct String representation and a function to generate the relevant Temporal instance.
 
 h|*Inherit*
-2+|`<<_quantified_class,Quantified>>`
+2+|`<<_ordered_value_class,Ordered_value>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1*
-|*magnitude*: `<<_temporal_class,Temporal>>`
-a|
-h|*Functions*
-^h|*Signature*
-^h|*Meaning*
-
 h|*1..1 +
-(effected)*
-|*effective_value* (): `<<_decimal_class,Decimal>>` +
- +
-__Post_result__: `Result = magnitude`
+(redefined)*
+|*magnitude*: `<<_temporal_class,Temporal>>`
 a|
 |===

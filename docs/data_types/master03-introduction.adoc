@@ -12,7 +12,7 @@ Over and above the need to satisfy the functional requirements of clinical data,
 . ease of implementation
 . interoperability with data types from other standards
 
-Accordingly, the types defined here have been derived from the {openehr_rm_data_types}[openEHR Data Types^] and the {hl7_fhir_data_types}[HL7 FHIR Data Types^].
+Accordingly, the types defined here are a new design, with origins in the {openehr_rm_data_types}[openEHR Data Types^] and the {hl7_fhir_data_types}[HL7 FHIR Data Types^].
 
 The `data_types` package is illustrated below.
 

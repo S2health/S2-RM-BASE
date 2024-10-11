@@ -4,6 +4,8 @@
 |===
 |Issue|Details|Raiser|Completed
 
+4+^h|*BASE Release 0.8.6*
+
 4+^h|*BASE Release 0.8.5*
 
 4+^h|*BASE Release 0.7.5*

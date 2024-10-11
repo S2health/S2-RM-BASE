@@ -13,7 +13,7 @@ Units are expressed as a `Coded_term` to allow the original units string (from u
 Can also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years (in the latter case, `Duration_value` may be used).
 
 h|*Inherit*
-2+|`<<_simple_measurable_class,Simple_measurable>>`
+2+|`<<_measurable_class,Measurable>>`
 
 h|*Attributes*
 ^h|*Signature*
@@ -35,22 +35,19 @@ h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1 +
-(redefined)*
+h|*1..1*
 |*add* __alias__ "+" ( +
 other: `<<_quantity_class,Quantity>>[1]` +
 ): `<<_quantity_class,Quantity>>`
 a|Sum of this `DV_QUANTITY` and `_other_`.
 
-h|*1..1 +
-(redefined)*
+h|*1..1*
 |*subtract* __alias__ "-" ( +
 other: `<<_quantity_class,Quantity>>[1]` +
 ): `<<_quantity_class,Quantity>>`
 a|Difference of this `DV_QUANTITY` and `_other_`.
 
-h|*1..1 +
-(redefined)*
+h|*1..1*
 |*multiply* __alias__ "&#42;" ( +
 factor: `<<_real_class,Real>>[1]` +
 ): `<<_quantity_class,Quantity>>`
@@ -67,8 +64,7 @@ a|Value equality: return True if `this` and `_other_` are attached to objects co
 [horizontal]
 `_other_`:: Other object for comparison.
 
-h|*1..1 +
-(effected)*
+h|*1..1*
 |*less_than* __alias__ "<" ( +
 other: `<<_quantity_class,Quantity>>[1]` +
 ): `<<_boolean_class,Boolean>>`

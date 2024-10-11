@@ -6,17 +6,24 @@ h|*Class*
 2+^h|*__Ordered_value (abstract)__*
 
 h|*Description*
-2+a|Abstract parent of ordered Data values. The `effective_value`function returns the numeric value, which is derived in different ways in descendants.
+2+a|Abstract parent of ordered Data values.
 
 h|*Inherit*
 2+|`<<_ordered_datum_class,Ordered_datum>>`
 
-h|*Functions*
+h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1 +
-(abstract)*
-|*effective_value* (): `<<_decimal_class,Decimal>>`
-a|
+h|*1..1*
+|*magnitude*: `<<_comparable_class,Comparable>>`
+a|The magnitude of the quantity.
+
+h|*0..1*
+|*precision*: `<<_integer_class,Integer>>`
+a|Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+
+The value -1 implies no limit, i.e. any number of decimal places.
+
+Precision can be set to 0 to ensure there are not decimal points, which may be useful on fields that are normally only reported as integers, e.g. blood pressure.
 |===

@@ -11,27 +11,18 @@ h|*Description*
 TODO: determine if should be a Quantity
 
 h|*Inherit*
-2+|`<<_quantified_class,Quantified>>`
+2+|`<<_ordered_value_class,Ordered_value>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*magnitude*: `<<_decimal_class,Decimal>>`
-a|
-
-h|*1..1*
 |*currency*: `<<_terminology_code_class,Terminology_code>>`
 a|
-h|*Functions*
-^h|*Signature*
-^h|*Meaning*
 
 h|*1..1 +
-(effected)*
-|*effective_value* (): `<<_decimal_class,Decimal>>` +
- +
-__unnamed1__:
+(redefined)*
+|*magnitude*: `<<_decimal_class,Decimal>>`
 a|
 |===
