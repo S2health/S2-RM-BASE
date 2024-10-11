@@ -4,17 +4,24 @@
 |===
 |Issue|Details|Raiser, Implementer|Completed
 
+4+^h|*BASE Release 0.8.6*
+
+|[[latest_issue]]0.8.6
+|{spec_tickets}/SBASE-58[SBASE-58^]. Move re-usable Entity classes to BASE as subtypes of `Info_node`.
+|T Beale
+|[[latest_issue_date]]07 Oct 2024
+
 4+^h|*BASE Release 0.8.5*
 
-|[[latest_issue]]0.8.5
+|0.8.5
 |{spec_tickets}/SBASE-49[SBASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`; +
- {spec_tickets}/SBASE-49[SBASE-57^]. Make Participation Locatable`; +
+ {spec_tickets}/SBASE-49[SBASE-57^]. Make `Participation Locatable`; +
  {spec_tickets}/SBASE-29[SBASE-29^]. Refactor `Node` to `Entity_ref_node` and `Info_node`.
 |J Coyle, +
 N Davis, +
 S Huff, +
 T Beale
-|[[latest_issue_date]]19 Oct 2023
+|27 Sep 2024
 
 4+^h|*BASE Release 0.7.5*
 

@@ -4,17 +4,26 @@
 |===
 |Issue|Details|Raiser|Completed
 
+4+^h|*BASE Release 0.8.6*
+
+|[[latest_issue]]0.8.6
+|{spec_tickets}/SBASE-59[SBASE-59^]. Simplify `Object_ref` and `Object_id`; remove `Locatable_ref` and `Object_version_id`.
+|D Perkins, +
+B Jures, +
+T Beale
+|[[latest_issue_date]]07 Oct 2024
+
 4+^h|*BASE Release 0.8.5*
 
 4+^h|*BASE Release 0.7.5*
 
-|[[latest_issue]]0.7.5
+|0.7.5
 |{spec_tickets}/SBASE-47[SBASE-47^]. Refactor `Locatable.code` and `original_code`; add `Info_item`; +
 |J Coyle, +
 N Davis, +
 S Huff, +
 T Beale
-|[[latest_issue_date]]19 Oct 2023
+|19 Oct 2023
 
 4+^h|*BASE Release 0.7.0*
 

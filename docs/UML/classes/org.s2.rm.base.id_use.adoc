@@ -1,0 +1,25 @@
+=== Id_use Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Id_use*
+
+h|*Description*
+2+a|An identifier with associated use meta-data.
+
+h|*Inherit*
+2+|`<<_info_node_class,Info_node>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*0..1*
+|*tag*: `<<_terminology_term_class,Terminology_term>>`
+a|Human readable tag, e.g. 'SSN', 'drivers license', used for display and search.
+
+h|*1..1*
+|*original_id*: `<<_rwe_id_ref_class,Rwe_id_ref>>`
+a|The used identifier.
+|===

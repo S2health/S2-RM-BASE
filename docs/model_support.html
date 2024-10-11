@@ -74,8 +74,7 @@
 <li><a href="#_class_descriptions">5.4.2. Class Descriptions</a>
 <ul class="sectlevel4">
 <li><a href="#_object_id_class">5.4.2.1. Object_id Class</a></li>
-<li><a href="#_object_version_id_class">5.4.2.2. Object_version_id Class</a></li>
-<li><a href="#_version_tree_id_class">5.4.2.3. Version_tree_id Class</a></li>
+<li><a href="#_version_tree_id_class">5.4.2.2. Version_tree_id Class</a></li>
 </ul>
 </li>
 </ul>
@@ -102,7 +101,6 @@
 <li><a href="#_class_descriptions_3">5.6.1. Class Descriptions</a>
 <ul class="sectlevel4">
 <li><a href="#_object_ref_class">5.6.1.1. Object_ref Class</a></li>
-<li><a href="#_locatable_ref_class">5.6.1.2. Locatable_ref Class</a></li>
 </ul>
 </li>
 </ul>
@@ -178,7 +176,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
 </tr>
 <tr>
@@ -237,19 +235,30 @@
 </thead>
 <tbody>
 <tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.6</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.8.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-59" target="_blank" rel="noopener">SBASE-59</a>. Simplify <code>Object_ref</code> and <code>Object_id</code>; remove <code>Locatable_ref</code> and <code>Object_version_id</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D Perkins,<br>
+B Jures,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>07 Oct 2024</p></td>
+</tr>
+<tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.5</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.7.5</strong></p></th>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.7.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-47" target="_blank" rel="noopener">SBASE-47</a>. Refactor <code>Locatable.code</code> and <code>original_code</code>; add <code>Info_item</code>;<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
 N Davis,<br>
 S Huff,<br>
 T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>19 Oct 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19 Oct 2023</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.7.0</strong></p></th>
@@ -282,7 +291,7 @@ T Beale</p></td>
 <div class="sect2">
 <h3 id="_prior_art"><a class="anchor" href="#_prior_art"></a>Prior Art</h3>
 <div class="paragraph">
-<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/model_support.html" target="_blank" rel="noopener">S2 Base Types</a> specification.</p>
+<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.6/model_support.html" target="_blank" rel="noopener">S2 Base Types</a> specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -320,7 +329,7 @@ T Beale</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.5/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>.</p>
+<p>The <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.6/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>.</p>
 </li>
 </ul>
 </div>
@@ -1133,10 +1142,13 @@ property: <code><a href="#_terminology_code_class">Terminology_code</a>[1]</code
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Ancestor class of identifiers of informational objects.</p>
+<p>Identifier of of an <code>object_version</code> instance.</p>
 </div>
 <div class="paragraph">
-<p>Object identifiers are used inside an object to identify that object, in a similar way to a 'primary key' in a relational DB. To identify an object in another service, use an <code>Object_ref</code>, or else use a Uid for local objects identified by UID.</p>
+<p>Object identifiers are used inside an object to identify that object, in a similar way to a 'primary key' in a relational DB. To identify an object in another service, use an <code>Object_ref</code>,</p>
+</div>
+<div class="paragraph">
+<p>If used in a 3-part form, takes the lexical form: <code>object_id  '::' creating_system_id  '::' version_tree_id</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1164,43 +1176,6 @@ property: <code><a href="#_terminology_code_class">Terminology_code</a>[1]</code
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Has_extension_valid</em>: <code>extension.is_empty xor has_extension</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_object_version_id_class"><a class="anchor" href="#_object_version_id_class"></a>5.4.2.2. Object_version_id Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Object_version_id</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Globally unique identifier for one version of a versioned object; lexical form: <code>object_id  '::' creating_system_id  '::' version_tree_id</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_object_id_class">Object_id</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>creating_system_id</strong> (): <code><a href="#_internet_id_class">Internet_id</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1221,11 +1196,17 @@ property: <code><a href="#_terminology_code_class">Terminology_code</a>[1]</code
 <p>True if this version identifier represents a branch.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Has_extension_valid</em>: <code>extension.is_empty xor has_extension</code></p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_version_tree_id_class"><a class="anchor" href="#_version_tree_id_class"></a>5.4.2.3. Version_tree_id Class</h5>
+<h5 id="_version_tree_id_class"><a class="anchor" href="#_version_tree_id_class"></a>5.4.2.2. Version_tree_id Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1789,7 +1770,7 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Class describing a reference to another object, which may exist locally or be maintained outside the current namespace, e.g. in another service. In a relational DB, equivalent to a 'foreign key' with extra meta-data.</p>
+<p>Class describing a reference to a <code>Locatable</code> instance whose identifier is <code><em>id</em></code>., which may exist locally or be maintained outside the current namespace, e.g. in another service. In a relational DB, equivalent to a 'foreign key' with extra meta-data.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1833,37 +1814,6 @@ was indeed the one assigned to it in the particular version or edition.</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Globally unique id of an object, regardless of where it is stored.</p>
 </div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_locatable_ref_class"><a class="anchor" href="#_locatable_ref_class"></a>5.6.1.2. Locatable_ref Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Locatable_ref</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Reference to a <code>Locatable</code> instance inside the top-level content structure inside a <code>Version&lt;T&gt;</code> identified by the <code><em>id</em></code> attribute. The <code><em>path</em></code> attribute is applied to the object that <code>Version.<em>data</em></code> points to.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_object_ref_class">Object_ref</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>

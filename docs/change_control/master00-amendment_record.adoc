@@ -4,6 +4,8 @@
 |===
 |Issue|Details|Raiser|Completed
 
+4+^h|*BASE Release 0.8.6*
+
 4+^h|*BASE Release 0.8.5*
 
 |[[latest_issue]]0.8.5
@@ -12,7 +14,7 @@
 N Davis, +
 S Huff, +
 T Beale
-|[[latest_issue_date]]19 Oct 2023
+|[[latest_issue_date]]27 Sep 2024
 
 |0.1.0
 |Initial Writing: based on the {openehr_rm_common}#_change_control_package[openEHR Common IM^].

@@ -16,15 +16,15 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*uid*: `<<_object_version_id_class,Object_version_id>>`
+|*uid*: `<<_object_id_class,Object_id>>`
 a|Stored version of inheritance precursor.
 
 h|*0..1*
-|*preceding_version_uid*: `<<_object_version_id_class,Object_version_id>>`
+|*preceding_version_uid*: `<<_object_id_class,Object_id>>`
 a|Stored version of inheritance precursor.
 
 h|*0..1*
-|*other_input_version_uids*: `List<<<_object_version_id_class,Object_version_id>>>`
+|*other_input_version_uids*: `List<<<_object_id_class,Object_id>>>`
 a|Identifiers of other versions whose content was merged into this version, if any.
 
 h|*1..1*

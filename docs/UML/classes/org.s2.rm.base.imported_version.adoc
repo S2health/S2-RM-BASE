@@ -24,14 +24,14 @@ h|*Functions*
 
 h|*1..1 +
 (effected)*
-|*uid* (): `<<_object_version_id_class,Object_version_id>>` +
+|*uid* (): `<<_object_id_class,Object_id>>` +
  +
 __Post__: `Result = item.uid`
 a|Computed version of inheritance precursor, derived as `_item.uid_`.
 
 h|*1..1 +
 (effected)*
-|*preceding_version_uid* (): `<<_object_version_id_class,Object_version_id>>` +
+|*preceding_version_uid* (): `<<_object_id_class,Object_id>>` +
  +
 __Post__: `Result = item.preceding_version_uid`
 a|Computed version of inheritance precursor, derived as `_item.preceding_version_uid_`.
