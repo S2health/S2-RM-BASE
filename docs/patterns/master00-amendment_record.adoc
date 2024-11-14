@@ -4,12 +4,19 @@
 |===
 |Issue|Details|Raiser, Implementer|Completed
 
+4+^h|*BASE Release 0.8.7*
+
+|[[latest_issue]]0.8.7
+|{spec_tickets}/SBASE-60[SBASE-60^]. Remove custom domain descendants of `Info_item`.
+|D Perkins
+|[[latest_issue_date]]04 Nov 2024
+
 4+^h|*BASE Release 0.8.6*
 
-|[[latest_issue]]0.8.6
+|0.8.6
 |{spec_tickets}/SBASE-58[SBASE-58^]. Move re-usable Entity classes to BASE as subtypes of `Info_node`.
 |T Beale
-|[[latest_issue_date]]07 Oct 2024
+|07 Oct 2024
 
 4+^h|*BASE Release 0.8.5*
 
