@@ -16,24 +16,8 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*value_status*: `<<_comparison_operator_enumeration,Comparison_operator>>`
-a|Optional status of magnitude with respect to real-world value:
-
-* `"="`   : real value is equal to recorded value
-* `"<"`   : real value is < recorded value
-* `">"`   : real value is > recorded value
-* `"\<="` : real value is \<= recorded value
-* `">="` : real value is >= recorded value
-
-If not present, assumed meaning is  `"="` .
-
-h|*0..1*
 |*accuracy*: `<<_quantity_class,Quantity>>`
 a|Accuracy of measurement. May be recorded in absolute units, or '%' units.
-
-h|*0..1*
-|*reference_ranges*: `List<<<_reference_range_class,Reference_range>>>`
-a|Optional tagged other reference ranges for this value in its particular measurement context.
 
 h|*0..1*
 |*intepretation*: `<<_coded_text_class,Coded_text>>`
@@ -46,4 +30,20 @@ a|Interpretation guide, typically in the form of a list of reference ranges base
 h|*1..1*
 |*value*: `M`
 a|
+
+h|*0..1*
+|*value_status*: `<<_comparison_operator_enumeration,Comparison_operator>>`
+a|Optional status of magnitude with respect to real-world value:
+
+* `"="`   : real value is equal to recorded value
+* `"<"`   : real value is < recorded value
+* `">"`   : real value is > recorded value
+* `"\<="` : real value is \<= recorded value
+* `">="` : real value is >= recorded value
+
+If not present, assumed meaning is  `"="` .
+
+h|*0..1*
+|*reference_ranges*: `List<<<_reference_range_class,Reference_range>>>`
+a|Optional tagged other reference ranges for this value in its particular measurement context.
 |===

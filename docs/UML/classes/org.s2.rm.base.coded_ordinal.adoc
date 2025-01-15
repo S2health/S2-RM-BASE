@@ -28,13 +28,12 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*concept*: `<<_coded_text_class,Coded_text>>`
-a|Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  `mild`, `moderate`, `severe`, or even the same number series as the values, e.g. 1, 2, 3.
-
-h|*1..1 +
-(redefined)*
 |*magnitude*: `<<_integer_class,Integer>>`
 a|Rank within ordered enumeration of values.
+
+h|*1..1*
+|*concept*: `<<_coded_text_class,Coded_text>>`
+a|Coded textual representation of this value in the enumeration, which may be strings made from  +  symbols, or other enumerations of terms such as  `mild`, `moderate`, `severe`, or even the same number series as the values, e.g. 1, 2, 3.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
@@ -42,6 +41,15 @@ h|*Functions*
 h|*1..1*
 |*less_than* __alias__ "<" ( +
 other: `<<_coded_ordinal_class,Coded_ordinal>>[1]` +
-): `<<_boolean_class,Boolean>>`
+): `<<_boolean_class,Boolean>>` +
+ +
+__Pre_comparable__: `is_strictly_comparable_to (other)`
 a|True if this Ordinal value is less than `_other_`.
+
+h|*1..1 +
+(effected)*
+|*effective_value* (): `<<_decimal_class,Decimal>>` +
+ +
+__Post_result__: `Result = magnitude`
+a|
 |===

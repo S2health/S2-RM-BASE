@@ -6,14 +6,14 @@ h|*Class*
 2+^h|*Quantity*
 
 h|*Description*
-2+a|Type representing physical quantities, i.e. quantities expressed as a value and units.
+2+a|Physical quantities, i.e. quantities expressed as a value and units.
 
 Units are expressed as a `Coded_term` to allow the original units string (from user application) to be recorded in `_units.value_`, and the coded form to be recorded in `_units.concept_`.
 
 Can also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years (in the latter case, `Duration_value` may be used).
 
 h|*Inherit*
-2+|`<<_measurable_class,Measurable>>`
+2+|`<<_simple_measurable_class,Simple_measurable>>`
 
 h|*Attributes*
 ^h|*Signature*
@@ -24,7 +24,7 @@ h|*1..1*
 a|Quantity units, expressed as a coded term from a recognized unit system, by default, SNOMED CT.
 
 h|*0..1*
-|*measured*: `<<_measured_class,Measured>><<<_quantity_class,Quantity>>>`
+|*measured*: `@@`
 a|Additional data elements for measured quantities, including precision, accuracy and reference ranges.
 
 h|*1..1 +
@@ -35,19 +35,22 @@ h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1*
+h|*1..1 +
+(redefined)*
 |*add* __alias__ "+" ( +
 other: `<<_quantity_class,Quantity>>[1]` +
 ): `<<_quantity_class,Quantity>>`
 a|Sum of this `DV_QUANTITY` and `_other_`.
 
-h|*1..1*
+h|*1..1 +
+(redefined)*
 |*subtract* __alias__ "-" ( +
 other: `<<_quantity_class,Quantity>>[1]` +
 ): `<<_quantity_class,Quantity>>`
 a|Difference of this `DV_QUANTITY` and `_other_`.
 
-h|*1..1*
+h|*1..1 +
+(redefined)*
 |*multiply* __alias__ "&#42;" ( +
 factor: `<<_real_class,Real>>[1]` +
 ): `<<_quantity_class,Quantity>>`
@@ -64,7 +67,8 @@ a|Value equality: return True if `this` and `_other_` are attached to objects co
 [horizontal]
 `_other_`:: Other object for comparison.
 
-h|*1..1*
+h|*1..1 +
+(effected)*
 |*less_than* __alias__ "<" ( +
 other: `<<_quantity_class,Quantity>>[1]` +
 ): `<<_boolean_class,Boolean>>`

@@ -14,14 +14,14 @@ h|*Description*
 * ratios of count per volume, mass etc.
 
 h|*Inherit*
-2+|`<<_measurable_class,Measurable>>`
+2+|`<<_compound_measurable_class,Compound_measurable>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*numerator*: `<<_quantity_class,Quantity>>`
+|*numerator*: `<<_simple_measurable_class,Simple_measurable>>`
 a|Numerator of proportion.
 
 h|*1..1*
@@ -29,13 +29,8 @@ h|*1..1*
 a|Denominator of ratio.
 
 h|*0..1*
-|*measured*: `<<_measured_class,Measured>><<<_proportion_class,Proportion>>>`
+|*measured*: `@@`
 a|Additional data elements for measured quantities, including precision, accuracy and reference ranges.
-
-h|*1..1 +
-(redefined)*
-|*magnitude*: `<<_decimal_class,Decimal>>`
-a|The magnitude of the quantity.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
@@ -76,4 +71,11 @@ h|*1..1*
 factor: `<<_real_class,Real>>[1]` +
 ): `<<_proportion_class,Proportion>>`
 a|Product of this Proportion and `_factor_`.
+
+h|*1..1 +
+(effected)*
+|*effective_value* (): `<<_decimal_class,Decimal>>` +
+ +
+__Post_result__: `Result = numerator.effective_value() / denominator.effective_value()`
+a|
 |===

@@ -16,13 +16,13 @@ h|*1..1*
 |*type*: `<<_terminology_term_class,Terminology_term>>`
 a|Term whose value indicates the meaning of this range, e.g.  normal, raference range, critical,  therapeutic  etc.
 
-h|*1..1*
-|*range*: `<<_range_class,Range>>`
-a|The data range for this meaning, e.g. critical  etc.
-
 h|*0..1*
 |*phenotype*: `<<_text_class,Text>>`
 a|
+
+h|*1..1*
+|*range*: `<<_range_class,Range>>`
+a|The data range for this meaning, e.g. critical  etc.
 
 h|*Invariants*
 2+a|__Range_is_simple__: `(range.lower_unbounded or else range.lower.is_simple) and (range.upper_unbounded or else range.upper.is_simple)`

@@ -15,15 +15,11 @@ Used to record:
 * albumin:creatinine ratio
 
 h|*Inherit*
-2+|`<<_measurable_class,Measurable>>`
+2+|`<<_compound_measurable_class,Compound_measurable>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
-
-h|*1..1*
-|*type*: `<<_ratio_kind_enumeration,Ratio_kind>>`
-a|Type of ratio.
 
 h|*1..1*
 |*numerator*: `<<_decimal_class,Decimal>>`
@@ -33,8 +29,17 @@ h|*1..1*
 |*denominator*: `<<_decimal_class,Decimal>>`
 a|Denominator value of Ratio.
 
+h|*1..1*
+|*type*: `<<_ratio_kind_enumeration,Ratio_kind>>`
+a|Type of ratio.
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
 h|*1..1 +
-(redefined)*
-|*magnitude*: `<<_decimal_class,Decimal>>`
-a|The magnitude of the quantity.
+(effected)*
+|*effective_value* (): `<<_decimal_class,Decimal>>` +
+ +
+__Post_result__: `Result = lhs/rhs`
+a|
 |===

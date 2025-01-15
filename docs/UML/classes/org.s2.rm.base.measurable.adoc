@@ -9,14 +9,6 @@ h|*Description*
 2+a|Quantified entities that are either derived by measurement in the real world, or that represent target values, safe values or some other relation to real world measurables.
 
 h|*Inherit*
-2+|`<<_ordered_value_class,Ordered_value>>`
+2+|`<<_quantified_class,Quantified>>`
 
-h|*Attributes*
-^h|*Signature*
-^h|*Meaning*
-
-h|*1..1 +
-(redefined)*
-|*magnitude*: `<<_numeric_class,Numeric>>`
-a|The magnitude of the quantity.
 |===

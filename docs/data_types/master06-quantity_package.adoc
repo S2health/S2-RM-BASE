@@ -34,28 +34,35 @@ Examples of observed dimensioned quantities include:
 
 === Percentages
 
-TODO: complete 
-
-Percentages are common in medicine, e.g. % red cell distribution width (RDW) which is the width of a distribution of RBC widths.
+Percentages are commonly recorded in medicine, e.g. % red cell distribution width (RDW) which is the width of a distribution of RBC widths.
 
 === Ratios
 
 A common quantitative type in science and medicine is the ratio, which consists of _two numbers_ and is used in situations like the following:
 
-* 1:128 (a titer);
 * Na:K concentration ratio (unitary denominator);
 * albumin:creatinine ratio; TODO: check.
 
 In general ratios have real number values, even if some consist only of integer values.
 
+=== Titers
+
+A titer is a specific type of observation that is used in two forms in healthcare:
+* general chemistry: the concentration of a solute in a solvent as determined by titration;
+* medicine: the concentration of an antibody, as determined by finding the highest dilution at which it is still able to cause agglutination of the antigen.
+
+Titers are normally recorded in the textual form '1:128', and indicate only the concentration ratio, without including either units or types of substance involved. This differs from a 'proportion' below, in which proper dimensioned quantities are used.
+
 === Physical Proportions
 
 A _proportion_ consists of _two physical quantities_, such as the proportion of two ingredients in a formulation of medication or the proportion of solid in a liquid e.g.:
 
-* 250 mg / 500 ml (solute/solvent)
-* 150 μg thyroxine in a 0.5g stable base
+* 250 mg / 500 ml (solute/solvent);
+* 150 μg thyroxine in a 0.5g stable base.
 
-Although a single solute/single solvent formulation appears to have the same form as a ratio, the general form is for any number of substances to be mixed together, usually according to a particular procedure. Formulations are therefore not candidates for direct modelling as fine-grained quantities, but instead are constructed by archetyping a higher-level structure, each leaf element of which contains the required kind of Quantity.
+=== Formulations
+
+A _formulation_ consists of two or more substances mixed together, usually according to a particular procedure. A single solute/single solvent formulation may be considered a proportion, while more complex formulations would normally need to be represented by some higher-level structure, each leaf element of which contains the required kind of Quantity.
 
 === Ranges
 
@@ -125,23 +132,35 @@ image::{uml_diagrams_uri}/BASE-data_types.ordered-quantity.svg[id=base_data_type
 
 === Taxonomy
 
-In order to make sense of the requirements in a systematic way, a taxonomy for quantified entities is needed. The most basic characteristic of quantified values as described above is the distinction between stated and observed form. The stated form of an ordered data value is a pure type definition, e.g. for the type `Quantity`, `Ratio` etc. The abstract type `Ordered_value` is the ancestor of such types. The observed, or _measured_ form is distinct and is represented by the type `Measured<V>`, whose generic parameter may be any `Ordered_value`. The various ordered value types are descendents of the latter type, while the `Measured<V>` acts as a wrapper for any pure value, adding data specific to the act of measurement.
+In order to make sense of the requirements in a systematic way, a taxonomy for quantified entities is used, illustrated below.
 
-The abstract `Ordered_value` type has descendants representing temporal types, ordinals, measurables and money.
+[.text-center]
+.Ordered data types taxonomy
+image::{uml_diagrams_uri}/BASE-data_types.ordered-taxonomy.svg[id=base_data_types_quantity_taxonomy, align="center"]
 
-`Coded_ordinal` is used for scores as described in the requirements above. `Coded_ordinal` represents data values whose values are generally Integers, and which have symbolic or text names instead, such as pass:["+", "++", "+++"], or `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `Coded_ordinal` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`.
+The root of the taxonomy is the class `Ordered_datum`.
 
-In contrast to `Coded_ordinal`, instances of `Measurable` and all its subtypes have precise numeric magnitudes. Accordingly, `Measurable` introduces the property `_magnitude_`, which is guaranteed to be available on any `Measurable`, carrying the effective value, regardless of the particular subtype.
+The most basic differentiating characteristic of ordered values as described above is the distinction between stated (or 'pure') and observed form. The pure forms of ordered data types are defined under the abstract type `Ordered_value`. The observed form, kown here as  _measured_ form is represented by the type `Measured<V>`, whose generic parameter may be any `Ordered_value`. The type `Measured<V>` acts as a wrapper for any pure value, adding data specific to the act of measurement.
 
-The `Measurable` class has the subtypes `Proportion`, `Ratio`, `Quantity`, and `Count`.
+Beneath `Ordered_value` is a further differentiation into `Coded_ordinal` and further hierarchy under `Quantified`.
 
-`Quantity` is used to represent amounts of measurable things, and has a real number magnitude, precision, units and accuracy. The `_units_` attribute contains the scientific unit represented as a Terminology term, where the `description` field would be used for the displayable form of the units.
+The `Coded_ordinal` type is used to represent data items whose values are fiat-assigned numerics, but imply no correlation with real world amounts or magnitudes. This type is used for scores as described in the requirements above. `Coded_ordinal` represents data values whose values are generally Integers, and which have symbolic or text names instead, such as `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `Coded_ordinal` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`. Although the numeric values of coded ordinal data items does not stricly measure anything, they are nevertheless commonly added to create final scores, which classify a patient condition or situation. No other mathematical operations have meaning for this type.
 
-In some cases, such as metric units, the UCUM code and the display form are the same, e.g. 'kg'. However this is not the general case, and many common units have different display and code forms, e.g. degrees Celcius:  '°C' and 'Cel'. In general the unit display name should be looked up if it is not known in context that the code is directly displayable. The `_units_display_name_` attribute may be used if the displayable form of the units is required in the data, and/or terminology lookup is not available or desirable. Unit names may be language dependent, particularly older units.
+In contrast to `Coded_ordinal`, types under `Quantified` have numeric values that can meaningfully be added, subtracted, multiplied and divided. The hierarchy breaks out into
+* `Temporal_value` - abstract parent of Date/time types;
+* `Money` - representing amount of currency;
+* `Measurable` - used to record values of true measurable continuous variables in the real world.
 
-A valid units string always implies a measured _property_, such as force or pressure. If unit strings are compared in the application environment to determine if they measure the same property (e.g. `"bar"` and `"kPa"` are both units of 'pressure'), which enables the `_is_strictly_comparable_to()_` function defined on `Ordered_value` to be properly specified on `Quantity`.
+`Measurable` is further classified into `Simple_measurable` and `Compound_measurable`. The former represents 'atomic' measurable things, while the latter enables combinations to be formed to represent proportions, ratios and titers.
 
-The type `Count` has an integer magnitude and is used to record naturally countable things such as number of previous pregnancies, number of steps taken by a recovering stroke victim and so on. There are no units in a `Count`. Countable quantities can be used to create instances of `Quantity`, such as during a statistical study which average tobacco consumption over a time period. Such a computation might cause the creation of `Quantity` objects representing values like {magnitude = 5.85, units = '/ week'}
+`Quantity` is used to represent amounts of measurable things, and has a real number magnitude, precision, and units. The `_units_` attribute contains the scientific unit represented as a `Coded_text`. This allows for representation of:
+* the presentation form of the unit, e.g. `'°C'`';
+* the meaning of the unit, e.g. 'degrees Centigrade';
+* the code for the unit, which might come from SNOMED, UCUM or another appropriate terminology.
+
+The type `Count` has an integer magnitude and is used to record naturally countable things such as number of pregnancies, number of steps taken by a physiotherapy patient and so on. There are no units in a `Count`. Countable quantities can be used to create instances of `Quantity`, such as during a statistical study which average tobacco consumption over a time period. Such a computation might cause the creation of `Quantity` objects representing values like {magnitude = 5.85, units = '/ week'}
+
+A sibling type of `Simple_measurable` and `Compound_measurable` is defined, `Stratified<V>`, which is a generic type whose parameter may be a `Simple_measurable`. Stratified data items are used to represent so-called 'semi-quantitative' values reported in bands, a process sometimes known as 'binning' or 'bucketing'. This method is used frequently in reporting lab values (particularly urinalysis) in healthcare.
 
 === Measured Values
 
@@ -160,17 +179,9 @@ The optional `_magnitude_status_` attribute can be used to provide a non-quantif
 
 If not present, the meaning is `"="`.
 
-=== Quantity Ranges
+=== Ranges
 
-Ranges are modelled by the generic type `Dv_interval<T:Dv_ordered>` which enables a range of any of the other quantity types (except ratio) to be constructed. This allows any subtype of `Dv_ordered` to occur as a range as well.
-
-=== Proportions
-
-The `Proportion` type is provided to express relative proportions of two Quantities, e.g. rates of change, density etc.
-
-=== Ratios
-
-The `Ratio` type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values. The `_type_` attribute is used to indicate the logical type of the proportion.
+Ranges are not considered an `Ordered_datum` in the taxonomy, but rather a related data type that consists of a range of `Ordered_datum` instances. Ranges are represented by the generic type `Range<T:Ordered_datum>` which enables a range of any of the other ordered type to be constructed.
 
 == Class Descriptions
 
@@ -180,19 +191,27 @@ include::{uml_export_dir}/classes/{pkg}ordered_datum.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}coded_ordinal.adoc[]
 
+include::{uml_export_dir}/classes/{pkg}quantified.adoc[]
+
 include::{uml_export_dir}/classes/{pkg}money.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}measurable.adoc[]
 
+include::{uml_export_dir}/classes/{pkg}simple_measurable.adoc[]
+
 include::{uml_export_dir}/classes/{pkg}quantity.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}count.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}compound_measurable.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}proportion.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio_kind.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}stratified.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}measured.adoc[]
 
