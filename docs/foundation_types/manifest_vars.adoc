@@ -1,5 +1,5 @@
 :spec_title: S2 Foundation Types
-:copyright_year: 2017
+:copyright_year: 2023
 :spec_status: STABLE
-:keywords: openehr, s2, identifiers, types
+:keywords: openehr, s2, interval, primitive
 :description: S2 Foundation Types specification

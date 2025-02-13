@@ -8,4 +8,7 @@ h|*Class*
 h|*Description*
 2+a|A kind of String constrained to obey the syntax of RFC 3986.
 
+h|*Inherit*
+2+|`<<_any_class,Any>>`
+
 |===

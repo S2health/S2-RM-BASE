@@ -162,7 +162,7 @@ Some of the elements that need to be represented in timing specifications are:
     "occurrence_times": [
       {
         "_type": "Day_hour_specifier",
-        "day": {
+        "days_coded": {
           "_type": "Terminology_term",
           "description": "daily",
           "concept": {
@@ -205,7 +205,7 @@ Some of the elements that need to be represented in timing specifications are:
       {
         "_type": "Day_hour_specifier",
         "event_count": 3,
-        "day": {
+        "days_coded": {
           "_type": "Terminology_term",
           "description": "daily",
           "concept": {
@@ -248,7 +248,7 @@ Some of the elements that need to be represented in timing specifications are:
     "occurrence_times": [
       {
         "_type": "Day_hour_specifier",
-        "day_period": "2",
+        "base_periods_in_cycle": "2",
         "times_of_day": [
           {
             "_type": "Customary_time",
@@ -269,7 +269,40 @@ Some of the elements that need to be represented in timing specifications are:
 }
 ----
 
+=== Perform on Monday, Thursday and Saturday of every 3rd week
 
+[source,json]
+----
+{
+  "_type": "Timing",
+  "pattern": {
+    "_type": "Occurrence_pattern",
+    "total_event_count": 20,
+    "occurrence_times": [
+      {
+        "_type": "Day_hour_specifier",
+        "days_spec": "week:Mo,Th,Sa",
+        "base_periods_in_cycle": "3",
+        "times_of_day": [
+          {
+            "_type": "Customary_time",
+            "reference_event": {
+              "_type": "Terminology_term",
+              "description": "Morning",
+              "concept": {
+                "_type": "Terminology_code",
+                "terminology_id": "snomed",
+                "code_string": "73775008"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+
+----
 == Class Descriptions
 
 include::{uml_export_dir}/classes/{pkg}timing.adoc[]

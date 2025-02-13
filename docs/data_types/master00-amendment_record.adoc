@@ -1,22 +1,43 @@
-= Amendment Record
+= Revision History
 
+.[open]
+[%collapsible]
+====
 [cols="1,6,2,2", options="header"]
 |===
-|Issue|Details|Raiser, Implementer|Completed
+|Issue|Details|Resolution|Completed
+
+4+^h|*BASE Release 0.9.0*
+
+|[[latest_issue,0.9.0]]0.9.0
+|{spec_tickets}/SBASE-62[SBASE-62^]. Add semi-quantitative data type; +
+{spec_tickets}/SBASE-63[SBASE-63^]. Adjust Quantity hierarchy to separate compound and simple value types; +
+{spec_tickets}/SBASE-64[SBASE-64^]. Improve days specification in Timing data type +
+|J Coyle, +
+N Davis, +
+S Huff, +
+T Beale
+|[[latest_issue_date,10 Jan 2025]]10 Jan 2025
 
 4+^h|*BASE Release 0.8.7*
 
 4+^h|*BASE Release 0.8.6*
 
+|0.8.6
+|{spec_tickets}/SBASE-59[SBASE-59^]. Simplify `Object_ref` and `Object_id`. +
+|D Perkins, +
+T Beale
+|27 Sep 2024
+
 4+^h|*BASE Release 0.8.5*
 
 |0.8.5
-|[[latest_issue]]{spec_tickets}/SBASE-52[SBASE-52^]. Change `Measured.interpretation` to `s2.QuantitativeInterpretationValues`; +
+|{spec_tickets}/SBASE-52[SBASE-52^]. Change `Measured.interpretation` to `s2.QuantitativeInterpretationValues`; +
 |J Coyle, +
 N Davis, +
 S Huff, +
 T Beale
-|[[latest_issue_date]]27 Sep 2024
+|27 Sep 2024
 
 4+^h|*BASE Release 0.7.5*
 
@@ -42,3 +63,4 @@ T Beale
 
 |===
 
+====

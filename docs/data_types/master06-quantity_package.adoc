@@ -124,12 +124,6 @@ Some countable entities such as tablets are divisible into major fractions, typi
 
 == Design
 
-The `rm.base.data_types.ordered package` addresses the above requirements and is illustrated below.
-
-[.text-center]
-.rm.base.data_types.ordered package - quantities
-image::{uml_diagrams_uri}/BASE-data_types.ordered-quantity.svg[id=base_data_types_quantity, align="center"]
-
 === Taxonomy
 
 In order to make sense of the requirements in a systematic way, a taxonomy for quantified entities is used, illustrated below.
@@ -146,7 +140,8 @@ Beneath `Ordered_value` is a further differentiation into `Coded_ordinal` and fu
 
 The `Coded_ordinal` type is used to represent data items whose values are fiat-assigned numerics, but imply no correlation with real world amounts or magnitudes. This type is used for scores as described in the requirements above. `Coded_ordinal` represents data values whose values are generally Integers, and which have symbolic or text names instead, such as `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `Coded_ordinal` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`. Although the numeric values of coded ordinal data items does not stricly measure anything, they are nevertheless commonly added to create final scores, which classify a patient condition or situation. No other mathematical operations have meaning for this type.
 
-In contrast to `Coded_ordinal`, types under `Quantified` have numeric values that can meaningfully be added, subtracted, multiplied and divided. The hierarchy breaks out into
+In contrast to `Coded_ordinal`, types under `Quantified` have numeric values that can meaningfully be added, subtracted, multiplied and divided. The hierarchy breaks out into:
+
 * `Temporal_value` - abstract parent of Date/time types;
 * `Money` - representing amount of currency;
 * `Measurable` - used to record values of true measurable continuous variables in the real world.
@@ -154,7 +149,8 @@ In contrast to `Coded_ordinal`, types under `Quantified` have numeric values tha
 `Measurable` is further classified into `Simple_measurable` and `Compound_measurable`. The former represents 'atomic' measurable things, while the latter enables combinations to be formed to represent proportions, ratios and titers.
 
 `Quantity` is used to represent amounts of measurable things, and has a real number magnitude, precision, and units. The `_units_` attribute contains the scientific unit represented as a `Coded_text`. This allows for representation of:
-* the presentation form of the unit, e.g. `'°C'`';
+
+* the presentation form of the unit, e.g. `'°C'`;
 * the meaning of the unit, e.g. 'degrees Centigrade';
 * the code for the unit, which might come from SNOMED, UCUM or another appropriate terminology.
 
@@ -162,11 +158,17 @@ The type `Count` has an integer magnitude and is used to record naturally counta
 
 A sibling type of `Simple_measurable` and `Compound_measurable` is defined, `Stratified<V>`, which is a generic type whose parameter may be a `Simple_measurable`. Stratified data items are used to represent so-called 'semi-quantitative' values reported in bands, a process sometimes known as 'binning' or 'bucketing'. This method is used frequently in reporting lab values (particularly urinalysis) in healthcare.
 
+The `rm.base.data_types.ordered package` addresses the above requirements and is illustrated below.
+
+[.text-center]
+.rm.base.data_types.ordered package - quantities
+image::{uml_diagrams_uri}/BASE-data_types.ordered-quantity.svg[id=base_data_types_quantity, align="center"]
+
 === Measured Values
 
 An important difference exists between values that are stated (e.g. as targets) and values that are measured in the real world. In the latter case, accuracy and precision are often recorded, and in clinical medicine, reference ranges relevant to the patient are often included as well.
 
-The `Measured` class provides a place to record these extra data items, and may be instantiated in any instance of a descendant `Measurable` that represents a measurement.
+The `Measured` class provides a place to record these extra data items, and may be instantiated in any instance of a descendant of `Measurable` that represents a measurement.
 
 The optional `_magnitude_status_` attribute can be used to provide a non-quantified indication of accuracy, and takes the following values:
 
@@ -211,7 +213,7 @@ include::{uml_export_dir}/classes/{pkg}ratio.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio_kind.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}stratified.adoc[]
+include::{uml_export_dir}/classes/{pkg}semi_quantitative.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}measured.adoc[]
 

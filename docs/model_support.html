@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <meta name="description" content="S2 Model support specification">
 <meta name="keywords" content="openehr, s2, identifiers, types">
 <title>S2 Model support structures</title>
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
+<link rel="stylesheet" href="/home/thomas/Graphite/S2-specification/S2-RM-global/resources/css/s2.css">
+<link rel="stylesheet" href="/home/thomas/Graphite/S2-specification/S2-RM-global/resources/css/pygments-default.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -18,7 +18,7 @@
 <ul class="sectlevel0">
 <li><a href="#_s2_model_support_structures">S2 Model support structures</a>
 <ul class="sectlevel1">
-<li><a href="#_amendment_record">Amendment Record</a></li>
+<li><a href="#_revision_history">Revision History</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
 <ul class="sectlevel2">
 <li><a href="#_prior_art">Prior Art</a></li>
@@ -176,12 +176,12 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE latest</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">[latest_issue]</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">0.8.6</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">07 Oct 2024</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: openehr, s2, identifiers, types</p></td>
@@ -195,7 +195,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2024 S2 Health</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2025 S2 Health</th>
 </tr>
 </thead>
 <tbody>
@@ -216,7 +216,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_amendment_record"><a class="anchor" href="#_amendment_record"></a>Amendment Record</h2>
+<h2 id="_revision_history"><a class="anchor" href="#_revision_history"></a>Revision History</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -294,7 +294,7 @@ T Beale</p></td>
 <div class="sect2">
 <h3 id="_prior_art"><a class="anchor" href="#_prior_art"></a>Prior Art</h3>
 <div class="paragraph">
-<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.7/model_support.html" target="_blank" rel="noopener">S2 Base Types</a> specification.</p>
+<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html" target="_blank" rel="noopener">S2 Base Types</a> specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -332,7 +332,7 @@ T Beale</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.7/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>.</p>
+<p>The <a href="https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html" target="_blank" rel="noopener">openEHR Architecture Overview</a>.</p>
 </li>
 </ul>
 </div>
@@ -1425,7 +1425,7 @@ property: <code><a href="#_terminology_code_class">Terminology_code</a>[1]</code
 </ul>
 </div>
 <div class="paragraph">
-<p>The version part of a terminology identifier is in theory only absolutely necessary for those terminologies which break the rule that the concept being identified with a code loses or changes its meaning over versions of the terminology. This should not be the case for modern terminologies and ontologies, particularly those designed since the publication of Cimino&#8217;s 'desiderata' (<a href="#Cimino1997">Cimino&#44; 1997</a>) of which the principle of 'concept permanence' is applicable here - "A concept&#8217;s meaning cannot change and it cannot be deleted from the vocabulary". However, there may be older terminologies, or specialised terminologies which may not have obeyed these rules, but which are still used; version ids should always be used for these. At a practical level, versions may be included routinely in some systems to support the potential medico-legal need to prove that a) a given code was in fact defined in the terminology (it may not have existed in an earlier edition) and b) that the meaning assumed in the system
+<p>The version part of a terminology identifier is in theory only absolutely necessary for those terminologies which break the rule that the concept being identified with a code loses or changes its meaning over versions of the terminology. This should not be the case for modern terminologies and ontologies, particularly those designed since the publication of Cimino&#8217;s 'desiderata' <span class="citation">(<a href="#Cimino1997">Cimino&#44; 1997</a>)</span> of which the principle of 'concept permanence' is applicable here - "A concept&#8217;s meaning cannot change and it cannot be deleted from the vocabulary". However, there may be older terminologies, or specialised terminologies which may not have obeyed these rules, but which are still used; version ids should always be used for these. At a practical level, versions may be included routinely in some systems to support the potential medico-legal need to prove that a) a given code was in fact defined in the terminology (it may not have existed in an earlier edition) and b) that the meaning assumed in the system
 was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 </div>
@@ -1960,15 +1960,15 @@ was indeed the one assigned to it in the particular version or edition.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">path_exists</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">))</span> <span class="tok-p">{</span>
-    <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">path_unique</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">))</span> <span class="tok-p">{</span>
-        <span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-n">item_at_path</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">);</span>
-		<span class="tok-c1">// process one item</span>
-	<span class="tok-p">}</span>
-    <span class="tok-k">else</span> <span class="tok-p">{</span>
-        <span class="tok-n">list_of_x</span> <span class="tok-o">=</span> <span class="tok-n">items_at_path</span> <span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">);</span>
-        <span class="tok-c1">//iterate the list</span>
-    <span class="tok-p">}</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">if</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">path_exists</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">))</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">    </span><span class="tok-k">if</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">path_unique</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">))</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-n">x</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-n">item_at_path</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">);</span>
+<span class="tok-w">		</span><span class="tok-c1">// process one item</span>
+<span class="tok-w">	</span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-k">else</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-n">list_of_x</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-n">items_at_path</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">a_path</span><span class="tok-p">);</span>
+<span class="tok-w">        </span><span class="tok-c1">//iterate the list</span>
+<span class="tok-w">    </span><span class="tok-p">}</span>
 <span class="tok-p">}</span></code></pre>
 </div>
 </div>
@@ -2489,7 +2489,7 @@ a_loc: <code><a href="#_pathable_class">Pathable</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The type attribute is used to indicate a clinical or domain-level meaning for the kind of link, for example 'problem' or 'issue'. If type values are designed appropriately, they can be used by the requestor of EHR extracts to categorise links which must be followed and which can be broken when the extract is created.</p>
+<p>Indicates a clinical or domain-level meaning for the kind of link, for example 'problem' or 'issue'. If type values are designed appropriately, they can be used by the requestor of EHR extracts to categorise links which must be followed and which can be broken when the extract is created.</p>
 </div></div></td>
 </tr>
 <tr>

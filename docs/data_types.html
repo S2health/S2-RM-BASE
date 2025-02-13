@@ -5,20 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="description" content="S2 Data Types Model">
-<meta name="keywords" content="EHR, clinical, data types, S2">
-<title>Data Types Model</title>
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
+<meta name="description" content="Model of data types">
+<meta name="keywords" content="Data types, quantity, coded">
+<title>S2 Data Types Model</title>
+<link rel="stylesheet" href="/home/thomas/Graphite/S2-specification/S2-RM-global/resources/css/s2.css">
+<link rel="stylesheet" href="/home/thomas/Graphite/S2-specification/S2-RM-global/resources/css/pygments-default.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel0">
-<li><a href="#_data_types_model">Data Types Model</a>
+<li><a href="#_s2_data_types_model">S2 Data Types Model</a>
 <ul class="sectlevel1">
-<li><a href="#_amendment_record">Amendment Record</a></li>
+<li><a href="#_revision_history">Revision History</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
 <ul class="sectlevel2">
 <li><a href="#_prior_art">Prior Art</a></li>
@@ -147,7 +147,7 @@
 <li><a href="#_proportion_class">5.4.11. Proportion Class</a></li>
 <li><a href="#_ratio_class">5.4.12. Ratio Class</a></li>
 <li><a href="#_ratio_kind_enumeration">5.4.13. Ratio_kind Enumeration</a></li>
-<li><a href="#_stratified_class">5.4.14. Stratified Class</a></li>
+<li><a href="#_semi_quantitative_class">5.4.14. Semi_quantitative Class</a></li>
 <li><a href="#_measured_class">5.4.15. Measured Class</a></li>
 <li><a href="#_reference_range_class">5.4.16. Reference_range Class</a></li>
 <li><a href="#_comparison_operator_enumeration">5.4.17. Comparison_operator Enumeration</a></li>
@@ -185,6 +185,7 @@
 <li><a href="#_for_5_minutes_10_minutes_before_meals">7.4.6. For 5 minutes, 10 minutes before meals</a></li>
 <li><a href="#_3_times_daily_30_minutes_before_meals">7.4.7. 3 times daily, 30 minutes before meals</a></li>
 <li><a href="#_take_every_2nd_day_in_the_morning_until_20_have_been_taken">7.4.8. Take every 2nd day, in the morning, until 20 have been taken</a></li>
+<li><a href="#_perform_on_monday_thursday_and_saturday_of_every_3rd_week">7.4.9. Perform on Monday, Thursday and Saturday of every 3rd week</a></li>
 </ul>
 </li>
 <li><a href="#_class_descriptions_7">7.5. Class Descriptions</a>
@@ -267,7 +268,7 @@
 </div>
 </div>
 </div>
-<h1 id="_data_types_model" class="sect0"><a class="anchor" href="#_data_types_model"></a>Data Types Model</h1>
+<h1 id="_s2_data_types_model" class="sect0"><a class="anchor" href="#_s2_data_types_model"></a>S2 Data Types Model</h1>
 <div class="openblock partintro">
 <div class="content">
 <table class="tableblock frame-all grid-all fit-content spread">
@@ -283,14 +284,14 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: TRIAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">[latest_issue]</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">0.9.0</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">10 Jan 2025</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, clinical, data types, S2</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: Data types, quantity, coded</p></td>
 </tr>
 </tbody>
 </table>
@@ -322,8 +323,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_amendment_record"><a class="anchor" href="#_amendment_record"></a>Amendment Record</h2>
+<h2 id="_revision_history"><a class="anchor" href="#_revision_history"></a>Revision History</h2>
 <div class="sectionbody">
+<details>
+<summary class="title">[open]</summary>
+<div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 9.0909%;">
@@ -335,11 +339,25 @@
 <tr>
 <th class="tableblock halign-left valign-top">Issue</th>
 <th class="tableblock halign-left valign-top">Details</th>
-<th class="tableblock halign-left valign-top">Raiser, Implementer</th>
+<th class="tableblock halign-left valign-top">Resolution</th>
 <th class="tableblock halign-left valign-top">Completed</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.9.0</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.9.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-62" target="_blank" rel="noopener">SBASE-62</a>. Add semi-quantitative data type;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-63" target="_blank" rel="noopener">SBASE-63</a>. Adjust Quantity hierarchy to separate compound and simple value types;<br>
+<a href="https://specifications.s2health.org/tickets/SBASE-64" target="_blank" rel="noopener">SBASE-64</a>. Improve days specification in Timing data type<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
+N Davis,<br>
+S Huff,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>10 Jan 2025</p></td>
+</tr>
 <tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.7</strong></p></th>
 </tr>
@@ -347,16 +365,23 @@
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.6</strong></p></th>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.8.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-59" target="_blank" rel="noopener">SBASE-59</a>. Simplify <code>Object_ref</code> and <code>Object_id</code>.<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D Perkins,<br>
+T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27 Sep 2024</p></td>
+</tr>
+<tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.8.5</strong></p></th>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.8.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a><a href="https://specifications.s2health.org/tickets/SBASE-52" target="_blank" rel="noopener">SBASE-52</a>. Change <code>Measured.interpretation</code> to <code>s2.QuantitativeInterpretationValues</code>;<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.s2health.org/tickets/SBASE-52" target="_blank" rel="noopener">SBASE-52</a>. Change <code>Measured.interpretation</code> to <code>s2.QuantitativeInterpretationValues</code>;<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
 N Davis,<br>
 S Huff,<br>
 T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>27 Sep 2024</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27 Sep 2024</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>BASE Release 0.7.5</strong></p></th>
@@ -385,6 +410,8 @@ T Beale</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</details>
 </div>
 </div>
 <div class="sect1">
@@ -448,7 +475,7 @@ T Beale</p></td>
 <div class="sect2">
 <h3 id="_status"><a class="anchor" href="#_status"></a>1.3. Status</h3>
 <div class="paragraph">
-<p>This specification is in the TRIAL state. The development version of this document can be found at <a href="https://specifications.s2health.org/releases/BASE/latest/data_types.html" target="_blank" rel="noopener">https://specifications.s2health.org/releases/BASE/latest/data_types.html</a>.</p>
+<p>This specification is in the STABLE state. The development version of this document can be found at <a href="https://specifications.s2health.org/releases/BASE/latest/data_types.html" target="_blank" rel="noopener">https://specifications.s2health.org/releases/BASE/latest/data_types.html</a>.</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -1486,15 +1513,6 @@ T Beale</p></td>
 </div>
 <div class="sect2">
 <h3 id="_design_2"><a class="anchor" href="#_design_2"></a>5.3. Design</h3>
-<div class="paragraph">
-<p>The <code>rm.base.data_types.ordered package</code> addresses the above requirements and is illustrated below.</p>
-</div>
-<div id="base_data_types_quantity" class="imageblock text-center text-center">
-<div class="content">
-<img src="UML/diagrams/BASE-data_types.ordered-quantity.svg" alt="BASE data types.ordered quantity">
-</div>
-<div class="title">Figure 3. rm.base.data_types.ordered package - quantities</div>
-</div>
 <div class="sect3">
 <h4 id="_taxonomy"><a class="anchor" href="#_taxonomy"></a>5.3.1. Taxonomy</h4>
 <div class="paragraph">
@@ -1504,7 +1522,7 @@ T Beale</p></td>
 <div class="content">
 <img src="UML/diagrams/BASE-data_types.ordered-taxonomy.svg" alt="BASE data types.ordered taxonomy">
 </div>
-<div class="title">Figure 4. Ordered data types taxonomy</div>
+<div class="title">Figure 3. Ordered data types taxonomy</div>
 </div>
 <div class="paragraph">
 <p>The root of the taxonomy is the class <code>Ordered_datum</code>.</p>
@@ -1519,25 +1537,54 @@ T Beale</p></td>
 <p>The <code>Coded_ordinal</code> type is used to represent data items whose values are fiat-assigned numerics, but imply no correlation with real world amounts or magnitudes. This type is used for scores as described in the requirements above. <code>Coded_ordinal</code> represents data values whose values are generally Integers, and which have symbolic or text names instead, such as <code>"mild"</code>, <code>"medium"</code>, <code>"severe"</code>. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for <code>Coded_ordinal</code> include representing values from the Apgar and Glasgow Coma Scales, e.g. <code>0｜heart rate absent｜</code>, <code>4｜withdraws from pain｜</code>. Although the numeric values of coded ordinal data items does not stricly measure anything, they are nevertheless commonly added to create final scores, which classify a patient condition or situation. No other mathematical operations have meaning for this type.</p>
 </div>
 <div class="paragraph">
-<p>In contrast to <code>Coded_ordinal</code>, types under <code>Quantified</code> have numeric values that can meaningfully be added, subtracted, multiplied and divided. The hierarchy breaks out into
-* <code>Temporal_value</code> - abstract parent of Date/time types;
-* <code>Money</code> - representing amount of currency;
-* <code>Measurable</code> - used to record values of true measurable continuous variables in the real world.</p>
+<p>In contrast to <code>Coded_ordinal</code>, types under <code>Quantified</code> have numeric values that can meaningfully be added, subtracted, multiplied and divided. The hierarchy breaks out into:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Temporal_value</code> - abstract parent of Date/time types;</p>
+</li>
+<li>
+<p><code>Money</code> - representing amount of currency;</p>
+</li>
+<li>
+<p><code>Measurable</code> - used to record values of true measurable continuous variables in the real world.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><code>Measurable</code> is further classified into <code>Simple_measurable</code> and <code>Compound_measurable</code>. The former represents 'atomic' measurable things, while the latter enables combinations to be formed to represent proportions, ratios and titers.</p>
 </div>
 <div class="paragraph">
-<p><code>Quantity</code> is used to represent amounts of measurable things, and has a real number magnitude, precision, and units. The <code><em>units</em></code> attribute contains the scientific unit represented as a <code>Coded_text</code>. This allows for representation of:
-* the presentation form of the unit, e.g. &#8217;°C'&#8217;;
-* the meaning of the unit, e.g. 'degrees Centigrade';
-* the code for the unit, which might come from SNOMED, UCUM or another appropriate terminology.</p>
+<p><code>Quantity</code> is used to represent amounts of measurable things, and has a real number magnitude, precision, and units. The <code><em>units</em></code> attribute contains the scientific unit represented as a <code>Coded_text</code>. This allows for representation of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the presentation form of the unit, e.g. <code>'°C'</code>;</p>
+</li>
+<li>
+<p>the meaning of the unit, e.g. 'degrees Centigrade';</p>
+</li>
+<li>
+<p>the code for the unit, which might come from SNOMED, UCUM or another appropriate terminology.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>The type <code>Count</code> has an integer magnitude and is used to record naturally countable things such as number of pregnancies, number of steps taken by a physiotherapy patient and so on. There are no units in a <code>Count</code>. Countable quantities can be used to create instances of <code>Quantity</code>, such as during a statistical study which average tobacco consumption over a time period. Such a computation might cause the creation of <code>Quantity</code> objects representing values like {magnitude = 5.85, units = '/ week'}</p>
 </div>
 <div class="paragraph">
 <p>A sibling type of <code>Simple_measurable</code> and <code>Compound_measurable</code> is defined, <code>Stratified&lt;V&gt;</code>, which is a generic type whose parameter may be a <code>Simple_measurable</code>. Stratified data items are used to represent so-called 'semi-quantitative' values reported in bands, a process sometimes known as 'binning' or 'bucketing'. This method is used frequently in reporting lab values (particularly urinalysis) in healthcare.</p>
+</div>
+<div class="paragraph">
+<p>The <code>rm.base.data_types.ordered package</code> addresses the above requirements and is illustrated below.</p>
+</div>
+<div id="base_data_types_quantity" class="imageblock text-center text-center">
+<div class="content">
+<img src="UML/diagrams/BASE-data_types.ordered-quantity.svg" alt="BASE data types.ordered quantity">
+</div>
+<div class="title">Figure 4. rm.base.data_types.ordered package - quantities</div>
 </div>
 </div>
 <div class="sect3">
@@ -1546,7 +1593,7 @@ T Beale</p></td>
 <p>An important difference exists between values that are stated (e.g. as targets) and values that are measured in the real world. In the latter case, accuracy and precision are often recorded, and in clinical medicine, reference ranges relevant to the patient are often included as well.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Measured</code> class provides a place to record these extra data items, and may be instantiated in any instance of a descendant <code>Measurable</code> that represents a measurement.</p>
+<p>The <code>Measured</code> class provides a place to record these extra data items, and may be instantiated in any instance of a descendant of <code>Measurable</code> that represents a measurement.</p>
 </div>
 <div class="paragraph">
 <p>The optional <code><em>magnitude_status</em></code> attribute can be used to provide a non-quantified indication of accuracy, and takes the following values:</p>
@@ -2505,7 +2552,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_stratified_class"><a class="anchor" href="#_stratified_class"></a>5.4.14. Stratified Class</h4>
+<h4 id="_semi_quantitative_class"><a class="anchor" href="#_semi_quantitative_class"></a>5.4.14. Semi_quantitative Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2515,7 +2562,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Stratified&lt;V&gt;</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Semi_quantitative&lt;V&gt;</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3264,7 +3311,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <span class="tok-w">    </span><span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
 <span class="tok-w">      </span><span class="tok-p">{</span>
 <span class="tok-w">        </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
-<span class="tok-w">        </span><span class="tok-nt">&quot;day&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;days_coded&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
 <span class="tok-w">          </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
 <span class="tok-w">          </span><span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;daily&quot;</span><span class="tok-p">,</span>
 <span class="tok-w">          </span><span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
@@ -3308,7 +3355,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <span class="tok-w">      </span><span class="tok-p">{</span>
 <span class="tok-w">        </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
 <span class="tok-w">        </span><span class="tok-nt">&quot;event_count&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-mi">3</span><span class="tok-p">,</span>
-<span class="tok-w">        </span><span class="tok-nt">&quot;day&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;days_coded&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
 <span class="tok-w">          </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
 <span class="tok-w">          </span><span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;daily&quot;</span><span class="tok-p">,</span>
 <span class="tok-w">          </span><span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
@@ -3352,7 +3399,42 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <span class="tok-w">    </span><span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
 <span class="tok-w">      </span><span class="tok-p">{</span>
 <span class="tok-w">        </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
-<span class="tok-w">        </span><span class="tok-nt">&quot;day_period&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;2&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;base_periods_in_cycle&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;2&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;times_of_day&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
+<span class="tok-w">          </span><span class="tok-p">{</span>
+<span class="tok-w">            </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Customary_time&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">            </span><span class="tok-nt">&quot;reference_event&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">              </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Terminology_term&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">              </span><span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Morning&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">              </span><span class="tok-nt">&quot;concept&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Terminology_code&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;terminology_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;snomed&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;code_string&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;73775008&quot;</span>
+<span class="tok-w">              </span><span class="tok-p">}</span>
+<span class="tok-w">            </span><span class="tok-p">}</span>
+<span class="tok-w">          </span><span class="tok-p">}</span>
+<span class="tok-w">        </span><span class="tok-p">]</span>
+<span class="tok-w">      </span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-p">]</span>
+<span class="tok-w">  </span><span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_perform_on_monday_thursday_and_saturday_of_every_3rd_week"><a class="anchor" href="#_perform_on_monday_thursday_and_saturday_of_every_3rd_week"></a>7.4.9. Perform on Monday, Thursday and Saturday of every 3rd week</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
+<span class="tok-w">  </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Timing&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">  </span><span class="tok-nt">&quot;pattern&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">    </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Occurrence_pattern&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">    </span><span class="tok-nt">&quot;total_event_count&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-mi">20</span><span class="tok-p">,</span>
+<span class="tok-w">    </span><span class="tok-nt">&quot;occurrence_times&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
+<span class="tok-w">      </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Day_hour_specifier&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;days_spec&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;week:Mo,Th,Sa&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;base_periods_in_cycle&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;3&quot;</span><span class="tok-p">,</span>
 <span class="tok-w">        </span><span class="tok-nt">&quot;times_of_day&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
 <span class="tok-w">          </span><span class="tok-p">{</span>
 <span class="tok-w">            </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Customary_time&quot;</span><span class="tok-p">,</span>
@@ -3586,7 +3668,7 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Event occurrence time specified as a period, meaning 'every &lt;period&gt;'.</p>
+<p>Event occurrence time specified as a period, meaning 'every &lt;period&gt;'. The period may be anything from seconds to years.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3608,7 +3690,9 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period_upper</strong>: <code><a href="#_duration_class">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>For variable periods, the upper limit of the period.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -3629,7 +3713,79 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Event time occurrence specified as particular days of week or month or year.</p>
+<p>Event occurrences specified as particular days within a <em>cycle</em>, and times of day within those days.</p>
+</div>
+<div class="paragraph">
+<p>A cycle consists of one or more <em>base periods</em> (<code>base_periods_in_cycle</code> property), where a base period is a week, month, quarter or potentially other periods defined in future.</p>
+</div>
+<div class="paragraph">
+<p>Days in the first base period are specified in the <code>days_spec</code> property. The remaining base periods contain no events.</p>
+</div>
+<div class="paragraph">
+<p>This enables specification of common patterns of occurrences, e.g.:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1st and 15th of each month:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>days_spec</code> = <code>"month:01,15"</code>;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1st and 15th of the first month of each quarter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>days_spec</code> = <code>"month:01,15"</code></p>
+</li>
+<li>
+<p><code>base_periods_in_cycle</code> = 4;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>every Monday:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>days_spec</code> = <code>"week:Mo"</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>every third Monday:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>days_spec</code> = <code>"week:Mo"</code></p>
+</li>
+<li>
+<p><code>base_periods_in_cycle</code> = 3.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To obtain the pattern 'once every N days', use the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>days_spec</code> = null</p>
+</li>
+<li>
+<p><code>base_periods_in_cycle</code> = N.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -3643,9 +3799,9 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day_coded</strong>: <code><a href="#_terminology_term_class">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specification of the day as a specific day(s) of week or month, e.g.:</p>
+<p>Optional specification of days as a specific day(s) of week or month, e.g.:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3655,7 +3811,13 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </ul>
 </div>
 <div class="paragraph">
-<p>Void means 'every day'.</p>
+<p>This coding is used primarily to enable user-friendly expression of the time(s) to be captured along with the computable form.</p>
+</div>
+<div class="paragraph">
+<p>The computable representation of the days part of the time specification is recorded in the structured <code><em>days</em></code> property.</p>
+</div>
+<div class="paragraph">
+<p>For example, this property might record a code for 'weekends', which is computably represented by an instance of <code>Days_by_week</code> with <code><em>saturday_included</em></code> and <code><em>saturday_included</em></code> both set to true.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3667,9 +3829,96 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>day_period</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>days_spec</strong>: <code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Days specified as a regular period, where a value N means every N days.</p>
+<p>Formal specification of days within week or month, or other period that may be specified in the future.</p>
+</div>
+<div class="paragraph">
+<p>The string value is designed to be both human- and machine-readable, as well as relatively compact. It takes one of the following values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>days-in-week - a string of the form <code>"week:Mo,Tu, Fr, &#8230;&#8203;"</code>, where the part following the colon is a comma-separated list of 2-letter day codes, which are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Monday: <code>"Mo"</code>;</p>
+</li>
+<li>
+<p>Tuesday: <code>"Tu"</code>;</p>
+</li>
+<li>
+<p>Wednesday: <code>"We"</code>;</p>
+</li>
+<li>
+<p>Thursday: <code>"Th"</code>;</p>
+</li>
+<li>
+<p>Friday: <code>"Fr"</code>;</p>
+</li>
+<li>
+<p>Saturday: <code>"Sa"</code>;</p>
+</li>
+<li>
+<p>Sunday: <code>"Su"</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>days-in-month: a string of the form "month:01, 14 &#8230;&#8203;"` where the part following the colon is a comma-separated list of items which can be:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2-digit day numbers from "01" to" 31";</p>
+</li>
+<li>
+<p>keywords: "last", "second-last", 'third-last", "first".</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The string is treated as case-insensitive, and whitespace is ignored. Consequently, mixed case and spacing can be used to improve human-readability.</p>
+</div>
+<div class="paragraph">
+<p>The value 'every day' can be represented  by full list for either the week or month form, but for convenience, this field may be null to mean the same thing.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>base_periods_in_cycle</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number of base periods (weeks, months or other) in the cycle represented by this object.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>base_period_is_week</strong> (): <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if <code>days_spec</code> is set, and the base period stated is <code>"week"</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>base_period_is_month</strong> (): <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if <code>days_spec</code> is set, and the base period stated is <code>"month"</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>base_period_is_day</strong> (): <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if <code>days_spec</code> is not set.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -4572,7 +4821,7 @@ wrapper for example, for serialising and deserialising in and out of XML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-10-26 22:53:35 -0600
+Last updated 2025-02-13 13:39:19 -0700
 </div>
 </div>
 </body>

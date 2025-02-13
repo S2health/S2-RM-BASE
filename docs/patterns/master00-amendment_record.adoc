@@ -1,15 +1,15 @@
-= Amendment Record
+= Revision History
 
 [cols="1,6,2,2", options="header"]
 |===
-|Issue|Details|Raiser, Implementer|Completed
+|Issue|Details|Resolution|Completed
 
 4+^h|*BASE Release 0.8.7*
 
-|[[latest_issue]]0.8.7
+|[[latest_issue,0.8.7]]0.8.7
 |{spec_tickets}/SBASE-60[SBASE-60^]. Remove custom domain descendants of `Info_item`.
 |D Perkins
-|[[latest_issue_date]]04 Nov 2024
+|[[latest_issue_date,04 Nov 2024]]04 Nov 2024
 
 4+^h|*BASE Release 0.8.6*
 

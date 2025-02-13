@@ -7,6 +7,7 @@ include::{ref_dir}/docs/boilerplate/basic_style_settings.adoc[]
 :description: S2 BASE Component
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
+include::{ref_dir}/docs/references/reference_definitions.adoc[]
 
 //
 // ============================================ Asciidoc PREAMBLE =============================================
@@ -49,13 +50,17 @@ endif::[]
 |Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.
 
 |link:change_control.html[Change Control^]
-|Specification of versioning for the EHR.
+|Republished form of the {openehr_rm_common}#_change_control_package[openEHR Change Control package^] with class names converted to mixed snake-case. No other changes.
+
+Specification of versioning for the EHR.
 
 |link:patterns.html[Patterns^]
 |Specification of various re-usable patterns.
 
-|link:resource.html[Resource]
-|A formal model of authoring and IP meta-data, language translation and annotations that can be used by classes defining any concrete type of authored resource, such as a document, archetype or template.
+|link:resource.html[Resource^]
+|Republished form of the {openehr_base_latest_resource}[openEHR Resource specification^] with class names converted to mixed snake-case. No other changes.
+
+A formal model of authoring and IP meta-data, language translation and annotations that can be used by classes defining any concrete type of authored resource, such as a document, archetype or template.
 
 |===
 

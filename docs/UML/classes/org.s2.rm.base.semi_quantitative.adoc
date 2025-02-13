@@ -1,9 +1,9 @@
-=== Stratified Class
+=== Semi_quantitative Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Stratified<V>*
+2+^h|*Semi_quantitative<V>*
 
 h|*Description*
 2+a|A measurement expressed as a range (often termed a 'bucket' or 'bin') from within a set of ranges into which observed values are determined to be. Sometimes known as a 'semi-quantified' data type.

@@ -10,10 +10,10 @@
             "title_short": "Foundation Types",
             "description": "S2 Foundation Types specification",
             "summary": "Specification of assumed, primitive and other foundation types required by all other specifications.",
-            "micro_summary": "Values, Structures, Interval, Date/times",
-            "copyright_year": "2017",
+            "micro_summary": "Primitive types, Interval, Date/times",
+            "copyright_year": "2023",
             "spec_status": "STABLE",
-            "keywords": "openehr, s2, identifiers, types"
+            "keywords": "openehr, s2, interval, primitive"
         },
         {
             "id": "model_support",
@@ -49,12 +49,28 @@
             "summary": "Information model of re-usable patterns.",
             "classes": [
                 "Event",
-                "Cluster",
-                "Element"
+                "Info_node",
+                "Entity_ref_node"
             ],
             "copyright_year": "2023",
-            "spec_status": "TRIAL",
+            "spec_status": "DEVELOPMENT",
             "keywords": "EHR, data structures, reference model, S2"
+        },
+        {
+            "id": "data_types",
+            "title": "S2 Data Types Model",
+            "title_short": "Data Types",
+            "description": "Model of data types",
+            "summary": "Data types used in healthcare information systems, including coded terms, quantities, date/time types etc.",
+            "micro_summary": "Data Types",
+            "classes": [
+                "Quantity",
+				"Coded_text", 
+				"Multimedia"
+            ],
+            "copyright_year": "2023",
+            "spec_status": "STABLE",
+            "keywords": "Data types, quantity, coded"
         },
         {
             "id": "change_control",

@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <meta name="description" content="S2 Foundation Types specification">
-<meta name="keywords" content="openehr, s2, identifiers, types">
+<meta name="keywords" content="openehr, s2, interval, primitive">
 <title>S2 Foundation Types</title>
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
+<link rel="stylesheet" href="/home/thomas/Graphite/S2-specification/S2-RM-global/resources/css/s2.css">
+<link rel="stylesheet" href="/home/thomas/Graphite/S2-specification/S2-RM-global/resources/css/pygments-default.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -18,7 +18,7 @@
 <ul class="sectlevel0">
 <li><a href="#_s2_foundation_types">S2 Foundation Types</a>
 <ul class="sectlevel1">
-<li><a href="#_amendment_record">Amendment Record</a></li>
+<li><a href="#_revision_history">Revision History</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
 <ul class="sectlevel2">
 <li><a href="#_prior_art">Prior Art</a></li>
@@ -179,15 +179,15 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE Release-0.8.7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: BASE latest</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">[latest_issue]</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">0.7.5</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">17 Nov 2023</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: openehr, s2, identifiers, types</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: openehr, s2, interval, primitive</p></td>
 </tr>
 </tbody>
 </table>
@@ -198,7 +198,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2017 - 2024 S2 Health</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2025 S2 Health</th>
 </tr>
 </thead>
 <tbody>
@@ -219,7 +219,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_amendment_record"><a class="anchor" href="#_amendment_record"></a>Amendment Record</h2>
+<h2 id="_revision_history"><a class="anchor" href="#_revision_history"></a>Revision History</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -274,7 +274,7 @@ T Beale</p></td>
 <div class="sect2">
 <h3 id="_prior_art"><a class="anchor" href="#_prior_art"></a>Prior Art</h3>
 <div class="paragraph">
-<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/Release-0.8.7/foundation_types.html" target="_blank" rel="noopener">S2 Foundation Types</a> specification.</p>
+<p>This specification is largely derived from the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">S2 Foundation Types</a> specification.</p>
 </div>
 </div>
 <div class="sect2">
@@ -617,11 +617,11 @@ other: <code><a href="#_comparable_class">Comparable</a>[1]</code><br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">uid</span><span class="tok-p">;</span> <span class="tok-c1">// really a Uuid</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">private</span><span class="tok-w"> </span><span class="tok-n">String</span><span class="tok-w"> </span><span class="tok-n">uid</span><span class="tok-p">;</span><span class="tok-w"> </span><span class="tok-c1">// really a Uuid</span>
 
-<span class="tok-kd">public</span> <span class="tok-nf">getUid</span><span class="tok-p">()</span> <span class="tok-p">{</span><span class="tok-k">return</span> <span class="tok-k">new</span> <span class="tok-n">Uuid</span><span class="tok-p">(</span><span class="tok-n">uid</span><span class="tok-p">);}</span>
+<span class="tok-kd">public</span><span class="tok-w"> </span><span class="tok-nf">getUid</span><span class="tok-p">()</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-k">return</span><span class="tok-w"> </span><span class="tok-k">new</span><span class="tok-w"> </span><span class="tok-n">Uuid</span><span class="tok-p">(</span><span class="tok-n">uid</span><span class="tok-p">);}</span>
 
-<span class="tok-kd">public</span> <span class="tok-nf">setUid</span> <span class="tok-p">(</span><span class="tok-n">Uuid</span> <span class="tok-n">aUid</span><span class="tok-p">)</span> <span class="tok-p">{</span><span class="tok-n">uid</span> <span class="tok-o">=</span> <span class="tok-n">aUid</span><span class="tok-p">.</span><span class="tok-na">value</span><span class="tok-p">;}</span></code></pre>
+<span class="tok-kd">public</span><span class="tok-w"> </span><span class="tok-nf">setUid</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">Uuid</span><span class="tok-w"> </span><span class="tok-n">aUid</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-n">uid</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-n">aUid</span><span class="tok-p">.</span><span class="tok-na">value</span><span class="tok-p">;}</span></code></pre>
 </div>
 </div>
 </div>
@@ -1349,6 +1349,10 @@ other: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>A kind of String constrained to obey the syntax of RFC 3986.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_any_class">Any</a></code></p></td>
+</tr>
 </tbody>
 </table>
 <div class="sect4">
@@ -1369,6 +1373,10 @@ other: <code><a href="#_real_class">Real</a>[1]</code><br>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Model of ISO&#8217;s Object Identifier (oid) as defined by the standard ISO/IEC 8824. Oids are formed from integers separated by dots. Each non-leaf node in an Oid starting from the left corresponds to an assigning authority, and identifies that authority&#8217;s namespace, inside which the remaining part of the identifier is locally unique.</p>
 </div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_any_class">Any</a></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1392,6 +1400,10 @@ other: <code><a href="#_real_class">Real</a>[1]</code><br>
 <p>Model of the DCE Universal Unique Identifier or UUID which takes the form of hexadecimal integers separated by hyphens, following the pattern 8-4-4-4-12 as defined by the Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A. Also known as a GUID.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_any_class">Any</a></code></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1413,6 +1425,10 @@ other: <code><a href="#_real_class">Real</a>[1]</code><br>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Reverse internet domain, as used to uniquely identify an internet domain. In the form of a dot-separated string in the reverse order of a domain name, specified by <a href="https://www.rfc-editor.org/info/rfc1034" target="_blank" rel="noopener">IETF RFC 1034</a>.</p>
 </div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_any_class">Any</a></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -2350,7 +2366,7 @@ For reasons of readability in data, it is strongly recommended that the 'extende
 <p>The nominal form of the operation is <code><em>add_nominal</em>()</code>, and is computed according to 'everyday' rules, i.e. in which the phrase 'a year from now' means the same date next year (with occasional slight adjustment), and 'in a month' means the same date next month (or possibly a day or more earlier due to next month being shorter). In a similar way, the addition of a period of one day (<code>'P1D'</code>), although itself a regular quantity is computed differently to the definite form: in the definite form, addition of <code>P1D</code> results in the addition of exactly 24h of time to the date, which may result in a time that is different by one hour due to a change of summer time during the interval, while the nominal addition results in the same time on the next of previous day, even though occasionally this will represent 23 or 25 hours' difference.</p>
 </div>
 <div class="paragraph">
-<p>The definite functions have standard operators such as <code>'+'</code>, <code>'-'</code>, etc associated with them, while the nominal functions have the operators <code>'++'</code>, <code>'--'</code>, etc.</p>
+<p>The definite functions have standard operators such as <code>''`, `'-'`, etc associated with them, while the nominal functions have the operators `'+'</code>, <code>'--'</code>, etc.</p>
 </div>
 </div>
 <div class="sect2">

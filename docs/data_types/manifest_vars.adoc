@@ -1,5 +1,5 @@
-:spec_title: Data Types Model
+:spec_title: S2 Data Types Model
 :copyright_year: 2023
-:spec_status: TRIAL
-:keywords: EHR, clinical, data types, S2
-:description: S2 Data Types Model
+:spec_status: STABLE
+:keywords: Data types, quantity, coded
+:description: Model of data types

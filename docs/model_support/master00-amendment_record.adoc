@@ -1,4 +1,4 @@
-= Amendment Record
+= Revision History
 
 [cols="1,6,2,2", options="header"]
 |===
@@ -8,12 +8,12 @@
 
 4+^h|*BASE Release 0.8.6*
 
-|[[latest_issue]]0.8.6
+|[[latest_issue,0.8.6]]0.8.6
 |{spec_tickets}/SBASE-59[SBASE-59^]. Simplify `Object_ref` and `Object_id`; remove `Locatable_ref` and `Object_version_id`.
 |D Perkins, +
 B Jures, +
 T Beale
-|[[latest_issue_date]]07 Oct 2024
+|[[latest_issue_date,07 Oct 2024]]07 Oct 2024
 
 4+^h|*BASE Release 0.8.5*
 

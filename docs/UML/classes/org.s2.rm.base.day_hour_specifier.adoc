@@ -6,7 +6,29 @@ h|*Class*
 2+^h|*Day_hour_specifier*
 
 h|*Description*
-2+a|Event time occurrence specified as particular days of week or month or year.
+2+a|Event occurrences specified as particular days within a _cycle_, and times of day within those days.
+
+A cycle consists of one or more _base periods_ (`base_periods_in_cycle` property), where a base period is a week, month, quarter or potentially other periods defined in future.
+
+Days in the first base period are specified in the `days_spec` property. The remaining base periods contain no events.
+
+This enables specification of common patterns of occurrences, e.g.:
+
+* 1st and 15th of each month:
+** `days_spec` = `"month:01,15"`;
+* 1st and 15th of the first month of each quarter:
+** `days_spec` = `"month:01,15"`
+** `base_periods_in_cycle` = 4;
+* every Monday:
+** `days_spec` = `"week:Mo"`
+* every third Monday:
+** `days_spec` = `"week:Mo"`
+** `base_periods_in_cycle` = 3.
+
+To obtain the pattern 'once every N days', use the following:
+
+* `days_spec` = null
+* `base_periods_in_cycle` = N.
 
 h|*Inherit*
 2+|`<<_occurrence_times_specifier_class,Occurrence_times_specifier>>`
@@ -16,18 +38,59 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*day*: `<<_terminology_term_class,Terminology_term>>`
-a|Specification of the day as a specific day(s) of week or month, e.g.:
+|*day_coded*: `<<_terminology_term_class,Terminology_term>>`
+a|Optional specification of days as a specific day(s) of week or month, e.g.:
 
 * 'weekday', 'weekend', '1st of month' .. '31st of month', 'bi-weekly', 'mondays' and so on.
 
-Void means 'every day'.
+This coding is used primarily to enable user-friendly expression of the time(s) to be captured along with the computable form.
+
+The computable representation of the days part of the time specification is recorded in the structured `_days_` property.
+
+For example, this property might record a code for 'weekends', which is computably represented by an instance of `Days_by_week` with `_saturday_included_` and `_saturday_included_` both set to true.
 
 h|*0..1*
 |*times_of_day*: `List<<<_hour_specifier_class,Hour_specifier>>>`
 a|Times of day within day(s).
 
 h|*0..1*
-|*day_period*: `Integer`
-a|Days specified as a regular period, where a value N means every N days.
+|*days_spec*: `String`
+a|Formal specification of days within week or month, or other period that may be specified in the future.
+
+The string value is designed to be both human- and machine-readable, as well as relatively compact. It takes one of the following values:
+
+* days-in-week - a string of the form `"week:Mo,Tu, Fr, ..."`, where the part following the colon is a comma-separated list of 2-letter day codes, which are:
+** Monday: `"Mo"`;
+** Tuesday: `"Tu"`;
+** Wednesday: `"We"`;
+** Thursday: `"Th"`;
+** Friday: `"Fr"`;
+** Saturday: `"Sa"`;
+** Sunday: `"Su"`.
+* days-in-month: a string of the form "month:01, 14 ..."` where the part following the colon is a comma-separated list of items which can be:
+** 2-digit day numbers from "01" to" 31";
+** keywords: "last", "second-last", 'third-last", "first".
+
+The string is treated as case-insensitive, and whitespace is ignored. Consequently, mixed case and spacing can be used to improve human-readability.
+
+The value 'every day' can be represented  by full list for either the week or month form, but for convenience, this field may be null to mean the same thing.
+
+h|*0..1*
+|*base_periods_in_cycle*: `Integer`
+a|Number of base periods (weeks, months or other) in the cycle represented by this object.
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*base_period_is_week* (): `Boolean`
+a|True if `days_spec` is set, and the base period stated is `"week"`.
+
+h|*1..1*
+|*base_period_is_month* (): `Boolean`
+a|True if `days_spec` is set, and the base period stated is `"month"`.
+
+h|*1..1*
+|*base_period_is_day* (): `Boolean`
+a|True if `days_spec` is not set.
 |===
