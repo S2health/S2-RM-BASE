@@ -1,5 +1,5 @@
 :spec_title: S2 Model support structures
 :copyright_year: 2023
-:spec_status: STABLE
+:spec_status: DEVELOPMENT
 :keywords: openehr, s2, identifiers, types
 :description: S2 Model support specification

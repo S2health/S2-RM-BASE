@@ -2,15 +2,15 @@
 
 == Overview
 
-This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely `Integer`, `Real`, `Boolean`, `Character`, `Octet`, `String`, `List<T>`, `Set<T>`, and `Array<T>`. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the {s2_base_foundation_types}[S2 Foundation Types^].
+This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely `Integer`, `Decimal`, `Boolean`, `Character`, `String`, `List<T>`, `Set<T>`, and `Array<T>`. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the {s2_base_foundation_types}[S2 Foundation Types^].
 
-The data types described here inherit from the class `Data_value`. They have two distinct uses in reference models. Firstly, they may be used as 'data values' in reference model structures wherever the `Data_value` class appears. Additionally, specific subtypes of the data types described here can also be used as attribute types in other classes in reference models, such as date/times, coded terms and so on. The difference is that in the former case, only subtypes of `Data_value` may be used, whilst in the latter case, other types may be used as well, from the assumed set of basic types.
+The data types described here inherit from the class `Data_value`. They have two uses in reference models. Firstly, they may be dynamically bound to reference model attributes wherever the `Data_value` class is statically declared. Additionally, specific subtypes  can be declared statically as attribute types in other classes in reference models, such as date/times, coded terms and so on.
 
 Over and above the need to satisfy the functional requirements of clinical data, three concerns have driven the design of the {product_name} data types:
 
 . clarity of expression
 . ease of implementation
-. interoperability with data types from other standards
+. interoperability with data types used in _de jure_ standards
 
 Accordingly, the types defined here are a new design, with origins in the {openehr_rm_data_types}[openEHR Data Types^] and the {hl7_fhir_data_types}[HL7 FHIR Data Types^].
 

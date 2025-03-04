@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document describes the architecture of the {product_name} Change Control Model, which contains patterns used by other specifications.
+This document describes the architecture of the {product_name} Change Control Model, which defines versioning of the S2 EHR.
 
 The intended audience includes implementers and health IT standards experts.
 
@@ -14,12 +14,18 @@ Prerequisite documents for reading this document include:
 
 Related documents include:
 
-* The {openehr_rm_support}[openEHR Support Information Model^];
+* The {openehr_rm_common}#_change_control_package[openEHR Change Control package^];
 * The {s2_base_model_support}[{product_name} Base Types^].
 
 == History
 
-This specification was derived from the Change Control section of the {openehr_rm_common}#_change_control_package[openEHR RM Common IM specification^].
+This specification was derived from the Change Control section of the {openehr_rm_common}#_change_control_package[openEHR RM Common IM specification^]. It has been slightly modified as follows:
+
+* class names are converted to 'mixed snake case';
+* the `Audit_details` class is slightly modified;
+* `Version.lifecycle_state` is represented by an enumeration rather than a coded text.
+
+There are no changes to the openEHR semantics.
 
 == Status
 

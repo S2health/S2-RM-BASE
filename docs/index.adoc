@@ -41,7 +41,7 @@ endif::[]
 |Specification |Description
 
 |link:foundation_types.html[Foundation Types^]
-|Specification of assumed, primitive and other foundation types required by other specifications.
+|Specification of assumed, primitive and other foundation types required by other specifications. Very slightly modified form of the {openehr_base_latest_foundation_types}[openEHR Foundation Types^].
 
 |link:model_support.html[Model Support^]
 |Specification of meta-model elements used in other specifications.
@@ -50,7 +50,7 @@ endif::[]
 |Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.
 
 |link:change_control.html[Change Control^]
-|Republished form of the {openehr_rm_common}#_change_control_package[openEHR Change Control package^] with class names converted to mixed snake-case. No other changes.
+|Slightly modified form of the {openehr_rm_common}#_change_control_package[openEHR Change Control package^] with class names converted to mixed snake-case, and improved `Audit_details` class. No changes to semantics.
 
 Specification of versioning for the EHR.
 
@@ -70,8 +70,8 @@ A formal model of authoring and IP meta-data, language translation and annotatio
 |===
 |Resource |Description
 
-|link:/UML/openEHR_UML-Base.mdzip[source files / XMI^]
-|UML file for openEHR Base classes, as MagicDraw 19. Contains UML 2.5 standard XMI file.
+|link:/UML/S2_UML-BASE.mdzip[source files / XMI^]
+|UML file for S2 BASE classes (MagicDraw 2024x). Contains UML 2.51 standard XMI file.
 
 |===
 

@@ -36,11 +36,12 @@ Practically, such types are realised by String data representation with setters 
 
 [source, java]
 ----
-private String uid; // really a Uuid
+public class Uuid extends String {
 
-public getUid() {return new Uuid(uid);}
+    public Uuid getUid() {return new Uuid(uid);}
 
-public setUid (Uuid aUid) {uid = aUid.value;}
+    public setUid (Uuid aUid) {uid = aUid.value;}
+}
 ----
 
 == Class Definitions

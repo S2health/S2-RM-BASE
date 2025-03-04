@@ -1,5 +1,5 @@
 :spec_title: S2 Data Types Model
 :copyright_year: 2023
-:spec_status: STABLE
+:spec_status: DEVELOPMENT
 :keywords: Data types, quantity, coded
 :description: Model of data types

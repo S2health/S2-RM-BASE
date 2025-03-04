@@ -2,7 +2,7 @@
 
 == Overview
 
-The `base.data_types.text` package contains classes for representing textual data in the health record, including plain text with or without formatting and coded terms. It is illustrated below.
+The `base.data_types.text` package contains classes for representing textual data in the health record. There are two descendant types, `Plain_text`, for representing plain text, and `Coded_text` for text items that are coded. Both types can include a subset of markdown formatting on the text element. The package is illustrated below.
 
 [.text-center]
 .base.data_types.text package
@@ -12,15 +12,16 @@ image::{uml_diagrams_uri}/BASE-data_types.text.svg[id=base_data_types_text, alig
 
 === Plain Text
 
-Plain text items are used in clinical data in a number of cases, including:
+Plain text items are used to record clinical data of two generic categories, as follows:
 
-* recording of narrative statements, e.g. visual observations, image interpretations;
-* recording of patient responses, including quantities or dates not deemed sufficiently precise to be represented using structured quantitative or date/time date types;
-* recording of values that would otherwise be coded, but for which no terminology is available.
+* 'long' narrative text:
+** narrative statements that are not recorded in a structured fashion, e.g. visual observations, image interpretations;
+** patient responses;
+* 'short' text items:
+** values that would otherwise be coded, but for which no terminology is available;
+** text equivalent of quantities or dates not deemed sufficiently precise to be represented using structured quantitative or date/time date types.
 
-This specification assumes that the authors of narrative text content expect to be able to create longer tracts of text that may include paragraphs, bolding, bullet lists and other typical structures, as well as simple atoms of text containing bolding and so on.
-
-It is assumed that the text associated with a coded term may include minimal formatting, i.e. a link and/or emphasis, but is devoid of other formatting or newlines.
+For the narrative text category, a subset of markdown, including headings, paragraphs, bolding, and lists is supported via the inherited `Text.formatting` attribute being set to `markdown`.
 
 === Coded Text
 
@@ -28,7 +29,7 @@ It is assumed that the text associated with a coded term may include minimal for
 
 Coded terms from controlled terminologies are used in the health record to enable machine processing of the data, via:
 
-* _description_: to describe a state or event, e.g. state that an intestinal infection is _listeria monocytogenes_, or that the patient has supra-ventricular tachycardia;
+* _description_: to describe a state or event, e.g. state that an intestinal infection is _listeria monocytogenes_, or that the patient has supra-ventricular tachycardia (SVT);
 * _classification_: to classify something into a specific category, e.g. to classify a specific procedure into a billing category;
 * _translation_: codes may be rendered with a text value in a different language, if the terminology supports it i.e. if the requisite translation exists.
 

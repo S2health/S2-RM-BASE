@@ -10,7 +10,7 @@ The intended audience includes implementers, integrators and health data manager
 
 Prerequisite documents for reading this document include:
 
-* The {s2_rm_overview}[openEHR Architecture Overview^];
+* The {s2_rm_overview}[S2 Architecture Overview^];
 
 == Status
 

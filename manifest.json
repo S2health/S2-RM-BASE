@@ -12,7 +12,7 @@
             "summary": "Specification of assumed, primitive and other foundation types required by all other specifications.",
             "micro_summary": "Primitive types, Interval, Date/times",
             "copyright_year": "2023",
-            "spec_status": "STABLE",
+            "spec_status": "DEVELOPMENT",
             "keywords": "openehr, s2, interval, primitive"
         },
         {
@@ -23,7 +23,7 @@
             "summary": "Specification of meta-model elements used in other specifications.",
             "micro_summary": "Meta-model, Identifiers",
             "copyright_year": "2023",
-            "spec_status": "STABLE",
+            "spec_status": "DEVELOPMENT",
             "keywords": "openehr, s2, identifiers, types"
         },
         {
@@ -37,7 +37,7 @@
                 "Authored_resource"
             ],
             "copyright_year": "2003",
-            "spec_status": "STABLE",
+            "spec_status": "DEVELOPMENT",
             "keywords": "openehr, s2, resources"
         },
         {
@@ -69,7 +69,7 @@
 				"Multimedia"
             ],
             "copyright_year": "2023",
-            "spec_status": "STABLE",
+            "spec_status": "DEVELOPMENT",
             "keywords": "Data types, quantity, coded"
         },
         {
