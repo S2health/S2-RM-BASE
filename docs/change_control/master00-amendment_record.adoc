@@ -11,7 +11,7 @@
 4+^h|*BASE Release 0.8.5*
 
 |[[latest_issue]]0.8.5
-|{spec_tickets}/SBASE-49[SBASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`.
+|{spec_tickets}/S2BASE-49[S2BASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`.
 |J Coyle, +
 N Davis, +
 S Huff, +

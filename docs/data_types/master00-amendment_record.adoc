@@ -10,9 +10,9 @@
 4+^h|*BASE Release 0.9.0*
 
 |[[latest_issue,0.9.0]]0.9.0
-|{spec_tickets}/SBASE-62[SBASE-62^]. Add semi-quantitative data type; +
-{spec_tickets}/SBASE-63[SBASE-63^]. Adjust Quantity hierarchy to separate compound and simple value types; +
-{spec_tickets}/SBASE-64[SBASE-64^]. Improve days specification in Timing data type +
+|{spec_tickets}/S2BASE-62[S2BASE-62^]. Add semi-quantitative data type; +
+{spec_tickets}/S2BASE-63[S2BASE-63^]. Adjust Quantity hierarchy to separate compound and simple value types; +
+{spec_tickets}/S2BASE-64[S2BASE-64^]. Improve days specification in Timing data type +
 |J Coyle, +
 N Davis, +
 S Huff, +
@@ -24,7 +24,7 @@ T Beale
 4+^h|*BASE Release 0.8.6*
 
 |0.8.6
-|{spec_tickets}/SBASE-59[SBASE-59^]. Simplify `Object_ref` and `Object_id`. +
+|{spec_tickets}/S2BASE-59[S2BASE-59^]. Simplify `Object_ref` and `Object_id`. +
 |D Perkins, +
 T Beale
 |27 Sep 2024
@@ -32,7 +32,7 @@ T Beale
 4+^h|*BASE Release 0.8.5*
 
 |0.8.5
-|{spec_tickets}/SBASE-52[SBASE-52^]. Change `Measured.interpretation` to `s2.QuantitativeInterpretationValues`; +
+|{spec_tickets}/S2BASE-52[S2BASE-52^]. Change `Measured.interpretation` to `s2.QuantitativeInterpretationValues`; +
 |J Coyle, +
 N Davis, +
 S Huff, +
@@ -42,14 +42,14 @@ T Beale
 4+^h|*BASE Release 0.7.5*
 
 |0.7.5
-|{spec_tickets}/SBASE-51[SBASE-51^]. Improve `Timing` type; +
-{spec_tickets}/SBASE-33[SBASE-33^]. Specify terminology for built-in attributes in BASE classes; +
-{spec_tickets}/SBASE-31[SBASE-31^]. Change `Coded_ordinal.magnitude` to `Integer`; +
-{spec_tickets}/SBASE-8[SBASE-8^]. Define `null_flavour` codes to use in `Node`;`` +
-{spec_tickets}/SBASE-14[SBASE-14^]. Define the meaning of `Ordered_value.precision`; +
-{spec_tickets}/SBASE-15[SBASE-15^]. Represent normal status in quantitative lab result values; +
-{spec_tickets}/SBASE-5[SBASE-5^]. Clarify meaning of `Terminology_code.terminology_id`; +
-{spec_tickets}/SBASE-2[SBASE-2^]. Convert use of `Real` to `Decimal` types across RM.
+|{spec_tickets}/S2BASE-51[S2BASE-51^]. Improve `Timing` type; +
+{spec_tickets}/S2BASE-33[S2BASE-33^]. Specify terminology for built-in attributes in BASE classes; +
+{spec_tickets}/S2BASE-31[S2BASE-31^]. Change `Coded_ordinal.magnitude` to `Integer`; +
+{spec_tickets}/S2BASE-8[S2BASE-8^]. Define `null_flavour` codes to use in `Node`;`` +
+{spec_tickets}/S2BASE-14[S2BASE-14^]. Define the meaning of `Ordered_value.precision`; +
+{spec_tickets}/S2BASE-15[S2BASE-15^]. Represent normal status in quantitative lab result values; +
+{spec_tickets}/S2BASE-5[S2BASE-5^]. Clarify meaning of `Terminology_code.terminology_id`; +
+{spec_tickets}/S2BASE-2[S2BASE-2^]. Convert use of `Real` to `Decimal` types across RM.
 |J Coyle, +
 N Davis, +
 S Huff, +

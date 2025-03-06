@@ -9,7 +9,7 @@
 4+^h|*BASE Release 0.8.6*
 
 |[[latest_issue,0.8.6]]0.8.6
-|{spec_tickets}/SBASE-59[SBASE-59^]. Simplify `Object_ref` and `Object_id`; remove `Locatable_ref` and `Object_version_id`.
+|{spec_tickets}/S2BASE-59[S2BASE-59^]. Simplify `Object_ref` and `Object_id`; remove `Locatable_ref` and `Object_version_id`.
 |D Perkins, +
 B Jures, +
 T Beale
@@ -20,7 +20,7 @@ T Beale
 4+^h|*BASE Release 0.7.5*
 
 |0.7.5
-|{spec_tickets}/SBASE-47[SBASE-47^]. Refactor `Locatable.code` and `original_code`; add `Info_item`; +
+|{spec_tickets}/S2BASE-47[S2BASE-47^]. Refactor `Locatable.code` and `original_code`; add `Info_item`; +
 |J Coyle, +
 N Davis, +
 S Huff, +
@@ -30,7 +30,7 @@ T Beale
 4+^h|*BASE Release 0.7.0*
 
 |0.7.0
-|{spec_tickets}/SBASE-16[SBASE-16^]. Define `Locatable._code_` field as taxonomic marker, and move `Feeder_audit._original_code_` to `Locatable`.
+|{spec_tickets}/S2BASE-16[S2BASE-16^]. Define `Locatable._code_` field as taxonomic marker, and move `Feeder_audit._original_code_` to `Locatable`.
 |J Coyle, +
 N Davis, +
 S Huff, +

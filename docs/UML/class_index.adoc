@@ -220,6 +220,8 @@
 [.xcode]
 * link:/releases/BASE/{base_release}/base.html#_sample_function_kind_enumeration[Sample_function_kind^]
 [.xcode]
+* link:/releases/BASE/{base_release}/base.html#_score_class[Score^]
+[.xcode]
 * link:/releases/BASE/{base_release}/base.html#_semi_quantitative_class[Semi_quantitative^]
 [.xcode]
 * link:/releases/BASE/{base_release}/base.html#_set_class[Set^]

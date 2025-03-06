@@ -13,7 +13,7 @@
 4+^h|*BASE Release 0.7.5*
 
 |[[latest_issue,0.7.5]]0.7.5
-|{spec_tickets}/SBASE-2[SBASE-2^]. Convert use of `Real` to `Decimal` types across RM.
+|{spec_tickets}/S2BASE-2[S2BASE-2^]. Convert use of `Real` to `Decimal` types across RM.
 |J Coyle, +
 N Davis, +
 S Huff, +
