@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document describes the common patterns used in S2 Reference Model, including participation and recursive structures.
+This document specifies common patterns used in {product_name} Reference Model, including participation and recursive data structures.
 
 The intended audience includes:
 
@@ -21,15 +21,23 @@ Prerequisite documents for reading this document include:
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {openehr_rm_latest_data_structures}[{openehr_rm_latest_data_structures}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {s2_base_latest_patterns}[{s2_base_latest_patterns}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
 *TBD*: (example To Be Determined paragraph)
 
+== Prior Art
+
+Parts of this specification were adapted from the {openehr_rm_common}[openEHR Common Information Model^]. It has been slightly modified as follows:
+
+* class names are converted to 'mixed snake case';
+* the `Participation` type uses `Entity_ref_node` as the type of its `_performer_` property, replacing the openEHR `PARTY_PROXY` type hierarchy completely;
+* the `Locatable` class and related classes perform the same conceptual function as in openEHR, but support external (LOINC) terminology coding on every archetyped node (i.e. openEHR `CLUSTER` or `ELEMENT` nodes).
+
 == Feedback
 
-Feedback may be provided on the {openehr_rm_forum}[openEHR RM specifications forum^].
+Feedback may be provided on the {s2_specifications_forum}[{product_name} forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 
@@ -37,5 +45,4 @@ To see changes made due to previously reported issues, see the {component_histor
 
 == Conformance
 
-Conformance of a data or software artifact to an openEHR specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.
-
+Conformance of a data or software artifact to an {product_name} specification is determined by a formal test of that artifact against the relevant {product_name} Implementation Technology Specification(s) (ITSs), such as a JSON-schema or OpenAPI specification. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.

@@ -1,5 +1,5 @@
 :spec_title: S2 Resource Model
 :copyright_year: 2003
-:spec_status: STABLE
+:spec_status: DEVELOPMENT
 :keywords: openehr, s2, resources
 :description: S2 Resource Model specification

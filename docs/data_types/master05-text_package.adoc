@@ -2,7 +2,7 @@
 
 == Overview
 
-The `base.data_types.text` package contains classes for representing textual data in the health record, including plain text with or without formatting and coded terms. It is illustrated below.
+The `base.data_types.text` package contains classes for representing textual data in the health record. There are two descendant types, `Plain_text`, for representing plain text, and `Coded_text` for text items that are coded. Both types can include a subset of markdown formatting on the text element. The package is illustrated below.
 
 [.text-center]
 .base.data_types.text package
@@ -12,13 +12,16 @@ image::{uml_diagrams_uri}/BASE-data_types.text.svg[id=base_data_types_text, alig
 
 === Plain Text
 
-Plain text items are used in clinical data in a number of cases, including:
+Plain text items are used to record clinical data of two generic categories, as follows:
 
-* recording of narrative statements, e.g. visual observations, image interpretations;
-* recording of patient responses, including quantities or dates not deemed sufficiently precise to be represented using structured quantitative or date/time date types;
-* recording of values that would otherwise be coded, but for which no terminology is available.
+* 'long' narrative text:
+** narrative statements that are not recorded in a structured fashion, e.g. visual observations, image interpretations;
+** patient responses;
+* 'short' text items:
+** values that would otherwise be coded, but for which no terminology is available;
+** text equivalent of quantities or dates not deemed sufficiently precise to be represented using structured quantitative or date/time date types.
 
-Plain text items may contain formatting, and may also have mappings to one or more terminology codes for various purposes, including reimbursement and research.
+For the narrative text category, a subset of markdown, including headings, paragraphs, bolding, and lists is supported via the inherited `Text.formatting` attribute being set to `markdown`.
 
 === Coded Text
 
@@ -26,7 +29,7 @@ Plain text items may contain formatting, and may also have mappings to one or mo
 
 Coded terms from controlled terminologies are used in the health record to enable machine processing of the data, via:
 
-* _description_: to describe a state or event, e.g. state that an intestinal infection is _listeria monocytogenes_, or that the patient has supra-ventricular tachycardia;
+* _description_: to describe a state or event, e.g. state that an intestinal infection is _listeria monocytogenes_, or that the patient has supra-ventricular tachycardia (SVT);
 * _classification_: to classify something into a specific category, e.g. to classify a specific procedure into a billing category;
 * _translation_: codes may be rendered with a text value in a different language, if the terminology supports it i.e. if the requisite translation exists.
 
@@ -46,30 +49,26 @@ In cases where {product_name} data is used to represent data originally represen
 
 Secondly, where term mappings are represented it is useful to be able to capture not just the code or code-phrase of the mapped term, but the preferred term or expression text, in order to make the mapped term self-standing in the data.
 
-=== Text Formatting
-
-This specification assumes that the authors of narrative text content expect to be able to create longer tracts of text that may include paragraphs, bolding, bullet lists and other typical structures, as well as simple atoms of text containing bolding and so on.
-
-It is assumed that the text associated with a coded term may include minimal formatting, i.e. a link and/or emphasis, but is devoid of other formatting or newlines.
-
 == Design
 
 === Overview
 
-All atomic text items are either instances of the type `Plain_text` or of `Coded_text`. Within archetyped structures, the parent type `Text` should be used wherever a coded or non-coded text item is allowed; `Coded_text` should be used wherever a text item must be coded, and `Plain_text` to force non-coded text. The `Text` type supports optional formatting and hyperlinking (see <<_formatting_and_hyperlinking>> below). The class `Coded_text` captures the association of two things:
+All atomic text items are either instances of the type `Plain_text` or of `Coded_text`. Within archetyped structures. The parent type `Text` should be used wherever a coded or non-coded text item is allowed; `Coded_text` should be used wherever a text item must be coded, and `Plain_text` to force plain text. The `Text` type supports optional formatting and hyperlinking (see <<_formatting_and_hyperlinking>> below).
 
-* the code of a term known in the terminology service, recorded in the `_concept_` attribute of type `Terminology_code`;
+The class `Coded_text` captures the association of two things:
+
+* the code of a term known in the terminology service, recorded in the `_term_` attribute of type `Terminology_term`;
 * the text rubric of the term, recorded in the `_value_` attribute (inherited from `Text`).
 
-The attribute `Terminology_code._code_string_` records a term code or post-coordinated code expression which may be used as an argument to a retrieval function in the terminology service to obtain the definition of the term or expression.
+The code for a `Terminology_term` is recorded in its `concept` attribute, of type `Terminology_code`. The attribute `Terminology_code._code_string_` can record a single term code or post-coordinated code expression which may be used as an argument to a retrieval function in the terminology service to obtain the definition of the term or expression.
 
 The model of `Coded_text` is designed to capture the _actual_ term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). If the user makes any modification to the text value during data entry, a `Plain_text` object and associated mapping (see <<Mappings>>) must be used instead.
 
 === Negation
 
-Negation is not supported as an additional Boolean property within a Coded text as in some models. It may be safely represented in one of the following ways:
+Negation is not supported as an additional Boolean property within a Coded text as in some information models. It may be safely represented in one of the following ways:
 
-* via a pre-coordinated term that includes negation, e.g `snomed_ct::409137002|No known drug allergy|`, if available;
+* via a pre-coordinated term that represents an exclusion, e.g `snomed_ct::409137002|No known drug allergy|`, if available;
 * via a higher order structure such as a clinical statement on 'exclusions' that lists conditions or diagnoses that have been excluded (e.g. via testing).
 
 === Representation of Meaning-Modifying Terms

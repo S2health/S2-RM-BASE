@@ -1,20 +1,27 @@
-= Amendment Record
+= Revision History
 
 [cols="1a,6,2,2a", options="header"]
 |===
-|Issue|Details|Raiser|Completed
+|Issue|Details|Contributor|Completed
+
+4+^h|*BASE Release 0.8.7*
+
+|[[latest_issue,0.8.7]]0.8.7
+|(No changes)
+|T Beale
+|[[latest_issue_date,04 Nov 2024]]04 Nov 2024
 
 4+^h|*BASE Release 0.8.6*
 
 4+^h|*BASE Release 0.8.5*
 
-|[[latest_issue]]0.8.5
-|{spec_tickets}/SBASE-49[SBASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`.
+|0.8.5
+|{spec_tickets}/S2BASE-49[S2BASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`.
 |J Coyle, +
 N Davis, +
 S Huff, +
 T Beale
-|[[latest_issue_date]]27 Sep 2024
+|27 Sep 2024
 
 |0.1.0
 |Initial Writing: based on the {openehr_rm_common}#_change_control_package[openEHR Common IM^].

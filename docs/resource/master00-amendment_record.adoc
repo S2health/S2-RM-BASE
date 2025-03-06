@@ -1,8 +1,19 @@
-= Amendment Record
+= Revision History
+
+.[open]
+[%collapsible]
+====
 
 [cols="1,6,2,2", options="header"]
 |===
-|Issue|Details|Raiser|Completed
+|Issue|Details|Contributor|Completed
+
+4+^h|*BASE Release 0.8.7*
+
+|[[latest_issue,0.8.7]]0.8.7
+|(No changes)
+|T Beale
+|[[latest_issue_date,04 Nov 2024]]04 Nov 2024
 
 4+^h|*BASE Release 0.8.6*
 
@@ -10,9 +21,11 @@
 
 4+^h|*BASE Release 0.7.5*
 
-|[[latest_issue]]0.1.0
+|0.1.0
 |Initial Writing: based on openEHR Resource Model
 |T Beale
-|[[latest_issue_date]]10 Apr 2023
+|10 Apr 2023
 
 |===
+
+====

@@ -14,7 +14,13 @@ Prerequisite documents for reading this document include:
 
 == Status
 
-== History
+This specification is in the {spec_status} state. The development version of this document can be found at {s2_base_latest_resource}[{s2_base_latest_resource}^].
+
+Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
+[.tbd]
+*TBD*: (example To Be Determined paragraph)
+
+== Prior Art
 
 This specification was derived from the {openehr_base_resource}[openEHR Resource specification^].
 
@@ -32,3 +38,6 @@ Issues may be raised on the {component_prs}[specifications Problem Report tracke
 
 To see changes made due to previously reported issues, see the {component_history}[{component} component Change Request tracker^].
 
+== Conformance
+
+Conformance of a data or software artifact to an {product_name} specification is determined by a formal test of that artifact against the relevant {product_name} Implementation Technology Specification(s) (ITSs), such as a JSON-schema or OpenAPI specification. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.

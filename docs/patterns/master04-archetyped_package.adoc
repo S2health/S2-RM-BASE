@@ -5,8 +5,8 @@
 The `archetyped` package defines the core types `Pathable`, `Locatable`, `Archetyped`, and `LINK`. It is illustrated in <<archetyped_package>>.
 
 [.text-center]
-.model_support.archetyped Package
-image::{uml_diagrams_uri}/BASE-model_support.archetyped.svg[id=archetyped_package, align="center"]
+.base.patterns.archetyped Package
+image::{uml_diagrams_uri}/BASE-patterns.archetyped.svg[id=archetyped_package, align="center"]
 
 === The Pathable Class
 

@@ -36,11 +36,12 @@ Practically, such types are realised by String data representation with setters 
 
 [source, java]
 ----
-private String uid; // really a Uuid
+public class Uuid extends String {
 
-public getUid() {return new Uuid(uid);}
+    public Uuid getUid() {return new Uuid(uid);}
 
-public setUid (Uuid aUid) {uid = aUid.value;}
+    public setUid (Uuid aUid) {uid = aUid.value;}
+}
 ----
 
 == Class Definitions
@@ -61,8 +62,8 @@ include::{uml_export_dir}/classes/{pkg}real.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}uri.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}iso_oid.adoc[leveloffset=+1]
+include::{uml_export_dir}/classes/{pkg}iso_oid.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}uuid.adoc[leveloffset=+1]
+include::{uml_export_dir}/classes/{pkg}uuid.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}internet_id.adoc[leveloffset=+1]
+include::{uml_export_dir}/classes/{pkg}internet_id.adoc[]

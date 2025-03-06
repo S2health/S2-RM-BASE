@@ -2,9 +2,7 @@
 
 == Boolean Values
 
-One of the most basic types of data is boolean data.
-
-TBD
+The type `Boolean_value` is provided to represent true Boolean values, such as yes/no answers, true/false values and so on.
 
 === Class Descriptions
 
@@ -23,7 +21,7 @@ Examples of RWE identifiers that are intended to be unique within the space of t
 * passport number
 * prescription id
 
-The defining logical characteristic of RWIs is that they continue to identify the entities in question, regardless of how the latter change in time; for example a social security number does not change when someone changes his or her hair colour or address. In general it should be the case that if two RWIs are equal, they refer to the same RWE.
+The defining logical characteristic of RWIs is that they continue to identify the entities in question regardless of how the latter change in time; for example a social security number does not change when someone changes his or her address. In general it should be the case that if two RWIs are equal, they refer to the same RWE.
 
 === Semantics
 

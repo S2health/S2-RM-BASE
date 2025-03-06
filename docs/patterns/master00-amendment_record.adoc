@@ -1,22 +1,33 @@
-= Amendment Record
+= Revision History
+
+.[open]
+[%collapsible]
+====
 
 [cols="1,6,2,2", options="header"]
 |===
-|Issue|Details|Raiser, Implementer|Completed
+|Issue|Details|Contributor|Completed
+
+4+^h|*BASE Release 0.8.7*
+
+|[[latest_issue,0.8.7]]0.8.7
+|{spec_tickets}/S2BASE-60[S2BASE-60^]. Remove custom domain descendants of `Info_item`.
+|D Perkins
+|[[latest_issue_date,04 Nov 2024]]04 Nov 2024
 
 4+^h|*BASE Release 0.8.6*
 
-|[[latest_issue]]0.8.6
-|{spec_tickets}/SBASE-58[SBASE-58^]. Move re-usable Entity classes to BASE as subtypes of `Info_node`.
+|0.8.6
+|{spec_tickets}/S2BASE-58[S2BASE-58^]. Move re-usable Entity classes to BASE as subtypes of `Info_node`.
 |T Beale
-|[[latest_issue_date]]07 Oct 2024
+|07 Oct 2024
 
 4+^h|*BASE Release 0.8.5*
 
 |0.8.5
-|{spec_tickets}/SBASE-49[SBASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`; +
- {spec_tickets}/SBASE-49[SBASE-57^]. Make `Participation Locatable`; +
- {spec_tickets}/SBASE-29[SBASE-29^]. Refactor `Node` to `Entity_ref_node` and `Info_node`.
+|{spec_tickets}/S2BASE-49[S2BASE-49^]. Replace `Party_proxy` and related classes with `Entity_ref_node`; +
+ {spec_tickets}/S2BASE-49[S2BASE-57^]. Make `Participation Locatable`; +
+ {spec_tickets}/S2BASE-29[S2BASE-29^]. Refactor `Node` to `Entity_ref_node` and `Info_node`.
 |J Coyle, +
 N Davis, +
 S Huff, +
@@ -26,8 +37,8 @@ T Beale
 4+^h|*BASE Release 0.7.5*
 
 |0.7.5
-|{spec_tickets}/SBASE-33[SBASE-33^]. Specify terminology for built-in attributes in BASE classes; +
-{spec_tickets}/SBASE-8[SBASE-8^]. Define `null_flavour` codes to use in `Node`.
+|{spec_tickets}/S2BASE-33[S2BASE-33^]. Specify terminology for built-in attributes in BASE classes; +
+{spec_tickets}/S2BASE-8[S2BASE-8^]. Define `null_flavour` codes to use in `Node`.
 |J Coyle, +
 N Davis, +
 S Huff, +
@@ -37,7 +48,7 @@ T Beale
 4+^h|*BASE Release 0.7.0*
 
 |0.7.0
-|{spec_tickets}/SBASE-18[SBASE-18^]. Replace `Cluster` and `Element` with single `Node` type.
+|{spec_tickets}/S2BASE-18[S2BASE-18^]. Replace `Cluster` and `Element` with single `Node` type.
 |J Coyle, +
 N Davis, +
 S Huff, +
@@ -45,7 +56,7 @@ T Beale
 |19 Oct 2023
 
 |
-|{spec_tickets}/SBASE-17[SBASE-17^]. Add `Element._original_value_` field to carry pre-normalized value where needed.
+|{spec_tickets}/S2BASE-17[S2BASE-17^]. Add `Element._original_value_` field to carry pre-normalized value where needed.
 |J Coyle, +
 N Davis, +
 S Huff, +
@@ -61,3 +72,4 @@ T Beale
 
 |===
 
+====

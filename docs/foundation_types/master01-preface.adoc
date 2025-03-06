@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document describes the {product_name} Foundation Types, a collection of built-in types whose semantics are assumed by other specifications.
+This document specifies the {product_name} Foundation Types, a collection of built-in types whose semantics are assumed by other specifications.
 
 The intended audience includes implementers and health IT standards experts.
 
@@ -20,6 +20,15 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 [.tbd]
 *TBD*: (example To Be Determined paragraph)
 
+== Prior Art
+
+This specification was derived from the  {openehr_base_foundation_types}[openEHR Foundation Types^]. It has been modified as follows:
+
+* class names are converted to 'mixed snake case';
+* the `Decimal` type replaces the `Real` type;
+* the inheritance of `Ordered` and `Numeric` types has been simplified;
+* the primitive identifier types `Uuid`, `Uri`, `Internet_id`, and Iso_oid` and included (in openEHR they are orphan types within the Base Types).
+
 == Feedback
 
 Feedback may be provided on the {s2_specifications_forum}[{product_name} Specifications forum^].
@@ -28,3 +37,6 @@ Issues may be raised on the {component_prs}[specifications Problem Report tracke
 
 To see changes made due to previously reported issues, see the {component_history}[{component} component Change Request tracker^].
 
+== Conformance
+
+Conformance of a data or software artifact to an {product_name} specification is determined by a formal test of that artifact against the relevant {product_name} Implementation Technology Specification(s) (ITSs), such as a JSON-schema or OpenAPI specification. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.
