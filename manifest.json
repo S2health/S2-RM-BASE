@@ -12,14 +12,14 @@
             "summary": "Specification of assumed, primitive and other foundation types required by all other specifications.",
             "micro_summary": "Primitive types, Interval, Date/times",
             "copyright_year": "2023",
-            "spec_status": "DEVELOPMENT",
+            "spec_status": "STABLE",
             "keywords": "openehr, s2, interval, primitive"
         },
         {
             "id": "model_support",
-            "title": "S2 Model support structures",
-            "title_short": "Model support",
-            "description": "S2 Model support specification",
+            "title": "S2 Model Support Types",
+            "title_short": "Model Support Types",
+            "description": "S2 Model Support types specification",
             "summary": "Specification of meta-model elements used in other specifications.",
             "micro_summary": "Meta-model, Identifiers",
             "copyright_year": "2023",
@@ -36,15 +36,15 @@
             "classes": [
                 "Authored_resource"
             ],
-            "copyright_year": "2003",
-            "spec_status": "DEVELOPMENT",
+            "copyright_year": "2023",
+            "spec_status": "STABLE",
             "keywords": "openehr, s2, resources"
         },
         {
             "id": "patterns",
-            "title": "S2 Patterns Information Model",
+            "title": "S2 Patterns Model",
             "title_short": "Patterns",
-            "description": "S2 Patterns Information Model specification",
+            "description": "S2 Patterns information model",
             "micro_summary": "Common patterns",
             "summary": "Information model of re-usable patterns.",
             "classes": [
@@ -60,7 +60,7 @@
             "id": "data_types",
             "title": "S2 Data Types Model",
             "title_short": "Data Types",
-            "description": "Model of data types",
+            "description": "S2 data types information model",
             "summary": "Data types used in healthcare information systems, including coded terms, quantities, date/time types etc.",
             "micro_summary": "Data Types",
             "classes": [
@@ -92,7 +92,7 @@
             "id": "S2_UML-BASE.mdzip",
             "type": "uml",
             "title": "Base UML",
-            "description": "UML file for S2 Base classes, as MagicDraw 19. Contains UML 2.5 standard XMI file."
+            "description": "UML file for S2 Base classes, as MagicDraw 2024x. Contains UML 2.51 standard XMI file."
         }
     ],
     "jira": {

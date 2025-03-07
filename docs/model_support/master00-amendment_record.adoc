@@ -1,5 +1,9 @@
 = Revision History
 
+.[click here]
+[%collapsible]
+====
+
 [cols="1,6,2,2", options="header"]
 |===
 |Issue|Details|Raiser|Completed
@@ -45,3 +49,5 @@ T Beale
 |10 Apr 2023
 
 |===
+
+====

@@ -1,8 +1,9 @@
 = Revision History
 
-.[open]
+.[click here]
 [%collapsible]
 ====
+
 [cols="1,6,2,2", options="header"]
 |===
 |Issue|Details|Resolution|Completed
