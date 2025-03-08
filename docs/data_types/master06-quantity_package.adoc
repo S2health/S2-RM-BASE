@@ -138,7 +138,13 @@ The most basic differentiating characteristic of ordered values as described abo
 
 Beneath `Ordered_value` is a further differentiation into `Coded_ordinal` and further hierarchy under `Quantified`.
 
-The `Coded_ordinal` type is used to represent data items whose values are fiat-assigned numerics, but imply no correlation with real world amounts or magnitudes. This type is used for scores as described in the requirements above. `Coded_ordinal` represents data values whose values are generally Integers, and which have symbolic or text names instead, such as `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `Coded_ordinal` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`. Although the numeric values of coded ordinal data items does not stricly measure anything, they are nevertheless commonly added to create final scores, which classify a patient condition or situation. No other mathematical operations have meaning for this type.
+=== Non-quantified Types
+
+The `Score` type is used to represent data items whose values are fiat-assigned numerics whose magnitudes carry meaning. The values imply no direct relation with real world amounts or magnitudes. This type is used for scores as described in the requirements above. Typical uses for `Score` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`. Although the numeric values of coded ordinal data items does not strictly measure anything, they may be summed to create final scores, which classify a patient condition or situation.
+
+`Coded_ordinal` represents data values whose values are generally Integers, and which have symbolic or text names instead, such as `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison.  No other mathematical operations have meaning for this type.
+
+=== Quantified Types
 
 In contrast to `Coded_ordinal`, types under `Quantified` have numeric values that can meaningfully be added, subtracted, multiplied and divided. The hierarchy breaks out into:
 

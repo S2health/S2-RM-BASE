@@ -129,8 +129,10 @@
 <li><a href="#_design_2">5.3. Design</a>
 <ul class="sectlevel3">
 <li><a href="#_taxonomy">5.3.1. Taxonomy</a></li>
-<li><a href="#_measured_values">5.3.2. Measured Values</a></li>
-<li><a href="#_ranges_2">5.3.3. Ranges</a></li>
+<li><a href="#_non_quantified_types">5.3.2. Non-quantified Types</a></li>
+<li><a href="#_quantified_types">5.3.3. Quantified Types</a></li>
+<li><a href="#_measured_values">5.3.4. Measured Values</a></li>
+<li><a href="#_ranges_2">5.3.5. Ranges</a></li>
 </ul>
 </li>
 <li><a href="#_class_descriptions_5">5.4. Class Descriptions</a>
@@ -1553,9 +1555,18 @@ T Beale</p></td>
 <div class="paragraph">
 <p>Beneath <code>Ordered_value</code> is a further differentiation into <code>Coded_ordinal</code> and further hierarchy under <code>Quantified</code>.</p>
 </div>
-<div class="paragraph">
-<p>The <code>Coded_ordinal</code> type is used to represent data items whose values are fiat-assigned numerics, but imply no correlation with real world amounts or magnitudes. This type is used for scores as described in the requirements above. <code>Coded_ordinal</code> represents data values whose values are generally Integers, and which have symbolic or text names instead, such as <code>"mild"</code>, <code>"medium"</code>, <code>"severe"</code>. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for <code>Coded_ordinal</code> include representing values from the Apgar and Glasgow Coma Scales, e.g. <code>0｜heart rate absent｜</code>, <code>4｜withdraws from pain｜</code>. Although the numeric values of coded ordinal data items does not stricly measure anything, they are nevertheless commonly added to create final scores, which classify a patient condition or situation. No other mathematical operations have meaning for this type.</p>
 </div>
+<div class="sect3">
+<h4 id="_non_quantified_types"><a class="anchor" href="#_non_quantified_types"></a>5.3.2. Non-quantified Types</h4>
+<div class="paragraph">
+<p>The <code>Score</code> type is used to represent data items whose values are fiat-assigned numerics whose magnitudes carry meaning. The values imply no direct relation with real world amounts or magnitudes. This type is used for scores as described in the requirements above. Typical uses for <code>Score</code> include representing values from the Apgar and Glasgow Coma Scales, e.g. <code>0｜heart rate absent｜</code>, <code>4｜withdraws from pain｜</code>. Although the numeric values of coded ordinal data items does not strictly measure anything, they may be summed to create final scores, which classify a patient condition or situation.</p>
+</div>
+<div class="paragraph">
+<p><code>Coded_ordinal</code> represents data values whose values are generally Integers, and which have symbolic or text names instead, such as <code>"mild"</code>, <code>"medium"</code>, <code>"severe"</code>. Each symbol can be assigned any Integer value, providing a basis for computable comparison.  No other mathematical operations have meaning for this type.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_quantified_types"><a class="anchor" href="#_quantified_types"></a>5.3.3. Quantified Types</h4>
 <div class="paragraph">
 <p>In contrast to <code>Coded_ordinal</code>, types under <code>Quantified</code> have numeric values that can meaningfully be added, subtracted, multiplied and divided. The hierarchy breaks out into:</p>
 </div>
@@ -1608,7 +1619,7 @@ T Beale</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_measured_values"><a class="anchor" href="#_measured_values"></a>5.3.2. Measured Values</h4>
+<h4 id="_measured_values"><a class="anchor" href="#_measured_values"></a>5.3.4. Measured Values</h4>
 <div class="paragraph">
 <p>An important difference exists between values that are stated (e.g. as targets) and values that are measured in the real world. In the latter case, accuracy and precision are often recorded, and in clinical medicine, reference ranges relevant to the patient are often included as well.</p>
 </div>
@@ -1645,7 +1656,7 @@ T Beale</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ranges_2"><a class="anchor" href="#_ranges_2"></a>5.3.3. Ranges</h4>
+<h4 id="_ranges_2"><a class="anchor" href="#_ranges_2"></a>5.3.5. Ranges</h4>
 <div class="paragraph">
 <p>Ranges are not considered an <code>Ordered_datum</code> in the taxonomy, but rather a related data type that consists of a range of <code>Ordered_datum</code> instances. Ranges are represented by the generic type <code>Range&lt;T:Ordered_datum&gt;</code> which enables a range of any of the other ordered type to be constructed.</p>
 </div>
