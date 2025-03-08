@@ -350,9 +350,11 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.9.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://platform.s2health.org/tickets/S2BASE-62" target="_blank" rel="noopener">S2BASE-62</a>. Add semi-quantitative data type;<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://platform.s2health.org/tickets/S2BASE-62" target="_blank" rel="noopener">S2BASE-62</a>. Add <code>Semi_quantitative</code> data type;<br>
+<a href="https://platform.s2health.org/tickets/S2BASE-66" target="_blank" rel="noopener">S2BASE-66</a>. Add dedicated <code>Score</code> data type;<br>
+<a href="https://platform.s2health.org/tickets/S2BASE-64" target="_blank" rel="noopener">S2BASE-64</a>. Improve days specification in <code>Timing</code> data type;<br>
 <a href="https://platform.s2health.org/tickets/S2BASE-63" target="_blank" rel="noopener">S2BASE-63</a>. Adjust Quantity hierarchy to separate compound and simple value types;<br>
-<a href="https://platform.s2health.org/tickets/S2BASE-64" target="_blank" rel="noopener">S2BASE-64</a>. Improve days specification in Timing data type<br></p></td>
+<a href="https://platform.s2health.org/tickets/S2BASE-64" target="_blank" rel="noopener">S2BASE-64</a>. Improve days specification in Timing data type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">J Coyle,<br>
 N Davis,<br>
 S Huff,<br>
@@ -3911,6 +3913,9 @@ factor: <code><a href="#_real_class">Real</a>[1]</code><br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>base_periods_in_cycle</strong>: <code>Integer</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Number of base periods (weeks, months or other) in the cycle represented by this object.</p>
+</div>
+<div class="paragraph">
+<p>Defaults to 1 if not set.</p>
 </div></div></td>
 </tr>
 <tr>

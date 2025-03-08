@@ -78,6 +78,8 @@ The value 'every day' can be represented  by full list for either the week or mo
 h|*0..1*
 |*base_periods_in_cycle*: `Integer`
 a|Number of base periods (weeks, months or other) in the cycle represented by this object.
+
+Defaults to 1 if not set.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*

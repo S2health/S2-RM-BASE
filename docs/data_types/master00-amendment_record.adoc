@@ -11,9 +11,11 @@
 4+^h|*BASE Release 0.9.0*
 
 |[[latest_issue,0.9.0]]0.9.0
-|{spec_tickets}/S2BASE-62[S2BASE-62^]. Add semi-quantitative data type; +
+|{spec_tickets}/S2BASE-62[S2BASE-62^]. Add `Semi_quantitative` data type; +
+{spec_tickets}/S2BASE-66[S2BASE-66^]. Add dedicated `Score` data type; +
+{spec_tickets}/S2BASE-64[S2BASE-64^]. Improve days specification in `Timing` data type; +
 {spec_tickets}/S2BASE-63[S2BASE-63^]. Adjust Quantity hierarchy to separate compound and simple value types; +
-{spec_tickets}/S2BASE-64[S2BASE-64^]. Improve days specification in Timing data type +
+{spec_tickets}/S2BASE-64[S2BASE-64^]. Improve days specification in Timing data type
 |J Coyle, +
 N Davis, +
 S Huff, +
